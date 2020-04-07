@@ -1,0 +1,15 @@
+// DigitalSimulation_MF.cpp : This file contains the 'main' function. Program execution begins and ends there.
+
+/* M4 (Process Interaction)
+   A6d (CSMA 1-persistent, DIFS = 4ms)
+   10 (K)
+   10 (LR) */
+
+#include <iostream>
+
+int main()
+{
+  // start simulation
+  std::cout << "Simulation \n";
+  return 0;
+}
