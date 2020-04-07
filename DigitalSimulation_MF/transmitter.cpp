@@ -1,4 +1,4 @@
-#include "Transmitter.h"
+#include "transmitter.h"
 
 Transmitter::Transmitter(unsigned int id_)
 {

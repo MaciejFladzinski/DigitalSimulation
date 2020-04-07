@@ -1,4 +1,4 @@
-#include "WirelessNetwork.h"
+#include "wirelessNetwork.h"
 
 WirelessNetwork::WirelessNetwork()
 {

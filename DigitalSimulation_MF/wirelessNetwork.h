@@ -4,7 +4,7 @@
 #include<vector>
 
 #include "receiver.h"
-#include "Transmitter.h"
+#include "transmitter.h"
 
 class WirelessNetwork
 {
