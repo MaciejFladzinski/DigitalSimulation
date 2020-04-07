@@ -7,9 +7,23 @@
 
 #include <iostream>
 
+#include "channel.h"
+#include "package.h"
+#include "receiver.h"
+#include "transmitter.h"
+#include "wirelessNetwork.h"
+
 int main()
 {
   // start simulation
   std::cout << "Simulation \n";
+
+  // TEST
+  WirelessNetwork* wireless_network = new WirelessNetwork();
+  Transmitter* transmitter = new Transmitter(5);
+  Channel* channel = new Channel();
+  Package* package = new Package();
+  Receiver* receiver = new Receiver();
+
   return 0;
 }
