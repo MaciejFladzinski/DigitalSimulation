@@ -12,9 +12,12 @@ public:
 
   // get
   inline unsigned _int64 GetActualTimeSimulation() { return actual_time_simulation_; }
+
   // set
   inline void SetActualTimeSimulation(unsigned _int64 actual_time_simulation)
-  { this->actual_time_simulation_ = actual_time_simulation; }
+  {
+    this->actual_time_simulation_ = actual_time_simulation;
+  }
 
 private:
   unsigned _int64 actual_time_simulation_; // actual time of simulation

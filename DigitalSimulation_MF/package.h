@@ -12,6 +12,7 @@ public:
 
   // get
   inline unsigned int GetNumberOfLR() { return number_of_LR_; }
+
   // set
   inline void SetNumberOfLR(unsigned int number_of_LR) { this->number_of_LR_ = number_of_LR; }
 

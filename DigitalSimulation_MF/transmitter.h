@@ -21,10 +21,18 @@ public:
   inline bool GetTransmissionPermission() { return transmission_permission_; }
 
   // set
-  inline void SetTransmitterId(unsigned int transmitter_id) { this->transmitter_id_ = transmitter_id; }
+  inline void SetTransmitterId(unsigned int transmitter_id)
+  {
+    this->transmitter_id_ = transmitter_id;
+  }
   inline void SetPackagesSuccesfullySent(unsigned int packages_successfully_sent)
-  { this->packages_successfully_sent_ = packages_successfully_sent; }
-  inline void SetPackagesLost(unsigned int packages_lost) { this->packages_lost_ = packages_lost; }
+  {
+    this->packages_successfully_sent_ = packages_successfully_sent;
+  }
+  inline void SetPackagesLost(unsigned int packages_lost)
+  {
+    this->packages_lost_ = packages_lost;
+  }
   inline void SetTimeOfChannelOccupancy(unsigned _int64 time_of_channel_occupancy)
   {
     this->time_of_channel_occupancy_ = time_of_channel_occupancy;
@@ -33,7 +41,10 @@ public:
   {
     this->time_of_start_transmission_ = time_of_start_transmission;
   }
-  inline void SetTimeCrp(unsigned _int64 time_crp) { this->time_crp_ = time_crp; }
+  inline void SetTimeCrp(unsigned _int64 time_crp)
+  {
+    this->time_crp_ = time_crp;
+  }
   inline void SetCorrectReceptionAck(bool correct_reception_ack)
   {
     this->correct_reception_ack_ = correct_reception_ack;

@@ -14,6 +14,7 @@ public:
   // get
   inline bool GetChannelOccupancy() { return channel_occupancy_; }
   inline bool GetCollision() { return collision_; }
+
   // set
   inline void SetChannelOccupancy(bool channel_occupancy) { this->channel_occupancy_ = channel_occupancy; }
   inline void SetCollision(bool collision) { this->collision_ = collision; }
