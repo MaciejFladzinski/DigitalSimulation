@@ -2,7 +2,7 @@
 
 Transmitter::Transmitter(unsigned int id_)
 {
-  transmitter_id = id_;
+  transmitter_id_ = id_;
 }
 
 

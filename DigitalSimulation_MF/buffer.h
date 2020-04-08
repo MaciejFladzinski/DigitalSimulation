@@ -1,5 +1,5 @@
-#ifndef BUFFER_H
-#define BUFFER_H
+#ifndef BUFFER_H_
+#define BUFFER_H_
 
 #include <queue>
 
@@ -11,6 +11,7 @@ public:
   Buffer();
   ~Buffer();
 
+private:
   std::queue<Package*> packages_in_buffer;  // queue of packages in buffer
 };
 
