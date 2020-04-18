@@ -8,11 +8,19 @@
 class Buffer
 {
 public:
-  Buffer();
+  Buffer(unsigned int id_); // constructor (transmitter id)
   ~Buffer();
 
+  // get
+  inline unsigned int GetTransmitterId() { return transmitter_id_; }
+
+  // set
+  inline void SetTransmitterId(unsigned int transmitter_id) { this->transmitter_id_ = transmitter_id; }
+
 private:
-  std::queue<Package*> packages_in_buffer;  // queue of packages in buffer
+  unsigned int transmitter_id_; // number of transmitter to which buffer belongs
+
+  std::queue<Package*> packages_in_buffer; // queue of packages in buffer
 };
 
 #endif
