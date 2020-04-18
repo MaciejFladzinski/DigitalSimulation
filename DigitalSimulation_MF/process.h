@@ -4,16 +4,17 @@
 class Process
 {
 public:
-  explicit Process(size_t time);
+  Process(size_t time);
   ~Process();
 
-  virtual void Execute() {} // process activation
+  virtual void Execute() = 0; // process activation
   
   // enum class (representation of states)
   
-  void Activ(unsigned __int64 activ_time_) {} //function (process activation time)
+  void Activ(size_t time); //function (process activation time)
 
 protected:
+  bool is_terminated_ = false;
   size_t time_ = 0; //time after which the process will start
 };
 

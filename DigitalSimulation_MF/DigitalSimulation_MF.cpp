@@ -7,19 +7,37 @@
 
 #include <iostream>
 
-#include "channel.h"
-#include "package.h"
+#include "generatepacketevent.h"
+#include "logger.h"
+#include "process.h"
 #include "wirelessNetwork.h"
 
 int main()
 {
-  // start simulation
-  std::cout << "Simulation \n";
+  Logger logger = Logger();
+  logger.set_level(Logger::Level::Info);
 
+  std::vector<Process*> events;
+
+  events.push_back(new GeneratePacketEvent(12, &logger));
+
+  events[0]->Execute();
+
+  try
+  {
+    events.at(3)->Execute();
+  }
+  catch (...)
+  {
+    logger.Error("Index out of bounds");
+  }
+
+  /*
   // TEST
   WirelessNetwork* wireless_network = new WirelessNetwork();
   Channel* channel = new Channel();
   Package* package = new Package();
+  */
 
   return 0;
 }
