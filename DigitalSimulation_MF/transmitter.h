@@ -4,7 +4,8 @@
 class Transmitter
 {
 public:
-  Transmitter(unsigned int id_); //constructor(id number)
+  //constructor(id number, queue of packages in buffer)
+  Transmitter(unsigned int id_);
   ~Transmitter();
 
   // const... = 0 -> it's only for definition const variable, it will be changed soon...

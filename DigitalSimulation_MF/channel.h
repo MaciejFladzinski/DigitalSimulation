@@ -23,7 +23,7 @@ private:
   bool channel_occupancy_; // true/false - channel is busy/free
   bool collision_; // true - collision occurred
 
-  std::vector<Package*> transmission_packages; // vector of transmission packages
+  std::vector<Package*> transmitted_packages;  // vector of transmitted packages
 };
 
 #endif

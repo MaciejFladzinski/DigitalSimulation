@@ -147,7 +147,6 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="buffer.cpp" />
     <ClCompile Include="channel.cpp" />
     <ClCompile Include="DigitalSimulation_MF.cpp" />
     <ClCompile Include="package.cpp" />
@@ -157,7 +156,6 @@
     <ClCompile Include="wirelessNetwork.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="buffer.h" />
     <ClInclude Include="channel.h" />
     <ClInclude Include="package.h" />
     <ClInclude Include="receiver.h" />

@@ -1,11 +1,10 @@
 #ifndef WIRELESSNETWORK_H_
 #define WIRELESSNETWORK_H_
 
-#include<vector>
+#include <vector>
 
 #include "receiver.h"
 #include "transmitter.h"
-#include "channel.h"
 
 class WirelessNetwork
 {
