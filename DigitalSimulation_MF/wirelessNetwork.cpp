@@ -10,6 +10,7 @@ WirelessNetwork::WirelessNetwork()
 	{
 		auto transmitter = new Transmitter(i);
 		transmitters.push_back(transmitter);
+
 		auto receiver = new Receiver(i);
 		receivers.push_back(receiver);
 	}
