@@ -1,8 +1,20 @@
 #include "packetprocess.h"
 
+PacketProcess::PacketProcess(size_t time, Logger* logger) : Process(time), logger_(logger)
+{
+  
+}
+
+PacketProcess::~PacketProcess()
+{
+  
+}
+
 void PacketProcess::Execute()
 {
   bool active = true;
+
+  logger_->Info("Packet Process");
 
   while(active)
   {

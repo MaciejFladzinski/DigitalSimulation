@@ -7,7 +7,7 @@
 
 #include <iostream>
 
-#include "generatepacketevent.h"
+#include "packetprocess.h"
 #include "logger.h"
 #include "process.h"
 #include "wirelessNetwork.h"
@@ -15,11 +15,11 @@
 int main()
 {
   Logger logger = Logger();
-  logger.set_level(Logger::Level::Info);
+  logger.set_level(Logger::Level::Debug);
 
   std::vector<Process*> events;
 
-  events.push_back(new GeneratePacketEvent(12, &logger));
+  events.push_back(new PacketProcess(5, &logger));
 
   events[0]->Execute();
 
