@@ -9,15 +9,15 @@ public:
   ~Transmitter();
 
   // const... = 0 -> it's only for definition const variable, it will be changed soon...
-  unsigned const _int64 time_of_ctiz_ = 0;  // ACK transmission time
+  unsigned const __int64 time_of_ctiz_ = 0;  // ACK transmission time
 
   // get
   inline unsigned int GetTransmitterId() { return transmitter_id_; }
   inline unsigned int GetPackagesSuccesfullySent() { return packages_successfully_sent_; }
   inline unsigned int GetPackagesLost() { return packages_lost_; }
-  inline unsigned _int64 GetTimeOfChannelOccupancy() { return time_of_channel_occupancy_; }
-  inline unsigned _int64 GetTimeOfStartTransmission() { return time_of_start_transmission_; }
-  inline unsigned _int64 GetTimeCrp() { return time_crp_; }
+  inline unsigned __int64 GetTimeOfChannelOccupancy() { return time_of_channel_occupancy_; }
+  inline unsigned __int64 GetTimeOfStartTransmission() { return time_of_start_transmission_; }
+  inline unsigned __int64 GetTimeCrp() { return time_crp_; }
   inline bool GetCorrectReceptionAck() { return correct_reception_ack_; }
   inline bool GetTransmissionPermission() { return transmission_permission_; }
 
@@ -34,15 +34,15 @@ public:
   {
     this->packages_lost_ = packages_lost;
   }
-  inline void SetTimeOfChannelOccupancy(unsigned _int64 time_of_channel_occupancy)
+  inline void SetTimeOfChannelOccupancy(unsigned __int64 time_of_channel_occupancy)
   {
     this->time_of_channel_occupancy_ = time_of_channel_occupancy;
   }
-  inline void SetTimeOfStartTransmission(unsigned _int64 time_of_start_transmission)
+  inline void SetTimeOfStartTransmission(unsigned __int64 time_of_start_transmission)
   {
     this->time_of_start_transmission_ = time_of_start_transmission;
   }
-  inline void SetTimeCrp(unsigned _int64 time_crp)
+  inline void SetTimeCrp(unsigned __int64 time_crp)
   {
     this->time_crp_ = time_crp;
   }
@@ -59,9 +59,9 @@ private:
   unsigned int transmitter_id_;  // transmitter number
   unsigned int packages_successfully_sent_;  // number of packages successfully sent
   unsigned int packages_lost_; // number of packages lost
-  unsigned _int64 time_of_channel_occupancy_;  // time of channel occupancy
-  unsigned _int64 time_of_start_transmission_; // time of start transmission
-  unsigned _int64 time_crp_;  // random time after which retransmissions can be made
+  unsigned __int64 time_of_channel_occupancy_;  // time of channel occupancy
+  unsigned __int64 time_of_start_transmission_; // time of start transmission
+  unsigned __int64 time_crp_;  // random time after which retransmissions can be made
   bool correct_reception_ack_;  // true - ACK take back in less time than (CGPk + CTIZ)
   bool transmission_permission_;  // true - permission to transmit the packet
 };

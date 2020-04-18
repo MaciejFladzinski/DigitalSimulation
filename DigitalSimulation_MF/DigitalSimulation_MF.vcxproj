@@ -150,6 +150,7 @@
     <ClCompile Include="channel.cpp" />
     <ClCompile Include="DigitalSimulation_MF.cpp" />
     <ClCompile Include="package.cpp" />
+    <ClCompile Include="process.cpp" />
     <ClCompile Include="receiver.cpp" />
     <ClCompile Include="time.cpp" />
     <ClCompile Include="transmitter.cpp" />
@@ -158,6 +159,7 @@
   <ItemGroup>
     <ClInclude Include="channel.h" />
     <ClInclude Include="package.h" />
+    <ClInclude Include="process.h" />
     <ClInclude Include="receiver.h" />
     <ClInclude Include="time.h" />
     <ClInclude Include="transmitter.h" />

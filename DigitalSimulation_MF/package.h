@@ -8,7 +8,7 @@ public:
   ~Package();
 
   // const... = 0 -> it's only for definition const variable, it will be changed soon...
-  unsigned const _int64 k_time_ctpk_ = 0; // random packet generation time (CTPk)
+  unsigned const __int64 k_time_ctpk_ = 0; // random packet generation time (CTPk)
 
   // get
   inline unsigned int GetNumberOfLR() { return number_of_LR_; }
