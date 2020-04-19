@@ -2,7 +2,7 @@
 
 #include <iostream>
 
-PacketProcess::PacketProcess(size_t time, Logger* logger) : Process(time), logger_(logger)
+PacketProcess::PacketProcess(size_t time, Logger* logger) : time_(time), logger_(logger)
 {
   
 }
@@ -25,7 +25,7 @@ void PacketProcess::Execute()
       // before all break set active = true/false + Activ(time) if it's required
 
     case State::AppearanceInTheSystem:
-      // Appearance in the system operations:
+      // Appearance in the system operations
 
       // 1. zaplanuj pojawienie sie nastepnego pakietu
       std::cout << "zaplanuj pojawienie sie nastepnego pakietu \n";
@@ -42,7 +42,7 @@ void PacketProcess::Execute()
       break;
 
     case State::Transmission:
-      // Transmission operations:
+      // Transmission operations
 
       // 1. przesy³aj pakiet okreœlon¹ jednostkê czasu (CTPk)
       std::cout << "przesylaj pakiet okreœlona jednostke czasu (CTPk) \n";
@@ -55,7 +55,7 @@ void PacketProcess::Execute()
       break;
 
     case State::RemovalFromTheSystem:
-      // Removal from the system operations:
+      // Removal from the system operations
 
       // 1. zwolnij kanal
       std::cout << "zwolnij kanal \n";
@@ -69,7 +69,7 @@ void PacketProcess::Execute()
       // 4. jeœli nie - opuœæ system
       std::cout << "jesli nie - opusc system \n\n";
 
-      //is_terminated_ = true;
+      is_terminated_ = true;
 
       active = false;
       break;

@@ -9,7 +9,6 @@
 
 #include "packetprocess.h"
 #include "logger.h"
-#include "process.h"
 #include "wirelessNetwork.h"
 
 int main()
@@ -17,9 +16,9 @@ int main()
   Logger logger = Logger();
   logger.set_level(Logger::Level::Debug);
 
-  std::vector<Process*> events;
+  std::vector<PacketProcess*> events;
 
-  events.push_back(new PacketProcess(5, &logger));
+  events.push_back(new PacketProcess(2, &logger));
 
   std::cout << "Test 1: \n";
   try
