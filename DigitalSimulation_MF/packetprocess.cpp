@@ -2,9 +2,10 @@
 
 #include <iostream>
 
-PacketProcess::PacketProcess(size_t time, Logger* logger) : activation_time_(time), logger_(logger)
+PacketProcess::PacketProcess(size_t time, Logger* logger) : Transmitter(0), Package(0,0)
 {
-  
+  activation_time_ = time;
+  logger_ = logger;
 }
 
 PacketProcess::~PacketProcess()
@@ -27,14 +28,13 @@ void PacketProcess::Execute()
     case State::AppearanceInTheSystem:
       // Appearance in the system operations
 
-      // 1. pojawienie sie pakietu
-      std::cout << "pojawienie sie pakietu \n";
+      // 1. pojawienie sie pakietu i dodanie go do kolejki FIFO
+      GeneratePackage();
+      logger_->Info("Generate Package");
 
-      // 2. dodaj pakiet do kolejki FIFO
-      std::cout << "dodaj pakiet do kolejki FIFO \n";
-
-      // 3. jeœli kana³ transmisyjny jest wolny rozpocznij transmisjê najstarszego pakietu
-      std::cout << "jesli kanal transmisyjny jest wolny rozpocznij transmisje najstarszego pakietu \n\n";
+      // 2. jeœli kana³ transmisyjny jest wolny rozpocznij transmisjê najstarszego pakietu
+      StartTransmission();
+      logger_->Info("Start transmission");
 
       state_ = State::Transmission;
       active = true;
@@ -44,7 +44,8 @@ void PacketProcess::Execute()
       // Transmission operations
 
       // 1. przesy³aj pakiet okreœlon¹ jednostkê czasu (CTPk)
-      std::cout << "przesylaj pakiet okreslona jednostke czasu (CTPk) \n";
+      logger_->Info("CTPk transmission time...");
+      TimeCTPk();
 
       // 2. w przypadku niepowodzenia wykonaj retransmisjê pakietu (maksymalnie LR=10 razy)
       std::cout << "w przypadku niepowodzenia wykonaj retransmisje pakietu (maksymalnie LR=10 razy) \n\n";

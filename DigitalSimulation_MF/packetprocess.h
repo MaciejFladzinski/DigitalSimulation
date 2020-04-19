@@ -2,8 +2,9 @@
 #define PACKET_PROCESS_H_
 
 #include "logger.h"
+#include "transmitter.h"
 
-class PacketProcess
+class PacketProcess : private Transmitter, private Package
 {
 public:
   // enum class - representation of states

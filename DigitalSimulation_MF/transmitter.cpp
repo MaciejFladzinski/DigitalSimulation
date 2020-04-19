@@ -24,8 +24,8 @@ void Transmitter::GeneratePackage()
 
 void Transmitter::StartTransmission()
 {
-  if (Channel::GetChannelOccupancy() == false && !packages_.empty())
+  if (GetChannelOccupancy() == false && !packages_.empty())
   {
-    std::cout << "Start packet transmission: " << packages_.front()->GetPackageId() << std::endl;
+    std::cout << "Start packet transmission. Package nr: " << packages_.front()->GetPackageId() << std::endl;
   }
 }
