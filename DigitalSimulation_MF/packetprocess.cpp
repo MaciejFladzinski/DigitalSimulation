@@ -2,7 +2,8 @@
 
 #include <iostream>
 
-PacketProcess::PacketProcess(size_t time, Logger* logger) : Transmitter(0), Package(0,0)
+PacketProcess::PacketProcess(size_t time, Logger* logger)
+: Transmitter(0), Package(0,0)
 {
   activation_time_ = time;
   logger_ = logger;
@@ -48,7 +49,8 @@ void PacketProcess::Execute()
       TimeCTPk();
 
       // 2. w przypadku niepowodzenia wykonaj retransmisjê pakietu (maksymalnie LR=10 razy)
-      std::cout << "w przypadku niepowodzenia wykonaj retransmisje pakietu (maksymalnie LR=10 razy) \n\n";
+      logger_->Info("Retransmission");
+      Retransmission();
 
       state_ = State::RemovalFromTheSystem;
       active = true;

@@ -5,11 +5,11 @@
 
 #include "channel.h"
 #include "package.h"
+#include "receiver.h"
 
-class Transmitter : public Channel
+class Transmitter : private Channel, private Receiver
 {
 public:
-
   //constructor(id number, queue of packages in buffer)
   Transmitter(unsigned int id_);
   ~Transmitter();
@@ -17,6 +17,7 @@ public:
   // functions
   void GeneratePackage();
   void StartTransmission();
+  void Retransmission();
 
   // const... = 0 -> it's only for definition const variable, it will be changed soon...
   unsigned const __int64 time_of_ctiz_ = 0;  // ACK transmission time

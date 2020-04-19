@@ -22,7 +22,7 @@ public:
 
 private:
   unsigned int package_id_;
-  unsigned int number_of_LR_; // packet retransmission number
+  unsigned int number_of_LR_ = 0; // packet retransmission number
   unsigned __int64 time_ctpk_; // random packet generation time (CTPk)
 };
 #endif

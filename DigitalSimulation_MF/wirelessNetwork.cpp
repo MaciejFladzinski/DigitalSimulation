@@ -3,6 +3,7 @@
 #include "transmitter.h"
 #include "receiver.h"
 #include "channel.h"
+#include "package.h"
 
 WirelessNetwork::WirelessNetwork()
 {
@@ -13,6 +14,9 @@ WirelessNetwork::WirelessNetwork()
 
 		auto receiver = new Receiver(i);
 		receivers_.push_back(receiver);
+
+		auto package = new Package(i, 0);
+		packages_.push_back(package);
 	}
 	auto channel = new Channel();
 }
