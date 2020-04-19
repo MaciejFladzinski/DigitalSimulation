@@ -30,8 +30,5 @@ void Logger::Debug(std::string message)
 
 void Logger::Error(std::string message)
 {
-  if (level_ != Level::Error)
-  {
-    std::cout << "[Error] " << message << std::endl;
-  }
+  std::cout << "[Error] " << message << std::endl;
 }

@@ -7,16 +7,15 @@
 class PacketProcess : public Process
 {
 public:
-  enum class State { Begin, Medium, End };
+  enum class State { AppearanceInTheSystem, Transmission, RemovalFromTheSystem };
 
-  PacketProcess(size_t time, Logger* logger); // add necessary pointers np. wireless network
+  PacketProcess(size_t time, Logger* logger); // add necessary pointers: wireless network, etc.
   ~PacketProcess();
 
   void Execute() override;
-  // implementation function execute (how it works?)
 
 private:
-  State state_ = State::Begin;
+  State state_ = State::AppearanceInTheSystem;
   Logger* logger_ = nullptr;
 };
 #endif

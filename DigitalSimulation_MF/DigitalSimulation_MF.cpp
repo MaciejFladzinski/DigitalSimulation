@@ -21,23 +21,25 @@ int main()
 
   events.push_back(new PacketProcess(5, &logger));
 
-  events[0]->Execute();
-
+  std::cout << "Test 1: \n";
   try
   {
-    events.at(3)->Execute();
+    events.at(0)->Execute();
   }
   catch (...)
   {
     logger.Error("Index out of bounds");
   }
 
-  /*
-  // TEST
-  WirelessNetwork* wireless_network = new WirelessNetwork();
-  Channel* channel = new Channel();
-  Package* package = new Package();
-  */
+  std::cout << "Test 2: \n";
+  try
+  {
+    events.at(1)->Execute();
+  }
+  catch (...)
+  {
+    logger.Error("Index out of bounds");
+  }
 
   return 0;
 }
