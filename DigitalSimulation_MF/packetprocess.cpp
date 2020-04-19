@@ -2,7 +2,7 @@
 
 #include <iostream>
 
-PacketProcess::PacketProcess(size_t time, Logger* logger) : time_(time), logger_(logger)
+PacketProcess::PacketProcess(size_t time, Logger* logger) : activation_time_(time), logger_(logger)
 {
   
 }
@@ -27,16 +27,14 @@ void PacketProcess::Execute()
     case State::AppearanceInTheSystem:
       // Appearance in the system operations
 
-      // 1. zaplanuj pojawienie sie nastepnego pakietu
-      std::cout << "zaplanuj pojawienie sie nastepnego pakietu \n";
+      // 1. pojawienie sie pakietu
+      std::cout << "pojawienie sie pakietu \n";
 
       // 2. dodaj pakiet do kolejki FIFO
       std::cout << "dodaj pakiet do kolejki FIFO \n";
 
-
       // 3. jeœli kana³ transmisyjny jest wolny rozpocznij transmisjê najstarszego pakietu
       std::cout << "jesli kanal transmisyjny jest wolny rozpocznij transmisje najstarszego pakietu \n\n";
-      //if (channel_occupancy_ == FALSE)
 
       state_ = State::Transmission;
       active = true;
@@ -82,4 +80,9 @@ void PacketProcess::Execute()
       break;
     }
   }
+}
+
+void PacketProcess::Activ(size_t time)
+{
+  activation_time_ += time;
 }

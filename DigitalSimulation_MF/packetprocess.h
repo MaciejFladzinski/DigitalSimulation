@@ -1,7 +1,6 @@
 #ifndef PACKET_PROCESS_H_
 #define PACKET_PROCESS_H_
 
-#include "channel.h"
 #include "logger.h"
 
 class PacketProcess
@@ -23,6 +22,6 @@ protected:
 private:
   State state_ = State::AppearanceInTheSystem;
   Logger* logger_ = nullptr;
-  size_t time_ = 0; //time after which the process will start
+  size_t activation_time_ = 0; //time after which the process will start
 };
 #endif
