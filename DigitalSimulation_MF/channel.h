@@ -13,15 +13,15 @@ public:
 
   // get
   inline bool GetChannelOccupancy() { return channel_occupancy_; }
-  inline bool GetCollision() { return collision_; }
+  inline bool GetCollision() { return packages_collision_; }
 
   // set
   inline void SetChannelOccupancy(bool channel_occupancy) { this->channel_occupancy_ = channel_occupancy; }
-  inline void SetCollision(bool collision) { this->collision_ = collision; }
+  inline void SetCollision(bool collision) { this->packages_collision_ = collision; }
 
 private:
-  bool channel_occupancy_; // true/false - channel is busy/free
-  bool collision_; // true - collision occurred
+  bool channel_occupancy_ = false; // true/false - channel is busy/free
+  bool packages_collision_; // true - collision occurred
 
   std::vector<Package*> transmitted_packages;  // vector of transmitted packages
 };
