@@ -33,6 +33,7 @@ void PacketProcess::Execute()
       // 2. dodaj pakiet do kolejki FIFO
       std::cout << "dodaj pakiet do kolejki FIFO \n";
 
+
       // 3. jeœli kana³ transmisyjny jest wolny rozpocznij transmisjê najstarszego pakietu
       std::cout << "jesli kanal transmisyjny jest wolny rozpocznij transmisje najstarszego pakietu \n\n";
       //if (channel_occupancy_ == FALSE)
@@ -45,7 +46,7 @@ void PacketProcess::Execute()
       // Transmission operations
 
       // 1. przesy³aj pakiet okreœlon¹ jednostkê czasu (CTPk)
-      std::cout << "przesylaj pakiet okreœlona jednostke czasu (CTPk) \n";
+      std::cout << "przesylaj pakiet okreslona jednostke czasu (CTPk) \n";
 
       // 2. w przypadku niepowodzenia wykonaj retransmisjê pakietu (maksymalnie LR=10 razy)
       std::cout << "w przypadku niepowodzenia wykonaj retransmisje pakietu (maksymalnie LR=10 razy) \n\n";

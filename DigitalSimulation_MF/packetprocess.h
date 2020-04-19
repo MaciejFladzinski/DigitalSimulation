@@ -1,6 +1,7 @@
 #ifndef PACKET_PROCESS_H_
 #define PACKET_PROCESS_H_
 
+#include "channel.h"
 #include "logger.h"
 
 class PacketProcess

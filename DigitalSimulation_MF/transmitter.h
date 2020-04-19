@@ -1,5 +1,8 @@
 #ifndef TRANSMITTER_H_
 #define TRANSMITTER_H_
+#include <vector>
+
+#include "package.h"
 
 class Transmitter
 {
@@ -20,6 +23,7 @@ public:
   inline unsigned __int64 GetTimeCrp() { return time_crp_; }
   inline bool GetCorrectReceptionAck() { return correct_reception_ack_; }
   inline bool GetTransmissionPermission() { return transmission_permission_; }
+  std::vector<Package*> GetPackages() { return packages_; }
 
   // set
   inline void SetTransmitterId(unsigned int transmitter_id)
@@ -54,6 +58,7 @@ public:
   {
     this->transmission_permission_ = transmission_permission;
   }
+  void SetPackages(std::vector<Package*> &packages) { packages_ = packages; }
 
 private:
   unsigned int transmitter_id_;  // transmitter number
@@ -64,6 +69,7 @@ private:
   unsigned __int64 time_crp_;  // random time after which retransmissions can be made
   bool correct_reception_ack_;  // true - ACK take back in less time than (CGPk + CTIZ)
   bool transmission_permission_;  // true - permission to transmit the packet
+  std::vector<Package*> packages_;  // vector of packages ready to transmission
 };
 
 #endif

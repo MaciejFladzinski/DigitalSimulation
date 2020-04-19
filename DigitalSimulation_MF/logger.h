@@ -21,7 +21,7 @@ public:
   void Error(std::string message);
 
 private:
-  std::string file_path_;
+  // std::string file_path_;
   Level level_ = Level::Info;  //LEVEL Info: Info, Error / Debug: Info, Debug, Error / Error: Error
 };
 #endif

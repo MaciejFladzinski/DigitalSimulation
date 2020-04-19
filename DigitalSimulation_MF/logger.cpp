@@ -16,7 +16,7 @@ Logger::~Logger()
 void Logger::Info(std::string message)
 {
   // add better text format (sprintf etc.)
-  
+
   // write to file
   std::ofstream save("Save.txt");
 
@@ -36,7 +36,7 @@ void Logger::Debug(std::string message)
 
 void Logger::Error(std::string message)
 {
-  // login in to file
+  // add to file
   std::ofstream save("Save.txt", std::ios_base::app);
 
   std::cout << "[Error] " << message << std::endl;
