@@ -2,8 +2,9 @@
 #define PACKET_PROCESS_H_
 
 #include "logger.h"
+#include "process.h"
 
-class PacketProcess
+class PacketProcess : Process
 {
 public:
   // enum class - representation of states
@@ -12,12 +13,7 @@ public:
   PacketProcess(size_t time, Logger* logger); // add necessary pointers: wireless network, etc.
   ~PacketProcess();
 
-  void Execute();
-
-  void Activ(size_t time); //function (process activation time)
-
-protected:
-  bool is_terminated_ = false;
+  void Execute() override;
 
 private:
   State state_ = State::AppearanceInTheSystem;

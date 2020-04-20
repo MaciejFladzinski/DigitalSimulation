@@ -2,7 +2,7 @@
 
 #include <iostream>
 
-PacketProcess::PacketProcess(size_t time, Logger* logger)
+PacketProcess::PacketProcess(size_t time, Logger* logger) : Process(0,0)
 {
   activation_time_ = time;
   logger_ = logger;
@@ -77,9 +77,4 @@ void PacketProcess::Execute()
       break;
     }
   }
-}
-
-void PacketProcess::Activ(size_t time)
-{
-  activation_time_ += time;
 }

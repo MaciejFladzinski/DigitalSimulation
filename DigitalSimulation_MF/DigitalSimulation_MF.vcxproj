@@ -152,6 +152,7 @@
     <ClCompile Include="logger.cpp" />
     <ClCompile Include="package.cpp" />
     <ClCompile Include="packetprocess.cpp" />
+    <ClCompile Include="process.cpp" />
     <ClCompile Include="receiver.cpp" />
     <ClCompile Include="time.cpp" />
     <ClCompile Include="transmitter.cpp" />
@@ -162,6 +163,7 @@
     <ClInclude Include="logger.h" />
     <ClInclude Include="package.h" />
     <ClInclude Include="packetprocess.h" />
+    <ClInclude Include="process.h" />
     <ClInclude Include="receiver.h" />
     <ClInclude Include="time.h" />
     <ClInclude Include="transmitter.h" />
