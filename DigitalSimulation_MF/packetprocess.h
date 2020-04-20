@@ -2,22 +2,32 @@
 #define PACKET_PROCESS_H_
 
 #include "logger.h"
-#include "process.h"
 
-class PacketProcess : public Process
+class PacketProcess
 {
 public:
   // enum class - representation of states
-  enum class State { AppearanceInTheSystem, Transmission, RemovalFromTheSystem };
+  enum class State { AppearanceInTheSystem, ChannelListening, Transmission, Retransmission, ACK, RemovalFromTheSystem };
 
-  PacketProcess(size_t time, size_t* time_ptr, Logger* logger); // add necessary pointers: wireless network, etc.
+  PacketProcess(unsigned __int64 time, Logger* logger); // add necessary pointers: wireless network, etc.
   ~PacketProcess();
 
-  void Execute() override;
+  // functions
+  void Execute();
+  void Activ(unsigned __int64 time); //function (process activation time)
+  
+  // get
+  inline unsigned __int64 GetActivationTime() { return activation_time_; }
+
+  // set
+  void SetActivationTime(unsigned __int64 activation_time) { activation_time_ = activation_time; }
+
+protected:
+  bool is_terminated_;
 
 private:
   State state_ = State::AppearanceInTheSystem;
   Logger* logger_ = nullptr;
-  size_t activation_time_ = 0; //time after which the process will start
+  unsigned __int64 activation_time_ = 0; //time after which the process will start
 };
 #endif

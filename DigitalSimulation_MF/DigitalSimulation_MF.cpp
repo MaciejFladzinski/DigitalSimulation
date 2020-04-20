@@ -13,12 +13,16 @@
 
 int main()
 {
+  // Test 0
+  WirelessNetwork* wireles_network = new WirelessNetwork();
+  Package* package = new Package(0,0);
+
   Logger logger = Logger();
   logger.set_level(Logger::Level::Debug);
 
   std::vector<PacketProcess*> events;
 
-  events.push_back(new PacketProcess(1,0, &logger));
+  events.push_back(new PacketProcess(0, &logger));
 
   std::cout << "Test 1: \n";
   try

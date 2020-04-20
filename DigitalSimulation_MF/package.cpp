@@ -13,9 +13,3 @@ Package::~Package()
 {
   
 }
-
-void Package::TimeCTPk()
-{
-  int ctpk = rand() % 10 + 1;  // random value <0;10>
-  printf("CTPk time: %dms. \n", ctpk);
-}

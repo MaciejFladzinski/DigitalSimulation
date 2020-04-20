@@ -1,10 +1,6 @@
 #include "packetprocess.h"
 
-#include <iostream>
-
-#include "wirelessNetwork.h"
-
-PacketProcess::PacketProcess(size_t time, size_t* time_ptr, Logger* logger) : Process(0,time_ptr)
+PacketProcess::PacketProcess(unsigned __int64 time, Logger* logger)
 {
   activation_time_ = time;
   logger_ = logger;
@@ -19,7 +15,7 @@ void PacketProcess::Execute()
 {
   bool active = true;
 
-  logger_->Info("Packet Process Execute");
+  logger_->Info("Packet Process Execute: \n");
 
   while(active)
   {
@@ -29,31 +25,104 @@ void PacketProcess::Execute()
 
     case State::AppearanceInTheSystem:
       // Appearance in the system operations
+      printf("AppearanceInTheSystem: \n");
 
       // 1. pojawienie sie pakietu i dodanie go do kolejki FIFO
-      logger_->Info("Generate package, add to FIFO queue");
+      logger_->Info("Generate package");
 
-      // 2. jeœli kana³ transmisyjny jest wolny rozpocznij transmisjê najstarszego pakietu
-      logger_->Info("Start transmission");
+      // 2. planowanie pojawienia sie nastpenego pakietu
+      logger_->Info("Planning appears the next package");
 
+      // 3. dodanie pakietu do bufora
+      logger_->Info("Add package to FIFO queue");
+
+      // 4. przejdz do State::ChannelListenning
+      logger_->Info("Go to ChannelListenning \n");
+      active = true;
+      state_ = State::ChannelListening;
+      break;
+
+    case State::ChannelListening:
+      // Channel listening operations
+      printf("ChannelListenning: \n");
+
+      // 1. co 0,5ms sprawdzaj czy kanal jest wolny
+      logger_->Info("Checking channel every 0,5ms");
+
+      // 2. sprawdzenie, czy kanal jest wolny dluzej niz DIFS = 4ms
+      logger_->Info("Checking if the channel is free for more than DIFS = 4ms");
+
+      // 3. jesli zalozenie jest spelnione przejdz do State::Transmission, jeœli nie kontynuuj sprawdzanie
+      logger_->Info("If true: go to Transmission, if false: go to ChannelListenning \n");
+
+      active = true;
       state_ = State::Transmission;
       break;
 
     case State::Transmission:
       // Transmission operations
+      printf("Transmission: \n");
 
-      // 1. przesy³aj pakiet okreœlon¹ jednostkê czasu (CTPk)
-      logger_->Info("CTPk transmission time...");
+      // 1. pobierz najstarszy pakiet z kolejki FIFO
+      logger_->Info("Pull the oldest package from the FIFO queue");
 
-      // 2. w przypadku niepowodzenia wykonaj retransmisjê pakietu (maksymalnie LR=10 razy)
-      logger_->Info("Retransmission");
+      // 2. wyznacz CTPk (czas transmisji pakietu)
+      logger_->Info("Calculation CTPk time");
 
-      state_ = State::RemovalFromTheSystem;
+      // 3. wysylaj pakiet przez okreslony czas (CTPk)
+      logger_->Info("Send package for a CTPk time");
+
+      // 4. jesli po czasie CTPk+CITZ (gdzie CITZ = 1ms) odebrano ACK przejdz do RemovalFromTheSystem, jeœli nie to do Retransmission
+      logger_->Info("Wait CTIZ time...");
+      logger_->Info("If received ACK in these time: go to state RemovalFromTheSystem, if no: go to state Retransmission \n");
+
       active = true;
+      state_ = State::Retransmission;
+      break;
+
+    case State::Retransmission:
+      // Retransmission operations
+      printf("Retransmission: \n");
+
+      // 1. zwieksz licznik retransmisji o 1
+      logger_->Info("++ number_of_retransmission");
+
+      // 2. sprawdz zgodnosc warunku LR <= 10
+      logger_->Info("If number_of_retransmission > 10: go to RemovalFromTheSystem");
+
+      // 3. wyznacz czas CRP
+      logger_->Info("Calculating CRP time");
+
+      // 4. czekaj okreslony czas CRP
+      logger_->Info("Wait CRP time...");
+
+      // 5. przejdz do state ChannelListenning
+      logger_->Info("Go to ChannelListenning \n");
+
+      active = true;
+      state_ = State::ACK; // it's only for compilation
+      break;
+
+    case State::ACK:
+      // ACK operations
+      printf("ACK: \n");
+
+      // 1. wygeneruj potwierdzenie ACK
+      logger_->Info("Generate ACK");
+
+      // 2. poddaj go transmisji przez okreslona jednostke czasu (CTIZ)
+      logger_->Info("Send ACK for a CTIZ time");
+
+      // 3. przejdz do state RemovalFromTheSystem
+      logger_->Info("Go to state RemovalFromTheSystem \n");
+
+      active = true;
+      state_ = State::RemovalFromTheSystem;
       break;
 
     case State::RemovalFromTheSystem:
       // Removal from the system operations
+      printf("RemovalFromTheSystem: \n");
 
       // 1. zwolnij kanal
       logger_->Info("Release the channel");
@@ -62,13 +131,9 @@ void PacketProcess::Execute()
       logger_->Info("Remove package from FIFO queue");
 
       // 3. jeœli w kolejce znajduje siê inny pakiet, rozpocznij jego transmisjê
-      logger_->Info("If there is another packet in the queue, start transmitting it");
-
-      // 4. jeœli nie - opuœæ system
-      logger_->Info("If no- leave the system \n");
+      logger_->Info("If there is another packet in the queue: go to state ChannelListenning, if no: end the transmission \n");
 
       is_terminated_ = true;
-
       active = false;
       break;
 
