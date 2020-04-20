@@ -2,10 +2,8 @@
 #define PACKET_PROCESS_H_
 
 #include "logger.h"
-#include "transmitter.h"
-#include "wirelessNetwork.h"
 
-class PacketProcess : private Transmitter, private Package
+class PacketProcess
 {
 public:
   // enum class - representation of states

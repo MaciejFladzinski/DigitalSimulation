@@ -3,7 +3,6 @@
 #include <iostream>
 
 PacketProcess::PacketProcess(size_t time, Logger* logger)
-: Transmitter(0), Package(0,0)
 {
   activation_time_ = time;
   logger_ = logger;
@@ -30,15 +29,12 @@ void PacketProcess::Execute()
       // Appearance in the system operations
 
       // 1. pojawienie sie pakietu i dodanie go do kolejki FIFO
-      GeneratePackage();
-      logger_->Info("Generate Package");
+      logger_->Info("Generate package, add to FIFO queue");
 
       // 2. jeœli kana³ transmisyjny jest wolny rozpocznij transmisjê najstarszego pakietu
-      StartTransmission();
       logger_->Info("Start transmission");
 
       state_ = State::Transmission;
-      active = true;
       break;
 
     case State::Transmission:
@@ -46,11 +42,9 @@ void PacketProcess::Execute()
 
       // 1. przesy³aj pakiet okreœlon¹ jednostkê czasu (CTPk)
       logger_->Info("CTPk transmission time...");
-      TimeCTPk();
 
       // 2. w przypadku niepowodzenia wykonaj retransmisjê pakietu (maksymalnie LR=10 razy)
       logger_->Info("Retransmission");
-      Retransmission();
 
       state_ = State::RemovalFromTheSystem;
       active = true;
