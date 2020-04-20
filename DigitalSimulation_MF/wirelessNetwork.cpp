@@ -1,24 +1,24 @@
 #include "wirelessNetwork.h"
 
+#include <iostream>
+
+
 #include "transmitter.h"
 #include "receiver.h"
 #include "channel.h"
-#include "package.h"
 
 WirelessNetwork::WirelessNetwork()
 {
 	for (int i = 0; i < k_number_of_stations_; i++)
 	{
-		//auto transmitter = new Transmitter(i);
-		//transmitters_ptr_.push_back(transmitter);
+		transmitters_->push_back(new Transmitter(i));
+		std::cout << "Stworzono nadajnik nr: " + i << std::endl;
 
-		//auto receiver = new Receiver(i);
-		//receivers_ptr_.push_back(receiver);
+		receivers_->push_back(new Receiver(i));
+		std::cout << "Stworzono odbiornik nr: " + i << std::endl;
 
-		//auto package = new Package(i, 0);
-		//packages_.push_back(package);
 	}
-	//auto channel = new Channel();
+	auto channel = new Channel();
 }
 
 WirelessNetwork::~WirelessNetwork()

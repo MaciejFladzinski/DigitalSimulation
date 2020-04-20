@@ -4,13 +4,13 @@
 #include "logger.h"
 #include "process.h"
 
-class PacketProcess : Process
+class PacketProcess : public Process
 {
 public:
   // enum class - representation of states
   enum class State { AppearanceInTheSystem, Transmission, RemovalFromTheSystem };
 
-  PacketProcess(size_t time, Logger* logger); // add necessary pointers: wireless network, etc.
+  PacketProcess(size_t time, size_t* time_ptr, Logger* logger); // add necessary pointers: wireless network, etc.
   ~PacketProcess();
 
   void Execute() override;

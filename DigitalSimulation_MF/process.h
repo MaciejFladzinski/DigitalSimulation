@@ -16,7 +16,7 @@ public:
 class Process
 {
 public:
-  Process(std::vector<Event*>* events_ptr, double* clock)
+  Process(std::vector<Event*>* events_ptr, size_t* clock)
     : phase_(0), is_terminated_(false), events_(events_ptr), clock_(clock)
   {
     event_ = new Event(this);
@@ -30,7 +30,7 @@ public:
   }
 
   // functions
-  virtual void Execute() = 0;
+  virtual void Execute() {};
 
   void Activ(size_t time) //function (process activation time)
   {
@@ -45,12 +45,12 @@ public:
   //get
   std::vector<Event*> GetEvents() { return *events_; }
   inline int GetPhase() { return phase_; }
-  inline double GetClock() { return *clock_; }
+  inline size_t GetClock() { return *clock_; }
 
   //set
   void SetEvents(std::vector<Event*>* events) { events_ = events; }
   void SetPhase(unsigned int phase) { phase_ = phase; }
-  void SetClock(double *clock) { *clock_ = *clock; }
+  void SetClock(size_t *clock) { *clock_ = *clock; }
 
 protected:
   bool is_terminated_;
@@ -58,7 +58,7 @@ protected:
 private:
   std::vector<Event*>* events_;
   unsigned int phase_;
-  double* clock_;
+  size_t* clock_;
   Event* event_;
 };
 #endif

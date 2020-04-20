@@ -2,7 +2,9 @@
 
 #include <iostream>
 
-PacketProcess::PacketProcess(size_t time, Logger* logger) : Process(0,0)
+#include "wirelessNetwork.h"
+
+PacketProcess::PacketProcess(size_t time, size_t* time_ptr, Logger* logger) : Process(0,time_ptr)
 {
   activation_time_ = time;
   logger_ = logger;
@@ -54,16 +56,16 @@ void PacketProcess::Execute()
       // Removal from the system operations
 
       // 1. zwolnij kanal
-      std::cout << "zwolnij kanal \n";
+      logger_->Info("Release the channel");
 
       // 2. usuñ pakiet z kolejki FIFO
-      std::cout << "usun pakiet z kolejki FIFO \n";
+      logger_->Info("Remove package from FIFO queue");
 
       // 3. jeœli w kolejce znajduje siê inny pakiet, rozpocznij jego transmisjê
-      std::cout << "jesli w kolejce znajduje sie inny pakiet, rozpocznij jego transmisje \n";
+      logger_->Info("If there is another packet in the queue, start transmitting it");
 
       // 4. jeœli nie - opuœæ system
-      std::cout << "jesli nie - opusc system \n\n";
+      logger_->Info("If no- leave the system \n");
 
       is_terminated_ = true;
 

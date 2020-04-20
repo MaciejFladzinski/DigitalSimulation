@@ -18,7 +18,7 @@ int main()
 
   std::vector<PacketProcess*> events;
 
-  events.push_back(new PacketProcess(2, &logger));
+  events.push_back(new PacketProcess(1,0, &logger));
 
   std::cout << "Test 1: \n";
   try
