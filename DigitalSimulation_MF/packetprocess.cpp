@@ -1,6 +1,6 @@
 #include "packetprocess.h"
 
-PacketProcess::PacketProcess(unsigned __int64 time, Logger* logger)
+PacketProcess::PacketProcess(unsigned __int64 time, Logger* logger) : Transmitter(0), Channel(), Receiver(0)
 {
   activation_time_ = time;
   logger_ = logger;
@@ -10,6 +10,12 @@ PacketProcess::~PacketProcess()
 {
   
 }
+
+void PacketProcess::Activ(unsigned long long time)
+{
+  activation_time_ += time;
+}
+
 
 void PacketProcess::Execute()
 {
@@ -28,15 +34,13 @@ void PacketProcess::Execute()
       printf("AppearanceInTheSystem: \n");
 
       // 1. pojawienie sie pakietu i dodanie go do kolejki FIFO
-      logger_->Info("Generate package");
+      logger_->Info("Generate package and add it to FIFO queue");
+      GeneratePackage();
 
       // 2. planowanie pojawienia sie nastpenego pakietu
       logger_->Info("Planning appears the next package");
 
-      // 3. dodanie pakietu do bufora
-      logger_->Info("Add package to FIFO queue");
-
-      // 4. przejdz do State::ChannelListenning
+      // 3. przejdz do State::ChannelListenning
       logger_->Info("Go to ChannelListenning \n");
       active = true;
       state_ = State::ChannelListening;
@@ -48,6 +52,7 @@ void PacketProcess::Execute()
 
       // 1. co 0,5ms sprawdzaj czy kanal jest wolny
       logger_->Info("Checking channel every 0,5ms");
+      CheckingChannel();
 
       // 2. sprawdzenie, czy kanal jest wolny dluzej niz DIFS = 4ms
       logger_->Info("Checking if the channel is free for more than DIFS = 4ms");
@@ -71,6 +76,7 @@ void PacketProcess::Execute()
 
       // 3. wysylaj pakiet przez okreslony czas (CTPk)
       logger_->Info("Send package for a CTPk time");
+      StartTransmission();
 
       // 4. jesli po czasie CTPk+CITZ (gdzie CITZ = 1ms) odebrano ACK przejdz do RemovalFromTheSystem, jeœli nie to do Retransmission
       logger_->Info("Wait CTIZ time...");
@@ -85,7 +91,7 @@ void PacketProcess::Execute()
       printf("Retransmission: \n");
 
       // 1. zwieksz licznik retransmisji o 1
-      logger_->Info("++ number_of_retransmission");
+      logger_->Info("++number_of_retransmission");
 
       // 2. sprawdz zgodnosc warunku LR <= 10
       logger_->Info("If number_of_retransmission > 10: go to RemovalFromTheSystem");
@@ -109,6 +115,7 @@ void PacketProcess::Execute()
 
       // 1. wygeneruj potwierdzenie ACK
       logger_->Info("Generate ACK");
+      GenerateACK();
 
       // 2. poddaj go transmisji przez okreslona jednostke czasu (CTIZ)
       logger_->Info("Send ACK for a CTIZ time");

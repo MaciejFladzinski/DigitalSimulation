@@ -7,6 +7,9 @@ public:
   Receiver(unsigned int id_);
   ~Receiver();
 
+  // functions
+  void GenerateACK();
+
   // get
   inline unsigned int GetReceiverId() { return receiver_id_; }
   inline bool GetErrorTransmission() { return error_transmission_; }

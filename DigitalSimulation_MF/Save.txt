@@ -1,8 +1,7 @@
 [Info] Packet Process Execute: 
 
-[Info] Generate package
+[Info] Generate package and add it to FIFO queue
 [Info] Planning appears the next package
-[Info] Add package to FIFO queue
 [Info] Go to ChannelListenning 
 
 [Info] Checking channel every 0,5ms
@@ -15,7 +14,7 @@
 [Info] Wait CTIZ time...
 [Info] If received ACK in these time: go to state RemovalFromTheSystem, if no: go to state Retransmission 
 
-[Info] ++ number_of_retransmission
+[Info] ++number_of_retransmission
 [Info] If number_of_retransmission > 10: go to RemovalFromTheSystem
 [Info] Calculating CRP time
 [Info] Wait CRP time...

@@ -9,3 +9,8 @@ Channel::~Channel()
 {
   
 }
+
+void Channel::CheckingChannel()
+{
+  
+}

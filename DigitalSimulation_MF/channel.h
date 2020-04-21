@@ -5,11 +5,16 @@
 
 #include "package.h"
 
+class Logger;
+
 class Channel
 {
 public:
   Channel();
   ~Channel();
+
+  // functions
+  void CheckingChannel();
 
   // get
   inline bool GetChannelOccupancy() { return channel_occupancy_; }

@@ -9,3 +9,8 @@ Receiver::~Receiver()
 {
   
 }
+
+void Receiver::GenerateACK()
+{
+  
+}

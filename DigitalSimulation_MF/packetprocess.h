@@ -1,9 +1,12 @@
 #ifndef PACKET_PROCESS_H_
 #define PACKET_PROCESS_H_
 
+#include "channel.h"
 #include "logger.h"
+#include "receiver.h"
+#include "transmitter.h"
 
-class PacketProcess
+class PacketProcess: private Transmitter, private Channel, private Receiver
 {
 public:
   // enum class - representation of states

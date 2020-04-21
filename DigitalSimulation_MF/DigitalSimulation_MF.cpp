@@ -13,11 +13,35 @@
 
 int main()
 {
+  Logger logger = Logger();
+
+  // user will choose the logger type, but for now this option will not be called
+  int logger_type = 0;
+
+  while (logger_type == 1 || logger_type == 2 || logger_type == 3)
+  {
+    printf("Choose: 1. Info, 2. Error, 3. Info & Error");
+    std::cin >> logger_type;
+    std::cout << std::endl;
+  }
+
+  switch(logger_type)
+  {
+  case 1:
+    logger.set_level(Logger::Level::Info);
+    break;
+  case 2:
+    logger.set_level(Logger::Level::Error);
+    break;
+  case 3:
+    logger.set_level(Logger::Level::Debug);
+    break;
+  }
+
   // Test 0
   WirelessNetwork* wireles_network = new WirelessNetwork();
-  Package* package = new Package(0,0);
+  Package* package = new Package(0, 0);
 
-  Logger logger = Logger();
   logger.set_level(Logger::Level::Debug);
 
   std::vector<PacketProcess*> events;
