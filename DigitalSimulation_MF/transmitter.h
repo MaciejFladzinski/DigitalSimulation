@@ -4,6 +4,7 @@
 #include <vector>
 
 #include "package.h"
+#include "logger.h"
 
 class Transmitter
 {
@@ -14,7 +15,7 @@ public:
 
   // functions
   void GeneratePackage();
-  void StartTransmission();
+  void StartTransmission(Logger* logger, Package* package);
 
   // const... = 0 -> it's only for definition const variable, it will be changed soon...
   unsigned const __int64 time_of_ctiz_ = 0;  // ACK transmission time

@@ -19,7 +19,25 @@ void Transmitter::GeneratePackage()
   printf("Generate package (id: %d) \n", id);
 }
 
-void Transmitter::StartTransmission()
+void Transmitter::StartTransmission(Logger* logger, Package* package)
 {
-  
+  logger->Info("Start package transmission" + std::to_string(packages_.front()->GetPackageId()));
+
+  /*
+   *logger->Info("Started transmission of packet "+ std::to_string(packets_.front()->GetPacketId()));
+  GetPacketsCurrentlyTransmitting()->push_back(packet);
+  Packet* pack = new Packet(3,3);
+  GetPacketsCurrentlyTransmitting()->push_back(pack);
+  SetChannelStatus(false);
+
+  if (GetPacketsCurrentlyTransmitting()->size() > 1)
+  {
+    SetCollisionStatus(true);
+    logger->Info("Collision detected");
+  }
+  else
+  {
+    logger->Info("No coliision");
+  }
+  */
 }

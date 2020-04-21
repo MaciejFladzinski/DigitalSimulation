@@ -76,7 +76,7 @@ void PacketProcess::Execute()
 
       // 3. wysylaj pakiet przez okreslony czas (CTPk)
       logger_->Info("Send package for a CTPk time");
-      StartTransmission();
+      //StartTransmission(0,0);
 
       // 4. jesli po czasie CTPk+CITZ (gdzie CITZ = 1ms) odebrano ACK przejdz do RemovalFromTheSystem, jeœli nie to do Retransmission
       logger_->Info("Wait CTIZ time...");
