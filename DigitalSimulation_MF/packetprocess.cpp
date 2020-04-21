@@ -1,6 +1,7 @@
 #include "packetprocess.h"
 
-PacketProcess::PacketProcess(unsigned __int64 time, Logger* logger) : Transmitter(0), Channel(), Receiver(0)
+PacketProcess::PacketProcess(unsigned __int64 time, Logger* logger, WirelessNetwork* wireless_network)
+: Transmitter(0), Receiver(0), Channel()
 {
   activation_time_ = time;
   logger_ = logger;
@@ -76,7 +77,7 @@ void PacketProcess::Execute()
 
       // 3. wysylaj pakiet przez okreslony czas (CTPk)
       logger_->Info("Send package for a CTPk time");
-      //StartTransmission(0,0);
+      StartTransmission(logger_,0);
 
       // 4. jesli po czasie CTPk+CITZ (gdzie CITZ = 1ms) odebrano ACK przejdz do RemovalFromTheSystem, jeœli nie to do Retransmission
       logger_->Info("Wait CTIZ time...");

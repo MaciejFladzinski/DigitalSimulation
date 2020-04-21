@@ -5,6 +5,7 @@
 
 #include "package.h"
 #include "logger.h"
+#include "channel.h"
 
 class Transmitter
 {

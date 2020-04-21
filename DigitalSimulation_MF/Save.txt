@@ -11,6 +11,7 @@
 [Info] Pull the oldest package from the FIFO queue
 [Info] Calculation CTPk time
 [Info] Send package for a CTPk time
+[Info] Start package transmission... id:1
 [Info] Wait CTIZ time...
 [Info] If received ACK in these time: go to state RemovalFromTheSystem, if no: go to state Retransmission 
 

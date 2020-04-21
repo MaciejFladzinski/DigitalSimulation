@@ -5,14 +5,15 @@
 #include "logger.h"
 #include "receiver.h"
 #include "transmitter.h"
+#include "wirelessNetwork.h"
 
-class PacketProcess: private Transmitter, private Channel, private Receiver
+class PacketProcess: private Transmitter, private Receiver, private Channel
 {
 public:
   // enum class - representation of states
   enum class State { AppearanceInTheSystem, ChannelListening, Transmission, Retransmission, ACK, RemovalFromTheSystem };
 
-  PacketProcess(unsigned __int64 time, Logger* logger); // add necessary pointers: wireless network, etc.
+  PacketProcess(unsigned __int64 time, Logger* logger, WirelessNetwork* wireless_netowrk); // add necessary pointers: wireless network, etc.
   ~PacketProcess();
 
   // functions

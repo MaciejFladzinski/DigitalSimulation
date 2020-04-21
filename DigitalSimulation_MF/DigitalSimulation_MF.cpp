@@ -46,7 +46,7 @@ int main()
 
   std::vector<PacketProcess*> events;
 
-  events.push_back(new PacketProcess(0, &logger));
+  events.push_back(new PacketProcess(12, &logger, wireles_network));
 
   std::cout << "Test 1: \n";
   try
