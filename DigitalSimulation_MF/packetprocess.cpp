@@ -57,7 +57,18 @@ void PacketProcess::Execute()
 
       // 1. co 0,5ms sprawdzaj czy kanal jest wolny
       logger_->Info("Checking channel every 0,5ms");
-      //CheckingChannel();
+
+      CheckingChannel(logger_);
+
+      if(GetChannelOccupancy() == false)
+      {
+        active = true;
+        state_ = State::Transmission;
+      }
+      else
+      {
+        active = false; // TO DO: process sleep
+      }
 
       // 2. sprawdzenie, czy kanal jest wolny dluzej niz DIFS = 4ms
       logger_->Info("Checking if the channel is free for more than DIFS = 4ms");
@@ -65,8 +76,6 @@ void PacketProcess::Execute()
       // 3. jesli zalozenie jest spelnione przejdz do State::Transmission, jeœli nie kontynuuj sprawdzanie
       logger_->Info("If true: go to Transmission, if false: go to ChannelListenning \n");
 
-      active = true;
-      state_ = State::Transmission;
       break;
 
     case State::Transmission:
@@ -120,7 +129,7 @@ void PacketProcess::Execute()
 
       // 1. wygeneruj potwierdzenie ACK
       logger_->Info("Generate ACK");
-      GenerateACK();
+      GenerateACK(logger_);
 
       // 2. poddaj go transmisji przez okreslona jednostke czasu (CTIZ)
       logger_->Info("Send ACK for a CTIZ time");

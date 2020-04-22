@@ -15,7 +15,7 @@
 [Info] Calculation CTPk time
 [Info] Send package for a CTPk time
 [Info] Start transmission package (id: 1)
-[Error] Collision detected !
+[Error] (TEST ERROR) Collision detected !
 [Info] Wait CTIZ time...
 [Info] If received ACK in these time: go to state RemovalFromTheSystem, if no: go to state Retransmission 
 

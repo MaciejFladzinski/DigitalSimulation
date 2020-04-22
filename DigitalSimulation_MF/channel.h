@@ -14,7 +14,7 @@ public:
   ~Channel();
 
   // functions
-  void CheckingChannel();
+  void CheckingChannel(Logger* logger);
 
   // get
   inline bool GetChannelOccupancy() { return channel_occupancy_; }

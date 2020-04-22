@@ -31,6 +31,6 @@ void Transmitter::StartTransmission(Logger* logger, Package* package)
   if(GetTransmittedPackages()->size()>1)
   {
     SetCollision(true);
-    logger->Error("Collision detected !");
+    logger->Error("(TEST ERROR) Collision detected !");
   }
 }

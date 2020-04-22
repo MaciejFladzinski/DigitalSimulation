@@ -1,6 +1,9 @@
 #ifndef RECEIVER_H_
 #define RECEIVER_H_
 
+#include "logger.h"
+#include "channel.h"
+
 class Receiver
 {
 public:
@@ -8,7 +11,7 @@ public:
   ~Receiver();
 
   // functions
-  void GenerateACK();
+  void GenerateACK(Logger* logger);
 
   // get
   inline unsigned int GetReceiverId() { return receiver_id_; }
@@ -32,7 +35,7 @@ public:
 private:
   unsigned int receiver_id_;  // receiver number
   bool error_transmission_ = false;  // true - transmission error occurred (TER)
-  bool send_acknowledgment_; // true - permission to send ACK
+  bool send_acknowledgment_ = false; // true - permission to send ACK
 };
 
 #endif
