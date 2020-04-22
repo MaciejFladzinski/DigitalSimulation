@@ -1,7 +1,7 @@
 #include "packetprocess.h"
 
 PacketProcess::PacketProcess(unsigned __int64 time, Logger* logger, WirelessNetwork* wireless_network)
-: Transmitter(0), Receiver(0), Channel()
+  : Transmitter(0), Receiver(0)
 {
   activation_time_ = time;
   logger_ = logger;
@@ -36,15 +36,19 @@ void PacketProcess::Execute()
 
       // 1. pojawienie sie pakietu i dodanie go do kolejki FIFO
       logger_->Info("Generate package and add it to FIFO queue");
-      GeneratePackage();
+      GeneratePackage(logger_);
+      // test increment ID
+      GeneratePackage(logger_);
+      GeneratePackage(logger_);
 
       // 2. planowanie pojawienia sie nastpenego pakietu
       logger_->Info("Planning appears the next package");
 
       // 3. przejdz do State::ChannelListenning
       logger_->Info("Go to ChannelListenning \n");
-      active = true;
+      // Add if
       state_ = State::ChannelListening;
+      active = true;
       break;
 
     case State::ChannelListening:
@@ -53,7 +57,7 @@ void PacketProcess::Execute()
 
       // 1. co 0,5ms sprawdzaj czy kanal jest wolny
       logger_->Info("Checking channel every 0,5ms");
-      CheckingChannel();
+      //CheckingChannel();
 
       // 2. sprawdzenie, czy kanal jest wolny dluzej niz DIFS = 4ms
       logger_->Info("Checking if the channel is free for more than DIFS = 4ms");

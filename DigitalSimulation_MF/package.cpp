@@ -1,9 +1,8 @@
 #include "package.h"
 
-Package::Package(unsigned int id_, unsigned const __int64 time_)
+Package::Package(unsigned int id_)
 {
   package_id_ = id_;
-  time_ctpk_ = time_;
 }
 
 Package::~Package()

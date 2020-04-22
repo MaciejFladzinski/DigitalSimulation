@@ -10,18 +10,27 @@ Transmitter::~Transmitter()
   
 }
 
-void Transmitter::GeneratePackage()
+void Transmitter::GeneratePackage(Logger* logger)
 {
   static size_t id = 0;
   ++id;
-  auto package = new Package(id,1);
+  auto package = new Package(id);
   packages_.push_back(package);
-  printf("Generate package (id: %d) \n", id);
+  logger->Info("Generate package (id: " + std::to_string(id) + ") and add it to FIFO queue");
 }
 
 void Transmitter::StartTransmission(Logger* logger, Package* package)
 {
-  logger->Info("Start package transmission... id:" + std::to_string(packages_.front()->GetPackageId()));
-  // add: package to  vector transmitted_packages_
-  // add: check collision
+  logger->Info("Start transmission package (id: " + std::to_string(packages_.front()->GetPackageId()) + ")");
+  GetTransmittedPackages()->push_back(package);
+  // TEST collision (expected: Collision detected!)
+  auto test_package = new Package(4);
+  GetTransmittedPackages()->push_back(test_package); // add second package in transmitted channel
+  SetChannelOccupancy(false);
+  // checking collision in channel
+  if(GetTransmittedPackages()->size()>1)
+  {
+    SetCollision(true);
+    logger->Error("Collision detected !");
+  }
 }

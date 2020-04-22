@@ -3,11 +3,12 @@
 
 #include <vector>
 
+
+#include "channel.h"
 #include "package.h"
 #include "logger.h"
-#include "channel.h"
 
-class Transmitter
+class Transmitter : public Channel
 {
 public:
   //constructor(id number, queue of packages in buffer)
@@ -15,7 +16,7 @@ public:
   ~Transmitter();
 
   // functions
-  void GeneratePackage();
+  void GeneratePackage(Logger* logger);
   void StartTransmission(Logger* logger, Package* package);
 
   // const... = 0 -> it's only for definition const variable, it will be changed soon...

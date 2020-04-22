@@ -1,6 +1,9 @@
 [Info] Packet Process Execute: 
 
 [Info] Generate package and add it to FIFO queue
+[Info] Generate package (id: 1) and add it to FIFO queue
+[Info] Generate package (id: 2) and add it to FIFO queue
+[Info] Generate package (id: 3) and add it to FIFO queue
 [Info] Planning appears the next package
 [Info] Go to ChannelListenning 
 
@@ -11,7 +14,8 @@
 [Info] Pull the oldest package from the FIFO queue
 [Info] Calculation CTPk time
 [Info] Send package for a CTPk time
-[Info] Start package transmission... id:1
+[Info] Start transmission package (id: 1)
+[Error] Collision detected !
 [Info] Wait CTIZ time...
 [Info] If received ACK in these time: go to state RemovalFromTheSystem, if no: go to state Retransmission 
 

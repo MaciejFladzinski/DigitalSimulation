@@ -40,7 +40,7 @@ int main()
 
   // Test 0
   WirelessNetwork* wireles_network = new WirelessNetwork();
-  Package* package = new Package(0, 0);
+  Package* package = new Package(0);
 
   logger.set_level(Logger::Level::Debug);
 

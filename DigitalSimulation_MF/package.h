@@ -4,7 +4,7 @@
 class Package
 {
 public:
-  Package(unsigned int id_, unsigned __int64 time_);
+  Package(unsigned int id_);
   ~Package();
 
   // get
