@@ -48,6 +48,7 @@ int main()
 
   events.push_back(new PacketProcess(12, &logger, wireles_network));
 
+  // Test 1
   std::cout << "Test 1: \n";
   try
   {
@@ -58,6 +59,7 @@ int main()
     logger.Error("Index out of bounds");
   }
 
+  // Test 2
   std::cout << "Test 2: \n";
   try
   {

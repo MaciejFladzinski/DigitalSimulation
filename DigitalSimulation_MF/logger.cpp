@@ -34,9 +34,19 @@ void Logger::Debug(std::string message)
   // add to file
   std::ofstream save("Save.txt", std::ios_base::app);
 
-  std::cout << "[Error] " << message << std::endl;
+  if (level_ != Level::Error)
+  {
+    std::cout << "[Info] " << message << std::endl;
 
-  save << "[Error] " << message << std::endl;
+    save << "[Info] " << message << std::endl;
+  }
+  else
+  {
+    std::cout << "[Error] " << message << std::endl;
+
+    save << "[Error] " << message << std::endl;
+  }
+
   save.close();
 }
 
