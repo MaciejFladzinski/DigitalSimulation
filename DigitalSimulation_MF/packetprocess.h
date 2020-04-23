@@ -2,8 +2,6 @@
 #define PACKET_PROCESS_H_
 
 #include "logger.h"
-#include "receiver.h"
-#include "transmitter.h"
 #include "wirelessNetwork.h"
 
 class PacketProcess: public Transmitter, public Receiver

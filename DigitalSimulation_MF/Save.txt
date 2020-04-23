@@ -23,6 +23,17 @@
 [Info] If number_of_retransmission > 10: go to RemovalFromTheSystem
 [Info] Calculating CRP time
 [Info] Wait CRP time...
+[Info] Retransmission package (id: 1). Number of retransmission: 1
+[Info] Retransmission package (id: 1). Number of retransmission: 2
+[Info] Retransmission package (id: 1). Number of retransmission: 3
+[Info] Retransmission package (id: 1). Number of retransmission: 4
+[Info] Retransmission package (id: 1). Number of retransmission: 5
+[Info] Retransmission package (id: 1). Number of retransmission: 6
+[Info] Retransmission package (id: 1). Number of retransmission: 7
+[Info] Retransmission package (id: 1). Number of retransmission: 8
+[Info] Retransmission package (id: 1). Number of retransmission: 9
+[Info] Retransmission package (id: 1). Number of retransmission: 10
+[Error] Another retransmission cannot be performed !
 [Info] Go to ChannelListenning 
 
 [Info] Generate ACK

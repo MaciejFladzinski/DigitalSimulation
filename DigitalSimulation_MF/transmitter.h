@@ -3,12 +3,10 @@
 
 #include <vector>
 
-
 #include "channel.h"
-#include "package.h"
 #include "logger.h"
 
-class Transmitter : public Channel
+class Transmitter : public Channel, public Package
 {
 public:
   //constructor(id number, queue of packages in buffer)
@@ -18,6 +16,7 @@ public:
   // functions
   void GeneratePackage(Logger* logger);
   void StartTransmission(Logger* logger, Package* package);
+  void Retransmission(Logger* logger, Package* package);
 
   // const... = 0 -> it's only for definition const variable, it will be changed soon...
   unsigned const __int64 time_of_ctiz_ = 0;  // ACK transmission time

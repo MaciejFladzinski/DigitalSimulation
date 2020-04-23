@@ -37,7 +37,7 @@ void PacketProcess::Execute()
       // 1. pojawienie sie pakietu i dodanie go do kolejki FIFO
       logger_->Info("Generate package and add it to FIFO queue");
       GeneratePackage(logger_);
-      // test increment ID
+      // test incrementation package ID
       GeneratePackage(logger_);
       GeneratePackage(logger_);
 
@@ -46,7 +46,8 @@ void PacketProcess::Execute()
 
       // 3. przejdz do State::ChannelListenning
       logger_->Info("Go to ChannelListenning \n");
-      // Add if
+
+      // Add: if
       state_ = State::ChannelListening;
       active = true;
       break;
@@ -60,21 +61,21 @@ void PacketProcess::Execute()
 
       CheckingChannel(logger_);
 
-      if(GetChannelOccupancy() == false)
+      // 2. sprawdzenie, czy kanal jest wolny dluzej niz DIFS = 4ms
+      logger_->Info("Checking if the channel is free for more than DIFS = 4ms");
+
+      // 3. jesli zalozenie jest spelnione przejdz do State::Transmission, jeœli nie kontynuuj sprawdzanie
+      logger_->Info("If true: go to Transmission, if false: go to ChannelListenning \n");
+
+      if (GetChannelOccupancy() == false)
       {
         active = true;
         state_ = State::Transmission;
       }
       else
       {
-        active = false; // TO DO: process sleep
+        active = false; // process sleep
       }
-
-      // 2. sprawdzenie, czy kanal jest wolny dluzej niz DIFS = 4ms
-      logger_->Info("Checking if the channel is free for more than DIFS = 4ms");
-
-      // 3. jesli zalozenie jest spelnione przejdz do State::Transmission, jeœli nie kontynuuj sprawdzanie
-      logger_->Info("If true: go to Transmission, if false: go to ChannelListenning \n");
 
       break;
 
@@ -90,11 +91,14 @@ void PacketProcess::Execute()
 
       // 3. wysylaj pakiet przez okreslony czas (CTPk)
       logger_->Info("Send package for a CTPk time");
+
       StartTransmission(logger_,0);
 
-      // 4. jesli po czasie CTPk+CITZ (gdzie CITZ = 1ms) odebrano ACK przejdz do RemovalFromTheSystem, jeœli nie to do Retransmission
+      // 4. jesli po czasie CTPk+CITZ (gdzie CITZ = 1ms) odebrano ACK przejdz do RemovalFromTheSystem, jesli nie to do Retransmission
       logger_->Info("Wait CTIZ time...");
       logger_->Info("If received ACK in these time: go to state RemovalFromTheSystem, if no: go to state Retransmission \n");
+
+      // Add: if...
 
       active = true;
       state_ = State::Retransmission;
@@ -116,7 +120,15 @@ void PacketProcess::Execute()
       // 4. czekaj okreslony czas CRP
       logger_->Info("Wait CRP time...");
 
-      // 5. przejdz do state ChannelListenning
+      // Test: incrementation number of LR, Error when LR>10
+      for (int i = 0; i < 10; i++)
+      {
+        Retransmission(logger_, 0);
+      }
+      printf("Tested error: \n");
+      Retransmission(logger_, 0);
+
+      // 5. przejdz do state ChannelListenning lub RemovalFromTheSystem
       logger_->Info("Go to ChannelListenning \n");
 
       active = true;

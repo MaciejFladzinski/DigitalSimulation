@@ -1,6 +1,6 @@
 #include "transmitter.h"
 
-Transmitter::Transmitter(unsigned int id_)
+Transmitter::Transmitter(unsigned int id_) : Package(0)
 {
   transmitter_id_ = id_;
 }
@@ -32,5 +32,25 @@ void Transmitter::StartTransmission(Logger* logger, Package* package)
   {
     SetCollision(true);
     logger->Error("(TEST ERROR) Collision detected !");
+  }
+}
+
+void Transmitter::Retransmission(Logger* logger, Package* package)
+{
+  static int number_of_LR = 0;
+  SetNumberOfLR(++number_of_LR);
+
+  if(GetNumberOfLR() <= 10)
+  {
+    // generate CRP time
+    // wait CRP time...
+    logger->Info("Retransmission package (id: " + std::to_string(packages_.front()->GetPackageId()) +
+      "). Number of retransmission: " + std::to_string(GetNumberOfLR()));
+    // go to state::CheckingChannel
+  }
+  else
+  {
+    logger->Error("Another retransmission cannot be performed !");
+    // go to state::RemovalFromTheSystem
   }
 }

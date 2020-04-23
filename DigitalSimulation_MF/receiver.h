@@ -2,7 +2,6 @@
 #define RECEIVER_H_
 
 #include "logger.h"
-#include "channel.h"
 
 class Receiver
 {
