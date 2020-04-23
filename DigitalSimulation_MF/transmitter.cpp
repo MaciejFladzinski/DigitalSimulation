@@ -23,6 +23,7 @@ void Transmitter::StartTransmission(Logger* logger, Package* package)
 {
   logger->Info("Start transmission package (id: " + std::to_string(packages_.front()->GetPackageId()) + ")");
   GetTransmittedPackages()->push_back(package);
+
   // TEST collision (expected: Collision detected!)
   auto test_package = new Package(4);
   GetTransmittedPackages()->push_back(test_package); // add second package in transmitted channel
@@ -31,7 +32,7 @@ void Transmitter::StartTransmission(Logger* logger, Package* package)
   if(GetTransmittedPackages()->size()>1)
   {
     SetCollision(true);
-    logger->Error("(TEST ERROR) Collision detected !");
+    logger->Error("Collision detected !");
   }
 }
 
@@ -52,5 +53,34 @@ void Transmitter::Retransmission(Logger* logger, Package* package)
   {
     logger->Error("Another retransmission cannot be performed !");
     // go to state::RemovalFromTheSystem
+  }
+}
+
+void Transmitter::RemovePackage(Logger* logger, Package* package)
+{
+  static int packages_successfully_sent = 0;
+  static int packages_lost = 0;
+
+  if (GetCorrectReceptionAck() == true)
+  {
+    SetPackagesSuccesfullySent(++packages_successfully_sent);
+    logger->Info("Package successfully sent ! Number of packages successfully sent: " +
+      std::to_string(GetPackagesSuccesfullySent()));
+    packages_.pop_back();
+  }
+  else
+  {
+    SetPackagesLost(++packages_lost);
+    logger->Error("Package lost. Number od packages lost: " + std::to_string(GetPackagesLost()));
+    packages_.pop_back();
+  }
+
+  if(packages_.front())
+  {
+    // go to ChannelListenning
+  }
+  else
+  {
+    // wait for generate new package
   }
 }

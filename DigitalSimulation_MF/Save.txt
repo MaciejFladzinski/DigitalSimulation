@@ -15,7 +15,7 @@
 [Info] Calculation CTPk time
 [Info] Send package for a CTPk time
 [Info] Start transmission package (id: 1)
-[Error] (TEST ERROR) Collision detected !
+[Error] Collision detected !
 [Info] Wait CTIZ time...
 [Info] If received ACK in these time: go to state RemovalFromTheSystem, if no: go to state Retransmission 
 
@@ -42,6 +42,8 @@
 
 [Info] Release the channel
 [Info] Remove package from FIFO queue
+[Info] Package successfully sent ! Number of packages successfully sent: 1
+[Error] Package lost. Number od packages lost: 1
 [Info] If there is another packet in the queue: go to state ChannelListenning, if no: end the transmission 
 
 [Error] Index out of bounds

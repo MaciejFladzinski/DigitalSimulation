@@ -17,6 +17,7 @@ public:
   void GeneratePackage(Logger* logger);
   void StartTransmission(Logger* logger, Package* package);
   void Retransmission(Logger* logger, Package* package);
+  void RemovePackage(Logger* logger, Package* package);
 
   // const... = 0 -> it's only for definition const variable, it will be changed soon...
   unsigned const __int64 time_of_ctiz_ = 0;  // ACK transmission time
@@ -74,7 +75,7 @@ private:
   unsigned __int64 time_of_channel_occupancy_;  // time of channel occupancy
   unsigned __int64 time_of_start_transmission_; // time of start transmission
   unsigned __int64 time_crp_;  // random time after which retransmissions can be made
-  bool correct_reception_ack_;  // true - ACK take back in less time than (CGPk + CTIZ)
+  bool correct_reception_ack_ = false;  // true - ACK take back in less time than (CGPk + CTIZ)
   bool transmission_permission_;  // true - permission to transmit the packet
   std::vector<Package*> packages_;  // vector of packages ready to transmission
 };

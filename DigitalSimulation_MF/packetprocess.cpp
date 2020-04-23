@@ -163,6 +163,15 @@ void PacketProcess::Execute()
       // 2. usuñ pakiet z kolejki FIFO
       logger_->Info("Remove package from FIFO queue");
 
+      // Test: success
+      printf("Test correct transmission: \n");
+      SetCorrectReceptionAck(true);
+      RemovePackage(logger_, 0);
+      // Test: error
+      printf("Test error transmission: \n");
+      SetCorrectReceptionAck(false);
+      RemovePackage(logger_, 0);
+
       // 3. jeœli w kolejce znajduje siê inny pakiet, rozpocznij jego transmisjê
       logger_->Info("If there is another packet in the queue: go to state ChannelListenning, if no: end the transmission \n");
 
