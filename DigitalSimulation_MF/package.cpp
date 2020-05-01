@@ -8,7 +8,7 @@ Package::Package(unsigned int id_package, unsigned int id_station, Logger* logge
   logger_ = logger;
 
   logger->Info("Package nr: " + std::to_string(id_package) +
-    " in station " + std::to_string(id_station) + " has been created");
+    " (in station nr: " + std::to_string(id_station) + ") has been created");
 }
 
 Package::~Package()
@@ -84,6 +84,10 @@ void Package::Execute()
         active = false; // process sleep
       }
       */
+
+      active = true;
+      state_ = State::Transmission;
+
       break;
 
     case State::Transmission:

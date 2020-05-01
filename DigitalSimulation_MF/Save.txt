@@ -1,0 +1,624 @@
+[Info] Create Wireless Network 
+
+[Info] Package nr: 1 (in station nr: 0) has been created
+[Info] Packet Process Execute: 
+
+[Info] Generate package and add it to FIFO queue
+[Info] Planning appears the next package
+[Info] Go to ChannelListenning 
+
+[Info] Checking channel every 0,5ms
+[Info] Checking if the channel is free for more than DIFS = 4ms
+[Info] If true: go to Transmission, if false: go to ChannelListenning 
+
+[Info] Pull the oldest package from the FIFO queue
+[Info] Calculation CTPk time
+[Info] Send package for a CTPk time
+[Info] Wait CTIZ time...
+[Info] If received ACK in these time: go to state RemovalFromTheSystem, if no: go to state Retransmission 
+
+[Info] ++number_of_retransmission
+[Info] If number_of_retransmission > 10: go to RemovalFromTheSystem
+[Info] Calculating CRP time
+[Info] Wait CRP time...
+[Info] Go to ChannelListenning 
+
+[Info] Generate ACK
+[Info] Send ACK for a CTIZ time
+[Info] Go to state RemovalFromTheSystem 
+
+[Info] Release the channel
+[Info] Remove package from FIFO queue
+[Info] If there is another packet in the queue: go to state ChannelListenning, if no: end the transmission 
+
+[Info] Package nr: 2 (in station nr: 0) has been created
+[Info] Packet Process Execute: 
+
+[Info] Generate package and add it to FIFO queue
+[Info] Planning appears the next package
+[Info] Go to ChannelListenning 
+
+[Info] Checking channel every 0,5ms
+[Info] Checking if the channel is free for more than DIFS = 4ms
+[Info] If true: go to Transmission, if false: go to ChannelListenning 
+
+[Info] Pull the oldest package from the FIFO queue
+[Info] Calculation CTPk time
+[Info] Send package for a CTPk time
+[Info] Wait CTIZ time...
+[Info] If received ACK in these time: go to state RemovalFromTheSystem, if no: go to state Retransmission 
+
+[Info] ++number_of_retransmission
+[Info] If number_of_retransmission > 10: go to RemovalFromTheSystem
+[Info] Calculating CRP time
+[Info] Wait CRP time...
+[Info] Go to ChannelListenning 
+
+[Info] Generate ACK
+[Info] Send ACK for a CTIZ time
+[Info] Go to state RemovalFromTheSystem 
+
+[Info] Release the channel
+[Info] Remove package from FIFO queue
+[Info] If there is another packet in the queue: go to state ChannelListenning, if no: end the transmission 
+
+[Info] Package nr: 1 (in station nr: 1) has been created
+[Info] Packet Process Execute: 
+
+[Info] Generate package and add it to FIFO queue
+[Info] Planning appears the next package
+[Info] Go to ChannelListenning 
+
+[Info] Checking channel every 0,5ms
+[Info] Checking if the channel is free for more than DIFS = 4ms
+[Info] If true: go to Transmission, if false: go to ChannelListenning 
+
+[Info] Pull the oldest package from the FIFO queue
+[Info] Calculation CTPk time
+[Info] Send package for a CTPk time
+[Info] Wait CTIZ time...
+[Info] If received ACK in these time: go to state RemovalFromTheSystem, if no: go to state Retransmission 
+
+[Info] ++number_of_retransmission
+[Info] If number_of_retransmission > 10: go to RemovalFromTheSystem
+[Info] Calculating CRP time
+[Info] Wait CRP time...
+[Info] Go to ChannelListenning 
+
+[Info] Generate ACK
+[Info] Send ACK for a CTIZ time
+[Info] Go to state RemovalFromTheSystem 
+
+[Info] Release the channel
+[Info] Remove package from FIFO queue
+[Info] If there is another packet in the queue: go to state ChannelListenning, if no: end the transmission 
+
+[Info] Package nr: 2 (in station nr: 1) has been created
+[Info] Packet Process Execute: 
+
+[Info] Generate package and add it to FIFO queue
+[Info] Planning appears the next package
+[Info] Go to ChannelListenning 
+
+[Info] Checking channel every 0,5ms
+[Info] Checking if the channel is free for more than DIFS = 4ms
+[Info] If true: go to Transmission, if false: go to ChannelListenning 
+
+[Info] Pull the oldest package from the FIFO queue
+[Info] Calculation CTPk time
+[Info] Send package for a CTPk time
+[Info] Wait CTIZ time...
+[Info] If received ACK in these time: go to state RemovalFromTheSystem, if no: go to state Retransmission 
+
+[Info] ++number_of_retransmission
+[Info] If number_of_retransmission > 10: go to RemovalFromTheSystem
+[Info] Calculating CRP time
+[Info] Wait CRP time...
+[Info] Go to ChannelListenning 
+
+[Info] Generate ACK
+[Info] Send ACK for a CTIZ time
+[Info] Go to state RemovalFromTheSystem 
+
+[Info] Release the channel
+[Info] Remove package from FIFO queue
+[Info] If there is another packet in the queue: go to state ChannelListenning, if no: end the transmission 
+
+[Info] Package nr: 1 (in station nr: 2) has been created
+[Info] Packet Process Execute: 
+
+[Info] Generate package and add it to FIFO queue
+[Info] Planning appears the next package
+[Info] Go to ChannelListenning 
+
+[Info] Checking channel every 0,5ms
+[Info] Checking if the channel is free for more than DIFS = 4ms
+[Info] If true: go to Transmission, if false: go to ChannelListenning 
+
+[Info] Pull the oldest package from the FIFO queue
+[Info] Calculation CTPk time
+[Info] Send package for a CTPk time
+[Info] Wait CTIZ time...
+[Info] If received ACK in these time: go to state RemovalFromTheSystem, if no: go to state Retransmission 
+
+[Info] ++number_of_retransmission
+[Info] If number_of_retransmission > 10: go to RemovalFromTheSystem
+[Info] Calculating CRP time
+[Info] Wait CRP time...
+[Info] Go to ChannelListenning 
+
+[Info] Generate ACK
+[Info] Send ACK for a CTIZ time
+[Info] Go to state RemovalFromTheSystem 
+
+[Info] Release the channel
+[Info] Remove package from FIFO queue
+[Info] If there is another packet in the queue: go to state ChannelListenning, if no: end the transmission 
+
+[Info] Package nr: 2 (in station nr: 2) has been created
+[Info] Packet Process Execute: 
+
+[Info] Generate package and add it to FIFO queue
+[Info] Planning appears the next package
+[Info] Go to ChannelListenning 
+
+[Info] Checking channel every 0,5ms
+[Info] Checking if the channel is free for more than DIFS = 4ms
+[Info] If true: go to Transmission, if false: go to ChannelListenning 
+
+[Info] Pull the oldest package from the FIFO queue
+[Info] Calculation CTPk time
+[Info] Send package for a CTPk time
+[Info] Wait CTIZ time...
+[Info] If received ACK in these time: go to state RemovalFromTheSystem, if no: go to state Retransmission 
+
+[Info] ++number_of_retransmission
+[Info] If number_of_retransmission > 10: go to RemovalFromTheSystem
+[Info] Calculating CRP time
+[Info] Wait CRP time...
+[Info] Go to ChannelListenning 
+
+[Info] Generate ACK
+[Info] Send ACK for a CTIZ time
+[Info] Go to state RemovalFromTheSystem 
+
+[Info] Release the channel
+[Info] Remove package from FIFO queue
+[Info] If there is another packet in the queue: go to state ChannelListenning, if no: end the transmission 
+
+[Info] Package nr: 1 (in station nr: 3) has been created
+[Info] Packet Process Execute: 
+
+[Info] Generate package and add it to FIFO queue
+[Info] Planning appears the next package
+[Info] Go to ChannelListenning 
+
+[Info] Checking channel every 0,5ms
+[Info] Checking if the channel is free for more than DIFS = 4ms
+[Info] If true: go to Transmission, if false: go to ChannelListenning 
+
+[Info] Pull the oldest package from the FIFO queue
+[Info] Calculation CTPk time
+[Info] Send package for a CTPk time
+[Info] Wait CTIZ time...
+[Info] If received ACK in these time: go to state RemovalFromTheSystem, if no: go to state Retransmission 
+
+[Info] ++number_of_retransmission
+[Info] If number_of_retransmission > 10: go to RemovalFromTheSystem
+[Info] Calculating CRP time
+[Info] Wait CRP time...
+[Info] Go to ChannelListenning 
+
+[Info] Generate ACK
+[Info] Send ACK for a CTIZ time
+[Info] Go to state RemovalFromTheSystem 
+
+[Info] Release the channel
+[Info] Remove package from FIFO queue
+[Info] If there is another packet in the queue: go to state ChannelListenning, if no: end the transmission 
+
+[Info] Package nr: 2 (in station nr: 3) has been created
+[Info] Packet Process Execute: 
+
+[Info] Generate package and add it to FIFO queue
+[Info] Planning appears the next package
+[Info] Go to ChannelListenning 
+
+[Info] Checking channel every 0,5ms
+[Info] Checking if the channel is free for more than DIFS = 4ms
+[Info] If true: go to Transmission, if false: go to ChannelListenning 
+
+[Info] Pull the oldest package from the FIFO queue
+[Info] Calculation CTPk time
+[Info] Send package for a CTPk time
+[Info] Wait CTIZ time...
+[Info] If received ACK in these time: go to state RemovalFromTheSystem, if no: go to state Retransmission 
+
+[Info] ++number_of_retransmission
+[Info] If number_of_retransmission > 10: go to RemovalFromTheSystem
+[Info] Calculating CRP time
+[Info] Wait CRP time...
+[Info] Go to ChannelListenning 
+
+[Info] Generate ACK
+[Info] Send ACK for a CTIZ time
+[Info] Go to state RemovalFromTheSystem 
+
+[Info] Release the channel
+[Info] Remove package from FIFO queue
+[Info] If there is another packet in the queue: go to state ChannelListenning, if no: end the transmission 
+
+[Info] Package nr: 1 (in station nr: 4) has been created
+[Info] Packet Process Execute: 
+
+[Info] Generate package and add it to FIFO queue
+[Info] Planning appears the next package
+[Info] Go to ChannelListenning 
+
+[Info] Checking channel every 0,5ms
+[Info] Checking if the channel is free for more than DIFS = 4ms
+[Info] If true: go to Transmission, if false: go to ChannelListenning 
+
+[Info] Pull the oldest package from the FIFO queue
+[Info] Calculation CTPk time
+[Info] Send package for a CTPk time
+[Info] Wait CTIZ time...
+[Info] If received ACK in these time: go to state RemovalFromTheSystem, if no: go to state Retransmission 
+
+[Info] ++number_of_retransmission
+[Info] If number_of_retransmission > 10: go to RemovalFromTheSystem
+[Info] Calculating CRP time
+[Info] Wait CRP time...
+[Info] Go to ChannelListenning 
+
+[Info] Generate ACK
+[Info] Send ACK for a CTIZ time
+[Info] Go to state RemovalFromTheSystem 
+
+[Info] Release the channel
+[Info] Remove package from FIFO queue
+[Info] If there is another packet in the queue: go to state ChannelListenning, if no: end the transmission 
+
+[Info] Package nr: 2 (in station nr: 4) has been created
+[Info] Packet Process Execute: 
+
+[Info] Generate package and add it to FIFO queue
+[Info] Planning appears the next package
+[Info] Go to ChannelListenning 
+
+[Info] Checking channel every 0,5ms
+[Info] Checking if the channel is free for more than DIFS = 4ms
+[Info] If true: go to Transmission, if false: go to ChannelListenning 
+
+[Info] Pull the oldest package from the FIFO queue
+[Info] Calculation CTPk time
+[Info] Send package for a CTPk time
+[Info] Wait CTIZ time...
+[Info] If received ACK in these time: go to state RemovalFromTheSystem, if no: go to state Retransmission 
+
+[Info] ++number_of_retransmission
+[Info] If number_of_retransmission > 10: go to RemovalFromTheSystem
+[Info] Calculating CRP time
+[Info] Wait CRP time...
+[Info] Go to ChannelListenning 
+
+[Info] Generate ACK
+[Info] Send ACK for a CTIZ time
+[Info] Go to state RemovalFromTheSystem 
+
+[Info] Release the channel
+[Info] Remove package from FIFO queue
+[Info] If there is another packet in the queue: go to state ChannelListenning, if no: end the transmission 
+
+[Info] Package nr: 1 (in station nr: 5) has been created
+[Info] Packet Process Execute: 
+
+[Info] Generate package and add it to FIFO queue
+[Info] Planning appears the next package
+[Info] Go to ChannelListenning 
+
+[Info] Checking channel every 0,5ms
+[Info] Checking if the channel is free for more than DIFS = 4ms
+[Info] If true: go to Transmission, if false: go to ChannelListenning 
+
+[Info] Pull the oldest package from the FIFO queue
+[Info] Calculation CTPk time
+[Info] Send package for a CTPk time
+[Info] Wait CTIZ time...
+[Info] If received ACK in these time: go to state RemovalFromTheSystem, if no: go to state Retransmission 
+
+[Info] ++number_of_retransmission
+[Info] If number_of_retransmission > 10: go to RemovalFromTheSystem
+[Info] Calculating CRP time
+[Info] Wait CRP time...
+[Info] Go to ChannelListenning 
+
+[Info] Generate ACK
+[Info] Send ACK for a CTIZ time
+[Info] Go to state RemovalFromTheSystem 
+
+[Info] Release the channel
+[Info] Remove package from FIFO queue
+[Info] If there is another packet in the queue: go to state ChannelListenning, if no: end the transmission 
+
+[Info] Package nr: 2 (in station nr: 5) has been created
+[Info] Packet Process Execute: 
+
+[Info] Generate package and add it to FIFO queue
+[Info] Planning appears the next package
+[Info] Go to ChannelListenning 
+
+[Info] Checking channel every 0,5ms
+[Info] Checking if the channel is free for more than DIFS = 4ms
+[Info] If true: go to Transmission, if false: go to ChannelListenning 
+
+[Info] Pull the oldest package from the FIFO queue
+[Info] Calculation CTPk time
+[Info] Send package for a CTPk time
+[Info] Wait CTIZ time...
+[Info] If received ACK in these time: go to state RemovalFromTheSystem, if no: go to state Retransmission 
+
+[Info] ++number_of_retransmission
+[Info] If number_of_retransmission > 10: go to RemovalFromTheSystem
+[Info] Calculating CRP time
+[Info] Wait CRP time...
+[Info] Go to ChannelListenning 
+
+[Info] Generate ACK
+[Info] Send ACK for a CTIZ time
+[Info] Go to state RemovalFromTheSystem 
+
+[Info] Release the channel
+[Info] Remove package from FIFO queue
+[Info] If there is another packet in the queue: go to state ChannelListenning, if no: end the transmission 
+
+[Info] Package nr: 1 (in station nr: 6) has been created
+[Info] Packet Process Execute: 
+
+[Info] Generate package and add it to FIFO queue
+[Info] Planning appears the next package
+[Info] Go to ChannelListenning 
+
+[Info] Checking channel every 0,5ms
+[Info] Checking if the channel is free for more than DIFS = 4ms
+[Info] If true: go to Transmission, if false: go to ChannelListenning 
+
+[Info] Pull the oldest package from the FIFO queue
+[Info] Calculation CTPk time
+[Info] Send package for a CTPk time
+[Info] Wait CTIZ time...
+[Info] If received ACK in these time: go to state RemovalFromTheSystem, if no: go to state Retransmission 
+
+[Info] ++number_of_retransmission
+[Info] If number_of_retransmission > 10: go to RemovalFromTheSystem
+[Info] Calculating CRP time
+[Info] Wait CRP time...
+[Info] Go to ChannelListenning 
+
+[Info] Generate ACK
+[Info] Send ACK for a CTIZ time
+[Info] Go to state RemovalFromTheSystem 
+
+[Info] Release the channel
+[Info] Remove package from FIFO queue
+[Info] If there is another packet in the queue: go to state ChannelListenning, if no: end the transmission 
+
+[Info] Package nr: 2 (in station nr: 6) has been created
+[Info] Packet Process Execute: 
+
+[Info] Generate package and add it to FIFO queue
+[Info] Planning appears the next package
+[Info] Go to ChannelListenning 
+
+[Info] Checking channel every 0,5ms
+[Info] Checking if the channel is free for more than DIFS = 4ms
+[Info] If true: go to Transmission, if false: go to ChannelListenning 
+
+[Info] Pull the oldest package from the FIFO queue
+[Info] Calculation CTPk time
+[Info] Send package for a CTPk time
+[Info] Wait CTIZ time...
+[Info] If received ACK in these time: go to state RemovalFromTheSystem, if no: go to state Retransmission 
+
+[Info] ++number_of_retransmission
+[Info] If number_of_retransmission > 10: go to RemovalFromTheSystem
+[Info] Calculating CRP time
+[Info] Wait CRP time...
+[Info] Go to ChannelListenning 
+
+[Info] Generate ACK
+[Info] Send ACK for a CTIZ time
+[Info] Go to state RemovalFromTheSystem 
+
+[Info] Release the channel
+[Info] Remove package from FIFO queue
+[Info] If there is another packet in the queue: go to state ChannelListenning, if no: end the transmission 
+
+[Info] Package nr: 1 (in station nr: 7) has been created
+[Info] Packet Process Execute: 
+
+[Info] Generate package and add it to FIFO queue
+[Info] Planning appears the next package
+[Info] Go to ChannelListenning 
+
+[Info] Checking channel every 0,5ms
+[Info] Checking if the channel is free for more than DIFS = 4ms
+[Info] If true: go to Transmission, if false: go to ChannelListenning 
+
+[Info] Pull the oldest package from the FIFO queue
+[Info] Calculation CTPk time
+[Info] Send package for a CTPk time
+[Info] Wait CTIZ time...
+[Info] If received ACK in these time: go to state RemovalFromTheSystem, if no: go to state Retransmission 
+
+[Info] ++number_of_retransmission
+[Info] If number_of_retransmission > 10: go to RemovalFromTheSystem
+[Info] Calculating CRP time
+[Info] Wait CRP time...
+[Info] Go to ChannelListenning 
+
+[Info] Generate ACK
+[Info] Send ACK for a CTIZ time
+[Info] Go to state RemovalFromTheSystem 
+
+[Info] Release the channel
+[Info] Remove package from FIFO queue
+[Info] If there is another packet in the queue: go to state ChannelListenning, if no: end the transmission 
+
+[Info] Package nr: 2 (in station nr: 7) has been created
+[Info] Packet Process Execute: 
+
+[Info] Generate package and add it to FIFO queue
+[Info] Planning appears the next package
+[Info] Go to ChannelListenning 
+
+[Info] Checking channel every 0,5ms
+[Info] Checking if the channel is free for more than DIFS = 4ms
+[Info] If true: go to Transmission, if false: go to ChannelListenning 
+
+[Info] Pull the oldest package from the FIFO queue
+[Info] Calculation CTPk time
+[Info] Send package for a CTPk time
+[Info] Wait CTIZ time...
+[Info] If received ACK in these time: go to state RemovalFromTheSystem, if no: go to state Retransmission 
+
+[Info] ++number_of_retransmission
+[Info] If number_of_retransmission > 10: go to RemovalFromTheSystem
+[Info] Calculating CRP time
+[Info] Wait CRP time...
+[Info] Go to ChannelListenning 
+
+[Info] Generate ACK
+[Info] Send ACK for a CTIZ time
+[Info] Go to state RemovalFromTheSystem 
+
+[Info] Release the channel
+[Info] Remove package from FIFO queue
+[Info] If there is another packet in the queue: go to state ChannelListenning, if no: end the transmission 
+
+[Info] Package nr: 1 (in station nr: 8) has been created
+[Info] Packet Process Execute: 
+
+[Info] Generate package and add it to FIFO queue
+[Info] Planning appears the next package
+[Info] Go to ChannelListenning 
+
+[Info] Checking channel every 0,5ms
+[Info] Checking if the channel is free for more than DIFS = 4ms
+[Info] If true: go to Transmission, if false: go to ChannelListenning 
+
+[Info] Pull the oldest package from the FIFO queue
+[Info] Calculation CTPk time
+[Info] Send package for a CTPk time
+[Info] Wait CTIZ time...
+[Info] If received ACK in these time: go to state RemovalFromTheSystem, if no: go to state Retransmission 
+
+[Info] ++number_of_retransmission
+[Info] If number_of_retransmission > 10: go to RemovalFromTheSystem
+[Info] Calculating CRP time
+[Info] Wait CRP time...
+[Info] Go to ChannelListenning 
+
+[Info] Generate ACK
+[Info] Send ACK for a CTIZ time
+[Info] Go to state RemovalFromTheSystem 
+
+[Info] Release the channel
+[Info] Remove package from FIFO queue
+[Info] If there is another packet in the queue: go to state ChannelListenning, if no: end the transmission 
+
+[Info] Package nr: 2 (in station nr: 8) has been created
+[Info] Packet Process Execute: 
+
+[Info] Generate package and add it to FIFO queue
+[Info] Planning appears the next package
+[Info] Go to ChannelListenning 
+
+[Info] Checking channel every 0,5ms
+[Info] Checking if the channel is free for more than DIFS = 4ms
+[Info] If true: go to Transmission, if false: go to ChannelListenning 
+
+[Info] Pull the oldest package from the FIFO queue
+[Info] Calculation CTPk time
+[Info] Send package for a CTPk time
+[Info] Wait CTIZ time...
+[Info] If received ACK in these time: go to state RemovalFromTheSystem, if no: go to state Retransmission 
+
+[Info] ++number_of_retransmission
+[Info] If number_of_retransmission > 10: go to RemovalFromTheSystem
+[Info] Calculating CRP time
+[Info] Wait CRP time...
+[Info] Go to ChannelListenning 
+
+[Info] Generate ACK
+[Info] Send ACK for a CTIZ time
+[Info] Go to state RemovalFromTheSystem 
+
+[Info] Release the channel
+[Info] Remove package from FIFO queue
+[Info] If there is another packet in the queue: go to state ChannelListenning, if no: end the transmission 
+
+[Info] Package nr: 1 (in station nr: 9) has been created
+[Info] Packet Process Execute: 
+
+[Info] Generate package and add it to FIFO queue
+[Info] Planning appears the next package
+[Info] Go to ChannelListenning 
+
+[Info] Checking channel every 0,5ms
+[Info] Checking if the channel is free for more than DIFS = 4ms
+[Info] If true: go to Transmission, if false: go to ChannelListenning 
+
+[Info] Pull the oldest package from the FIFO queue
+[Info] Calculation CTPk time
+[Info] Send package for a CTPk time
+[Info] Wait CTIZ time...
+[Info] If received ACK in these time: go to state RemovalFromTheSystem, if no: go to state Retransmission 
+
+[Info] ++number_of_retransmission
+[Info] If number_of_retransmission > 10: go to RemovalFromTheSystem
+[Info] Calculating CRP time
+[Info] Wait CRP time...
+[Info] Go to ChannelListenning 
+
+[Info] Generate ACK
+[Info] Send ACK for a CTIZ time
+[Info] Go to state RemovalFromTheSystem 
+
+[Info] Release the channel
+[Info] Remove package from FIFO queue
+[Info] If there is another packet in the queue: go to state ChannelListenning, if no: end the transmission 
+
+[Info] Package nr: 2 (in station nr: 9) has been created
+[Info] Packet Process Execute: 
+
+[Info] Generate package and add it to FIFO queue
+[Info] Planning appears the next package
+[Info] Go to ChannelListenning 
+
+[Info] Checking channel every 0,5ms
+[Info] Checking if the channel is free for more than DIFS = 4ms
+[Info] If true: go to Transmission, if false: go to ChannelListenning 
+
+[Info] Pull the oldest package from the FIFO queue
+[Info] Calculation CTPk time
+[Info] Send package for a CTPk time
+[Info] Wait CTIZ time...
+[Info] If received ACK in these time: go to state RemovalFromTheSystem, if no: go to state Retransmission 
+
+[Info] ++number_of_retransmission
+[Info] If number_of_retransmission > 10: go to RemovalFromTheSystem
+[Info] Calculating CRP time
+[Info] Wait CRP time...
+[Info] Go to ChannelListenning 
+
+[Info] Generate ACK
+[Info] Send ACK for a CTIZ time
+[Info] Go to state RemovalFromTheSystem 
+
+[Info] Release the channel
+[Info] Remove package from FIFO queue
+[Info] If there is another packet in the queue: go to state ChannelListenning, if no: end the transmission 
+
+[Info] Delete Wireless Network 
+

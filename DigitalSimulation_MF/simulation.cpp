@@ -14,7 +14,7 @@ Simulation::Simulation(Logger* logger)
     transmitter = wireless_network->GetTransmitters(i);
     id_number = transmitter->GetTransmitterId();
 
-    for (int j=0; j<1; ++j)
+    for (int j = 1; j <= 2; ++j)
     {
       package = wireless_network->GeneratePackage(logger, wireless_network, j, id_number);
       // add random generate package time

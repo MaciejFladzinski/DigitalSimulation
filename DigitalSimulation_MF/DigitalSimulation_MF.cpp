@@ -8,12 +8,16 @@
 #include <iostream>
 
 #include "logger.h"
+#include "simulation.h"
 #include "wirelessNetwork.h"
 
 int main()
 {
   Logger* logger = new Logger();
   logger->set_level();
+  auto simulation = new Simulation(logger);
 
+  delete simulation;
+  delete logger;
   return 0;
 }
