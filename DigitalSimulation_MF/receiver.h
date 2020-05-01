@@ -6,7 +6,7 @@
 class Receiver
 {
 public:
-  Receiver(unsigned int id_);
+  Receiver(unsigned int id_, Logger* logger);
   ~Receiver();
 
   // functions

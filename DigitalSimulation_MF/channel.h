@@ -10,7 +10,7 @@ class Logger;
 class Channel
 {
 public:
-  Channel();
+  Channel(Logger* logger);
   ~Channel();
 
   // functions

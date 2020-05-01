@@ -1,6 +1,6 @@
 #include "receiver.h"
 
-Receiver::Receiver(unsigned int id_)
+Receiver::Receiver(unsigned int id_, Logger* logger)
 {
   receiver_id_ = id_;
 }

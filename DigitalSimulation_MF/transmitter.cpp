@@ -1,6 +1,6 @@
 #include "transmitter.h"
 
-Transmitter::Transmitter(unsigned int id_) : Package(0)
+Transmitter::Transmitter(unsigned int id_, Logger* logger)
 {
   transmitter_id_ = id_;
 }
@@ -10,15 +10,7 @@ Transmitter::~Transmitter()
   
 }
 
-void Transmitter::GeneratePackage(Logger* logger)
-{
-  static size_t id = 0;
-  ++id;
-  auto package = new Package(id);
-  packages_.push_back(package);
-  logger->Info("Generate package (id: " + std::to_string(id) + ") and add it to FIFO queue");
-}
-
+/*
 void Transmitter::StartTransmission(Logger* logger, Package* package)
 {
   logger->Info("Start transmission package (id: " + std::to_string(packages_.front()->GetPackageId()) + ")");
@@ -84,3 +76,4 @@ void Transmitter::RemovePackage(Logger* logger, Package* package)
     // wait for generate new package
   }
 }
+*/
