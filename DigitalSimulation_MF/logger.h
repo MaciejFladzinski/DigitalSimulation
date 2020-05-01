@@ -11,10 +11,7 @@ public:
   Logger();
   ~Logger();
 
-  void set_level(Level level)
-  {
-    level_ = level;
-  }
+  void set_level();
 
   void Info(std::string message);
   void Debug(std::string message);
