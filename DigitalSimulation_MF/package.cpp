@@ -79,11 +79,10 @@ void Package::Execute()
       // 2. sprawdzenie, czy kanal jest wolny dluzej niz DIFS = 4ms
       // 3. jesli zalozenie jest spelnione przejdz do State::Transmission, jeœli nie kontynuuj sprawdzanie
 
-      if (wireless_network_->GetChannelStatus() == false) // if(channel is free)
+      if (wireless_network_->GetChannelStatus() == false)
       {
         logger_->Info("Channel is free");
 
-        // if (X > DIFS)
         if (transmitter->GetTimeOfChannelListenning() > transmitter->difs_time_)
         {
           logger_->Info("Channel is free more than 4ms");
@@ -102,7 +101,7 @@ void Package::Execute()
       else
       {
         logger_->Info("Channel is busy");
-        transmitter->Wait(logger_);
+        transmitter->Wait(logger_); // Process sleep for 5ms (add: active = false ?)
         state_ = State::ChannelListening;
         active = true;
       }
@@ -115,34 +114,36 @@ void Package::Execute()
       // 1. pobierz najstarszy pakiet z kolejki FIFO
       // 2. wyznacz CTPk (czas transmisji pakietu)
       // 3. wysylaj pakiet przez okreslony czas (CTPk)
-      // 4. jesli po czasie CTPk+CTIZ (dla CTIZ = 1ms) odebrano ACK przejdz do RemovalFromTheSystem, jesli nie- Retransmission
 
-      if(transmitter->GetTransmissionOfAnotherPackage() == true) // if there is another package (currently transmissing)
-      {
-        wireless_network_->GetChannel()->SetCollision(true);
-        logger_->Info("Collision detected");
-        state_ = State::Retransmission;
-        active = true;
-      }
-      else
+      if (wireless_network_->GetChannelStatus() == false) // if(channel is free)
       {
         logger_->Info("No collision detected");
+        wireless_network_->GetChannel()->SetChannelOccupancy(true); // now channel is busy
+        logger_->Info("Package is sending");
+        transmitter->CTPkTime(logger_); // process sleep for CTPk time
 
-        if(wireless_network_->GetChannelStatus() == false) // if(channel is free)
+        if (wireless_network_->GetChannel()->GetCollision() == false)
         {
-          wireless_network_->GetChannel()->SetChannelOccupancy(true); // now channel is busy
-          transmitter->SetTransmissionOfAnotherPackage(true); // blocking transmission for another package
-          logger_->Info("Package is sending, wait for ACK");
+          wireless_network_->GetChannel()->SetChannelOccupancy(false);
           state_ = State::ACK;
           active = true;
         }
         else
         {
-          transmitter->Wait(logger_);
-          transmitter->SetTimeOfChannelLitenning(0);
-          state_ = State::ChannelListening;
+          wireless_network_->GetChannel()->SetCollision(true);
+          logger_->Info("Collision detected");
+          wireless_network_->GetChannel()->SetCollision(false);
+          state_ = State::Retransmission;
           active = true;
         }
+      }
+      else
+      {
+        wireless_network_->GetChannel()->SetCollision(true);
+        logger_->Info("Collision detected");
+        wireless_network_->GetChannel()->SetCollision(false);
+        state_ = State::Retransmission;
+        active = true;
       }
       break;
 
@@ -161,18 +162,18 @@ void Package::Execute()
       if(GetNumberOfLR() <= 10)
       {
         logger_->Info("Permission for retransmission");
-        transmitter->CRPTime(logger_);
+        transmitter->CRPTime(logger_); // process sleep for CRP time
         transmitter->SetTimeOfChannelLitenning(0);
-        active = true;
         state_ = State::ChannelListening;
+        active = true;
       }
       else
       {
         logger_->Info("Unable to retransmit again");
         transmitter->AddPackageLost(logger_);
         logger_->Info("Packages lost: " + std::to_string(transmitter->GetPackagesLost()));
-        active = true;
         state_ = State::RemovalFromTheSystem;
+        active = true;
       }
       break;
 
@@ -182,29 +183,48 @@ void Package::Execute()
 
       // 1. wygeneruj potwierdzenie ACK
       // 2. poddaj go transmisji przez okreslona jednostke czasu (CTIZ)
-      // 3. przejdz do state RemovalFromTheSystem
+      // 3. jesli po czasie CTPk+CTIZ (dla CTIZ = 1ms) odebrano ACK przejdz do RemovalFromTheSystem, jesli nie- Retransmission
 
-      transmitter->CheckTransmissionPackageTime(logger_); // checking max time of package transmission + receive ACK (CTPk+CTIZ)
-      receiver->SetAcknowledgment(true);
-
-      // check: if(ACK is received in time: CTPk+CTIZ)
-      if(true)
+      if (wireless_network_->GetChannelStatus() == false)
       {
-        logger_->Info("ACK successfully sent");
-        wireless_network_->GetChannel()->SetChannelOccupancy(false);
-        transmitter->SetTransmissionOfAnotherPackage(false);
-        transmitter->AddPackageSuccessfullySent(logger_);
-        logger_->Info("Packages successfully sent: "+std::to_string(transmitter->GetPackagesSuccessfullySent()));
-        active = true;
-        state_ = State::RemovalFromTheSystem;
+        logger_->Info("Package successfully sent");
+        receiver->SetAcknowledgment(true); // permission to send ACK
+        logger_->Info("Permission to send ACK");
+        wireless_network_->GetChannel()->SetChannelOccupancy(true); // ACK in channel
+        logger_->Info("CTIZ time");
+        transmitter->ctiz_time_; // process sleep for 1ms (CTIZ)
+        
+        //if there is no collision after time CTPk + CTIZ in the channel:
+        if (wireless_network_->GetChannel()->GetCollision() == false)
+        {
+          wireless_network_->GetChannel()->SetChannelOccupancy(false); // ACK delivered
+          logger_->Info("ACK delivered successfully");
+          transmitter->AddPackageSuccessfullySent(logger_);
+          logger_->Info("Packages successfully sent: " + std::to_string(transmitter->GetPackagesSuccessfullySent()));
+          transmitter->SetTimeOfChannelLitenning(0);
+          receiver->SetAcknowledgment(false);
+          state_ = State::RemovalFromTheSystem;
+          active = true;
+        }
+        else
+        {
+          wireless_network_->GetChannel()->SetCollision(true);
+          logger_->Info("Collision detected");
+          wireless_network_->GetChannel()->SetChannelOccupancy(false); // ACK not delivered
+          transmitter->SetTimeOfChannelLitenning(0);
+          wireless_network_->GetChannel()->SetCollision(false);
+          state_ = State::Retransmission;
+          active = true;
+        }
       }
       else
       {
-        logger_->Info("ACK wasn't received");
+        receiver->SetAcknowledgment(false); // no permission to send ACK
+        logger_->Info("No permission to send ACK");
         wireless_network_->GetChannel()->SetChannelOccupancy(false);
         transmitter->SetTimeOfChannelLitenning(0);
-        active = true;
         state_ = State::Retransmission;
+        active = true;
       }
       break;
 

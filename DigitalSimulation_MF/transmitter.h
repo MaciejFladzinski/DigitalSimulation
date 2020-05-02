@@ -26,10 +26,7 @@ public:
   unsigned const __int64 ctiz_time_ = 10;  // ACK transmission time (CTIZ = 1ms)
   unsigned const __int64 difs_time_ = 40; // checking channel time (DIFS = 4ms)
 
-  bool GetTransmissionOfAnotherPackage();
   unsigned int GetPackagesSuccessfullySent();
-
-  void SetTransmissionOfAnotherPackage(bool transmission_of_another_package);
 
   // get
   inline unsigned int GetTransmitterId() { return transmitter_id_; }
@@ -85,7 +82,6 @@ private:
   unsigned __int64 time_crp_;  // random time after which retransmissions can be made
   bool correct_reception_ack_ = false;  // true - ACK take back in less time than (CGPk + CTIZ)
   bool transmission_permission_;  // true - permission to transmit the packet
-  bool transmission_of_another_package_ = false; // protection against sending more than one package by transmitter
 
   Logger* logger_ = nullptr;
 };

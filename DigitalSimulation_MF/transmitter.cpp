@@ -12,19 +12,9 @@ Transmitter::~Transmitter()
   logger_->Info("Remove transmitter nr: " + std::to_string(transmitter_id_));
 }
 
-bool Transmitter::GetTransmissionOfAnotherPackage()
-{
-  return transmission_of_another_package_;
-}
-
 unsigned Transmitter::GetPackagesSuccessfullySent()
 {
   return packages_successfully_sent_;
-}
-
-void Transmitter::SetTransmissionOfAnotherPackage(bool transmission_of_another_package)
-{
-  transmission_of_another_package_ = transmission_of_another_package;
 }
 
 void Transmitter::Wait(Logger* logger)
