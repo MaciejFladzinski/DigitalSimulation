@@ -3,9 +3,9 @@
 
 #include <vector>
 
-#include "package.h"
+#include "logger.h"
 
-class Logger;
+class Package;
 
 class Channel
 {
@@ -13,23 +13,21 @@ public:
   Channel(Logger* logger);
   ~Channel();
 
-  // functions
-  void CheckingChannel(Logger* logger);
-
   // get
-  inline bool GetChannelOccupancy() { return channel_occupancy_; }
-  inline bool GetCollision() { return packages_collision_; }
-  std::vector<Package*>* GetTransmittedPackages() { return &transmitted_packages_; }
+  bool GetChannelOccupancy();
+  bool GetCollision();
+  Package* GetTransmittedPackages(int i);
 
   // set
-  inline void SetChannelOccupancy(bool channel_occupancy) { this->channel_occupancy_ = channel_occupancy; }
-  inline void SetCollision(bool collision) { this->packages_collision_ = collision; }
-  //void SetTransmittedPackages(std::vector<Package*>& transmitted_packages) { transmitted_packages_ = transmitted_packages; }
+  void SetChannelOccupancy(bool channel_occupancy);
+  void SetCollision(bool collision);
+  void SetTransmittedPackages(Package* package);
 
 private:
   bool channel_occupancy_ = false; // true/false - channel is busy/free
-  bool packages_collision_; // true - collision occurred
+  bool packages_collision_ = false; // true - collision occurred
 
+  Logger* logger_ = nullptr;
   std::vector<Package*> transmitted_packages_;  // vector of transmitted packages
 };
 

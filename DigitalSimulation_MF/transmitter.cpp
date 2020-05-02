@@ -3,11 +3,43 @@
 Transmitter::Transmitter(unsigned int id_, Logger* logger)
 {
   transmitter_id_ = id_;
+  logger_ = logger;
+  logger->Info("Create transmitter nr: " + std::to_string(id_));
 }
 
 Transmitter::~Transmitter()
 {
-  
+  logger_->Info("Remove transmitter nr: " + std::to_string(transmitter_id_));
+}
+
+void Transmitter::Wait(Logger* logger)
+{
+  logger_ = logger;
+  logger->Info("Waiting 0,5ms...");
+}
+
+void Transmitter::CTPkTime(Logger* logger)
+{
+  logger_ = logger;
+  logger->Info("CTPk time");
+}
+
+void Transmitter::CRPTime(Logger* logger)
+{
+  logger_ = logger;
+  logger->Info("CRP time");
+}
+
+void Transmitter::CheckDIFSTime(Logger* logger)
+{
+  logger_ = logger;
+  logger->Info("Check: DIFS = 4ms ?");
+}
+
+void Transmitter::CheckTransmissionPackageTime(Logger* logger)
+{
+  logger_ = logger;
+  logger->Info("Check transmission of package (with ACK) time: CTPk + CTIZ");
 }
 
 /*

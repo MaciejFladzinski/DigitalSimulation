@@ -35,6 +35,8 @@ private:
   unsigned int receiver_id_;  // receiver number
   bool error_transmission_ = false;  // true - transmission error occurred (TER)
   bool send_acknowledgment_ = false; // true - permission to send ACK
+
+  Logger* logger_ = nullptr;
 };
 
 #endif

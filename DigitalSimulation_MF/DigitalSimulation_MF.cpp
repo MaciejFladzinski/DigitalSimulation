@@ -15,6 +15,7 @@ int main()
 {
   Logger* logger = new Logger();
   logger->set_level();
+
   auto simulation = new Simulation(logger);
 
   delete simulation;

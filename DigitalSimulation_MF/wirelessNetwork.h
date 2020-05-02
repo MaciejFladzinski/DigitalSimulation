@@ -24,6 +24,9 @@ public:
   Transmitter* GetTransmitters(int i);
   Receiver* GetReceivers(int i);
   Package* GetPackages(int i);
+  Channel* GetChannel();
+
+  bool GetChannelStatus();
 
   void SetPackages(Package* package); // add (generate) package
 

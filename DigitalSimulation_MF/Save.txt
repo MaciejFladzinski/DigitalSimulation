@@ -1,16 +1,30 @@
-[Info] Create Wireless Network 
-
+[Info] Create Wireless Network
+[Info] Create channel
+[Info] Create transmitter nr: 0
+[Info] Create receiver nr: 0
+[Info] Create transmitter nr: 1
+[Info] Create receiver nr: 1
+[Info] Create transmitter nr: 2
+[Info] Create receiver nr: 2
+[Info] Create transmitter nr: 3
+[Info] Create receiver nr: 3
+[Info] Create transmitter nr: 4
+[Info] Create receiver nr: 4
+[Info] Create transmitter nr: 5
+[Info] Create receiver nr: 5
+[Info] Create transmitter nr: 6
+[Info] Create receiver nr: 6
+[Info] Create transmitter nr: 7
+[Info] Create receiver nr: 7
+[Info] Create transmitter nr: 8
+[Info] Create receiver nr: 8
+[Info] Create transmitter nr: 9
+[Info] Create receiver nr: 9
 [Info] Package nr: 1 (in station nr: 0) has been created
-[Info] Packet Process Execute: 
-
-[Info] Generate package and add it to FIFO queue
-[Info] Planning appears the next package
-[Info] Go to ChannelListenning 
-
-[Info] Checking channel every 0,5ms
-[Info] Checking if the channel is free for more than DIFS = 4ms
-[Info] If true: go to Transmission, if false: go to ChannelListenning 
-
+[Info] Packet Process Execute:
+[Info] Channel is free
+[Info] Check: DIFS = 4ms ?
+[Info] Channel is free more than 4ms
 [Info] Pull the oldest package from the FIFO queue
 [Info] Calculation CTPk time
 [Info] Send package for a CTPk time
@@ -32,16 +46,10 @@
 [Info] If there is another packet in the queue: go to state ChannelListenning, if no: end the transmission 
 
 [Info] Package nr: 2 (in station nr: 0) has been created
-[Info] Packet Process Execute: 
-
-[Info] Generate package and add it to FIFO queue
-[Info] Planning appears the next package
-[Info] Go to ChannelListenning 
-
-[Info] Checking channel every 0,5ms
-[Info] Checking if the channel is free for more than DIFS = 4ms
-[Info] If true: go to Transmission, if false: go to ChannelListenning 
-
+[Info] Packet Process Execute:
+[Info] Channel is free
+[Info] Check: DIFS = 4ms ?
+[Info] Channel is free more than 4ms
 [Info] Pull the oldest package from the FIFO queue
 [Info] Calculation CTPk time
 [Info] Send package for a CTPk time
@@ -63,16 +71,10 @@
 [Info] If there is another packet in the queue: go to state ChannelListenning, if no: end the transmission 
 
 [Info] Package nr: 1 (in station nr: 1) has been created
-[Info] Packet Process Execute: 
-
-[Info] Generate package and add it to FIFO queue
-[Info] Planning appears the next package
-[Info] Go to ChannelListenning 
-
-[Info] Checking channel every 0,5ms
-[Info] Checking if the channel is free for more than DIFS = 4ms
-[Info] If true: go to Transmission, if false: go to ChannelListenning 
-
+[Info] Packet Process Execute:
+[Info] Channel is free
+[Info] Check: DIFS = 4ms ?
+[Info] Channel is free more than 4ms
 [Info] Pull the oldest package from the FIFO queue
 [Info] Calculation CTPk time
 [Info] Send package for a CTPk time
@@ -94,16 +96,10 @@
 [Info] If there is another packet in the queue: go to state ChannelListenning, if no: end the transmission 
 
 [Info] Package nr: 2 (in station nr: 1) has been created
-[Info] Packet Process Execute: 
-
-[Info] Generate package and add it to FIFO queue
-[Info] Planning appears the next package
-[Info] Go to ChannelListenning 
-
-[Info] Checking channel every 0,5ms
-[Info] Checking if the channel is free for more than DIFS = 4ms
-[Info] If true: go to Transmission, if false: go to ChannelListenning 
-
+[Info] Packet Process Execute:
+[Info] Channel is free
+[Info] Check: DIFS = 4ms ?
+[Info] Channel is free more than 4ms
 [Info] Pull the oldest package from the FIFO queue
 [Info] Calculation CTPk time
 [Info] Send package for a CTPk time
@@ -125,16 +121,10 @@
 [Info] If there is another packet in the queue: go to state ChannelListenning, if no: end the transmission 
 
 [Info] Package nr: 1 (in station nr: 2) has been created
-[Info] Packet Process Execute: 
-
-[Info] Generate package and add it to FIFO queue
-[Info] Planning appears the next package
-[Info] Go to ChannelListenning 
-
-[Info] Checking channel every 0,5ms
-[Info] Checking if the channel is free for more than DIFS = 4ms
-[Info] If true: go to Transmission, if false: go to ChannelListenning 
-
+[Info] Packet Process Execute:
+[Info] Channel is free
+[Info] Check: DIFS = 4ms ?
+[Info] Channel is free more than 4ms
 [Info] Pull the oldest package from the FIFO queue
 [Info] Calculation CTPk time
 [Info] Send package for a CTPk time
@@ -156,16 +146,10 @@
 [Info] If there is another packet in the queue: go to state ChannelListenning, if no: end the transmission 
 
 [Info] Package nr: 2 (in station nr: 2) has been created
-[Info] Packet Process Execute: 
-
-[Info] Generate package and add it to FIFO queue
-[Info] Planning appears the next package
-[Info] Go to ChannelListenning 
-
-[Info] Checking channel every 0,5ms
-[Info] Checking if the channel is free for more than DIFS = 4ms
-[Info] If true: go to Transmission, if false: go to ChannelListenning 
-
+[Info] Packet Process Execute:
+[Info] Channel is free
+[Info] Check: DIFS = 4ms ?
+[Info] Channel is free more than 4ms
 [Info] Pull the oldest package from the FIFO queue
 [Info] Calculation CTPk time
 [Info] Send package for a CTPk time
@@ -187,16 +171,10 @@
 [Info] If there is another packet in the queue: go to state ChannelListenning, if no: end the transmission 
 
 [Info] Package nr: 1 (in station nr: 3) has been created
-[Info] Packet Process Execute: 
-
-[Info] Generate package and add it to FIFO queue
-[Info] Planning appears the next package
-[Info] Go to ChannelListenning 
-
-[Info] Checking channel every 0,5ms
-[Info] Checking if the channel is free for more than DIFS = 4ms
-[Info] If true: go to Transmission, if false: go to ChannelListenning 
-
+[Info] Packet Process Execute:
+[Info] Channel is free
+[Info] Check: DIFS = 4ms ?
+[Info] Channel is free more than 4ms
 [Info] Pull the oldest package from the FIFO queue
 [Info] Calculation CTPk time
 [Info] Send package for a CTPk time
@@ -218,16 +196,10 @@
 [Info] If there is another packet in the queue: go to state ChannelListenning, if no: end the transmission 
 
 [Info] Package nr: 2 (in station nr: 3) has been created
-[Info] Packet Process Execute: 
-
-[Info] Generate package and add it to FIFO queue
-[Info] Planning appears the next package
-[Info] Go to ChannelListenning 
-
-[Info] Checking channel every 0,5ms
-[Info] Checking if the channel is free for more than DIFS = 4ms
-[Info] If true: go to Transmission, if false: go to ChannelListenning 
-
+[Info] Packet Process Execute:
+[Info] Channel is free
+[Info] Check: DIFS = 4ms ?
+[Info] Channel is free more than 4ms
 [Info] Pull the oldest package from the FIFO queue
 [Info] Calculation CTPk time
 [Info] Send package for a CTPk time
@@ -249,16 +221,10 @@
 [Info] If there is another packet in the queue: go to state ChannelListenning, if no: end the transmission 
 
 [Info] Package nr: 1 (in station nr: 4) has been created
-[Info] Packet Process Execute: 
-
-[Info] Generate package and add it to FIFO queue
-[Info] Planning appears the next package
-[Info] Go to ChannelListenning 
-
-[Info] Checking channel every 0,5ms
-[Info] Checking if the channel is free for more than DIFS = 4ms
-[Info] If true: go to Transmission, if false: go to ChannelListenning 
-
+[Info] Packet Process Execute:
+[Info] Channel is free
+[Info] Check: DIFS = 4ms ?
+[Info] Channel is free more than 4ms
 [Info] Pull the oldest package from the FIFO queue
 [Info] Calculation CTPk time
 [Info] Send package for a CTPk time
@@ -280,16 +246,10 @@
 [Info] If there is another packet in the queue: go to state ChannelListenning, if no: end the transmission 
 
 [Info] Package nr: 2 (in station nr: 4) has been created
-[Info] Packet Process Execute: 
-
-[Info] Generate package and add it to FIFO queue
-[Info] Planning appears the next package
-[Info] Go to ChannelListenning 
-
-[Info] Checking channel every 0,5ms
-[Info] Checking if the channel is free for more than DIFS = 4ms
-[Info] If true: go to Transmission, if false: go to ChannelListenning 
-
+[Info] Packet Process Execute:
+[Info] Channel is free
+[Info] Check: DIFS = 4ms ?
+[Info] Channel is free more than 4ms
 [Info] Pull the oldest package from the FIFO queue
 [Info] Calculation CTPk time
 [Info] Send package for a CTPk time
@@ -311,16 +271,10 @@
 [Info] If there is another packet in the queue: go to state ChannelListenning, if no: end the transmission 
 
 [Info] Package nr: 1 (in station nr: 5) has been created
-[Info] Packet Process Execute: 
-
-[Info] Generate package and add it to FIFO queue
-[Info] Planning appears the next package
-[Info] Go to ChannelListenning 
-
-[Info] Checking channel every 0,5ms
-[Info] Checking if the channel is free for more than DIFS = 4ms
-[Info] If true: go to Transmission, if false: go to ChannelListenning 
-
+[Info] Packet Process Execute:
+[Info] Channel is free
+[Info] Check: DIFS = 4ms ?
+[Info] Channel is free more than 4ms
 [Info] Pull the oldest package from the FIFO queue
 [Info] Calculation CTPk time
 [Info] Send package for a CTPk time
@@ -342,16 +296,10 @@
 [Info] If there is another packet in the queue: go to state ChannelListenning, if no: end the transmission 
 
 [Info] Package nr: 2 (in station nr: 5) has been created
-[Info] Packet Process Execute: 
-
-[Info] Generate package and add it to FIFO queue
-[Info] Planning appears the next package
-[Info] Go to ChannelListenning 
-
-[Info] Checking channel every 0,5ms
-[Info] Checking if the channel is free for more than DIFS = 4ms
-[Info] If true: go to Transmission, if false: go to ChannelListenning 
-
+[Info] Packet Process Execute:
+[Info] Channel is free
+[Info] Check: DIFS = 4ms ?
+[Info] Channel is free more than 4ms
 [Info] Pull the oldest package from the FIFO queue
 [Info] Calculation CTPk time
 [Info] Send package for a CTPk time
@@ -373,16 +321,10 @@
 [Info] If there is another packet in the queue: go to state ChannelListenning, if no: end the transmission 
 
 [Info] Package nr: 1 (in station nr: 6) has been created
-[Info] Packet Process Execute: 
-
-[Info] Generate package and add it to FIFO queue
-[Info] Planning appears the next package
-[Info] Go to ChannelListenning 
-
-[Info] Checking channel every 0,5ms
-[Info] Checking if the channel is free for more than DIFS = 4ms
-[Info] If true: go to Transmission, if false: go to ChannelListenning 
-
+[Info] Packet Process Execute:
+[Info] Channel is free
+[Info] Check: DIFS = 4ms ?
+[Info] Channel is free more than 4ms
 [Info] Pull the oldest package from the FIFO queue
 [Info] Calculation CTPk time
 [Info] Send package for a CTPk time
@@ -404,16 +346,10 @@
 [Info] If there is another packet in the queue: go to state ChannelListenning, if no: end the transmission 
 
 [Info] Package nr: 2 (in station nr: 6) has been created
-[Info] Packet Process Execute: 
-
-[Info] Generate package and add it to FIFO queue
-[Info] Planning appears the next package
-[Info] Go to ChannelListenning 
-
-[Info] Checking channel every 0,5ms
-[Info] Checking if the channel is free for more than DIFS = 4ms
-[Info] If true: go to Transmission, if false: go to ChannelListenning 
-
+[Info] Packet Process Execute:
+[Info] Channel is free
+[Info] Check: DIFS = 4ms ?
+[Info] Channel is free more than 4ms
 [Info] Pull the oldest package from the FIFO queue
 [Info] Calculation CTPk time
 [Info] Send package for a CTPk time
@@ -435,16 +371,10 @@
 [Info] If there is another packet in the queue: go to state ChannelListenning, if no: end the transmission 
 
 [Info] Package nr: 1 (in station nr: 7) has been created
-[Info] Packet Process Execute: 
-
-[Info] Generate package and add it to FIFO queue
-[Info] Planning appears the next package
-[Info] Go to ChannelListenning 
-
-[Info] Checking channel every 0,5ms
-[Info] Checking if the channel is free for more than DIFS = 4ms
-[Info] If true: go to Transmission, if false: go to ChannelListenning 
-
+[Info] Packet Process Execute:
+[Info] Channel is free
+[Info] Check: DIFS = 4ms ?
+[Info] Channel is free more than 4ms
 [Info] Pull the oldest package from the FIFO queue
 [Info] Calculation CTPk time
 [Info] Send package for a CTPk time
@@ -466,16 +396,10 @@
 [Info] If there is another packet in the queue: go to state ChannelListenning, if no: end the transmission 
 
 [Info] Package nr: 2 (in station nr: 7) has been created
-[Info] Packet Process Execute: 
-
-[Info] Generate package and add it to FIFO queue
-[Info] Planning appears the next package
-[Info] Go to ChannelListenning 
-
-[Info] Checking channel every 0,5ms
-[Info] Checking if the channel is free for more than DIFS = 4ms
-[Info] If true: go to Transmission, if false: go to ChannelListenning 
-
+[Info] Packet Process Execute:
+[Info] Channel is free
+[Info] Check: DIFS = 4ms ?
+[Info] Channel is free more than 4ms
 [Info] Pull the oldest package from the FIFO queue
 [Info] Calculation CTPk time
 [Info] Send package for a CTPk time
@@ -497,16 +421,10 @@
 [Info] If there is another packet in the queue: go to state ChannelListenning, if no: end the transmission 
 
 [Info] Package nr: 1 (in station nr: 8) has been created
-[Info] Packet Process Execute: 
-
-[Info] Generate package and add it to FIFO queue
-[Info] Planning appears the next package
-[Info] Go to ChannelListenning 
-
-[Info] Checking channel every 0,5ms
-[Info] Checking if the channel is free for more than DIFS = 4ms
-[Info] If true: go to Transmission, if false: go to ChannelListenning 
-
+[Info] Packet Process Execute:
+[Info] Channel is free
+[Info] Check: DIFS = 4ms ?
+[Info] Channel is free more than 4ms
 [Info] Pull the oldest package from the FIFO queue
 [Info] Calculation CTPk time
 [Info] Send package for a CTPk time
@@ -528,16 +446,10 @@
 [Info] If there is another packet in the queue: go to state ChannelListenning, if no: end the transmission 
 
 [Info] Package nr: 2 (in station nr: 8) has been created
-[Info] Packet Process Execute: 
-
-[Info] Generate package and add it to FIFO queue
-[Info] Planning appears the next package
-[Info] Go to ChannelListenning 
-
-[Info] Checking channel every 0,5ms
-[Info] Checking if the channel is free for more than DIFS = 4ms
-[Info] If true: go to Transmission, if false: go to ChannelListenning 
-
+[Info] Packet Process Execute:
+[Info] Channel is free
+[Info] Check: DIFS = 4ms ?
+[Info] Channel is free more than 4ms
 [Info] Pull the oldest package from the FIFO queue
 [Info] Calculation CTPk time
 [Info] Send package for a CTPk time
@@ -559,16 +471,10 @@
 [Info] If there is another packet in the queue: go to state ChannelListenning, if no: end the transmission 
 
 [Info] Package nr: 1 (in station nr: 9) has been created
-[Info] Packet Process Execute: 
-
-[Info] Generate package and add it to FIFO queue
-[Info] Planning appears the next package
-[Info] Go to ChannelListenning 
-
-[Info] Checking channel every 0,5ms
-[Info] Checking if the channel is free for more than DIFS = 4ms
-[Info] If true: go to Transmission, if false: go to ChannelListenning 
-
+[Info] Packet Process Execute:
+[Info] Channel is free
+[Info] Check: DIFS = 4ms ?
+[Info] Channel is free more than 4ms
 [Info] Pull the oldest package from the FIFO queue
 [Info] Calculation CTPk time
 [Info] Send package for a CTPk time
@@ -590,16 +496,10 @@
 [Info] If there is another packet in the queue: go to state ChannelListenning, if no: end the transmission 
 
 [Info] Package nr: 2 (in station nr: 9) has been created
-[Info] Packet Process Execute: 
-
-[Info] Generate package and add it to FIFO queue
-[Info] Planning appears the next package
-[Info] Go to ChannelListenning 
-
-[Info] Checking channel every 0,5ms
-[Info] Checking if the channel is free for more than DIFS = 4ms
-[Info] If true: go to Transmission, if false: go to ChannelListenning 
-
+[Info] Packet Process Execute:
+[Info] Channel is free
+[Info] Check: DIFS = 4ms ?
+[Info] Channel is free more than 4ms
 [Info] Pull the oldest package from the FIFO queue
 [Info] Calculation CTPk time
 [Info] Send package for a CTPk time
@@ -620,5 +520,25 @@
 [Info] Remove package from FIFO queue
 [Info] If there is another packet in the queue: go to state ChannelListenning, if no: end the transmission 
 
-[Info] Delete Wireless Network 
-
+[Info] Remove Wireless Network
+[Info] Remove channel
+[Info] Remove transmitter nr: 0
+[Info] Remove receiver nr: 0
+[Info] Remove transmitter nr: 1
+[Info] Remove receiver nr: 1
+[Info] Remove transmitter nr: 2
+[Info] Remove receiver nr: 2
+[Info] Remove transmitter nr: 3
+[Info] Remove receiver nr: 3
+[Info] Remove transmitter nr: 4
+[Info] Remove receiver nr: 4
+[Info] Remove transmitter nr: 5
+[Info] Remove receiver nr: 5
+[Info] Remove transmitter nr: 6
+[Info] Remove receiver nr: 6
+[Info] Remove transmitter nr: 7
+[Info] Remove receiver nr: 7
+[Info] Remove transmitter nr: 8
+[Info] Remove receiver nr: 8
+[Info] Remove transmitter nr: 9
+[Info] Remove receiver nr: 9

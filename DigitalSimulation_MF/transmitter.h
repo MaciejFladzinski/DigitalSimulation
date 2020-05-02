@@ -10,14 +10,23 @@
 class Transmitter
 {
 public:
-  //constructor(id number, queue of packages in buffer)
   Transmitter(unsigned int id_, Logger* logger);
   ~Transmitter();
 
   // functions
-  //void StartTransmission(Logger* logger, Package* package);
-  //void Retransmission(Logger* logger, Package* package);
-  //void RemovePackage(Logger* logger, Package* package);
+  void Wait(Logger* logger); // delay 0,5ms
+  void CTPkTime(Logger* logger); // transmission time
+  void CRPTime(Logger* logger); // time before start retransmission
+  void CheckDIFSTime(Logger* logger); // DIFS > 4ms ? true : false
+  void CheckTransmissionPackageTime(Logger* logger); // CTPk + CTIZ,   CTIZ = 1ms
+  /*
+  void TransmissionTime(); // generate CTPk for packet
+	void RetransmissionTime(); //generate retransmission time for packet
+	void SetBT(Logger* logger);//Function setting BT 
+	void Wait(Logger* logger); //function deleing transsmision
+	void check_DIFS(Logger* logger); //function checking if DIFS == true
+	void Check_Transmission_Time(Logger* logger); //function checking if transssmision time is correct
+   */
 
   // const... = 0 -> it's only for definition const variable, it will be changed soon...
   unsigned const __int64 time_of_ctiz_ = 0;  // ACK transmission time
@@ -31,7 +40,6 @@ public:
   inline unsigned __int64 GetTimeCrp() { return time_crp_; }
   inline bool GetCorrectReceptionAck() { return correct_reception_ack_; }
   inline bool GetTransmissionPermission() { return transmission_permission_; }
-  //std::vector<Package*> GetPackages() { return packages_; }
 
   // set
   inline void SetTransmitterId(unsigned int transmitter_id)
@@ -66,7 +74,6 @@ public:
   {
     this->transmission_permission_ = transmission_permission;
   }
-  //void SetPackages(std::vector<Package*> &packages) { packages_ = packages; }
 
 private:
   unsigned int transmitter_id_;  // transmitter number
@@ -77,7 +84,8 @@ private:
   unsigned __int64 time_crp_;  // random time after which retransmissions can be made
   bool correct_reception_ack_ = false;  // true - ACK take back in less time than (CGPk + CTIZ)
   bool transmission_permission_;  // true - permission to transmit the packet
-  //std::vector<Package*> packages_;  // vector of packages ready to transmission
+
+  Logger* logger_ = nullptr;
 };
 
 #endif

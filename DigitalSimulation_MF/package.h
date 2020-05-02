@@ -2,17 +2,19 @@
 #define PACKAGE_H_
 
 #include "logger.h"
+#include "transmitter.h"
+#include "channel.h"
 
 class WirelessNetwork;
 
 class Package
 {
 public:
-  Package(unsigned int id_package, unsigned int id_station, Logger* logger, WirelessNetwork* network);
+  Package(unsigned int id_package, unsigned int id_station, Logger* logger, WirelessNetwork* wireless_network);
   ~Package();
 
   // enum class - representation of states
-  enum class State { AppearanceInTheSystem, ChannelListening, Transmission, Retransmission, ACK, RemovalFromTheSystem };
+  enum class State { ChannelListening, Transmission, Retransmission, ACK, RemovalFromTheSystem };
 
   // functions
   void Execute();
@@ -43,9 +45,10 @@ private:
   unsigned __int64 time_ctpk_; // random packet generation time (CTPk)
   unsigned __int64 activation_time_ = 0; //time after which the process will start
 
-  State state_ = State::AppearanceInTheSystem;
+  State state_ = State::ChannelListening;
 
   WirelessNetwork* wireless_network_;
+  Channel* channel;
   Logger* logger_ = nullptr;
 };
 #endif

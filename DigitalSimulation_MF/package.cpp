@@ -1,10 +1,15 @@
 #include "package.h"
 
-Package::Package(unsigned int id_package, unsigned int id_station, Logger* logger, WirelessNetwork* network)
+#include <iostream>
+
+#include "wirelessNetwork.h"
+#include "channel.h"
+
+Package::Package(unsigned int id_package, unsigned int id_station, Logger* logger, WirelessNetwork* wireless_network)
 {
   id_package_ = id_package;
   id_station_ = id_station;
-  wireless_network_ = network;
+  wireless_network_ = wireless_network;
   logger_ = logger;
 
   logger->Info("Package nr: " + std::to_string(id_package) +
@@ -13,7 +18,7 @@ Package::Package(unsigned int id_package, unsigned int id_station, Logger* logge
 
 Package::~Package()
 {
-  
+  logger_->Info("Remove package");
 }
 
 void Package::Activ(unsigned long long time)
@@ -23,23 +28,20 @@ void Package::Activ(unsigned long long time)
 
 void Package::Execute()
 {
-  /*
-     int id;
-  id = this->return_station_number();
-  BroadcastStation* tx_station = network_->get_broadcast_stations(id);
-  ReceivingStation* rx_station = network_->get_receiving_stations(id);
-   */
+  Transmitter* transmitter = wireless_network_->GetTransmitters(id_station_);
+  Receiver* receiver = wireless_network_->GetReceivers(id_station_);
 
   bool active = true;
 
-  logger_->Info("Packet Process Execute: \n");
+  std::cout << std::endl;
+  logger_->Info("Packet Process Execute:");
 
   while (active)
   {
     switch (state_)
     {
-      // before all break set active = true/false + Activ(time) if it's required
-
+      // State::AppearanceInTheSystem tymczasowo jest sztywno wykonywany przy tworzeniu symulacji
+      /*
     case State::AppearanceInTheSystem:
       // Appearance in the system operations
       printf("AppearanceInTheSystem: \n");
@@ -58,36 +60,42 @@ void Package::Execute()
       state_ = State::ChannelListening;
       active = true;
       break;
-
+      */
     case State::ChannelListening:
       // Channel listening operations
-      printf("ChannelListenning: \n");
 
       // 1. co 0,5ms sprawdzaj czy kanal jest wolny
-      logger_->Info("Checking channel every 0,5ms");
-
-      //CheckingChannel(logger_);
-
       // 2. sprawdzenie, czy kanal jest wolny dluzej niz DIFS = 4ms
-      logger_->Info("Checking if the channel is free for more than DIFS = 4ms");
-
       // 3. jesli zalozenie jest spelnione przejdz do State::Transmission, jeœli nie kontynuuj sprawdzanie
-      logger_->Info("If true: go to Transmission, if false: go to ChannelListenning \n");
-      /*
-      if (GetChannelOccupancy() == false)
+
+      if (wireless_network_->GetChannelStatus() == false) // if(channel is free)
       {
-        active = true;
-        state_ = State::Transmission;
+        logger_->Info("Channel is free");
+        transmitter->CheckDIFSTime(logger_);
+
+        // if (channel is free > 4ms), but now "test = 1" only for simulation test
+        bool test = 1;
+        if (test)
+        {
+          logger_->Info("Channel is free more than 4ms");
+          state_ = State::Transmission;
+          active = true;
+        }
+        else
+        {
+          logger_->Info("Channel isn't free more than 4ms");
+          transmitter->Wait(logger_);
+          state_ = State::ChannelListening;
+          active = true;
+        }
       }
       else
       {
-        active = false; // process sleep
+        logger_->Info("Channel is busy");
+        transmitter->Wait(logger_);
+        state_ = State::ChannelListening;
+        active = true;
       }
-      */
-
-      active = true;
-      state_ = State::Transmission;
-
       break;
 
     case State::Transmission:
@@ -105,7 +113,7 @@ void Package::Execute()
 
       //StartTransmission(logger_,0);
 
-      // 4. jesli po czasie CTPk+CITZ (gdzie CITZ = 1ms) odebrano ACK przejdz do RemovalFromTheSystem, jesli nie to do Retransmission
+      // 4. jesli po czasie CTPk+CTIZ (gdzie CTIZ = 1ms) odebrano ACK przejdz do RemovalFromTheSystem, jesli nie to do Retransmission
       logger_->Info("Wait CTIZ time...");
       logger_->Info("If received ACK in these time: go to state RemovalFromTheSystem, if no: go to state Retransmission \n");
 
