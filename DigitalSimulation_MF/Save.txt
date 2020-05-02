@@ -27,10 +27,9 @@
 [Info] Channel is free more than 4ms
 [Info] No collision detected
 [Info] Package is sending, wait for ACK
-[Info] Generate ACK
-[Info] Send ACK for a CTIZ time
-[Info] Go to state RemovalFromTheSystem 
-
+[Info] Check transmission of package (with ACK) time: CTPk + CTIZ
+[Info] ACK successfully sent
+[Info] Packages successfully sent: 1
 [Info] Release the channel
 [Info] Remove package from FIFO queue
 [Info] If there is another packet in the queue: go to state ChannelListenning, if no: end the transmission 
@@ -42,10 +41,9 @@
 [Info] Channel is free more than 4ms
 [Info] No collision detected
 [Info] Package is sending, wait for ACK
-[Info] Generate ACK
-[Info] Send ACK for a CTIZ time
-[Info] Go to state RemovalFromTheSystem 
-
+[Info] Check transmission of package (with ACK) time: CTPk + CTIZ
+[Info] ACK successfully sent
+[Info] Packages successfully sent: 2
 [Info] Release the channel
 [Info] Remove package from FIFO queue
 [Info] If there is another packet in the queue: go to state ChannelListenning, if no: end the transmission 
@@ -57,10 +55,9 @@
 [Info] Channel is free more than 4ms
 [Info] No collision detected
 [Info] Package is sending, wait for ACK
-[Info] Generate ACK
-[Info] Send ACK for a CTIZ time
-[Info] Go to state RemovalFromTheSystem 
-
+[Info] Check transmission of package (with ACK) time: CTPk + CTIZ
+[Info] ACK successfully sent
+[Info] Packages successfully sent: 1
 [Info] Release the channel
 [Info] Remove package from FIFO queue
 [Info] If there is another packet in the queue: go to state ChannelListenning, if no: end the transmission 
@@ -72,10 +69,9 @@
 [Info] Channel is free more than 4ms
 [Info] No collision detected
 [Info] Package is sending, wait for ACK
-[Info] Generate ACK
-[Info] Send ACK for a CTIZ time
-[Info] Go to state RemovalFromTheSystem 
-
+[Info] Check transmission of package (with ACK) time: CTPk + CTIZ
+[Info] ACK successfully sent
+[Info] Packages successfully sent: 2
 [Info] Release the channel
 [Info] Remove package from FIFO queue
 [Info] If there is another packet in the queue: go to state ChannelListenning, if no: end the transmission 
@@ -87,10 +83,9 @@
 [Info] Channel is free more than 4ms
 [Info] No collision detected
 [Info] Package is sending, wait for ACK
-[Info] Generate ACK
-[Info] Send ACK for a CTIZ time
-[Info] Go to state RemovalFromTheSystem 
-
+[Info] Check transmission of package (with ACK) time: CTPk + CTIZ
+[Info] ACK successfully sent
+[Info] Packages successfully sent: 1
 [Info] Release the channel
 [Info] Remove package from FIFO queue
 [Info] If there is another packet in the queue: go to state ChannelListenning, if no: end the transmission 
@@ -102,10 +97,9 @@
 [Info] Channel is free more than 4ms
 [Info] No collision detected
 [Info] Package is sending, wait for ACK
-[Info] Generate ACK
-[Info] Send ACK for a CTIZ time
-[Info] Go to state RemovalFromTheSystem 
-
+[Info] Check transmission of package (with ACK) time: CTPk + CTIZ
+[Info] ACK successfully sent
+[Info] Packages successfully sent: 2
 [Info] Release the channel
 [Info] Remove package from FIFO queue
 [Info] If there is another packet in the queue: go to state ChannelListenning, if no: end the transmission 
@@ -117,10 +111,9 @@
 [Info] Channel is free more than 4ms
 [Info] No collision detected
 [Info] Package is sending, wait for ACK
-[Info] Generate ACK
-[Info] Send ACK for a CTIZ time
-[Info] Go to state RemovalFromTheSystem 
-
+[Info] Check transmission of package (with ACK) time: CTPk + CTIZ
+[Info] ACK successfully sent
+[Info] Packages successfully sent: 1
 [Info] Release the channel
 [Info] Remove package from FIFO queue
 [Info] If there is another packet in the queue: go to state ChannelListenning, if no: end the transmission 
@@ -132,10 +125,9 @@
 [Info] Channel is free more than 4ms
 [Info] No collision detected
 [Info] Package is sending, wait for ACK
-[Info] Generate ACK
-[Info] Send ACK for a CTIZ time
-[Info] Go to state RemovalFromTheSystem 
-
+[Info] Check transmission of package (with ACK) time: CTPk + CTIZ
+[Info] ACK successfully sent
+[Info] Packages successfully sent: 2
 [Info] Release the channel
 [Info] Remove package from FIFO queue
 [Info] If there is another packet in the queue: go to state ChannelListenning, if no: end the transmission 
@@ -147,10 +139,9 @@
 [Info] Channel is free more than 4ms
 [Info] No collision detected
 [Info] Package is sending, wait for ACK
-[Info] Generate ACK
-[Info] Send ACK for a CTIZ time
-[Info] Go to state RemovalFromTheSystem 
-
+[Info] Check transmission of package (with ACK) time: CTPk + CTIZ
+[Info] ACK successfully sent
+[Info] Packages successfully sent: 1
 [Info] Release the channel
 [Info] Remove package from FIFO queue
 [Info] If there is another packet in the queue: go to state ChannelListenning, if no: end the transmission 
@@ -162,10 +153,9 @@
 [Info] Channel is free more than 4ms
 [Info] No collision detected
 [Info] Package is sending, wait for ACK
-[Info] Generate ACK
-[Info] Send ACK for a CTIZ time
-[Info] Go to state RemovalFromTheSystem 
-
+[Info] Check transmission of package (with ACK) time: CTPk + CTIZ
+[Info] ACK successfully sent
+[Info] Packages successfully sent: 2
 [Info] Release the channel
 [Info] Remove package from FIFO queue
 [Info] If there is another packet in the queue: go to state ChannelListenning, if no: end the transmission 
@@ -177,10 +167,9 @@
 [Info] Channel is free more than 4ms
 [Info] No collision detected
 [Info] Package is sending, wait for ACK
-[Info] Generate ACK
-[Info] Send ACK for a CTIZ time
-[Info] Go to state RemovalFromTheSystem 
-
+[Info] Check transmission of package (with ACK) time: CTPk + CTIZ
+[Info] ACK successfully sent
+[Info] Packages successfully sent: 1
 [Info] Release the channel
 [Info] Remove package from FIFO queue
 [Info] If there is another packet in the queue: go to state ChannelListenning, if no: end the transmission 
@@ -192,10 +181,9 @@
 [Info] Channel is free more than 4ms
 [Info] No collision detected
 [Info] Package is sending, wait for ACK
-[Info] Generate ACK
-[Info] Send ACK for a CTIZ time
-[Info] Go to state RemovalFromTheSystem 
-
+[Info] Check transmission of package (with ACK) time: CTPk + CTIZ
+[Info] ACK successfully sent
+[Info] Packages successfully sent: 2
 [Info] Release the channel
 [Info] Remove package from FIFO queue
 [Info] If there is another packet in the queue: go to state ChannelListenning, if no: end the transmission 
@@ -207,10 +195,9 @@
 [Info] Channel is free more than 4ms
 [Info] No collision detected
 [Info] Package is sending, wait for ACK
-[Info] Generate ACK
-[Info] Send ACK for a CTIZ time
-[Info] Go to state RemovalFromTheSystem 
-
+[Info] Check transmission of package (with ACK) time: CTPk + CTIZ
+[Info] ACK successfully sent
+[Info] Packages successfully sent: 1
 [Info] Release the channel
 [Info] Remove package from FIFO queue
 [Info] If there is another packet in the queue: go to state ChannelListenning, if no: end the transmission 
@@ -222,10 +209,9 @@
 [Info] Channel is free more than 4ms
 [Info] No collision detected
 [Info] Package is sending, wait for ACK
-[Info] Generate ACK
-[Info] Send ACK for a CTIZ time
-[Info] Go to state RemovalFromTheSystem 
-
+[Info] Check transmission of package (with ACK) time: CTPk + CTIZ
+[Info] ACK successfully sent
+[Info] Packages successfully sent: 2
 [Info] Release the channel
 [Info] Remove package from FIFO queue
 [Info] If there is another packet in the queue: go to state ChannelListenning, if no: end the transmission 
@@ -237,10 +223,9 @@
 [Info] Channel is free more than 4ms
 [Info] No collision detected
 [Info] Package is sending, wait for ACK
-[Info] Generate ACK
-[Info] Send ACK for a CTIZ time
-[Info] Go to state RemovalFromTheSystem 
-
+[Info] Check transmission of package (with ACK) time: CTPk + CTIZ
+[Info] ACK successfully sent
+[Info] Packages successfully sent: 1
 [Info] Release the channel
 [Info] Remove package from FIFO queue
 [Info] If there is another packet in the queue: go to state ChannelListenning, if no: end the transmission 
@@ -252,10 +237,9 @@
 [Info] Channel is free more than 4ms
 [Info] No collision detected
 [Info] Package is sending, wait for ACK
-[Info] Generate ACK
-[Info] Send ACK for a CTIZ time
-[Info] Go to state RemovalFromTheSystem 
-
+[Info] Check transmission of package (with ACK) time: CTPk + CTIZ
+[Info] ACK successfully sent
+[Info] Packages successfully sent: 2
 [Info] Release the channel
 [Info] Remove package from FIFO queue
 [Info] If there is another packet in the queue: go to state ChannelListenning, if no: end the transmission 
@@ -267,10 +251,9 @@
 [Info] Channel is free more than 4ms
 [Info] No collision detected
 [Info] Package is sending, wait for ACK
-[Info] Generate ACK
-[Info] Send ACK for a CTIZ time
-[Info] Go to state RemovalFromTheSystem 
-
+[Info] Check transmission of package (with ACK) time: CTPk + CTIZ
+[Info] ACK successfully sent
+[Info] Packages successfully sent: 1
 [Info] Release the channel
 [Info] Remove package from FIFO queue
 [Info] If there is another packet in the queue: go to state ChannelListenning, if no: end the transmission 
@@ -282,10 +265,9 @@
 [Info] Channel is free more than 4ms
 [Info] No collision detected
 [Info] Package is sending, wait for ACK
-[Info] Generate ACK
-[Info] Send ACK for a CTIZ time
-[Info] Go to state RemovalFromTheSystem 
-
+[Info] Check transmission of package (with ACK) time: CTPk + CTIZ
+[Info] ACK successfully sent
+[Info] Packages successfully sent: 2
 [Info] Release the channel
 [Info] Remove package from FIFO queue
 [Info] If there is another packet in the queue: go to state ChannelListenning, if no: end the transmission 
@@ -297,10 +279,9 @@
 [Info] Channel is free more than 4ms
 [Info] No collision detected
 [Info] Package is sending, wait for ACK
-[Info] Generate ACK
-[Info] Send ACK for a CTIZ time
-[Info] Go to state RemovalFromTheSystem 
-
+[Info] Check transmission of package (with ACK) time: CTPk + CTIZ
+[Info] ACK successfully sent
+[Info] Packages successfully sent: 1
 [Info] Release the channel
 [Info] Remove package from FIFO queue
 [Info] If there is another packet in the queue: go to state ChannelListenning, if no: end the transmission 
@@ -312,10 +293,9 @@
 [Info] Channel is free more than 4ms
 [Info] No collision detected
 [Info] Package is sending, wait for ACK
-[Info] Generate ACK
-[Info] Send ACK for a CTIZ time
-[Info] Go to state RemovalFromTheSystem 
-
+[Info] Check transmission of package (with ACK) time: CTPk + CTIZ
+[Info] ACK successfully sent
+[Info] Packages successfully sent: 2
 [Info] Release the channel
 [Info] Remove package from FIFO queue
 [Info] If there is another packet in the queue: go to state ChannelListenning, if no: end the transmission 

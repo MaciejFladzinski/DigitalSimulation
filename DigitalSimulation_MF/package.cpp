@@ -120,7 +120,8 @@ void Package::Execute()
 
         if(wireless_network_->GetChannelStatus() == false) // if(channel is free)
         {
-          //wireless_network_->GetChannel()->SetChannelOccupancy(true); // now: channel is busy
+          wireless_network_->GetChannel()->SetChannelOccupancy(true); // now: channel is busy
+          // add: package to vector in channel (package currently transmitted)
           logger_->Info("Package is sending, wait for ACK");
           state_ = State::ACK;
           active = true;
@@ -170,17 +171,29 @@ void Package::Execute()
       printf("ACK: \n");
 
       // 1. wygeneruj potwierdzenie ACK
-      logger_->Info("Generate ACK");
-      //GenerateACK(logger_);
-
       // 2. poddaj go transmisji przez okreslona jednostke czasu (CTIZ)
-      logger_->Info("Send ACK for a CTIZ time");
-
       // 3. przejdz do state RemovalFromTheSystem
-      logger_->Info("Go to state RemovalFromTheSystem \n");
 
-      active = true;
-      state_ = State::RemovalFromTheSystem;
+      transmitter->CheckTransmissionPackageTime(logger_); // checking max time of package transmission + receive ACK (CTPk+CTIZ)
+      receiver->SetAcknowledgment(true);
+
+      // check: if(ACK is received in time: CTPk+CTIZ)
+      if(true)
+      {
+        logger_->Info("ACK successfully sent");
+        wireless_network_->GetChannel()->SetChannelOccupancy(false);
+        transmitter->AddPackageSuccessfullySent(logger_);
+        logger_->Info("Packages successfully sent: "+std::to_string(transmitter->GetPackagesSuccessfullySent()));
+        active = true;
+        state_ = State::RemovalFromTheSystem;
+      }
+      else
+      {
+        logger_->Info("ACK wasn't received");
+        wireless_network_->GetChannel()->SetChannelOccupancy(false);
+        active = true;
+        state_ = State::Retransmission;
+      }
       break;
 
     case State::RemovalFromTheSystem:

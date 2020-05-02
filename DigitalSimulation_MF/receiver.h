@@ -26,7 +26,7 @@ public:
   {
     this->error_transmission_ = error_transmission;
   }
-  inline void SetSetAcknowledgment(bool send_acknowledgment)
+  inline void SetAcknowledgment(bool send_acknowledgment)
   {
     this->send_acknowledgment_ = send_acknowledgment;
   }
