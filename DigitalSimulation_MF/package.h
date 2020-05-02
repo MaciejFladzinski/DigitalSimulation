@@ -19,7 +19,7 @@ public:
   // functions
   void Execute();
   void Activ(unsigned __int64 time); //function (process activation time)
-
+  void IncrementNumberOfLR(Logger* logger);
 
   // get
   inline unsigned int GetPackageId() { return id_package_; }

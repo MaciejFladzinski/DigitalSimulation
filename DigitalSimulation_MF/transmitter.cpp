@@ -63,6 +63,12 @@ void Transmitter::AddPackageSuccessfullySent(Logger* logger)
   ++packages_successfully_sent_;
 }
 
+void Transmitter::AddPackageLost(Logger* logger)
+{
+  logger_ = logger;
+  ++packages_lost_;
+}
+
 
 /*
 void Transmitter::StartTransmission(Logger* logger, Package* package)

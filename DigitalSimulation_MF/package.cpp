@@ -21,6 +21,14 @@ Package::~Package()
   logger_->Info("Remove package");
 }
 
+void Package::IncrementNumberOfLR(Logger* logger)
+{
+  logger_ = logger;
+  ++number_of_LR_;
+  logger->Info("Package retransmission attempt... attempt nr: " + std::to_string(number_of_LR_));
+}
+
+
 void Package::Activ(unsigned long long time)
 {
   activation_time_ += time;
@@ -121,6 +129,7 @@ void Package::Execute()
         if(wireless_network_->GetChannelStatus() == false) // if(channel is free)
         {
           wireless_network_->GetChannel()->SetChannelOccupancy(true); // now: channel is busy
+          transmitter->SetTransmissionOfAnotherPackage(true);
           // add: package to vector in channel (package currently transmitted)
           logger_->Info("Package is sending, wait for ACK");
           state_ = State::ACK;
@@ -140,30 +149,27 @@ void Package::Execute()
       printf("Retransmission: \n");
 
       // 1. zwieksz licznik retransmisji o 1
-      logger_->Info("++number_of_retransmission");
-
       // 2. sprawdz zgodnosc warunku LR <= 10
-      logger_->Info("If number_of_retransmission > 10: go to RemovalFromTheSystem");
-
       // 3. wyznacz czas CRP
-      logger_->Info("Calculating CRP time");
-
       // 4. czekaj okreslony czas CRP
-      logger_->Info("Wait CRP time...");
-
-      // Test: incrementation number of LR, Error when LR>10
-      for (int i = 0; i < 10; i++)
-      {
-        //Retransmission(logger_, 0);
-      }
-      printf("Tested error: \n");
-      //Retransmission(logger_, 0);
-
       // 5. przejdz do state ChannelListenning lub RemovalFromTheSystem
-      logger_->Info("Go to ChannelListenning \n");
 
-      active = true;
-      state_ = State::ACK; // it's only for compilation
+      IncrementNumberOfLR(logger_);
+      if(GetNumberOfLR() <= 10)
+      {
+        logger_->Info("Permission for retransmission");
+        transmitter->CRPTime(logger_);
+        active = true;
+        state_ = State::ChannelListening;
+      }
+      else
+      {
+        logger_->Info("Unable to retransmit again");
+        transmitter->AddPackageLost(logger_);
+        logger_->Info("Packages lost: " + std::to_string(transmitter->GetPackagesLost()));
+        active = true;
+        state_ = State::RemovalFromTheSystem;
+      }
       break;
 
     case State::ACK:
@@ -182,6 +188,7 @@ void Package::Execute()
       {
         logger_->Info("ACK successfully sent");
         wireless_network_->GetChannel()->SetChannelOccupancy(false);
+        transmitter->SetTransmissionOfAnotherPackage(false);
         transmitter->AddPackageSuccessfullySent(logger_);
         logger_->Info("Packages successfully sent: "+std::to_string(transmitter->GetPackagesSuccessfullySent()));
         active = true;

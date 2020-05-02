@@ -20,7 +20,8 @@ public:
   void CheckDIFSTime(Logger* logger); // DIFS > 4ms ? true : false
   void CheckTransmissionPackageTime(Logger* logger); // CTPk + CTIZ,   CTIZ = 1ms
   void AddPackageSuccessfullySent(Logger* logger);  // Add 1 package successfully sent
-
+  void AddPackageLost(Logger* logger);  // Add 1 package lost
+  
   // const... = 0 -> it's only for definition const variable, it will be changed soon...
   unsigned const __int64 ctiz_time_ = 1;  // ACK transmission time (CTIZ = 1ms)
 

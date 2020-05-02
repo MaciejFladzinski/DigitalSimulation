@@ -25,11 +25,80 @@
 [Info] Channel is free
 [Info] Check: DIFS = 4ms ?
 [Info] Channel is free more than 4ms
-[Info] No collision detected
-[Info] Package is sending, wait for ACK
-[Info] Check transmission of package (with ACK) time: CTPk + CTIZ
-[Info] ACK successfully sent
-[Info] Packages successfully sent: 1
+[Info] Collision detected
+[Info] Package retransmission attempt... attempt nr: 1
+[Info] Permission for retransmission
+[Info] CRP time
+[Info] Channel is free
+[Info] Check: DIFS = 4ms ?
+[Info] Channel is free more than 4ms
+[Info] Collision detected
+[Info] Package retransmission attempt... attempt nr: 2
+[Info] Permission for retransmission
+[Info] CRP time
+[Info] Channel is free
+[Info] Check: DIFS = 4ms ?
+[Info] Channel is free more than 4ms
+[Info] Collision detected
+[Info] Package retransmission attempt... attempt nr: 3
+[Info] Permission for retransmission
+[Info] CRP time
+[Info] Channel is free
+[Info] Check: DIFS = 4ms ?
+[Info] Channel is free more than 4ms
+[Info] Collision detected
+[Info] Package retransmission attempt... attempt nr: 4
+[Info] Permission for retransmission
+[Info] CRP time
+[Info] Channel is free
+[Info] Check: DIFS = 4ms ?
+[Info] Channel is free more than 4ms
+[Info] Collision detected
+[Info] Package retransmission attempt... attempt nr: 5
+[Info] Permission for retransmission
+[Info] CRP time
+[Info] Channel is free
+[Info] Check: DIFS = 4ms ?
+[Info] Channel is free more than 4ms
+[Info] Collision detected
+[Info] Package retransmission attempt... attempt nr: 6
+[Info] Permission for retransmission
+[Info] CRP time
+[Info] Channel is free
+[Info] Check: DIFS = 4ms ?
+[Info] Channel is free more than 4ms
+[Info] Collision detected
+[Info] Package retransmission attempt... attempt nr: 7
+[Info] Permission for retransmission
+[Info] CRP time
+[Info] Channel is free
+[Info] Check: DIFS = 4ms ?
+[Info] Channel is free more than 4ms
+[Info] Collision detected
+[Info] Package retransmission attempt... attempt nr: 8
+[Info] Permission for retransmission
+[Info] CRP time
+[Info] Channel is free
+[Info] Check: DIFS = 4ms ?
+[Info] Channel is free more than 4ms
+[Info] Collision detected
+[Info] Package retransmission attempt... attempt nr: 9
+[Info] Permission for retransmission
+[Info] CRP time
+[Info] Channel is free
+[Info] Check: DIFS = 4ms ?
+[Info] Channel is free more than 4ms
+[Info] Collision detected
+[Info] Package retransmission attempt... attempt nr: 10
+[Info] Permission for retransmission
+[Info] CRP time
+[Info] Channel is free
+[Info] Check: DIFS = 4ms ?
+[Info] Channel is free more than 4ms
+[Info] Collision detected
+[Info] Package retransmission attempt... attempt nr: 11
+[Info] Unable to retransmit again
+[Info] Packages lost: 1
 [Info] Release the channel
 [Info] Remove package from FIFO queue
 [Info] If there is another packet in the queue: go to state ChannelListenning, if no: end the transmission 
@@ -39,11 +108,80 @@
 [Info] Channel is free
 [Info] Check: DIFS = 4ms ?
 [Info] Channel is free more than 4ms
-[Info] No collision detected
-[Info] Package is sending, wait for ACK
-[Info] Check transmission of package (with ACK) time: CTPk + CTIZ
-[Info] ACK successfully sent
-[Info] Packages successfully sent: 2
+[Info] Collision detected
+[Info] Package retransmission attempt... attempt nr: 1
+[Info] Permission for retransmission
+[Info] CRP time
+[Info] Channel is free
+[Info] Check: DIFS = 4ms ?
+[Info] Channel is free more than 4ms
+[Info] Collision detected
+[Info] Package retransmission attempt... attempt nr: 2
+[Info] Permission for retransmission
+[Info] CRP time
+[Info] Channel is free
+[Info] Check: DIFS = 4ms ?
+[Info] Channel is free more than 4ms
+[Info] Collision detected
+[Info] Package retransmission attempt... attempt nr: 3
+[Info] Permission for retransmission
+[Info] CRP time
+[Info] Channel is free
+[Info] Check: DIFS = 4ms ?
+[Info] Channel is free more than 4ms
+[Info] Collision detected
+[Info] Package retransmission attempt... attempt nr: 4
+[Info] Permission for retransmission
+[Info] CRP time
+[Info] Channel is free
+[Info] Check: DIFS = 4ms ?
+[Info] Channel is free more than 4ms
+[Info] Collision detected
+[Info] Package retransmission attempt... attempt nr: 5
+[Info] Permission for retransmission
+[Info] CRP time
+[Info] Channel is free
+[Info] Check: DIFS = 4ms ?
+[Info] Channel is free more than 4ms
+[Info] Collision detected
+[Info] Package retransmission attempt... attempt nr: 6
+[Info] Permission for retransmission
+[Info] CRP time
+[Info] Channel is free
+[Info] Check: DIFS = 4ms ?
+[Info] Channel is free more than 4ms
+[Info] Collision detected
+[Info] Package retransmission attempt... attempt nr: 7
+[Info] Permission for retransmission
+[Info] CRP time
+[Info] Channel is free
+[Info] Check: DIFS = 4ms ?
+[Info] Channel is free more than 4ms
+[Info] Collision detected
+[Info] Package retransmission attempt... attempt nr: 8
+[Info] Permission for retransmission
+[Info] CRP time
+[Info] Channel is free
+[Info] Check: DIFS = 4ms ?
+[Info] Channel is free more than 4ms
+[Info] Collision detected
+[Info] Package retransmission attempt... attempt nr: 9
+[Info] Permission for retransmission
+[Info] CRP time
+[Info] Channel is free
+[Info] Check: DIFS = 4ms ?
+[Info] Channel is free more than 4ms
+[Info] Collision detected
+[Info] Package retransmission attempt... attempt nr: 10
+[Info] Permission for retransmission
+[Info] CRP time
+[Info] Channel is free
+[Info] Check: DIFS = 4ms ?
+[Info] Channel is free more than 4ms
+[Info] Collision detected
+[Info] Package retransmission attempt... attempt nr: 11
+[Info] Unable to retransmit again
+[Info] Packages lost: 2
 [Info] Release the channel
 [Info] Remove package from FIFO queue
 [Info] If there is another packet in the queue: go to state ChannelListenning, if no: end the transmission 
@@ -53,11 +191,80 @@
 [Info] Channel is free
 [Info] Check: DIFS = 4ms ?
 [Info] Channel is free more than 4ms
-[Info] No collision detected
-[Info] Package is sending, wait for ACK
-[Info] Check transmission of package (with ACK) time: CTPk + CTIZ
-[Info] ACK successfully sent
-[Info] Packages successfully sent: 1
+[Info] Collision detected
+[Info] Package retransmission attempt... attempt nr: 1
+[Info] Permission for retransmission
+[Info] CRP time
+[Info] Channel is free
+[Info] Check: DIFS = 4ms ?
+[Info] Channel is free more than 4ms
+[Info] Collision detected
+[Info] Package retransmission attempt... attempt nr: 2
+[Info] Permission for retransmission
+[Info] CRP time
+[Info] Channel is free
+[Info] Check: DIFS = 4ms ?
+[Info] Channel is free more than 4ms
+[Info] Collision detected
+[Info] Package retransmission attempt... attempt nr: 3
+[Info] Permission for retransmission
+[Info] CRP time
+[Info] Channel is free
+[Info] Check: DIFS = 4ms ?
+[Info] Channel is free more than 4ms
+[Info] Collision detected
+[Info] Package retransmission attempt... attempt nr: 4
+[Info] Permission for retransmission
+[Info] CRP time
+[Info] Channel is free
+[Info] Check: DIFS = 4ms ?
+[Info] Channel is free more than 4ms
+[Info] Collision detected
+[Info] Package retransmission attempt... attempt nr: 5
+[Info] Permission for retransmission
+[Info] CRP time
+[Info] Channel is free
+[Info] Check: DIFS = 4ms ?
+[Info] Channel is free more than 4ms
+[Info] Collision detected
+[Info] Package retransmission attempt... attempt nr: 6
+[Info] Permission for retransmission
+[Info] CRP time
+[Info] Channel is free
+[Info] Check: DIFS = 4ms ?
+[Info] Channel is free more than 4ms
+[Info] Collision detected
+[Info] Package retransmission attempt... attempt nr: 7
+[Info] Permission for retransmission
+[Info] CRP time
+[Info] Channel is free
+[Info] Check: DIFS = 4ms ?
+[Info] Channel is free more than 4ms
+[Info] Collision detected
+[Info] Package retransmission attempt... attempt nr: 8
+[Info] Permission for retransmission
+[Info] CRP time
+[Info] Channel is free
+[Info] Check: DIFS = 4ms ?
+[Info] Channel is free more than 4ms
+[Info] Collision detected
+[Info] Package retransmission attempt... attempt nr: 9
+[Info] Permission for retransmission
+[Info] CRP time
+[Info] Channel is free
+[Info] Check: DIFS = 4ms ?
+[Info] Channel is free more than 4ms
+[Info] Collision detected
+[Info] Package retransmission attempt... attempt nr: 10
+[Info] Permission for retransmission
+[Info] CRP time
+[Info] Channel is free
+[Info] Check: DIFS = 4ms ?
+[Info] Channel is free more than 4ms
+[Info] Collision detected
+[Info] Package retransmission attempt... attempt nr: 11
+[Info] Unable to retransmit again
+[Info] Packages lost: 1
 [Info] Release the channel
 [Info] Remove package from FIFO queue
 [Info] If there is another packet in the queue: go to state ChannelListenning, if no: end the transmission 
@@ -67,11 +274,80 @@
 [Info] Channel is free
 [Info] Check: DIFS = 4ms ?
 [Info] Channel is free more than 4ms
-[Info] No collision detected
-[Info] Package is sending, wait for ACK
-[Info] Check transmission of package (with ACK) time: CTPk + CTIZ
-[Info] ACK successfully sent
-[Info] Packages successfully sent: 2
+[Info] Collision detected
+[Info] Package retransmission attempt... attempt nr: 1
+[Info] Permission for retransmission
+[Info] CRP time
+[Info] Channel is free
+[Info] Check: DIFS = 4ms ?
+[Info] Channel is free more than 4ms
+[Info] Collision detected
+[Info] Package retransmission attempt... attempt nr: 2
+[Info] Permission for retransmission
+[Info] CRP time
+[Info] Channel is free
+[Info] Check: DIFS = 4ms ?
+[Info] Channel is free more than 4ms
+[Info] Collision detected
+[Info] Package retransmission attempt... attempt nr: 3
+[Info] Permission for retransmission
+[Info] CRP time
+[Info] Channel is free
+[Info] Check: DIFS = 4ms ?
+[Info] Channel is free more than 4ms
+[Info] Collision detected
+[Info] Package retransmission attempt... attempt nr: 4
+[Info] Permission for retransmission
+[Info] CRP time
+[Info] Channel is free
+[Info] Check: DIFS = 4ms ?
+[Info] Channel is free more than 4ms
+[Info] Collision detected
+[Info] Package retransmission attempt... attempt nr: 5
+[Info] Permission for retransmission
+[Info] CRP time
+[Info] Channel is free
+[Info] Check: DIFS = 4ms ?
+[Info] Channel is free more than 4ms
+[Info] Collision detected
+[Info] Package retransmission attempt... attempt nr: 6
+[Info] Permission for retransmission
+[Info] CRP time
+[Info] Channel is free
+[Info] Check: DIFS = 4ms ?
+[Info] Channel is free more than 4ms
+[Info] Collision detected
+[Info] Package retransmission attempt... attempt nr: 7
+[Info] Permission for retransmission
+[Info] CRP time
+[Info] Channel is free
+[Info] Check: DIFS = 4ms ?
+[Info] Channel is free more than 4ms
+[Info] Collision detected
+[Info] Package retransmission attempt... attempt nr: 8
+[Info] Permission for retransmission
+[Info] CRP time
+[Info] Channel is free
+[Info] Check: DIFS = 4ms ?
+[Info] Channel is free more than 4ms
+[Info] Collision detected
+[Info] Package retransmission attempt... attempt nr: 9
+[Info] Permission for retransmission
+[Info] CRP time
+[Info] Channel is free
+[Info] Check: DIFS = 4ms ?
+[Info] Channel is free more than 4ms
+[Info] Collision detected
+[Info] Package retransmission attempt... attempt nr: 10
+[Info] Permission for retransmission
+[Info] CRP time
+[Info] Channel is free
+[Info] Check: DIFS = 4ms ?
+[Info] Channel is free more than 4ms
+[Info] Collision detected
+[Info] Package retransmission attempt... attempt nr: 11
+[Info] Unable to retransmit again
+[Info] Packages lost: 2
 [Info] Release the channel
 [Info] Remove package from FIFO queue
 [Info] If there is another packet in the queue: go to state ChannelListenning, if no: end the transmission 
@@ -81,11 +357,80 @@
 [Info] Channel is free
 [Info] Check: DIFS = 4ms ?
 [Info] Channel is free more than 4ms
-[Info] No collision detected
-[Info] Package is sending, wait for ACK
-[Info] Check transmission of package (with ACK) time: CTPk + CTIZ
-[Info] ACK successfully sent
-[Info] Packages successfully sent: 1
+[Info] Collision detected
+[Info] Package retransmission attempt... attempt nr: 1
+[Info] Permission for retransmission
+[Info] CRP time
+[Info] Channel is free
+[Info] Check: DIFS = 4ms ?
+[Info] Channel is free more than 4ms
+[Info] Collision detected
+[Info] Package retransmission attempt... attempt nr: 2
+[Info] Permission for retransmission
+[Info] CRP time
+[Info] Channel is free
+[Info] Check: DIFS = 4ms ?
+[Info] Channel is free more than 4ms
+[Info] Collision detected
+[Info] Package retransmission attempt... attempt nr: 3
+[Info] Permission for retransmission
+[Info] CRP time
+[Info] Channel is free
+[Info] Check: DIFS = 4ms ?
+[Info] Channel is free more than 4ms
+[Info] Collision detected
+[Info] Package retransmission attempt... attempt nr: 4
+[Info] Permission for retransmission
+[Info] CRP time
+[Info] Channel is free
+[Info] Check: DIFS = 4ms ?
+[Info] Channel is free more than 4ms
+[Info] Collision detected
+[Info] Package retransmission attempt... attempt nr: 5
+[Info] Permission for retransmission
+[Info] CRP time
+[Info] Channel is free
+[Info] Check: DIFS = 4ms ?
+[Info] Channel is free more than 4ms
+[Info] Collision detected
+[Info] Package retransmission attempt... attempt nr: 6
+[Info] Permission for retransmission
+[Info] CRP time
+[Info] Channel is free
+[Info] Check: DIFS = 4ms ?
+[Info] Channel is free more than 4ms
+[Info] Collision detected
+[Info] Package retransmission attempt... attempt nr: 7
+[Info] Permission for retransmission
+[Info] CRP time
+[Info] Channel is free
+[Info] Check: DIFS = 4ms ?
+[Info] Channel is free more than 4ms
+[Info] Collision detected
+[Info] Package retransmission attempt... attempt nr: 8
+[Info] Permission for retransmission
+[Info] CRP time
+[Info] Channel is free
+[Info] Check: DIFS = 4ms ?
+[Info] Channel is free more than 4ms
+[Info] Collision detected
+[Info] Package retransmission attempt... attempt nr: 9
+[Info] Permission for retransmission
+[Info] CRP time
+[Info] Channel is free
+[Info] Check: DIFS = 4ms ?
+[Info] Channel is free more than 4ms
+[Info] Collision detected
+[Info] Package retransmission attempt... attempt nr: 10
+[Info] Permission for retransmission
+[Info] CRP time
+[Info] Channel is free
+[Info] Check: DIFS = 4ms ?
+[Info] Channel is free more than 4ms
+[Info] Collision detected
+[Info] Package retransmission attempt... attempt nr: 11
+[Info] Unable to retransmit again
+[Info] Packages lost: 1
 [Info] Release the channel
 [Info] Remove package from FIFO queue
 [Info] If there is another packet in the queue: go to state ChannelListenning, if no: end the transmission 
@@ -95,11 +440,80 @@
 [Info] Channel is free
 [Info] Check: DIFS = 4ms ?
 [Info] Channel is free more than 4ms
-[Info] No collision detected
-[Info] Package is sending, wait for ACK
-[Info] Check transmission of package (with ACK) time: CTPk + CTIZ
-[Info] ACK successfully sent
-[Info] Packages successfully sent: 2
+[Info] Collision detected
+[Info] Package retransmission attempt... attempt nr: 1
+[Info] Permission for retransmission
+[Info] CRP time
+[Info] Channel is free
+[Info] Check: DIFS = 4ms ?
+[Info] Channel is free more than 4ms
+[Info] Collision detected
+[Info] Package retransmission attempt... attempt nr: 2
+[Info] Permission for retransmission
+[Info] CRP time
+[Info] Channel is free
+[Info] Check: DIFS = 4ms ?
+[Info] Channel is free more than 4ms
+[Info] Collision detected
+[Info] Package retransmission attempt... attempt nr: 3
+[Info] Permission for retransmission
+[Info] CRP time
+[Info] Channel is free
+[Info] Check: DIFS = 4ms ?
+[Info] Channel is free more than 4ms
+[Info] Collision detected
+[Info] Package retransmission attempt... attempt nr: 4
+[Info] Permission for retransmission
+[Info] CRP time
+[Info] Channel is free
+[Info] Check: DIFS = 4ms ?
+[Info] Channel is free more than 4ms
+[Info] Collision detected
+[Info] Package retransmission attempt... attempt nr: 5
+[Info] Permission for retransmission
+[Info] CRP time
+[Info] Channel is free
+[Info] Check: DIFS = 4ms ?
+[Info] Channel is free more than 4ms
+[Info] Collision detected
+[Info] Package retransmission attempt... attempt nr: 6
+[Info] Permission for retransmission
+[Info] CRP time
+[Info] Channel is free
+[Info] Check: DIFS = 4ms ?
+[Info] Channel is free more than 4ms
+[Info] Collision detected
+[Info] Package retransmission attempt... attempt nr: 7
+[Info] Permission for retransmission
+[Info] CRP time
+[Info] Channel is free
+[Info] Check: DIFS = 4ms ?
+[Info] Channel is free more than 4ms
+[Info] Collision detected
+[Info] Package retransmission attempt... attempt nr: 8
+[Info] Permission for retransmission
+[Info] CRP time
+[Info] Channel is free
+[Info] Check: DIFS = 4ms ?
+[Info] Channel is free more than 4ms
+[Info] Collision detected
+[Info] Package retransmission attempt... attempt nr: 9
+[Info] Permission for retransmission
+[Info] CRP time
+[Info] Channel is free
+[Info] Check: DIFS = 4ms ?
+[Info] Channel is free more than 4ms
+[Info] Collision detected
+[Info] Package retransmission attempt... attempt nr: 10
+[Info] Permission for retransmission
+[Info] CRP time
+[Info] Channel is free
+[Info] Check: DIFS = 4ms ?
+[Info] Channel is free more than 4ms
+[Info] Collision detected
+[Info] Package retransmission attempt... attempt nr: 11
+[Info] Unable to retransmit again
+[Info] Packages lost: 2
 [Info] Release the channel
 [Info] Remove package from FIFO queue
 [Info] If there is another packet in the queue: go to state ChannelListenning, if no: end the transmission 
@@ -109,11 +523,80 @@
 [Info] Channel is free
 [Info] Check: DIFS = 4ms ?
 [Info] Channel is free more than 4ms
-[Info] No collision detected
-[Info] Package is sending, wait for ACK
-[Info] Check transmission of package (with ACK) time: CTPk + CTIZ
-[Info] ACK successfully sent
-[Info] Packages successfully sent: 1
+[Info] Collision detected
+[Info] Package retransmission attempt... attempt nr: 1
+[Info] Permission for retransmission
+[Info] CRP time
+[Info] Channel is free
+[Info] Check: DIFS = 4ms ?
+[Info] Channel is free more than 4ms
+[Info] Collision detected
+[Info] Package retransmission attempt... attempt nr: 2
+[Info] Permission for retransmission
+[Info] CRP time
+[Info] Channel is free
+[Info] Check: DIFS = 4ms ?
+[Info] Channel is free more than 4ms
+[Info] Collision detected
+[Info] Package retransmission attempt... attempt nr: 3
+[Info] Permission for retransmission
+[Info] CRP time
+[Info] Channel is free
+[Info] Check: DIFS = 4ms ?
+[Info] Channel is free more than 4ms
+[Info] Collision detected
+[Info] Package retransmission attempt... attempt nr: 4
+[Info] Permission for retransmission
+[Info] CRP time
+[Info] Channel is free
+[Info] Check: DIFS = 4ms ?
+[Info] Channel is free more than 4ms
+[Info] Collision detected
+[Info] Package retransmission attempt... attempt nr: 5
+[Info] Permission for retransmission
+[Info] CRP time
+[Info] Channel is free
+[Info] Check: DIFS = 4ms ?
+[Info] Channel is free more than 4ms
+[Info] Collision detected
+[Info] Package retransmission attempt... attempt nr: 6
+[Info] Permission for retransmission
+[Info] CRP time
+[Info] Channel is free
+[Info] Check: DIFS = 4ms ?
+[Info] Channel is free more than 4ms
+[Info] Collision detected
+[Info] Package retransmission attempt... attempt nr: 7
+[Info] Permission for retransmission
+[Info] CRP time
+[Info] Channel is free
+[Info] Check: DIFS = 4ms ?
+[Info] Channel is free more than 4ms
+[Info] Collision detected
+[Info] Package retransmission attempt... attempt nr: 8
+[Info] Permission for retransmission
+[Info] CRP time
+[Info] Channel is free
+[Info] Check: DIFS = 4ms ?
+[Info] Channel is free more than 4ms
+[Info] Collision detected
+[Info] Package retransmission attempt... attempt nr: 9
+[Info] Permission for retransmission
+[Info] CRP time
+[Info] Channel is free
+[Info] Check: DIFS = 4ms ?
+[Info] Channel is free more than 4ms
+[Info] Collision detected
+[Info] Package retransmission attempt... attempt nr: 10
+[Info] Permission for retransmission
+[Info] CRP time
+[Info] Channel is free
+[Info] Check: DIFS = 4ms ?
+[Info] Channel is free more than 4ms
+[Info] Collision detected
+[Info] Package retransmission attempt... attempt nr: 11
+[Info] Unable to retransmit again
+[Info] Packages lost: 1
 [Info] Release the channel
 [Info] Remove package from FIFO queue
 [Info] If there is another packet in the queue: go to state ChannelListenning, if no: end the transmission 
@@ -123,11 +606,80 @@
 [Info] Channel is free
 [Info] Check: DIFS = 4ms ?
 [Info] Channel is free more than 4ms
-[Info] No collision detected
-[Info] Package is sending, wait for ACK
-[Info] Check transmission of package (with ACK) time: CTPk + CTIZ
-[Info] ACK successfully sent
-[Info] Packages successfully sent: 2
+[Info] Collision detected
+[Info] Package retransmission attempt... attempt nr: 1
+[Info] Permission for retransmission
+[Info] CRP time
+[Info] Channel is free
+[Info] Check: DIFS = 4ms ?
+[Info] Channel is free more than 4ms
+[Info] Collision detected
+[Info] Package retransmission attempt... attempt nr: 2
+[Info] Permission for retransmission
+[Info] CRP time
+[Info] Channel is free
+[Info] Check: DIFS = 4ms ?
+[Info] Channel is free more than 4ms
+[Info] Collision detected
+[Info] Package retransmission attempt... attempt nr: 3
+[Info] Permission for retransmission
+[Info] CRP time
+[Info] Channel is free
+[Info] Check: DIFS = 4ms ?
+[Info] Channel is free more than 4ms
+[Info] Collision detected
+[Info] Package retransmission attempt... attempt nr: 4
+[Info] Permission for retransmission
+[Info] CRP time
+[Info] Channel is free
+[Info] Check: DIFS = 4ms ?
+[Info] Channel is free more than 4ms
+[Info] Collision detected
+[Info] Package retransmission attempt... attempt nr: 5
+[Info] Permission for retransmission
+[Info] CRP time
+[Info] Channel is free
+[Info] Check: DIFS = 4ms ?
+[Info] Channel is free more than 4ms
+[Info] Collision detected
+[Info] Package retransmission attempt... attempt nr: 6
+[Info] Permission for retransmission
+[Info] CRP time
+[Info] Channel is free
+[Info] Check: DIFS = 4ms ?
+[Info] Channel is free more than 4ms
+[Info] Collision detected
+[Info] Package retransmission attempt... attempt nr: 7
+[Info] Permission for retransmission
+[Info] CRP time
+[Info] Channel is free
+[Info] Check: DIFS = 4ms ?
+[Info] Channel is free more than 4ms
+[Info] Collision detected
+[Info] Package retransmission attempt... attempt nr: 8
+[Info] Permission for retransmission
+[Info] CRP time
+[Info] Channel is free
+[Info] Check: DIFS = 4ms ?
+[Info] Channel is free more than 4ms
+[Info] Collision detected
+[Info] Package retransmission attempt... attempt nr: 9
+[Info] Permission for retransmission
+[Info] CRP time
+[Info] Channel is free
+[Info] Check: DIFS = 4ms ?
+[Info] Channel is free more than 4ms
+[Info] Collision detected
+[Info] Package retransmission attempt... attempt nr: 10
+[Info] Permission for retransmission
+[Info] CRP time
+[Info] Channel is free
+[Info] Check: DIFS = 4ms ?
+[Info] Channel is free more than 4ms
+[Info] Collision detected
+[Info] Package retransmission attempt... attempt nr: 11
+[Info] Unable to retransmit again
+[Info] Packages lost: 2
 [Info] Release the channel
 [Info] Remove package from FIFO queue
 [Info] If there is another packet in the queue: go to state ChannelListenning, if no: end the transmission 
@@ -137,11 +689,80 @@
 [Info] Channel is free
 [Info] Check: DIFS = 4ms ?
 [Info] Channel is free more than 4ms
-[Info] No collision detected
-[Info] Package is sending, wait for ACK
-[Info] Check transmission of package (with ACK) time: CTPk + CTIZ
-[Info] ACK successfully sent
-[Info] Packages successfully sent: 1
+[Info] Collision detected
+[Info] Package retransmission attempt... attempt nr: 1
+[Info] Permission for retransmission
+[Info] CRP time
+[Info] Channel is free
+[Info] Check: DIFS = 4ms ?
+[Info] Channel is free more than 4ms
+[Info] Collision detected
+[Info] Package retransmission attempt... attempt nr: 2
+[Info] Permission for retransmission
+[Info] CRP time
+[Info] Channel is free
+[Info] Check: DIFS = 4ms ?
+[Info] Channel is free more than 4ms
+[Info] Collision detected
+[Info] Package retransmission attempt... attempt nr: 3
+[Info] Permission for retransmission
+[Info] CRP time
+[Info] Channel is free
+[Info] Check: DIFS = 4ms ?
+[Info] Channel is free more than 4ms
+[Info] Collision detected
+[Info] Package retransmission attempt... attempt nr: 4
+[Info] Permission for retransmission
+[Info] CRP time
+[Info] Channel is free
+[Info] Check: DIFS = 4ms ?
+[Info] Channel is free more than 4ms
+[Info] Collision detected
+[Info] Package retransmission attempt... attempt nr: 5
+[Info] Permission for retransmission
+[Info] CRP time
+[Info] Channel is free
+[Info] Check: DIFS = 4ms ?
+[Info] Channel is free more than 4ms
+[Info] Collision detected
+[Info] Package retransmission attempt... attempt nr: 6
+[Info] Permission for retransmission
+[Info] CRP time
+[Info] Channel is free
+[Info] Check: DIFS = 4ms ?
+[Info] Channel is free more than 4ms
+[Info] Collision detected
+[Info] Package retransmission attempt... attempt nr: 7
+[Info] Permission for retransmission
+[Info] CRP time
+[Info] Channel is free
+[Info] Check: DIFS = 4ms ?
+[Info] Channel is free more than 4ms
+[Info] Collision detected
+[Info] Package retransmission attempt... attempt nr: 8
+[Info] Permission for retransmission
+[Info] CRP time
+[Info] Channel is free
+[Info] Check: DIFS = 4ms ?
+[Info] Channel is free more than 4ms
+[Info] Collision detected
+[Info] Package retransmission attempt... attempt nr: 9
+[Info] Permission for retransmission
+[Info] CRP time
+[Info] Channel is free
+[Info] Check: DIFS = 4ms ?
+[Info] Channel is free more than 4ms
+[Info] Collision detected
+[Info] Package retransmission attempt... attempt nr: 10
+[Info] Permission for retransmission
+[Info] CRP time
+[Info] Channel is free
+[Info] Check: DIFS = 4ms ?
+[Info] Channel is free more than 4ms
+[Info] Collision detected
+[Info] Package retransmission attempt... attempt nr: 11
+[Info] Unable to retransmit again
+[Info] Packages lost: 1
 [Info] Release the channel
 [Info] Remove package from FIFO queue
 [Info] If there is another packet in the queue: go to state ChannelListenning, if no: end the transmission 
@@ -151,11 +772,80 @@
 [Info] Channel is free
 [Info] Check: DIFS = 4ms ?
 [Info] Channel is free more than 4ms
-[Info] No collision detected
-[Info] Package is sending, wait for ACK
-[Info] Check transmission of package (with ACK) time: CTPk + CTIZ
-[Info] ACK successfully sent
-[Info] Packages successfully sent: 2
+[Info] Collision detected
+[Info] Package retransmission attempt... attempt nr: 1
+[Info] Permission for retransmission
+[Info] CRP time
+[Info] Channel is free
+[Info] Check: DIFS = 4ms ?
+[Info] Channel is free more than 4ms
+[Info] Collision detected
+[Info] Package retransmission attempt... attempt nr: 2
+[Info] Permission for retransmission
+[Info] CRP time
+[Info] Channel is free
+[Info] Check: DIFS = 4ms ?
+[Info] Channel is free more than 4ms
+[Info] Collision detected
+[Info] Package retransmission attempt... attempt nr: 3
+[Info] Permission for retransmission
+[Info] CRP time
+[Info] Channel is free
+[Info] Check: DIFS = 4ms ?
+[Info] Channel is free more than 4ms
+[Info] Collision detected
+[Info] Package retransmission attempt... attempt nr: 4
+[Info] Permission for retransmission
+[Info] CRP time
+[Info] Channel is free
+[Info] Check: DIFS = 4ms ?
+[Info] Channel is free more than 4ms
+[Info] Collision detected
+[Info] Package retransmission attempt... attempt nr: 5
+[Info] Permission for retransmission
+[Info] CRP time
+[Info] Channel is free
+[Info] Check: DIFS = 4ms ?
+[Info] Channel is free more than 4ms
+[Info] Collision detected
+[Info] Package retransmission attempt... attempt nr: 6
+[Info] Permission for retransmission
+[Info] CRP time
+[Info] Channel is free
+[Info] Check: DIFS = 4ms ?
+[Info] Channel is free more than 4ms
+[Info] Collision detected
+[Info] Package retransmission attempt... attempt nr: 7
+[Info] Permission for retransmission
+[Info] CRP time
+[Info] Channel is free
+[Info] Check: DIFS = 4ms ?
+[Info] Channel is free more than 4ms
+[Info] Collision detected
+[Info] Package retransmission attempt... attempt nr: 8
+[Info] Permission for retransmission
+[Info] CRP time
+[Info] Channel is free
+[Info] Check: DIFS = 4ms ?
+[Info] Channel is free more than 4ms
+[Info] Collision detected
+[Info] Package retransmission attempt... attempt nr: 9
+[Info] Permission for retransmission
+[Info] CRP time
+[Info] Channel is free
+[Info] Check: DIFS = 4ms ?
+[Info] Channel is free more than 4ms
+[Info] Collision detected
+[Info] Package retransmission attempt... attempt nr: 10
+[Info] Permission for retransmission
+[Info] CRP time
+[Info] Channel is free
+[Info] Check: DIFS = 4ms ?
+[Info] Channel is free more than 4ms
+[Info] Collision detected
+[Info] Package retransmission attempt... attempt nr: 11
+[Info] Unable to retransmit again
+[Info] Packages lost: 2
 [Info] Release the channel
 [Info] Remove package from FIFO queue
 [Info] If there is another packet in the queue: go to state ChannelListenning, if no: end the transmission 
@@ -165,11 +855,80 @@
 [Info] Channel is free
 [Info] Check: DIFS = 4ms ?
 [Info] Channel is free more than 4ms
-[Info] No collision detected
-[Info] Package is sending, wait for ACK
-[Info] Check transmission of package (with ACK) time: CTPk + CTIZ
-[Info] ACK successfully sent
-[Info] Packages successfully sent: 1
+[Info] Collision detected
+[Info] Package retransmission attempt... attempt nr: 1
+[Info] Permission for retransmission
+[Info] CRP time
+[Info] Channel is free
+[Info] Check: DIFS = 4ms ?
+[Info] Channel is free more than 4ms
+[Info] Collision detected
+[Info] Package retransmission attempt... attempt nr: 2
+[Info] Permission for retransmission
+[Info] CRP time
+[Info] Channel is free
+[Info] Check: DIFS = 4ms ?
+[Info] Channel is free more than 4ms
+[Info] Collision detected
+[Info] Package retransmission attempt... attempt nr: 3
+[Info] Permission for retransmission
+[Info] CRP time
+[Info] Channel is free
+[Info] Check: DIFS = 4ms ?
+[Info] Channel is free more than 4ms
+[Info] Collision detected
+[Info] Package retransmission attempt... attempt nr: 4
+[Info] Permission for retransmission
+[Info] CRP time
+[Info] Channel is free
+[Info] Check: DIFS = 4ms ?
+[Info] Channel is free more than 4ms
+[Info] Collision detected
+[Info] Package retransmission attempt... attempt nr: 5
+[Info] Permission for retransmission
+[Info] CRP time
+[Info] Channel is free
+[Info] Check: DIFS = 4ms ?
+[Info] Channel is free more than 4ms
+[Info] Collision detected
+[Info] Package retransmission attempt... attempt nr: 6
+[Info] Permission for retransmission
+[Info] CRP time
+[Info] Channel is free
+[Info] Check: DIFS = 4ms ?
+[Info] Channel is free more than 4ms
+[Info] Collision detected
+[Info] Package retransmission attempt... attempt nr: 7
+[Info] Permission for retransmission
+[Info] CRP time
+[Info] Channel is free
+[Info] Check: DIFS = 4ms ?
+[Info] Channel is free more than 4ms
+[Info] Collision detected
+[Info] Package retransmission attempt... attempt nr: 8
+[Info] Permission for retransmission
+[Info] CRP time
+[Info] Channel is free
+[Info] Check: DIFS = 4ms ?
+[Info] Channel is free more than 4ms
+[Info] Collision detected
+[Info] Package retransmission attempt... attempt nr: 9
+[Info] Permission for retransmission
+[Info] CRP time
+[Info] Channel is free
+[Info] Check: DIFS = 4ms ?
+[Info] Channel is free more than 4ms
+[Info] Collision detected
+[Info] Package retransmission attempt... attempt nr: 10
+[Info] Permission for retransmission
+[Info] CRP time
+[Info] Channel is free
+[Info] Check: DIFS = 4ms ?
+[Info] Channel is free more than 4ms
+[Info] Collision detected
+[Info] Package retransmission attempt... attempt nr: 11
+[Info] Unable to retransmit again
+[Info] Packages lost: 1
 [Info] Release the channel
 [Info] Remove package from FIFO queue
 [Info] If there is another packet in the queue: go to state ChannelListenning, if no: end the transmission 
@@ -179,11 +938,80 @@
 [Info] Channel is free
 [Info] Check: DIFS = 4ms ?
 [Info] Channel is free more than 4ms
-[Info] No collision detected
-[Info] Package is sending, wait for ACK
-[Info] Check transmission of package (with ACK) time: CTPk + CTIZ
-[Info] ACK successfully sent
-[Info] Packages successfully sent: 2
+[Info] Collision detected
+[Info] Package retransmission attempt... attempt nr: 1
+[Info] Permission for retransmission
+[Info] CRP time
+[Info] Channel is free
+[Info] Check: DIFS = 4ms ?
+[Info] Channel is free more than 4ms
+[Info] Collision detected
+[Info] Package retransmission attempt... attempt nr: 2
+[Info] Permission for retransmission
+[Info] CRP time
+[Info] Channel is free
+[Info] Check: DIFS = 4ms ?
+[Info] Channel is free more than 4ms
+[Info] Collision detected
+[Info] Package retransmission attempt... attempt nr: 3
+[Info] Permission for retransmission
+[Info] CRP time
+[Info] Channel is free
+[Info] Check: DIFS = 4ms ?
+[Info] Channel is free more than 4ms
+[Info] Collision detected
+[Info] Package retransmission attempt... attempt nr: 4
+[Info] Permission for retransmission
+[Info] CRP time
+[Info] Channel is free
+[Info] Check: DIFS = 4ms ?
+[Info] Channel is free more than 4ms
+[Info] Collision detected
+[Info] Package retransmission attempt... attempt nr: 5
+[Info] Permission for retransmission
+[Info] CRP time
+[Info] Channel is free
+[Info] Check: DIFS = 4ms ?
+[Info] Channel is free more than 4ms
+[Info] Collision detected
+[Info] Package retransmission attempt... attempt nr: 6
+[Info] Permission for retransmission
+[Info] CRP time
+[Info] Channel is free
+[Info] Check: DIFS = 4ms ?
+[Info] Channel is free more than 4ms
+[Info] Collision detected
+[Info] Package retransmission attempt... attempt nr: 7
+[Info] Permission for retransmission
+[Info] CRP time
+[Info] Channel is free
+[Info] Check: DIFS = 4ms ?
+[Info] Channel is free more than 4ms
+[Info] Collision detected
+[Info] Package retransmission attempt... attempt nr: 8
+[Info] Permission for retransmission
+[Info] CRP time
+[Info] Channel is free
+[Info] Check: DIFS = 4ms ?
+[Info] Channel is free more than 4ms
+[Info] Collision detected
+[Info] Package retransmission attempt... attempt nr: 9
+[Info] Permission for retransmission
+[Info] CRP time
+[Info] Channel is free
+[Info] Check: DIFS = 4ms ?
+[Info] Channel is free more than 4ms
+[Info] Collision detected
+[Info] Package retransmission attempt... attempt nr: 10
+[Info] Permission for retransmission
+[Info] CRP time
+[Info] Channel is free
+[Info] Check: DIFS = 4ms ?
+[Info] Channel is free more than 4ms
+[Info] Collision detected
+[Info] Package retransmission attempt... attempt nr: 11
+[Info] Unable to retransmit again
+[Info] Packages lost: 2
 [Info] Release the channel
 [Info] Remove package from FIFO queue
 [Info] If there is another packet in the queue: go to state ChannelListenning, if no: end the transmission 
@@ -193,11 +1021,80 @@
 [Info] Channel is free
 [Info] Check: DIFS = 4ms ?
 [Info] Channel is free more than 4ms
-[Info] No collision detected
-[Info] Package is sending, wait for ACK
-[Info] Check transmission of package (with ACK) time: CTPk + CTIZ
-[Info] ACK successfully sent
-[Info] Packages successfully sent: 1
+[Info] Collision detected
+[Info] Package retransmission attempt... attempt nr: 1
+[Info] Permission for retransmission
+[Info] CRP time
+[Info] Channel is free
+[Info] Check: DIFS = 4ms ?
+[Info] Channel is free more than 4ms
+[Info] Collision detected
+[Info] Package retransmission attempt... attempt nr: 2
+[Info] Permission for retransmission
+[Info] CRP time
+[Info] Channel is free
+[Info] Check: DIFS = 4ms ?
+[Info] Channel is free more than 4ms
+[Info] Collision detected
+[Info] Package retransmission attempt... attempt nr: 3
+[Info] Permission for retransmission
+[Info] CRP time
+[Info] Channel is free
+[Info] Check: DIFS = 4ms ?
+[Info] Channel is free more than 4ms
+[Info] Collision detected
+[Info] Package retransmission attempt... attempt nr: 4
+[Info] Permission for retransmission
+[Info] CRP time
+[Info] Channel is free
+[Info] Check: DIFS = 4ms ?
+[Info] Channel is free more than 4ms
+[Info] Collision detected
+[Info] Package retransmission attempt... attempt nr: 5
+[Info] Permission for retransmission
+[Info] CRP time
+[Info] Channel is free
+[Info] Check: DIFS = 4ms ?
+[Info] Channel is free more than 4ms
+[Info] Collision detected
+[Info] Package retransmission attempt... attempt nr: 6
+[Info] Permission for retransmission
+[Info] CRP time
+[Info] Channel is free
+[Info] Check: DIFS = 4ms ?
+[Info] Channel is free more than 4ms
+[Info] Collision detected
+[Info] Package retransmission attempt... attempt nr: 7
+[Info] Permission for retransmission
+[Info] CRP time
+[Info] Channel is free
+[Info] Check: DIFS = 4ms ?
+[Info] Channel is free more than 4ms
+[Info] Collision detected
+[Info] Package retransmission attempt... attempt nr: 8
+[Info] Permission for retransmission
+[Info] CRP time
+[Info] Channel is free
+[Info] Check: DIFS = 4ms ?
+[Info] Channel is free more than 4ms
+[Info] Collision detected
+[Info] Package retransmission attempt... attempt nr: 9
+[Info] Permission for retransmission
+[Info] CRP time
+[Info] Channel is free
+[Info] Check: DIFS = 4ms ?
+[Info] Channel is free more than 4ms
+[Info] Collision detected
+[Info] Package retransmission attempt... attempt nr: 10
+[Info] Permission for retransmission
+[Info] CRP time
+[Info] Channel is free
+[Info] Check: DIFS = 4ms ?
+[Info] Channel is free more than 4ms
+[Info] Collision detected
+[Info] Package retransmission attempt... attempt nr: 11
+[Info] Unable to retransmit again
+[Info] Packages lost: 1
 [Info] Release the channel
 [Info] Remove package from FIFO queue
 [Info] If there is another packet in the queue: go to state ChannelListenning, if no: end the transmission 
@@ -207,11 +1104,80 @@
 [Info] Channel is free
 [Info] Check: DIFS = 4ms ?
 [Info] Channel is free more than 4ms
-[Info] No collision detected
-[Info] Package is sending, wait for ACK
-[Info] Check transmission of package (with ACK) time: CTPk + CTIZ
-[Info] ACK successfully sent
-[Info] Packages successfully sent: 2
+[Info] Collision detected
+[Info] Package retransmission attempt... attempt nr: 1
+[Info] Permission for retransmission
+[Info] CRP time
+[Info] Channel is free
+[Info] Check: DIFS = 4ms ?
+[Info] Channel is free more than 4ms
+[Info] Collision detected
+[Info] Package retransmission attempt... attempt nr: 2
+[Info] Permission for retransmission
+[Info] CRP time
+[Info] Channel is free
+[Info] Check: DIFS = 4ms ?
+[Info] Channel is free more than 4ms
+[Info] Collision detected
+[Info] Package retransmission attempt... attempt nr: 3
+[Info] Permission for retransmission
+[Info] CRP time
+[Info] Channel is free
+[Info] Check: DIFS = 4ms ?
+[Info] Channel is free more than 4ms
+[Info] Collision detected
+[Info] Package retransmission attempt... attempt nr: 4
+[Info] Permission for retransmission
+[Info] CRP time
+[Info] Channel is free
+[Info] Check: DIFS = 4ms ?
+[Info] Channel is free more than 4ms
+[Info] Collision detected
+[Info] Package retransmission attempt... attempt nr: 5
+[Info] Permission for retransmission
+[Info] CRP time
+[Info] Channel is free
+[Info] Check: DIFS = 4ms ?
+[Info] Channel is free more than 4ms
+[Info] Collision detected
+[Info] Package retransmission attempt... attempt nr: 6
+[Info] Permission for retransmission
+[Info] CRP time
+[Info] Channel is free
+[Info] Check: DIFS = 4ms ?
+[Info] Channel is free more than 4ms
+[Info] Collision detected
+[Info] Package retransmission attempt... attempt nr: 7
+[Info] Permission for retransmission
+[Info] CRP time
+[Info] Channel is free
+[Info] Check: DIFS = 4ms ?
+[Info] Channel is free more than 4ms
+[Info] Collision detected
+[Info] Package retransmission attempt... attempt nr: 8
+[Info] Permission for retransmission
+[Info] CRP time
+[Info] Channel is free
+[Info] Check: DIFS = 4ms ?
+[Info] Channel is free more than 4ms
+[Info] Collision detected
+[Info] Package retransmission attempt... attempt nr: 9
+[Info] Permission for retransmission
+[Info] CRP time
+[Info] Channel is free
+[Info] Check: DIFS = 4ms ?
+[Info] Channel is free more than 4ms
+[Info] Collision detected
+[Info] Package retransmission attempt... attempt nr: 10
+[Info] Permission for retransmission
+[Info] CRP time
+[Info] Channel is free
+[Info] Check: DIFS = 4ms ?
+[Info] Channel is free more than 4ms
+[Info] Collision detected
+[Info] Package retransmission attempt... attempt nr: 11
+[Info] Unable to retransmit again
+[Info] Packages lost: 2
 [Info] Release the channel
 [Info] Remove package from FIFO queue
 [Info] If there is another packet in the queue: go to state ChannelListenning, if no: end the transmission 
@@ -221,11 +1187,80 @@
 [Info] Channel is free
 [Info] Check: DIFS = 4ms ?
 [Info] Channel is free more than 4ms
-[Info] No collision detected
-[Info] Package is sending, wait for ACK
-[Info] Check transmission of package (with ACK) time: CTPk + CTIZ
-[Info] ACK successfully sent
-[Info] Packages successfully sent: 1
+[Info] Collision detected
+[Info] Package retransmission attempt... attempt nr: 1
+[Info] Permission for retransmission
+[Info] CRP time
+[Info] Channel is free
+[Info] Check: DIFS = 4ms ?
+[Info] Channel is free more than 4ms
+[Info] Collision detected
+[Info] Package retransmission attempt... attempt nr: 2
+[Info] Permission for retransmission
+[Info] CRP time
+[Info] Channel is free
+[Info] Check: DIFS = 4ms ?
+[Info] Channel is free more than 4ms
+[Info] Collision detected
+[Info] Package retransmission attempt... attempt nr: 3
+[Info] Permission for retransmission
+[Info] CRP time
+[Info] Channel is free
+[Info] Check: DIFS = 4ms ?
+[Info] Channel is free more than 4ms
+[Info] Collision detected
+[Info] Package retransmission attempt... attempt nr: 4
+[Info] Permission for retransmission
+[Info] CRP time
+[Info] Channel is free
+[Info] Check: DIFS = 4ms ?
+[Info] Channel is free more than 4ms
+[Info] Collision detected
+[Info] Package retransmission attempt... attempt nr: 5
+[Info] Permission for retransmission
+[Info] CRP time
+[Info] Channel is free
+[Info] Check: DIFS = 4ms ?
+[Info] Channel is free more than 4ms
+[Info] Collision detected
+[Info] Package retransmission attempt... attempt nr: 6
+[Info] Permission for retransmission
+[Info] CRP time
+[Info] Channel is free
+[Info] Check: DIFS = 4ms ?
+[Info] Channel is free more than 4ms
+[Info] Collision detected
+[Info] Package retransmission attempt... attempt nr: 7
+[Info] Permission for retransmission
+[Info] CRP time
+[Info] Channel is free
+[Info] Check: DIFS = 4ms ?
+[Info] Channel is free more than 4ms
+[Info] Collision detected
+[Info] Package retransmission attempt... attempt nr: 8
+[Info] Permission for retransmission
+[Info] CRP time
+[Info] Channel is free
+[Info] Check: DIFS = 4ms ?
+[Info] Channel is free more than 4ms
+[Info] Collision detected
+[Info] Package retransmission attempt... attempt nr: 9
+[Info] Permission for retransmission
+[Info] CRP time
+[Info] Channel is free
+[Info] Check: DIFS = 4ms ?
+[Info] Channel is free more than 4ms
+[Info] Collision detected
+[Info] Package retransmission attempt... attempt nr: 10
+[Info] Permission for retransmission
+[Info] CRP time
+[Info] Channel is free
+[Info] Check: DIFS = 4ms ?
+[Info] Channel is free more than 4ms
+[Info] Collision detected
+[Info] Package retransmission attempt... attempt nr: 11
+[Info] Unable to retransmit again
+[Info] Packages lost: 1
 [Info] Release the channel
 [Info] Remove package from FIFO queue
 [Info] If there is another packet in the queue: go to state ChannelListenning, if no: end the transmission 
@@ -235,11 +1270,80 @@
 [Info] Channel is free
 [Info] Check: DIFS = 4ms ?
 [Info] Channel is free more than 4ms
-[Info] No collision detected
-[Info] Package is sending, wait for ACK
-[Info] Check transmission of package (with ACK) time: CTPk + CTIZ
-[Info] ACK successfully sent
-[Info] Packages successfully sent: 2
+[Info] Collision detected
+[Info] Package retransmission attempt... attempt nr: 1
+[Info] Permission for retransmission
+[Info] CRP time
+[Info] Channel is free
+[Info] Check: DIFS = 4ms ?
+[Info] Channel is free more than 4ms
+[Info] Collision detected
+[Info] Package retransmission attempt... attempt nr: 2
+[Info] Permission for retransmission
+[Info] CRP time
+[Info] Channel is free
+[Info] Check: DIFS = 4ms ?
+[Info] Channel is free more than 4ms
+[Info] Collision detected
+[Info] Package retransmission attempt... attempt nr: 3
+[Info] Permission for retransmission
+[Info] CRP time
+[Info] Channel is free
+[Info] Check: DIFS = 4ms ?
+[Info] Channel is free more than 4ms
+[Info] Collision detected
+[Info] Package retransmission attempt... attempt nr: 4
+[Info] Permission for retransmission
+[Info] CRP time
+[Info] Channel is free
+[Info] Check: DIFS = 4ms ?
+[Info] Channel is free more than 4ms
+[Info] Collision detected
+[Info] Package retransmission attempt... attempt nr: 5
+[Info] Permission for retransmission
+[Info] CRP time
+[Info] Channel is free
+[Info] Check: DIFS = 4ms ?
+[Info] Channel is free more than 4ms
+[Info] Collision detected
+[Info] Package retransmission attempt... attempt nr: 6
+[Info] Permission for retransmission
+[Info] CRP time
+[Info] Channel is free
+[Info] Check: DIFS = 4ms ?
+[Info] Channel is free more than 4ms
+[Info] Collision detected
+[Info] Package retransmission attempt... attempt nr: 7
+[Info] Permission for retransmission
+[Info] CRP time
+[Info] Channel is free
+[Info] Check: DIFS = 4ms ?
+[Info] Channel is free more than 4ms
+[Info] Collision detected
+[Info] Package retransmission attempt... attempt nr: 8
+[Info] Permission for retransmission
+[Info] CRP time
+[Info] Channel is free
+[Info] Check: DIFS = 4ms ?
+[Info] Channel is free more than 4ms
+[Info] Collision detected
+[Info] Package retransmission attempt... attempt nr: 9
+[Info] Permission for retransmission
+[Info] CRP time
+[Info] Channel is free
+[Info] Check: DIFS = 4ms ?
+[Info] Channel is free more than 4ms
+[Info] Collision detected
+[Info] Package retransmission attempt... attempt nr: 10
+[Info] Permission for retransmission
+[Info] CRP time
+[Info] Channel is free
+[Info] Check: DIFS = 4ms ?
+[Info] Channel is free more than 4ms
+[Info] Collision detected
+[Info] Package retransmission attempt... attempt nr: 11
+[Info] Unable to retransmit again
+[Info] Packages lost: 2
 [Info] Release the channel
 [Info] Remove package from FIFO queue
 [Info] If there is another packet in the queue: go to state ChannelListenning, if no: end the transmission 
@@ -249,11 +1353,80 @@
 [Info] Channel is free
 [Info] Check: DIFS = 4ms ?
 [Info] Channel is free more than 4ms
-[Info] No collision detected
-[Info] Package is sending, wait for ACK
-[Info] Check transmission of package (with ACK) time: CTPk + CTIZ
-[Info] ACK successfully sent
-[Info] Packages successfully sent: 1
+[Info] Collision detected
+[Info] Package retransmission attempt... attempt nr: 1
+[Info] Permission for retransmission
+[Info] CRP time
+[Info] Channel is free
+[Info] Check: DIFS = 4ms ?
+[Info] Channel is free more than 4ms
+[Info] Collision detected
+[Info] Package retransmission attempt... attempt nr: 2
+[Info] Permission for retransmission
+[Info] CRP time
+[Info] Channel is free
+[Info] Check: DIFS = 4ms ?
+[Info] Channel is free more than 4ms
+[Info] Collision detected
+[Info] Package retransmission attempt... attempt nr: 3
+[Info] Permission for retransmission
+[Info] CRP time
+[Info] Channel is free
+[Info] Check: DIFS = 4ms ?
+[Info] Channel is free more than 4ms
+[Info] Collision detected
+[Info] Package retransmission attempt... attempt nr: 4
+[Info] Permission for retransmission
+[Info] CRP time
+[Info] Channel is free
+[Info] Check: DIFS = 4ms ?
+[Info] Channel is free more than 4ms
+[Info] Collision detected
+[Info] Package retransmission attempt... attempt nr: 5
+[Info] Permission for retransmission
+[Info] CRP time
+[Info] Channel is free
+[Info] Check: DIFS = 4ms ?
+[Info] Channel is free more than 4ms
+[Info] Collision detected
+[Info] Package retransmission attempt... attempt nr: 6
+[Info] Permission for retransmission
+[Info] CRP time
+[Info] Channel is free
+[Info] Check: DIFS = 4ms ?
+[Info] Channel is free more than 4ms
+[Info] Collision detected
+[Info] Package retransmission attempt... attempt nr: 7
+[Info] Permission for retransmission
+[Info] CRP time
+[Info] Channel is free
+[Info] Check: DIFS = 4ms ?
+[Info] Channel is free more than 4ms
+[Info] Collision detected
+[Info] Package retransmission attempt... attempt nr: 8
+[Info] Permission for retransmission
+[Info] CRP time
+[Info] Channel is free
+[Info] Check: DIFS = 4ms ?
+[Info] Channel is free more than 4ms
+[Info] Collision detected
+[Info] Package retransmission attempt... attempt nr: 9
+[Info] Permission for retransmission
+[Info] CRP time
+[Info] Channel is free
+[Info] Check: DIFS = 4ms ?
+[Info] Channel is free more than 4ms
+[Info] Collision detected
+[Info] Package retransmission attempt... attempt nr: 10
+[Info] Permission for retransmission
+[Info] CRP time
+[Info] Channel is free
+[Info] Check: DIFS = 4ms ?
+[Info] Channel is free more than 4ms
+[Info] Collision detected
+[Info] Package retransmission attempt... attempt nr: 11
+[Info] Unable to retransmit again
+[Info] Packages lost: 1
 [Info] Release the channel
 [Info] Remove package from FIFO queue
 [Info] If there is another packet in the queue: go to state ChannelListenning, if no: end the transmission 
@@ -263,11 +1436,80 @@
 [Info] Channel is free
 [Info] Check: DIFS = 4ms ?
 [Info] Channel is free more than 4ms
-[Info] No collision detected
-[Info] Package is sending, wait for ACK
-[Info] Check transmission of package (with ACK) time: CTPk + CTIZ
-[Info] ACK successfully sent
-[Info] Packages successfully sent: 2
+[Info] Collision detected
+[Info] Package retransmission attempt... attempt nr: 1
+[Info] Permission for retransmission
+[Info] CRP time
+[Info] Channel is free
+[Info] Check: DIFS = 4ms ?
+[Info] Channel is free more than 4ms
+[Info] Collision detected
+[Info] Package retransmission attempt... attempt nr: 2
+[Info] Permission for retransmission
+[Info] CRP time
+[Info] Channel is free
+[Info] Check: DIFS = 4ms ?
+[Info] Channel is free more than 4ms
+[Info] Collision detected
+[Info] Package retransmission attempt... attempt nr: 3
+[Info] Permission for retransmission
+[Info] CRP time
+[Info] Channel is free
+[Info] Check: DIFS = 4ms ?
+[Info] Channel is free more than 4ms
+[Info] Collision detected
+[Info] Package retransmission attempt... attempt nr: 4
+[Info] Permission for retransmission
+[Info] CRP time
+[Info] Channel is free
+[Info] Check: DIFS = 4ms ?
+[Info] Channel is free more than 4ms
+[Info] Collision detected
+[Info] Package retransmission attempt... attempt nr: 5
+[Info] Permission for retransmission
+[Info] CRP time
+[Info] Channel is free
+[Info] Check: DIFS = 4ms ?
+[Info] Channel is free more than 4ms
+[Info] Collision detected
+[Info] Package retransmission attempt... attempt nr: 6
+[Info] Permission for retransmission
+[Info] CRP time
+[Info] Channel is free
+[Info] Check: DIFS = 4ms ?
+[Info] Channel is free more than 4ms
+[Info] Collision detected
+[Info] Package retransmission attempt... attempt nr: 7
+[Info] Permission for retransmission
+[Info] CRP time
+[Info] Channel is free
+[Info] Check: DIFS = 4ms ?
+[Info] Channel is free more than 4ms
+[Info] Collision detected
+[Info] Package retransmission attempt... attempt nr: 8
+[Info] Permission for retransmission
+[Info] CRP time
+[Info] Channel is free
+[Info] Check: DIFS = 4ms ?
+[Info] Channel is free more than 4ms
+[Info] Collision detected
+[Info] Package retransmission attempt... attempt nr: 9
+[Info] Permission for retransmission
+[Info] CRP time
+[Info] Channel is free
+[Info] Check: DIFS = 4ms ?
+[Info] Channel is free more than 4ms
+[Info] Collision detected
+[Info] Package retransmission attempt... attempt nr: 10
+[Info] Permission for retransmission
+[Info] CRP time
+[Info] Channel is free
+[Info] Check: DIFS = 4ms ?
+[Info] Channel is free more than 4ms
+[Info] Collision detected
+[Info] Package retransmission attempt... attempt nr: 11
+[Info] Unable to retransmit again
+[Info] Packages lost: 2
 [Info] Release the channel
 [Info] Remove package from FIFO queue
 [Info] If there is another packet in the queue: go to state ChannelListenning, if no: end the transmission 
@@ -277,11 +1519,80 @@
 [Info] Channel is free
 [Info] Check: DIFS = 4ms ?
 [Info] Channel is free more than 4ms
-[Info] No collision detected
-[Info] Package is sending, wait for ACK
-[Info] Check transmission of package (with ACK) time: CTPk + CTIZ
-[Info] ACK successfully sent
-[Info] Packages successfully sent: 1
+[Info] Collision detected
+[Info] Package retransmission attempt... attempt nr: 1
+[Info] Permission for retransmission
+[Info] CRP time
+[Info] Channel is free
+[Info] Check: DIFS = 4ms ?
+[Info] Channel is free more than 4ms
+[Info] Collision detected
+[Info] Package retransmission attempt... attempt nr: 2
+[Info] Permission for retransmission
+[Info] CRP time
+[Info] Channel is free
+[Info] Check: DIFS = 4ms ?
+[Info] Channel is free more than 4ms
+[Info] Collision detected
+[Info] Package retransmission attempt... attempt nr: 3
+[Info] Permission for retransmission
+[Info] CRP time
+[Info] Channel is free
+[Info] Check: DIFS = 4ms ?
+[Info] Channel is free more than 4ms
+[Info] Collision detected
+[Info] Package retransmission attempt... attempt nr: 4
+[Info] Permission for retransmission
+[Info] CRP time
+[Info] Channel is free
+[Info] Check: DIFS = 4ms ?
+[Info] Channel is free more than 4ms
+[Info] Collision detected
+[Info] Package retransmission attempt... attempt nr: 5
+[Info] Permission for retransmission
+[Info] CRP time
+[Info] Channel is free
+[Info] Check: DIFS = 4ms ?
+[Info] Channel is free more than 4ms
+[Info] Collision detected
+[Info] Package retransmission attempt... attempt nr: 6
+[Info] Permission for retransmission
+[Info] CRP time
+[Info] Channel is free
+[Info] Check: DIFS = 4ms ?
+[Info] Channel is free more than 4ms
+[Info] Collision detected
+[Info] Package retransmission attempt... attempt nr: 7
+[Info] Permission for retransmission
+[Info] CRP time
+[Info] Channel is free
+[Info] Check: DIFS = 4ms ?
+[Info] Channel is free more than 4ms
+[Info] Collision detected
+[Info] Package retransmission attempt... attempt nr: 8
+[Info] Permission for retransmission
+[Info] CRP time
+[Info] Channel is free
+[Info] Check: DIFS = 4ms ?
+[Info] Channel is free more than 4ms
+[Info] Collision detected
+[Info] Package retransmission attempt... attempt nr: 9
+[Info] Permission for retransmission
+[Info] CRP time
+[Info] Channel is free
+[Info] Check: DIFS = 4ms ?
+[Info] Channel is free more than 4ms
+[Info] Collision detected
+[Info] Package retransmission attempt... attempt nr: 10
+[Info] Permission for retransmission
+[Info] CRP time
+[Info] Channel is free
+[Info] Check: DIFS = 4ms ?
+[Info] Channel is free more than 4ms
+[Info] Collision detected
+[Info] Package retransmission attempt... attempt nr: 11
+[Info] Unable to retransmit again
+[Info] Packages lost: 1
 [Info] Release the channel
 [Info] Remove package from FIFO queue
 [Info] If there is another packet in the queue: go to state ChannelListenning, if no: end the transmission 
@@ -291,11 +1602,80 @@
 [Info] Channel is free
 [Info] Check: DIFS = 4ms ?
 [Info] Channel is free more than 4ms
-[Info] No collision detected
-[Info] Package is sending, wait for ACK
-[Info] Check transmission of package (with ACK) time: CTPk + CTIZ
-[Info] ACK successfully sent
-[Info] Packages successfully sent: 2
+[Info] Collision detected
+[Info] Package retransmission attempt... attempt nr: 1
+[Info] Permission for retransmission
+[Info] CRP time
+[Info] Channel is free
+[Info] Check: DIFS = 4ms ?
+[Info] Channel is free more than 4ms
+[Info] Collision detected
+[Info] Package retransmission attempt... attempt nr: 2
+[Info] Permission for retransmission
+[Info] CRP time
+[Info] Channel is free
+[Info] Check: DIFS = 4ms ?
+[Info] Channel is free more than 4ms
+[Info] Collision detected
+[Info] Package retransmission attempt... attempt nr: 3
+[Info] Permission for retransmission
+[Info] CRP time
+[Info] Channel is free
+[Info] Check: DIFS = 4ms ?
+[Info] Channel is free more than 4ms
+[Info] Collision detected
+[Info] Package retransmission attempt... attempt nr: 4
+[Info] Permission for retransmission
+[Info] CRP time
+[Info] Channel is free
+[Info] Check: DIFS = 4ms ?
+[Info] Channel is free more than 4ms
+[Info] Collision detected
+[Info] Package retransmission attempt... attempt nr: 5
+[Info] Permission for retransmission
+[Info] CRP time
+[Info] Channel is free
+[Info] Check: DIFS = 4ms ?
+[Info] Channel is free more than 4ms
+[Info] Collision detected
+[Info] Package retransmission attempt... attempt nr: 6
+[Info] Permission for retransmission
+[Info] CRP time
+[Info] Channel is free
+[Info] Check: DIFS = 4ms ?
+[Info] Channel is free more than 4ms
+[Info] Collision detected
+[Info] Package retransmission attempt... attempt nr: 7
+[Info] Permission for retransmission
+[Info] CRP time
+[Info] Channel is free
+[Info] Check: DIFS = 4ms ?
+[Info] Channel is free more than 4ms
+[Info] Collision detected
+[Info] Package retransmission attempt... attempt nr: 8
+[Info] Permission for retransmission
+[Info] CRP time
+[Info] Channel is free
+[Info] Check: DIFS = 4ms ?
+[Info] Channel is free more than 4ms
+[Info] Collision detected
+[Info] Package retransmission attempt... attempt nr: 9
+[Info] Permission for retransmission
+[Info] CRP time
+[Info] Channel is free
+[Info] Check: DIFS = 4ms ?
+[Info] Channel is free more than 4ms
+[Info] Collision detected
+[Info] Package retransmission attempt... attempt nr: 10
+[Info] Permission for retransmission
+[Info] CRP time
+[Info] Channel is free
+[Info] Check: DIFS = 4ms ?
+[Info] Channel is free more than 4ms
+[Info] Collision detected
+[Info] Package retransmission attempt... attempt nr: 11
+[Info] Unable to retransmit again
+[Info] Packages lost: 2
 [Info] Release the channel
 [Info] Remove package from FIFO queue
 [Info] If there is another packet in the queue: go to state ChannelListenning, if no: end the transmission 
