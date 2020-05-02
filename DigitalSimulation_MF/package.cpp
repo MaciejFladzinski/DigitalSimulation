@@ -208,30 +208,17 @@ void Package::Execute()
       printf("RemovalFromTheSystem: \n");
 
       // 1. zwolnij kanal
-      logger_->Info("Release the channel");
-
       // 2. usuñ pakiet z kolejki FIFO
-      logger_->Info("Remove package from FIFO queue");
-
-      // Test: success
-      printf("Test correct transmission: \n");
-      //SetCorrectReceptionAck(true);
-      //RemovePackage(logger_, 0);
-      // Test: error
-      printf("Test error transmission: \n");
-      //SetCorrectReceptionAck(false);
-      //RemovePackage(logger_, 0);
-
       // 3. jeœli w kolejce znajduje siê inny pakiet, rozpocznij jego transmisjê
-      logger_->Info("If there is another packet in the queue: go to state ChannelListenning, if no: end the transmission \n");
 
       is_terminated_ = true;
+      logger_->Info("The process has completed correctly \n");
       active = false;
       break;
 
     default:
-      logger_->Error("In PacketProcess Execute !\n");
-
+      logger_->Error("In PacketProcess Execute !  Transmitter id: " + std::to_string(id_station_) +
+        "  Package id: " + std::to_string(id_package_) + "\n");
       active = false;
       break;
     }
