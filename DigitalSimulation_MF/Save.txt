@@ -25,18 +25,8 @@
 [Info] Channel is free
 [Info] Check: DIFS = 4ms ?
 [Info] Channel is free more than 4ms
-[Info] Pull the oldest package from the FIFO queue
-[Info] Calculation CTPk time
-[Info] Send package for a CTPk time
-[Info] Wait CTIZ time...
-[Info] If received ACK in these time: go to state RemovalFromTheSystem, if no: go to state Retransmission 
-
-[Info] ++number_of_retransmission
-[Info] If number_of_retransmission > 10: go to RemovalFromTheSystem
-[Info] Calculating CRP time
-[Info] Wait CRP time...
-[Info] Go to ChannelListenning 
-
+[Info] No collision detected
+[Info] Package is sending, wait for ACK
 [Info] Generate ACK
 [Info] Send ACK for a CTIZ time
 [Info] Go to state RemovalFromTheSystem 
@@ -50,18 +40,8 @@
 [Info] Channel is free
 [Info] Check: DIFS = 4ms ?
 [Info] Channel is free more than 4ms
-[Info] Pull the oldest package from the FIFO queue
-[Info] Calculation CTPk time
-[Info] Send package for a CTPk time
-[Info] Wait CTIZ time...
-[Info] If received ACK in these time: go to state RemovalFromTheSystem, if no: go to state Retransmission 
-
-[Info] ++number_of_retransmission
-[Info] If number_of_retransmission > 10: go to RemovalFromTheSystem
-[Info] Calculating CRP time
-[Info] Wait CRP time...
-[Info] Go to ChannelListenning 
-
+[Info] No collision detected
+[Info] Package is sending, wait for ACK
 [Info] Generate ACK
 [Info] Send ACK for a CTIZ time
 [Info] Go to state RemovalFromTheSystem 
@@ -75,18 +55,8 @@
 [Info] Channel is free
 [Info] Check: DIFS = 4ms ?
 [Info] Channel is free more than 4ms
-[Info] Pull the oldest package from the FIFO queue
-[Info] Calculation CTPk time
-[Info] Send package for a CTPk time
-[Info] Wait CTIZ time...
-[Info] If received ACK in these time: go to state RemovalFromTheSystem, if no: go to state Retransmission 
-
-[Info] ++number_of_retransmission
-[Info] If number_of_retransmission > 10: go to RemovalFromTheSystem
-[Info] Calculating CRP time
-[Info] Wait CRP time...
-[Info] Go to ChannelListenning 
-
+[Info] No collision detected
+[Info] Package is sending, wait for ACK
 [Info] Generate ACK
 [Info] Send ACK for a CTIZ time
 [Info] Go to state RemovalFromTheSystem 
@@ -100,18 +70,8 @@
 [Info] Channel is free
 [Info] Check: DIFS = 4ms ?
 [Info] Channel is free more than 4ms
-[Info] Pull the oldest package from the FIFO queue
-[Info] Calculation CTPk time
-[Info] Send package for a CTPk time
-[Info] Wait CTIZ time...
-[Info] If received ACK in these time: go to state RemovalFromTheSystem, if no: go to state Retransmission 
-
-[Info] ++number_of_retransmission
-[Info] If number_of_retransmission > 10: go to RemovalFromTheSystem
-[Info] Calculating CRP time
-[Info] Wait CRP time...
-[Info] Go to ChannelListenning 
-
+[Info] No collision detected
+[Info] Package is sending, wait for ACK
 [Info] Generate ACK
 [Info] Send ACK for a CTIZ time
 [Info] Go to state RemovalFromTheSystem 
@@ -125,18 +85,8 @@
 [Info] Channel is free
 [Info] Check: DIFS = 4ms ?
 [Info] Channel is free more than 4ms
-[Info] Pull the oldest package from the FIFO queue
-[Info] Calculation CTPk time
-[Info] Send package for a CTPk time
-[Info] Wait CTIZ time...
-[Info] If received ACK in these time: go to state RemovalFromTheSystem, if no: go to state Retransmission 
-
-[Info] ++number_of_retransmission
-[Info] If number_of_retransmission > 10: go to RemovalFromTheSystem
-[Info] Calculating CRP time
-[Info] Wait CRP time...
-[Info] Go to ChannelListenning 
-
+[Info] No collision detected
+[Info] Package is sending, wait for ACK
 [Info] Generate ACK
 [Info] Send ACK for a CTIZ time
 [Info] Go to state RemovalFromTheSystem 
@@ -150,18 +100,8 @@
 [Info] Channel is free
 [Info] Check: DIFS = 4ms ?
 [Info] Channel is free more than 4ms
-[Info] Pull the oldest package from the FIFO queue
-[Info] Calculation CTPk time
-[Info] Send package for a CTPk time
-[Info] Wait CTIZ time...
-[Info] If received ACK in these time: go to state RemovalFromTheSystem, if no: go to state Retransmission 
-
-[Info] ++number_of_retransmission
-[Info] If number_of_retransmission > 10: go to RemovalFromTheSystem
-[Info] Calculating CRP time
-[Info] Wait CRP time...
-[Info] Go to ChannelListenning 
-
+[Info] No collision detected
+[Info] Package is sending, wait for ACK
 [Info] Generate ACK
 [Info] Send ACK for a CTIZ time
 [Info] Go to state RemovalFromTheSystem 
@@ -175,18 +115,8 @@
 [Info] Channel is free
 [Info] Check: DIFS = 4ms ?
 [Info] Channel is free more than 4ms
-[Info] Pull the oldest package from the FIFO queue
-[Info] Calculation CTPk time
-[Info] Send package for a CTPk time
-[Info] Wait CTIZ time...
-[Info] If received ACK in these time: go to state RemovalFromTheSystem, if no: go to state Retransmission 
-
-[Info] ++number_of_retransmission
-[Info] If number_of_retransmission > 10: go to RemovalFromTheSystem
-[Info] Calculating CRP time
-[Info] Wait CRP time...
-[Info] Go to ChannelListenning 
-
+[Info] No collision detected
+[Info] Package is sending, wait for ACK
 [Info] Generate ACK
 [Info] Send ACK for a CTIZ time
 [Info] Go to state RemovalFromTheSystem 
@@ -200,18 +130,8 @@
 [Info] Channel is free
 [Info] Check: DIFS = 4ms ?
 [Info] Channel is free more than 4ms
-[Info] Pull the oldest package from the FIFO queue
-[Info] Calculation CTPk time
-[Info] Send package for a CTPk time
-[Info] Wait CTIZ time...
-[Info] If received ACK in these time: go to state RemovalFromTheSystem, if no: go to state Retransmission 
-
-[Info] ++number_of_retransmission
-[Info] If number_of_retransmission > 10: go to RemovalFromTheSystem
-[Info] Calculating CRP time
-[Info] Wait CRP time...
-[Info] Go to ChannelListenning 
-
+[Info] No collision detected
+[Info] Package is sending, wait for ACK
 [Info] Generate ACK
 [Info] Send ACK for a CTIZ time
 [Info] Go to state RemovalFromTheSystem 
@@ -225,18 +145,8 @@
 [Info] Channel is free
 [Info] Check: DIFS = 4ms ?
 [Info] Channel is free more than 4ms
-[Info] Pull the oldest package from the FIFO queue
-[Info] Calculation CTPk time
-[Info] Send package for a CTPk time
-[Info] Wait CTIZ time...
-[Info] If received ACK in these time: go to state RemovalFromTheSystem, if no: go to state Retransmission 
-
-[Info] ++number_of_retransmission
-[Info] If number_of_retransmission > 10: go to RemovalFromTheSystem
-[Info] Calculating CRP time
-[Info] Wait CRP time...
-[Info] Go to ChannelListenning 
-
+[Info] No collision detected
+[Info] Package is sending, wait for ACK
 [Info] Generate ACK
 [Info] Send ACK for a CTIZ time
 [Info] Go to state RemovalFromTheSystem 
@@ -250,18 +160,8 @@
 [Info] Channel is free
 [Info] Check: DIFS = 4ms ?
 [Info] Channel is free more than 4ms
-[Info] Pull the oldest package from the FIFO queue
-[Info] Calculation CTPk time
-[Info] Send package for a CTPk time
-[Info] Wait CTIZ time...
-[Info] If received ACK in these time: go to state RemovalFromTheSystem, if no: go to state Retransmission 
-
-[Info] ++number_of_retransmission
-[Info] If number_of_retransmission > 10: go to RemovalFromTheSystem
-[Info] Calculating CRP time
-[Info] Wait CRP time...
-[Info] Go to ChannelListenning 
-
+[Info] No collision detected
+[Info] Package is sending, wait for ACK
 [Info] Generate ACK
 [Info] Send ACK for a CTIZ time
 [Info] Go to state RemovalFromTheSystem 
@@ -275,18 +175,8 @@
 [Info] Channel is free
 [Info] Check: DIFS = 4ms ?
 [Info] Channel is free more than 4ms
-[Info] Pull the oldest package from the FIFO queue
-[Info] Calculation CTPk time
-[Info] Send package for a CTPk time
-[Info] Wait CTIZ time...
-[Info] If received ACK in these time: go to state RemovalFromTheSystem, if no: go to state Retransmission 
-
-[Info] ++number_of_retransmission
-[Info] If number_of_retransmission > 10: go to RemovalFromTheSystem
-[Info] Calculating CRP time
-[Info] Wait CRP time...
-[Info] Go to ChannelListenning 
-
+[Info] No collision detected
+[Info] Package is sending, wait for ACK
 [Info] Generate ACK
 [Info] Send ACK for a CTIZ time
 [Info] Go to state RemovalFromTheSystem 
@@ -300,18 +190,8 @@
 [Info] Channel is free
 [Info] Check: DIFS = 4ms ?
 [Info] Channel is free more than 4ms
-[Info] Pull the oldest package from the FIFO queue
-[Info] Calculation CTPk time
-[Info] Send package for a CTPk time
-[Info] Wait CTIZ time...
-[Info] If received ACK in these time: go to state RemovalFromTheSystem, if no: go to state Retransmission 
-
-[Info] ++number_of_retransmission
-[Info] If number_of_retransmission > 10: go to RemovalFromTheSystem
-[Info] Calculating CRP time
-[Info] Wait CRP time...
-[Info] Go to ChannelListenning 
-
+[Info] No collision detected
+[Info] Package is sending, wait for ACK
 [Info] Generate ACK
 [Info] Send ACK for a CTIZ time
 [Info] Go to state RemovalFromTheSystem 
@@ -325,18 +205,8 @@
 [Info] Channel is free
 [Info] Check: DIFS = 4ms ?
 [Info] Channel is free more than 4ms
-[Info] Pull the oldest package from the FIFO queue
-[Info] Calculation CTPk time
-[Info] Send package for a CTPk time
-[Info] Wait CTIZ time...
-[Info] If received ACK in these time: go to state RemovalFromTheSystem, if no: go to state Retransmission 
-
-[Info] ++number_of_retransmission
-[Info] If number_of_retransmission > 10: go to RemovalFromTheSystem
-[Info] Calculating CRP time
-[Info] Wait CRP time...
-[Info] Go to ChannelListenning 
-
+[Info] No collision detected
+[Info] Package is sending, wait for ACK
 [Info] Generate ACK
 [Info] Send ACK for a CTIZ time
 [Info] Go to state RemovalFromTheSystem 
@@ -350,18 +220,8 @@
 [Info] Channel is free
 [Info] Check: DIFS = 4ms ?
 [Info] Channel is free more than 4ms
-[Info] Pull the oldest package from the FIFO queue
-[Info] Calculation CTPk time
-[Info] Send package for a CTPk time
-[Info] Wait CTIZ time...
-[Info] If received ACK in these time: go to state RemovalFromTheSystem, if no: go to state Retransmission 
-
-[Info] ++number_of_retransmission
-[Info] If number_of_retransmission > 10: go to RemovalFromTheSystem
-[Info] Calculating CRP time
-[Info] Wait CRP time...
-[Info] Go to ChannelListenning 
-
+[Info] No collision detected
+[Info] Package is sending, wait for ACK
 [Info] Generate ACK
 [Info] Send ACK for a CTIZ time
 [Info] Go to state RemovalFromTheSystem 
@@ -375,18 +235,8 @@
 [Info] Channel is free
 [Info] Check: DIFS = 4ms ?
 [Info] Channel is free more than 4ms
-[Info] Pull the oldest package from the FIFO queue
-[Info] Calculation CTPk time
-[Info] Send package for a CTPk time
-[Info] Wait CTIZ time...
-[Info] If received ACK in these time: go to state RemovalFromTheSystem, if no: go to state Retransmission 
-
-[Info] ++number_of_retransmission
-[Info] If number_of_retransmission > 10: go to RemovalFromTheSystem
-[Info] Calculating CRP time
-[Info] Wait CRP time...
-[Info] Go to ChannelListenning 
-
+[Info] No collision detected
+[Info] Package is sending, wait for ACK
 [Info] Generate ACK
 [Info] Send ACK for a CTIZ time
 [Info] Go to state RemovalFromTheSystem 
@@ -400,18 +250,8 @@
 [Info] Channel is free
 [Info] Check: DIFS = 4ms ?
 [Info] Channel is free more than 4ms
-[Info] Pull the oldest package from the FIFO queue
-[Info] Calculation CTPk time
-[Info] Send package for a CTPk time
-[Info] Wait CTIZ time...
-[Info] If received ACK in these time: go to state RemovalFromTheSystem, if no: go to state Retransmission 
-
-[Info] ++number_of_retransmission
-[Info] If number_of_retransmission > 10: go to RemovalFromTheSystem
-[Info] Calculating CRP time
-[Info] Wait CRP time...
-[Info] Go to ChannelListenning 
-
+[Info] No collision detected
+[Info] Package is sending, wait for ACK
 [Info] Generate ACK
 [Info] Send ACK for a CTIZ time
 [Info] Go to state RemovalFromTheSystem 
@@ -425,18 +265,8 @@
 [Info] Channel is free
 [Info] Check: DIFS = 4ms ?
 [Info] Channel is free more than 4ms
-[Info] Pull the oldest package from the FIFO queue
-[Info] Calculation CTPk time
-[Info] Send package for a CTPk time
-[Info] Wait CTIZ time...
-[Info] If received ACK in these time: go to state RemovalFromTheSystem, if no: go to state Retransmission 
-
-[Info] ++number_of_retransmission
-[Info] If number_of_retransmission > 10: go to RemovalFromTheSystem
-[Info] Calculating CRP time
-[Info] Wait CRP time...
-[Info] Go to ChannelListenning 
-
+[Info] No collision detected
+[Info] Package is sending, wait for ACK
 [Info] Generate ACK
 [Info] Send ACK for a CTIZ time
 [Info] Go to state RemovalFromTheSystem 
@@ -450,18 +280,8 @@
 [Info] Channel is free
 [Info] Check: DIFS = 4ms ?
 [Info] Channel is free more than 4ms
-[Info] Pull the oldest package from the FIFO queue
-[Info] Calculation CTPk time
-[Info] Send package for a CTPk time
-[Info] Wait CTIZ time...
-[Info] If received ACK in these time: go to state RemovalFromTheSystem, if no: go to state Retransmission 
-
-[Info] ++number_of_retransmission
-[Info] If number_of_retransmission > 10: go to RemovalFromTheSystem
-[Info] Calculating CRP time
-[Info] Wait CRP time...
-[Info] Go to ChannelListenning 
-
+[Info] No collision detected
+[Info] Package is sending, wait for ACK
 [Info] Generate ACK
 [Info] Send ACK for a CTIZ time
 [Info] Go to state RemovalFromTheSystem 
@@ -475,18 +295,8 @@
 [Info] Channel is free
 [Info] Check: DIFS = 4ms ?
 [Info] Channel is free more than 4ms
-[Info] Pull the oldest package from the FIFO queue
-[Info] Calculation CTPk time
-[Info] Send package for a CTPk time
-[Info] Wait CTIZ time...
-[Info] If received ACK in these time: go to state RemovalFromTheSystem, if no: go to state Retransmission 
-
-[Info] ++number_of_retransmission
-[Info] If number_of_retransmission > 10: go to RemovalFromTheSystem
-[Info] Calculating CRP time
-[Info] Wait CRP time...
-[Info] Go to ChannelListenning 
-
+[Info] No collision detected
+[Info] Package is sending, wait for ACK
 [Info] Generate ACK
 [Info] Send ACK for a CTIZ time
 [Info] Go to state RemovalFromTheSystem 
@@ -500,18 +310,8 @@
 [Info] Channel is free
 [Info] Check: DIFS = 4ms ?
 [Info] Channel is free more than 4ms
-[Info] Pull the oldest package from the FIFO queue
-[Info] Calculation CTPk time
-[Info] Send package for a CTPk time
-[Info] Wait CTIZ time...
-[Info] If received ACK in these time: go to state RemovalFromTheSystem, if no: go to state Retransmission 
-
-[Info] ++number_of_retransmission
-[Info] If number_of_retransmission > 10: go to RemovalFromTheSystem
-[Info] Calculating CRP time
-[Info] Wait CRP time...
-[Info] Go to ChannelListenning 
-
+[Info] No collision detected
+[Info] Package is sending, wait for ACK
 [Info] Generate ACK
 [Info] Send ACK for a CTIZ time
 [Info] Go to state RemovalFromTheSystem 

@@ -40,7 +40,8 @@ void Package::Execute()
   {
     switch (state_)
     {
-      // State::AppearanceInTheSystem tymczasowo jest sztywno wykonywany przy tworzeniu symulacji
+      // tymczasowo pakiet jest sztywno generowany przy tworzeniu obiektu Simulation
+
       /*
     case State::AppearanceInTheSystem:
       // Appearance in the system operations
@@ -63,6 +64,7 @@ void Package::Execute()
       */
     case State::ChannelListening:
       // Channel listening operations
+      printf("Channel listening: \n");
 
       // 1. co 0,5ms sprawdzaj czy kanal jest wolny
       // 2. sprawdzenie, czy kanal jest wolny dluzej niz DIFS = 4ms
@@ -73,9 +75,8 @@ void Package::Execute()
         logger_->Info("Channel is free");
         transmitter->CheckDIFSTime(logger_);
 
-        // if (channel is free > 4ms), but now "test = 1" only for simulation test
-        bool test = 1;
-        if (test)
+        // if (channel is free > 4ms), but now "true/false" only for simulation test
+        if (true)
         {
           logger_->Info("Channel is free more than 4ms");
           state_ = State::Transmission;
@@ -103,24 +104,34 @@ void Package::Execute()
       printf("Transmission: \n");
 
       // 1. pobierz najstarszy pakiet z kolejki FIFO
-      logger_->Info("Pull the oldest package from the FIFO queue");
-
       // 2. wyznacz CTPk (czas transmisji pakietu)
-      logger_->Info("Calculation CTPk time");
-
       // 3. wysylaj pakiet przez okreslony czas (CTPk)
-      logger_->Info("Send package for a CTPk time");
+      // 4. jesli po czasie CTPk+CTIZ (dla CTIZ = 1ms) odebrano ACK przejdz do RemovalFromTheSystem, jesli nie- Retransmission
 
-      //StartTransmission(logger_,0);
+      if (wireless_network_->GetChannel()->GetCollision() == true)
+      {
+        logger_->Info("Collision detected");
+        state_ = State::Retransmission;
+        active = true;
+      }
+      else
+      {
+        logger_->Info("No collision detected");
 
-      // 4. jesli po czasie CTPk+CTIZ (gdzie CTIZ = 1ms) odebrano ACK przejdz do RemovalFromTheSystem, jesli nie to do Retransmission
-      logger_->Info("Wait CTIZ time...");
-      logger_->Info("If received ACK in these time: go to state RemovalFromTheSystem, if no: go to state Retransmission \n");
-
-      // Add: if...
-
-      active = true;
-      state_ = State::Retransmission;
+        if(wireless_network_->GetChannelStatus() == false) // if(channel is free)
+        {
+          //wireless_network_->GetChannel()->SetChannelOccupancy(true); // now: channel is busy
+          logger_->Info("Package is sending, wait for ACK");
+          state_ = State::ACK;
+          active = true;
+        }
+        else
+        {
+          transmitter->Wait(logger_);
+          state_ = State::ChannelListening;
+          active = true;
+        }
+      }
       break;
 
     case State::Retransmission:
