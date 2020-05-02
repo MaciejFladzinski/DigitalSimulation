@@ -17,13 +17,14 @@ public:
   void Wait(Logger* logger); // delay 0,5ms
   void CTPkTime(Logger* logger); // transmission time
   void CRPTime(Logger* logger); // time before start retransmission
-  void CheckDIFSTime(Logger* logger); // DIFS > 4ms ? true : false
   void CheckTransmissionPackageTime(Logger* logger); // CTPk + CTIZ,   CTIZ = 1ms
   void AddPackageSuccessfullySent(Logger* logger);  // Add 1 package successfully sent
   void AddPackageLost(Logger* logger);  // Add 1 package lost
-  
+  void IncTimeOfChannelListenning(Logger* logger);  // Add 0,5ms in channel listenning
+
   // const... = 0 -> it's only for definition const variable, it will be changed soon...
-  unsigned const __int64 ctiz_time_ = 1;  // ACK transmission time (CTIZ = 1ms)
+  unsigned const __int64 ctiz_time_ = 10;  // ACK transmission time (CTIZ = 1ms)
+  unsigned const __int64 difs_time_ = 40; // checking channel time (DIFS = 4ms)
 
   bool GetTransmissionOfAnotherPackage();
   unsigned int GetPackagesSuccessfullySent();
@@ -33,6 +34,7 @@ public:
   // get
   inline unsigned int GetTransmitterId() { return transmitter_id_; }
   inline unsigned int GetPackagesLost() { return packages_lost_; }
+  inline unsigned int GetTimeOfChannelListenning() { return time_of_channel_listenning_; }
   inline unsigned __int64 GetTimeOfChannelOccupancy() { return time_of_channel_occupancy_; }
   inline unsigned __int64 GetTimeFromStartTransmission() { return time_from_start_transmission_; }
   inline unsigned __int64 GetTimeCrp() { return time_crp_; }
@@ -68,11 +70,16 @@ public:
   {
     this->transmission_permission_ = transmission_permission;
   }
+  inline void SetTimeOfChannelLitenning(unsigned __int64 time_of_channel_listenning)
+  {
+    this->time_of_channel_listenning_ = time_of_channel_listenning;
+  }
 
 private:
   unsigned int transmitter_id_;  // transmitter number
   unsigned int packages_successfully_sent_ = 0;  // number of packages successfully sent
   unsigned int packages_lost_ = 0; // number of packages lost
+  unsigned __int64 time_of_channel_listenning_ = 0; // time of checking channel
   unsigned __int64 time_of_channel_occupancy_;  // time of channel occupancy
   unsigned __int64 time_from_start_transmission_; // time od package transmission and ACK (if all is correct): CTPk + CTIZ
   unsigned __int64 time_crp_;  // random time after which retransmissions can be made

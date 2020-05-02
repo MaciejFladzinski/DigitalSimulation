@@ -21,11 +21,6 @@ bool Channel::GetCollision()
   return packages_collision_;
 }
 
-Package* Channel::GetTransmittedPackages(int i)
-{
-  return transmitted_packages_[i];
-}
-
 void Channel::SetChannelOccupancy(bool channel_occupancy)
 {
   channel_occupancy_ = channel_occupancy;
@@ -34,9 +29,4 @@ void Channel::SetChannelOccupancy(bool channel_occupancy)
 void Channel::SetCollision(bool collision)
 {
   packages_collision_ = collision;
-}
-
-void Channel::SetTransmittedPackages(Package* package)
-{
-  return transmitted_packages_.push_back(package);
 }

@@ -2,8 +2,8 @@
 #define PACKAGE_H_
 
 #include "logger.h"
-#include "transmitter.h"
 #include "channel.h"
+#include "package.h"
 
 class WirelessNetwork;
 
@@ -48,7 +48,7 @@ private:
   State state_ = State::ChannelListening;
 
   WirelessNetwork* wireless_network_;
-  Channel* channel;
+  Channel* channel_;
   Logger* logger_ = nullptr;
 };
 #endif

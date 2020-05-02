@@ -70,6 +70,7 @@ void Package::Execute()
       active = true;
       break;
       */
+
     case State::ChannelListening:
       // Channel listening operations
       printf("Channel listening: \n");
@@ -81,10 +82,9 @@ void Package::Execute()
       if (wireless_network_->GetChannelStatus() == false) // if(channel is free)
       {
         logger_->Info("Channel is free");
-        transmitter->CheckDIFSTime(logger_);
 
-        // if (channel is free > 4ms), but now "true/false" only for simulation test
-        if (true)
+        // if (X > DIFS)
+        if (transmitter->GetTimeOfChannelListenning() > transmitter->difs_time_)
         {
           logger_->Info("Channel is free more than 4ms");
           state_ = State::Transmission;
@@ -93,7 +93,8 @@ void Package::Execute()
         else
         {
           logger_->Info("Channel isn't free more than 4ms");
-          transmitter->Wait(logger_);
+          transmitter->Wait(logger_); // Process sleep for 5ms (add: active = false ?)
+          transmitter->IncTimeOfChannelListenning(logger_); // X += 5ms
           state_ = State::ChannelListening;
           active = true;
         }
@@ -116,8 +117,9 @@ void Package::Execute()
       // 3. wysylaj pakiet przez okreslony czas (CTPk)
       // 4. jesli po czasie CTPk+CTIZ (dla CTIZ = 1ms) odebrano ACK przejdz do RemovalFromTheSystem, jesli nie- Retransmission
 
-      if (wireless_network_->GetChannel()->GetCollision() == true)
+      if(transmitter->GetTransmissionOfAnotherPackage() == true) // if there is another package (currently transmissing)
       {
+        wireless_network_->GetChannel()->SetCollision(true);
         logger_->Info("Collision detected");
         state_ = State::Retransmission;
         active = true;
@@ -128,9 +130,8 @@ void Package::Execute()
 
         if(wireless_network_->GetChannelStatus() == false) // if(channel is free)
         {
-          wireless_network_->GetChannel()->SetChannelOccupancy(true); // now: channel is busy
-          transmitter->SetTransmissionOfAnotherPackage(true);
-          // add: package to vector in channel (package currently transmitted)
+          wireless_network_->GetChannel()->SetChannelOccupancy(true); // now channel is busy
+          transmitter->SetTransmissionOfAnotherPackage(true); // blocking transmission for another package
           logger_->Info("Package is sending, wait for ACK");
           state_ = State::ACK;
           active = true;
@@ -138,6 +139,7 @@ void Package::Execute()
         else
         {
           transmitter->Wait(logger_);
+          transmitter->SetTimeOfChannelLitenning(0);
           state_ = State::ChannelListening;
           active = true;
         }
@@ -155,10 +157,12 @@ void Package::Execute()
       // 5. przejdz do state ChannelListenning lub RemovalFromTheSystem
 
       IncrementNumberOfLR(logger_);
+
       if(GetNumberOfLR() <= 10)
       {
         logger_->Info("Permission for retransmission");
         transmitter->CRPTime(logger_);
+        transmitter->SetTimeOfChannelLitenning(0);
         active = true;
         state_ = State::ChannelListening;
       }
@@ -198,6 +202,7 @@ void Package::Execute()
       {
         logger_->Info("ACK wasn't received");
         wireless_network_->GetChannel()->SetChannelOccupancy(false);
+        transmitter->SetTimeOfChannelLitenning(0);
         active = true;
         state_ = State::Retransmission;
       }

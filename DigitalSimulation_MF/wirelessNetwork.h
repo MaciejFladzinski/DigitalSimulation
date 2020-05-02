@@ -20,7 +20,6 @@ public:
   std::vector<Receiver*> receivers_;
 
   Package* GeneratePackage(Logger* logger, WirelessNetwork* wireless_network, unsigned int id_package, unsigned int id_station);
-
   Transmitter* GetTransmitters(int i);
   Receiver* GetReceivers(int i);
   Package* GetPackages(int i);
@@ -28,7 +27,7 @@ public:
 
   bool GetChannelStatus();
 
-  void SetPackages(Package* package); // add (generate) package
+  void SetPackages(Package* package);
 
   // get
   inline int GetNumberOfPackages() { return number_of_packages_; }
