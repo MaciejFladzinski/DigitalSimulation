@@ -22,11 +22,10 @@
 [Info] Create receiver nr: 9
 [Info] Start simulation...
 [Info] Started Simulation method M4 (Process Interaction):
-[Info] Package nr: 0 (in station nr: 0) has been created
 [Info] Simulation time: 2000
 [Info] Packet Process Execute:
-[Info] Generate package (id: 0) in transmitter (id: 0)
-[Info] Package nr: 1 (in station nr: 0) has been created
+[Info] Generate CTPk time... CTPk = 50
+[Info] Generate package (id: 1) by transmitter (id: 0). Package transmission time: 50
 [Info] Channel is free
 [Info] Channel isn't free more than 4ms
 [Info] Waiting 0,5ms...
@@ -66,9 +65,492 @@
 [Info] Channel is free
 [Info] Channel is free more than 4ms
 [Info] No collision detected
-[Info] Started transmission of packet: 0
+[Info] Started transmission of packet: 1
 [Info] Package successfully sent
 [Info] Permission to send ACK
 [Info] CTIZ time
-[Info] ACK delivered successfully
-[Info] Packages successfully sent: 1
+[Info] TER error occur
+[Info] Collision detected
+[Info] Package retransmission attempt... attempt nr: 1
+[Info] Permission for retransmission
+[Info] CRP time
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Waiting 0,5ms...
+[Info] Time of free channel listenning: 5
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Waiting 0,5ms...
+[Info] Time of free channel listenning: 10
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Waiting 0,5ms...
+[Info] Time of free channel listenning: 15
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Waiting 0,5ms...
+[Info] Time of free channel listenning: 20
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Waiting 0,5ms...
+[Info] Time of free channel listenning: 25
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Waiting 0,5ms...
+[Info] Time of free channel listenning: 30
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Waiting 0,5ms...
+[Info] Time of free channel listenning: 35
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Waiting 0,5ms...
+[Info] Time of free channel listenning: 40
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Waiting 0,5ms...
+[Info] Time of free channel listenning: 45
+[Info] Channel is free
+[Info] Channel is free more than 4ms
+[Info] No collision detected
+[Info] Started transmission of packet: 1
+[Info] Package successfully sent
+[Info] Permission to send ACK
+[Info] CTIZ time
+[Info] TER error occur
+[Info] Collision detected
+[Info] Package retransmission attempt... attempt nr: 2
+[Info] Permission for retransmission
+[Info] CRP time
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Waiting 0,5ms...
+[Info] Time of free channel listenning: 5
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Waiting 0,5ms...
+[Info] Time of free channel listenning: 10
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Waiting 0,5ms...
+[Info] Time of free channel listenning: 15
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Waiting 0,5ms...
+[Info] Time of free channel listenning: 20
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Waiting 0,5ms...
+[Info] Time of free channel listenning: 25
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Waiting 0,5ms...
+[Info] Time of free channel listenning: 30
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Waiting 0,5ms...
+[Info] Time of free channel listenning: 35
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Waiting 0,5ms...
+[Info] Time of free channel listenning: 40
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Waiting 0,5ms...
+[Info] Time of free channel listenning: 45
+[Info] Channel is free
+[Info] Channel is free more than 4ms
+[Info] No collision detected
+[Info] Started transmission of packet: 1
+[Info] Package successfully sent
+[Info] Permission to send ACK
+[Info] CTIZ time
+[Info] TER error occur
+[Info] Collision detected
+[Info] Package retransmission attempt... attempt nr: 3
+[Info] Permission for retransmission
+[Info] CRP time
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Waiting 0,5ms...
+[Info] Time of free channel listenning: 5
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Waiting 0,5ms...
+[Info] Time of free channel listenning: 10
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Waiting 0,5ms...
+[Info] Time of free channel listenning: 15
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Waiting 0,5ms...
+[Info] Time of free channel listenning: 20
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Waiting 0,5ms...
+[Info] Time of free channel listenning: 25
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Waiting 0,5ms...
+[Info] Time of free channel listenning: 30
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Waiting 0,5ms...
+[Info] Time of free channel listenning: 35
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Waiting 0,5ms...
+[Info] Time of free channel listenning: 40
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Waiting 0,5ms...
+[Info] Time of free channel listenning: 45
+[Info] Channel is free
+[Info] Channel is free more than 4ms
+[Info] No collision detected
+[Info] Started transmission of packet: 1
+[Info] Package successfully sent
+[Info] Permission to send ACK
+[Info] CTIZ time
+[Info] TER error occur
+[Info] Collision detected
+[Info] Package retransmission attempt... attempt nr: 4
+[Info] Permission for retransmission
+[Info] CRP time
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Waiting 0,5ms...
+[Info] Time of free channel listenning: 5
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Waiting 0,5ms...
+[Info] Time of free channel listenning: 10
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Waiting 0,5ms...
+[Info] Time of free channel listenning: 15
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Waiting 0,5ms...
+[Info] Time of free channel listenning: 20
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Waiting 0,5ms...
+[Info] Time of free channel listenning: 25
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Waiting 0,5ms...
+[Info] Time of free channel listenning: 30
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Waiting 0,5ms...
+[Info] Time of free channel listenning: 35
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Waiting 0,5ms...
+[Info] Time of free channel listenning: 40
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Waiting 0,5ms...
+[Info] Time of free channel listenning: 45
+[Info] Channel is free
+[Info] Channel is free more than 4ms
+[Info] No collision detected
+[Info] Started transmission of packet: 1
+[Info] Package successfully sent
+[Info] Permission to send ACK
+[Info] CTIZ time
+[Info] TER error occur
+[Info] Collision detected
+[Info] Package retransmission attempt... attempt nr: 5
+[Info] Permission for retransmission
+[Info] CRP time
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Waiting 0,5ms...
+[Info] Time of free channel listenning: 5
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Waiting 0,5ms...
+[Info] Time of free channel listenning: 10
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Waiting 0,5ms...
+[Info] Time of free channel listenning: 15
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Waiting 0,5ms...
+[Info] Time of free channel listenning: 20
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Waiting 0,5ms...
+[Info] Time of free channel listenning: 25
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Waiting 0,5ms...
+[Info] Time of free channel listenning: 30
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Waiting 0,5ms...
+[Info] Time of free channel listenning: 35
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Waiting 0,5ms...
+[Info] Time of free channel listenning: 40
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Waiting 0,5ms...
+[Info] Time of free channel listenning: 45
+[Info] Channel is free
+[Info] Channel is free more than 4ms
+[Info] No collision detected
+[Info] Started transmission of packet: 1
+[Info] Package successfully sent
+[Info] Permission to send ACK
+[Info] CTIZ time
+[Info] TER error occur
+[Info] Collision detected
+[Info] Package retransmission attempt... attempt nr: 6
+[Info] Permission for retransmission
+[Info] CRP time
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Waiting 0,5ms...
+[Info] Time of free channel listenning: 5
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Waiting 0,5ms...
+[Info] Time of free channel listenning: 10
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Waiting 0,5ms...
+[Info] Time of free channel listenning: 15
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Waiting 0,5ms...
+[Info] Time of free channel listenning: 20
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Waiting 0,5ms...
+[Info] Time of free channel listenning: 25
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Waiting 0,5ms...
+[Info] Time of free channel listenning: 30
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Waiting 0,5ms...
+[Info] Time of free channel listenning: 35
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Waiting 0,5ms...
+[Info] Time of free channel listenning: 40
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Waiting 0,5ms...
+[Info] Time of free channel listenning: 45
+[Info] Channel is free
+[Info] Channel is free more than 4ms
+[Info] No collision detected
+[Info] Started transmission of packet: 1
+[Info] Package successfully sent
+[Info] Permission to send ACK
+[Info] CTIZ time
+[Info] TER error occur
+[Info] Collision detected
+[Info] Package retransmission attempt... attempt nr: 7
+[Info] Permission for retransmission
+[Info] CRP time
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Waiting 0,5ms...
+[Info] Time of free channel listenning: 5
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Waiting 0,5ms...
+[Info] Time of free channel listenning: 10
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Waiting 0,5ms...
+[Info] Time of free channel listenning: 15
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Waiting 0,5ms...
+[Info] Time of free channel listenning: 20
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Waiting 0,5ms...
+[Info] Time of free channel listenning: 25
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Waiting 0,5ms...
+[Info] Time of free channel listenning: 30
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Waiting 0,5ms...
+[Info] Time of free channel listenning: 35
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Waiting 0,5ms...
+[Info] Time of free channel listenning: 40
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Waiting 0,5ms...
+[Info] Time of free channel listenning: 45
+[Info] Channel is free
+[Info] Channel is free more than 4ms
+[Info] No collision detected
+[Info] Started transmission of packet: 1
+[Info] Package successfully sent
+[Info] Permission to send ACK
+[Info] CTIZ time
+[Info] TER error occur
+[Info] Collision detected
+[Info] Package retransmission attempt... attempt nr: 8
+[Info] Permission for retransmission
+[Info] CRP time
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Waiting 0,5ms...
+[Info] Time of free channel listenning: 5
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Waiting 0,5ms...
+[Info] Time of free channel listenning: 10
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Waiting 0,5ms...
+[Info] Time of free channel listenning: 15
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Waiting 0,5ms...
+[Info] Time of free channel listenning: 20
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Waiting 0,5ms...
+[Info] Time of free channel listenning: 25
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Waiting 0,5ms...
+[Info] Time of free channel listenning: 30
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Waiting 0,5ms...
+[Info] Time of free channel listenning: 35
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Waiting 0,5ms...
+[Info] Time of free channel listenning: 40
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Waiting 0,5ms...
+[Info] Time of free channel listenning: 45
+[Info] Channel is free
+[Info] Channel is free more than 4ms
+[Info] No collision detected
+[Info] Started transmission of packet: 1
+[Info] Package successfully sent
+[Info] Permission to send ACK
+[Info] CTIZ time
+[Info] TER error occur
+[Info] Collision detected
+[Info] Package retransmission attempt... attempt nr: 9
+[Info] Permission for retransmission
+[Info] CRP time
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Waiting 0,5ms...
+[Info] Time of free channel listenning: 5
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Waiting 0,5ms...
+[Info] Time of free channel listenning: 10
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Waiting 0,5ms...
+[Info] Time of free channel listenning: 15
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Waiting 0,5ms...
+[Info] Time of free channel listenning: 20
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Waiting 0,5ms...
+[Info] Time of free channel listenning: 25
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Waiting 0,5ms...
+[Info] Time of free channel listenning: 30
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Waiting 0,5ms...
+[Info] Time of free channel listenning: 35
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Waiting 0,5ms...
+[Info] Time of free channel listenning: 40
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Waiting 0,5ms...
+[Info] Time of free channel listenning: 45
+[Info] Channel is free
+[Info] Channel is free more than 4ms
+[Info] No collision detected
+[Info] Started transmission of packet: 1
+[Info] Package successfully sent
+[Info] Permission to send ACK
+[Info] CTIZ time
+[Info] TER error occur
+[Info] Collision detected
+[Info] Package retransmission attempt... attempt nr: 10
+[Info] Permission for retransmission
+[Info] CRP time
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Waiting 0,5ms...
+[Info] Time of free channel listenning: 5
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Waiting 0,5ms...
+[Info] Time of free channel listenning: 10
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Waiting 0,5ms...
+[Info] Time of free channel listenning: 15
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Waiting 0,5ms...
+[Info] Time of free channel listenning: 20
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Waiting 0,5ms...
+[Info] Time of free channel listenning: 25
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Waiting 0,5ms...
+[Info] Time of free channel listenning: 30
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Waiting 0,5ms...
+[Info] Time of free channel listenning: 35
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Waiting 0,5ms...
+[Info] Time of free channel listenning: 40
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Waiting 0,5ms...
+[Info] Time of free channel listenning: 45
+[Info] Channel is free
+[Info] Channel is free more than 4ms
+[Info] No collision detected
+[Info] Started transmission of packet: 1
+[Info] Package successfully sent
+[Info] Permission to send ACK
+[Info] CTIZ time
+[Info] TER error occur
+[Info] Collision detected
+[Info] Package retransmission attempt... attempt nr: 11
+[Info] Unable to retransmit again
+[Info] Packages lost: 1

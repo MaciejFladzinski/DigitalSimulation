@@ -1,5 +1,7 @@
 #include "transmitter.h"
 
+#include <iostream>
+
 Transmitter::Transmitter(unsigned int id_, Logger* logger)
 {
   transmitter_id_ = id_;
@@ -23,22 +25,10 @@ void Transmitter::Wait(Logger* logger)
   logger->Info("Waiting 0,5ms...");
 }
 
-void Transmitter::CTPkTime(Logger* logger)
-{
-  logger_ = logger;
-  logger->Info("CTPk time");
-}
-
 void Transmitter::CRPTime(Logger* logger)
 {
   logger_ = logger;
   logger->Info("CRP time");
-}
-
-void Transmitter::CheckTransmissionPackageTime(Logger* logger)
-{
-  logger_ = logger;
-  logger->Info("Check transmission of package (with ACK) time: CTPk + CTIZ");
 }
 
 void Transmitter::AddPackageSuccessfullySent(Logger* logger)

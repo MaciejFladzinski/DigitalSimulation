@@ -10,7 +10,7 @@ public:
   Simulation(Logger* logger, WirelessNetwork* wireless_network);
   ~Simulation();
 
-  void Run(Logger* logger, unsigned __int64 time);
+  void Run(Logger* logger, size_t time);
 
 private:
   size_t generate_packet_max_time_ = 10;

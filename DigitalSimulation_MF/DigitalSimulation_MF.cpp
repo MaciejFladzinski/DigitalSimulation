@@ -5,7 +5,7 @@
    10 (K)
    10 (LR) */
 
-#include <iostream>
+#include <ctime>
 
 #include "logger.h"
 #include "simulation.h"
@@ -13,6 +13,9 @@
 
 int main()
 {
+  // generate random value in simulation by function "rand()"
+  std::srand(time(NULL));
+
   Logger* logger = new Logger();
   logger->set_level();
 

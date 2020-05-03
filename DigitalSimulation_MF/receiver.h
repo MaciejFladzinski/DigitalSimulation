@@ -9,9 +9,6 @@ public:
   Receiver(unsigned int id_, Logger* logger);
   ~Receiver();
 
-  // functions
-  void GenerateACK(Logger* logger);
-
   // get
   inline unsigned int GetReceiverId() { return receiver_id_; }
   inline bool GetErrorTransmission() { return error_transmission_; }

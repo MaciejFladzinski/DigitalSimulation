@@ -8,10 +8,10 @@ public:
   ~Time();
 
   // const... = 0 -> it's only for definition const variable, it will be changed soon...
-  unsigned const __int64 k_max_time_simulation_ = 0;  // max time of simulation
+  const size_t k_max_time_simulation_ = 0;  // max time of simulation
 
   // get
-  inline unsigned __int64 GetActualTimeSimulation() { return actual_time_simulation_; }
+  inline size_t GetActualTimeSimulation() { return actual_time_simulation_; }
 
   // set
   inline void SetActualTimeSimulation(unsigned __int64 actual_time_simulation)
@@ -20,7 +20,7 @@ public:
   }
 
 private:
-  unsigned __int64 actual_time_simulation_; // actual time of simulation
+  size_t actual_time_simulation_; // actual time of simulation
 };
 
 #endif

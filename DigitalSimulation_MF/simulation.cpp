@@ -22,7 +22,7 @@ Simulation::~Simulation()
 
 }
 
-void Simulation::Run(Logger* logger, unsigned __int64 time)
+void Simulation::Run(Logger* logger, size_t time)
 {
   logger_ = logger;
 

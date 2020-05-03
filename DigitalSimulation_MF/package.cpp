@@ -5,7 +5,7 @@
 #include "wirelessNetwork.h"
 #include "channel.h"
 
-Package::Package(unsigned int id_package, unsigned int id_station, unsigned __int64 time,
+Package::Package(unsigned int id_package, unsigned int id_station, size_t time,
   Logger* logger, WirelessNetwork* wireless_network, Agenda* agenda)
 {
   id_package_ = id_package;
@@ -15,13 +15,45 @@ Package::Package(unsigned int id_package, unsigned int id_station, unsigned __in
   logger_ = logger;
   agenda_ = agenda;
 
-  logger->Info("Package nr: " + std::to_string(id_package) +
-    " (in station nr: " + std::to_string(id_station) + ") has been created");
+  //logger->Info("Package nr: " + std::to_string(id_package) +
+  //  " (in station nr: " + std::to_string(id_station) + ") has been created");
+}
+
+Package::Package(unsigned id_package, unsigned id_station, size_t time)
+{
+  id_package_ = id_package;
+  id_station_ = id_station;
+  time_ = time;
 }
 
 Package::~Package()
 {
   logger_->Info("Remove package");
+}
+
+void Package::SetPackageId(unsigned int id_package)
+{
+  id_package_ = id_package;
+}
+
+void Package::SetStationId(unsigned int id_station)
+{
+  id_station_ = id_station;
+}
+
+void Package::SetNumberOfLR(unsigned int number_of_LR)
+{
+  number_of_LR_ = number_of_LR;
+}
+
+void Package::SetTimeCTPk(size_t ctpk_time)
+{
+  ctpk_time_ = ctpk_time;
+}
+
+void Package::SetTime(size_t time)
+{
+  time_ = time;
 }
 
 void Package::IncrementNumberOfLR(Logger* logger)
@@ -41,7 +73,15 @@ void Package::SetTerminated()
   is_terminated_ = true;
 }
 
-void Package::Activ(unsigned __int64 time, bool relative)
+void Package::GenerateCTPkTime(Logger* logger)
+{
+  logger_ = logger;
+  size_t ctpk_time = rand() % 10 * 10 + 10;	 // time CTPk {1,...,10}ms * 10 -> {10,...,100}x 
+  SetTimeCTPk(ctpk_time);
+  logger->Info("Generate CTPk time... CTPk = " + std::to_string(GetTimeCTPk()));
+}
+
+void Package::Activ(size_t time, bool relative)
 {
   if (relative == true)
   {
@@ -77,10 +117,10 @@ void Package::Execute()
       // 3. dodanie pakietu do bufora
       // 4. przejdz do State::ChannelListenning
 
-      wireless_network_->GeneratePackage(logger_, this);
+      wireless_network_->GeneratePackage(logger_, this, id_station_);
       {
         auto new_id = id_package_ + 1;
-        auto new_package = new Package(new_id, id_station_, time_ctpk_, logger_, wireless_network_, agenda_);
+        auto new_package = new Package(new_id, id_station_, ctpk_time_, logger_, wireless_network_, agenda_);
         new_package->Activ(rand() % WirelessNetwork::generate_packet_max_time);
       }
       state_ = State::ChannelListening;
@@ -115,7 +155,6 @@ void Package::Execute()
         logger_->Info("Channel is busy");
         transmitter->Wait(logger_); // Process sleep for 5ms (add: active = false ?)
         state_ = State::ChannelListening;
-        //active = false;
       }
       break;
 
@@ -131,7 +170,7 @@ void Package::Execute()
         logger_->Info("No collision detected");
         wireless_network_->StartTransmission(logger_);
         Activ(rand() % WirelessNetwork::transmission_max_time);
-        //transmitter->CTPkTime(logger_); // process sleep for CTPk time
+        
         
         if (wireless_network_->GetChannel()->GetCollision() == false)
         {
@@ -144,7 +183,6 @@ void Package::Execute()
           logger_->Info("Collision detected");
           wireless_network_->GetChannel()->SetCollision(false);
           state_ = State::Retransmission;
-          active = false;
         }
       }
       else
@@ -153,7 +191,6 @@ void Package::Execute()
         logger_->Info("Collision detected");
         wireless_network_->GetChannel()->SetCollision(false);
         state_ = State::Retransmission;
-        active = false;
       }
       break;
 
@@ -200,8 +237,10 @@ void Package::Execute()
         wireless_network_->GetChannel()->SetChannelOccupancy(true); // ACK in channel
         logger_->Info("CTIZ time");
         //transmitter->ctiz_time_; // process sleep for 1ms (CTIZ)
-        
+
         //if there is no collision after time CTPk + CTIZ in the channel:
+        wireless_network_->GetChannel()->ChanceForTER(logger_); // check TER error
+
         if (wireless_network_->GetChannel()->GetCollision() == false)
         {
           wireless_network_->GetChannel()->SetChannelOccupancy(false); // ACK delivered
@@ -221,7 +260,6 @@ void Package::Execute()
           transmitter->SetTimeOfChannelListenning(0);
           wireless_network_->GetChannel()->SetCollision(false);
           state_ = State::Retransmission;
-          active = false;
         }
       }
       else
@@ -231,7 +269,6 @@ void Package::Execute()
         wireless_network_->GetChannel()->SetChannelOccupancy(false);
         transmitter->SetTimeOfChannelListenning(0);
         state_ = State::Retransmission;
-        active = false;
       }
       break;
 

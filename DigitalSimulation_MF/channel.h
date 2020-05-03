@@ -11,6 +11,9 @@ public:
   Channel(Logger* logger);
   ~Channel();
 
+  // functions
+  void ChanceForTER(Logger* logger);
+
   // get
   bool GetChannelOccupancy();
   bool GetCollision();

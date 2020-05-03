@@ -1,5 +1,5 @@
 #include "wirelessNetwork.h"
-#include "package.h"
+//#include "package.h"
 
 #include <iostream>
 
@@ -83,12 +83,16 @@ void WirelessNetwork::Init(Logger* logger)
 	channel_->SetChannelOccupancy(false);	// channel is free
 }
 
-void WirelessNetwork::GeneratePackage(Logger* logger, Package* package)
+void WirelessNetwork::GeneratePackage(Logger* logger, Package* package, unsigned int id_station)
 {
 	logger_ = logger;
-	packages_.push_back(package);
-	logger->Info("Generate package (id: " + std::to_string(package->GetPackageId()) +
-		") in transmitter (id: " + std::to_string(package->GetStationId()) + ")");
+	static size_t id = 0;
+	++id;
+	package->GenerateCTPkTime(logger);
+	auto new_package = new Package(id, id_station, package->GetTimeCTPk());
+	packages_.push_back(new_package);
+	logger->Info("Generate package (id: " + std::to_string(id) + ") by transmitter (id: " +
+		std::to_string(id_station) + "). Package transmission time: " + std::to_string(package->GetTimeCTPk()));
 }
 
 void WirelessNetwork::StartTransmission(Logger* logger)
