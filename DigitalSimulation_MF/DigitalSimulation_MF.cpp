@@ -16,7 +16,11 @@ int main()
   Logger* logger = new Logger();
   logger->set_level();
 
-  auto simulation = new Simulation(logger);
+  WirelessNetwork* wireless_network = new WirelessNetwork(logger);
+
+  auto simulation = new Simulation(logger, wireless_network);
+
+  simulation->Run(logger, 2000);
 
   delete simulation;
   delete logger;

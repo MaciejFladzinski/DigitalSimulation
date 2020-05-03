@@ -14,12 +14,15 @@ public:
   WirelessNetwork(Logger *logger);
   ~WirelessNetwork();
 
+  static const size_t generate_packet_max_time = 10;
+  static const size_t transmission_max_time = 25;
+
   unsigned const int k_number_of_stations_ = 10; // number of transmitters and receivers
 
   std::vector<Transmitter*> transmitters_;
   std::vector<Receiver*> receivers_;
 
-  Package* GeneratePackage(Logger* logger, WirelessNetwork* wireless_network, unsigned int id_package, unsigned int id_station);
+  //Package* GeneratePackage(Logger* logger, WirelessNetwork* wireless_network, unsigned int id_package, unsigned int id_station);
   Transmitter* GetTransmitters(int i);
   Receiver* GetReceivers(int i);
   Package* GetPackages(int i);
@@ -27,18 +30,19 @@ public:
 
   bool GetChannelStatus();
 
-  void SetPackages(Package* package);
-
-  // get
-  inline int GetNumberOfPackages() { return number_of_packages_; }
-
-  // set
-  void SetNumberOfPackages(int number_of_packages) { number_of_packages_ = number_of_packages; }
+  void SetPackages(Package* package); // add package to the vector
+  void Init(Logger* logger); // take package from the buffer
+  void GeneratePackage(Logger* logger, Package* package);
+  void StartTransmission(Logger* logger);
+  void EndTransmission(Logger* logger);
+  bool IsBufferEmpty() { return packages_.empty(); }
+  Package* GetFirstPackage() { return packages_.front(); }
+  size_t GetBufferSize() { return packages_.size(); }
 
 private:
-  std::vector<Package*> packages_;
-  int number_of_packages_;
+  std::vector<Package*> packages_;  // packages in buffer
+
   Logger* logger_ = nullptr;
-  Channel* channel_;
+  Channel* channel_ = nullptr;
 };
 #endif

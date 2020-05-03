@@ -67,7 +67,7 @@ public:
   {
     this->transmission_permission_ = transmission_permission;
   }
-  inline void SetTimeOfChannelLitenning(unsigned __int64 time_of_channel_listenning)
+  inline void SetTimeOfChannelListenning(unsigned __int64 time_of_channel_listenning)
   {
     this->time_of_channel_listenning_ = time_of_channel_listenning;
   }

@@ -3,12 +3,21 @@
 
 #include "logger.h"
 #include "wirelessNetwork.h"
-#include "transmitter.h"
 
 class Simulation
 {
 public:
-  Simulation(Logger* logger);
+  Simulation(Logger* logger, WirelessNetwork* wireless_network);
   ~Simulation();
+
+  void Run(Logger* logger, unsigned __int64 time);
+
+private:
+  size_t generate_packet_max_time_ = 10;
+  size_t transmission_max_time_ = 25;
+  size_t clock_ = 0;
+
+  WirelessNetwork* wireless_network_ = nullptr;
+  Logger* logger_ = nullptr;
 };
 #endif
