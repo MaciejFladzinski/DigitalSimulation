@@ -25,10 +25,21 @@ void Transmitter::Wait(Logger* logger)
   logger->Info("Waiting 0,5ms...");
 }
 
-void Transmitter::CRPTime(Logger* logger)
+void Transmitter::GenerateCRPTime(Logger* logger, size_t ctpk, unsigned int number_of_LR)
 {
   logger_ = logger;
-  logger->Info("CRP time");
+
+  unsigned int max_value = 1;
+  for (int i = 0; i < number_of_LR; ++i)
+  {
+    max_value *= 2;
+  }
+
+  unsigned int R = rand() % max_value;
+  size_t crp_time = ctpk * R;
+
+  SetTimeCrp(crp_time);
+  logger->Info("CRP time: " + std::to_string(GetTimeCrp()));
 }
 
 void Transmitter::AddPackageSuccessfullySent(Logger* logger)

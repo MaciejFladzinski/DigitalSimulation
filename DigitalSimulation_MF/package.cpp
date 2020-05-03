@@ -60,7 +60,8 @@ void Package::IncrementNumberOfLR(Logger* logger)
 {
   logger_ = logger;
   ++number_of_LR_;
-  logger->Info("Package retransmission attempt... attempt nr: " + std::to_string(number_of_LR_));
+  SetNumberOfLR(number_of_LR_);
+  logger->Info("Package retransmission attempt... attempt nr: " + std::to_string(GetNumberOfLR()));
 }
 
 bool Package::IsTerminated()
@@ -208,7 +209,7 @@ void Package::Execute()
       if(GetNumberOfLR() <= 10)
       {
         logger_->Info("Permission for retransmission");
-        transmitter->CRPTime(logger_); // process sleep for CRP time
+        transmitter->GenerateCRPTime(logger_,ctpk_time_,number_of_LR_); // process sleep for CRP time
         transmitter->SetTimeOfChannelListenning(0);
         state_ = State::ChannelListening;
       }
