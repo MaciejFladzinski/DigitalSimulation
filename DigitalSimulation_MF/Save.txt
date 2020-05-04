@@ -23,10 +23,10 @@
 [Info] Create transmitter nr: 9
 [Info] Create receiver nr: 9
 [Info] Started Simulation method M4 (Process Interaction):
-[Info] Simulation time: 2002
+[Info] Simulation time: 0
 [Info] Packet Process Execute:
-[Info] Generate CTPk time... CTPk = 50
-[Info] Generate package (id: 1) by transmitter (id: 0). Package transmission time: 50
+[Info] Generate CTPk time... CTPk = 100
+[Info] Generate package (id: 1) by transmitter (id: 5). Package transmission time: 100
 [Info] Channel is free
 [Info] Channel isn't free more than 4ms
 [Info] Time of free channel listenning: 5
@@ -93,34 +93,49 @@
 [Info] Channel is free more than 4ms
 [Info] No collision detected
 [Info] Start transmission
+[Info] TER error occur
+[Info] Package retransmission attempt... attempt nr: 2
+[Info] Permission for retransmission
+[Info] CRP time: 100
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 5
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 10
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 15
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 20
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 25
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 30
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 35
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 40
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 45
+[Info] Channel is free
+[Info] Channel is free more than 4ms
+[Info] No collision detected
+[Info] Start transmission
 [Info] TER error doesn't occur
 [Info] Package successfully sent
 [Info] Permission to send ACK
 [Info] ACK delivered successfully
 [Info] Packages successfully sent: 1
-[Info] End process package (id: 1) 
+[Info] Simulation time: 545
+[Info] Packet Process Execute:
+[Info] End process package (id: 0) 
 
 [Info] Remove package
-[Info] Remove wireless network
-[Info] Remove channel
-[Info] Remove transmitter nr: 0
-[Info] Remove receiver nr: 0
-[Info] Remove transmitter nr: 1
-[Info] Remove receiver nr: 1
-[Info] Remove transmitter nr: 2
-[Info] Remove receiver nr: 2
-[Info] Remove transmitter nr: 3
-[Info] Remove receiver nr: 3
-[Info] Remove transmitter nr: 4
-[Info] Remove receiver nr: 4
-[Info] Remove transmitter nr: 5
-[Info] Remove receiver nr: 5
-[Info] Remove transmitter nr: 6
-[Info] Remove receiver nr: 6
-[Info] Remove transmitter nr: 7
-[Info] Remove receiver nr: 7
-[Info] Remove transmitter nr: 8
-[Info] Remove receiver nr: 8
-[Info] Remove transmitter nr: 9
-[Info] Remove receiver nr: 9
-[Info] Remove logger
+[Info] Simulation time: 3722304989

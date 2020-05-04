@@ -6,6 +6,8 @@
    10 (LR) */
 
 #include <ctime>
+#include <ostream>
+
 
 #include "logger.h"
 #include "simulation.h"
@@ -25,6 +27,7 @@ int main()
 
   simulation->RunM4(logger, 2000);
 
+  printf("\n");
   delete simulation;
   delete wireless_network;
   delete logger;

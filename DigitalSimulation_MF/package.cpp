@@ -77,7 +77,7 @@ void Package::SetTerminated()
 void Package::StepInto()
 {
   //logger_->Info("Simulation time: " + std::to_string(clock_));
-  printf("\nPress any key to continue... \n\n");
+  printf("\nPress Enter to continue... \n\n");
   getchar();
 }
 
@@ -119,10 +119,8 @@ void Package::Activ(size_t time, bool relative)
   {
     time_ = time;
   }
-
   agenda_->push(this);
 }
-
 
 void Package::Execute()
 {
@@ -130,6 +128,7 @@ void Package::Execute()
   Receiver* receiver = wireless_network_->GetReceivers(id_station_);
 
   bool active = true;
+  int counter = 0;
 
   printf("\nSelect simulation mode:\n1- step into\n2- step over\n");
   int key;
@@ -144,20 +143,29 @@ void Package::Execute()
     switch (state_)
     {
     case State::AppearanceInTheSystem:
-      // Appearance in the system operations
 
       wireless_network_->GeneratePackage(logger_, this, rand()%10); // generate and add package to the vector
       {
-        //auto new_id = ++id_package_;
+        // generate next package
         auto new_package = new Package(id_package_, id_station_, ctpk_time_, logger_, wireless_network_, agenda_);
-        new_package->Activ(rand() % WirelessNetwork::generate_packet_max_time);
+        new_package->Activ(rand() % WirelessNetwork::generate_packet_max_time); // planning the appearance of the next package
+        agenda_->push(new_package);
       }
-      if (SelectMode(key) == true) { StepInto(); }
-      state_ = State::ChannelListening;
+
+      ++counter;
+      if (counter == 1) // if (package is first)
+      {
+        if (SelectMode(key) == true) { StepInto(); }
+        state_ = State::ChannelListening;
+      }
+      else
+      {
+        state_ = State::ChannelListening;
+        active = false;
+      }
       break;
 
     case State::ChannelListening:
-      // Channel listening operations
 
       if (wireless_network_->GetChannelStatus() == false)
       {
@@ -188,7 +196,6 @@ void Package::Execute()
       break;
 
     case State::Transmission:
-      // Transmission operations
 
       if (wireless_network_->GetChannelStatus() == false) // if(channel is free)
       {
@@ -227,7 +234,6 @@ void Package::Execute()
       break;
 
     case State::Retransmission:
-      // Retransmission operations
 
       IncrementNumberOfLR(logger_);
 
@@ -247,11 +253,11 @@ void Package::Execute()
         transmitter->SetTimeOfChannelListenning(0);
         if (SelectMode(key) == true) { StepInto(); }
         state_ = State::RemovalFromTheSystem;
+        active = false;
       }
       break;
 
     case State::ACK:
-      // ACK operations
 
       if (wireless_network_->GetChannelStatus() == false)
       {
@@ -272,6 +278,7 @@ void Package::Execute()
           receiver->SetAcknowledgment(false);
           if (SelectMode(key) == true) { StepInto(); }
           state_ = State::RemovalFromTheSystem;
+          active = false;
         }
         else
         {
@@ -296,7 +303,6 @@ void Package::Execute()
       break;
 
     case State::RemovalFromTheSystem:
-      // Removal from the system operations
 
       wireless_network_->EndTransmission(logger_);
       
