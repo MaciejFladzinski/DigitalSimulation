@@ -7,12 +7,12 @@ Logger::Logger()
 {
   // open file
   std::ofstream save("Save.txt");
-  printf("Logger has been created \n");
+  Info("Create logger \n");
 }
 
 Logger::~Logger()
 {
-  printf("Logger has been removed \n");
+  Info("Remove logger");
 }
 
 void Logger::set_level()

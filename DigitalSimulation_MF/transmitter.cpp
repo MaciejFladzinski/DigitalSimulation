@@ -29,12 +29,7 @@ void Transmitter::GenerateCRPTime(Logger* logger, size_t ctpk, unsigned int numb
 {
   logger_ = logger;
 
-  unsigned int max_value = 1;
-  for (int i = 0; i < number_of_LR; ++i)
-  {
-    max_value *= 2;
-  }
-
+  unsigned int max_value = std::pow(2, number_of_LR);
   unsigned int R = rand() % max_value;
   size_t crp_time = ctpk * R;
 
@@ -46,12 +41,14 @@ void Transmitter::AddPackageSuccessfullySent(Logger* logger)
 {
   logger_ = logger;
   ++packages_successfully_sent_;
+  logger->Info("Packages successfully sent: " + std::to_string(GetPackagesSuccessfullySent()));
 }
 
 void Transmitter::AddPackageLost(Logger* logger)
 {
   logger_ = logger;
   ++packages_lost_;
+  logger->Info("Packages lost: " + std::to_string(GetPackagesLost()));
 }
 
 void Transmitter::IncTimeOfChannelListenning(Logger* logger)

@@ -1,12 +1,11 @@
 #include "wirelessNetwork.h"
-//#include "package.h"
 
 #include <iostream>
 
 WirelessNetwork::WirelessNetwork(Logger* logger)
 {
   logger_ = logger;
-	logger->Info("Create Wireless Network");
+	logger->Info("Create wireless network");
 
   channel_ = new Channel(logger);
 
@@ -18,11 +17,12 @@ WirelessNetwork::WirelessNetwork(Logger* logger)
 		auto receiver = new Receiver(i, logger);
 		receivers_.push_back(receiver);
 	}
+	printf("\n");
 }
 
 WirelessNetwork::~WirelessNetwork()
 {
-	logger_->Info("Remove Wireless Network");
+	logger_->Info("Remove wireless network");
 	delete channel_;
 
 	for (int i = 0; i < k_number_of_stations_; ++i)
@@ -57,16 +57,7 @@ bool WirelessNetwork::GetChannelStatus()
 	return channel_->GetChannelOccupancy();
 }
 
-/*
-Package* WirelessNetwork::GeneratePackage(Logger* logger, WirelessNetwork* wireless_network,
-	unsigned id_package, unsigned id_station)
-{
-	//Package* new_package = new Package(id_package, id_station, logger, wireless_network);
-	//return new_package;
-}
-*/
-
-void WirelessNetwork::SetPackages(Package* package)
+void WirelessNetwork::AddPackages(Package* package)
 {
 	return packages_.push_back(package);
 }

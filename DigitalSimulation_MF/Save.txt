@@ -1,4 +1,6 @@
-[Info] Create Wireless Network
+[Info] Create logger 
+
+[Info] Create wireless network
 [Info] Create channel
 [Info] Create transmitter nr: 0
 [Info] Create receiver nr: 0
@@ -20,12 +22,11 @@
 [Info] Create receiver nr: 8
 [Info] Create transmitter nr: 9
 [Info] Create receiver nr: 9
-[Info] Start simulation...
 [Info] Started Simulation method M4 (Process Interaction):
-[Info] Simulation time: 2000
+[Info] Simulation time: 4008
 [Info] Packet Process Execute:
 [Info] Generate CTPk time... CTPk = 20
-[Info] Generate package (id: 1) by transmitter (id: 0). Package transmission time: 20
+[Info] Generate package (id: 1) by transmitter (id: 2). Package transmission time: 20
 [Info] Channel is free
 [Info] Channel isn't free more than 4ms
 [Info] Waiting 0,5ms...
@@ -66,201 +67,36 @@
 [Info] Channel is free more than 4ms
 [Info] No collision detected
 [Info] Started transmission of packet: 1
-[Info] Package successfully sent
-[Info] Permission to send ACK
-[Info] CTIZ time
-[Info] TER error occur
-[Info] Collision detected
-[Info] Package retransmission attempt... attempt nr: 1
-[Info] Permission for retransmission
-[Info] CRP time: 0
-[Info] Channel is free
-[Info] Channel isn't free more than 4ms
-[Info] Waiting 0,5ms...
-[Info] Time of free channel listenning: 5
-[Info] Channel is free
-[Info] Channel isn't free more than 4ms
-[Info] Waiting 0,5ms...
-[Info] Time of free channel listenning: 10
-[Info] Channel is free
-[Info] Channel isn't free more than 4ms
-[Info] Waiting 0,5ms...
-[Info] Time of free channel listenning: 15
-[Info] Channel is free
-[Info] Channel isn't free more than 4ms
-[Info] Waiting 0,5ms...
-[Info] Time of free channel listenning: 20
-[Info] Channel is free
-[Info] Channel isn't free more than 4ms
-[Info] Waiting 0,5ms...
-[Info] Time of free channel listenning: 25
-[Info] Channel is free
-[Info] Channel isn't free more than 4ms
-[Info] Waiting 0,5ms...
-[Info] Time of free channel listenning: 30
-[Info] Channel is free
-[Info] Channel isn't free more than 4ms
-[Info] Waiting 0,5ms...
-[Info] Time of free channel listenning: 35
-[Info] Channel is free
-[Info] Channel isn't free more than 4ms
-[Info] Waiting 0,5ms...
-[Info] Time of free channel listenning: 40
-[Info] Channel is free
-[Info] Channel isn't free more than 4ms
-[Info] Waiting 0,5ms...
-[Info] Time of free channel listenning: 45
-[Info] Channel is free
-[Info] Channel is free more than 4ms
-[Info] No collision detected
-[Info] Started transmission of packet: 1
-[Info] Package successfully sent
-[Info] Permission to send ACK
-[Info] CTIZ time
-[Info] TER error occur
-[Info] Collision detected
-[Info] Package retransmission attempt... attempt nr: 2
-[Info] Permission for retransmission
-[Info] CRP time: 60
-[Info] Channel is free
-[Info] Channel isn't free more than 4ms
-[Info] Waiting 0,5ms...
-[Info] Time of free channel listenning: 5
-[Info] Channel is free
-[Info] Channel isn't free more than 4ms
-[Info] Waiting 0,5ms...
-[Info] Time of free channel listenning: 10
-[Info] Channel is free
-[Info] Channel isn't free more than 4ms
-[Info] Waiting 0,5ms...
-[Info] Time of free channel listenning: 15
-[Info] Channel is free
-[Info] Channel isn't free more than 4ms
-[Info] Waiting 0,5ms...
-[Info] Time of free channel listenning: 20
-[Info] Channel is free
-[Info] Channel isn't free more than 4ms
-[Info] Waiting 0,5ms...
-[Info] Time of free channel listenning: 25
-[Info] Channel is free
-[Info] Channel isn't free more than 4ms
-[Info] Waiting 0,5ms...
-[Info] Time of free channel listenning: 30
-[Info] Channel is free
-[Info] Channel isn't free more than 4ms
-[Info] Waiting 0,5ms...
-[Info] Time of free channel listenning: 35
-[Info] Channel is free
-[Info] Channel isn't free more than 4ms
-[Info] Waiting 0,5ms...
-[Info] Time of free channel listenning: 40
-[Info] Channel is free
-[Info] Channel isn't free more than 4ms
-[Info] Waiting 0,5ms...
-[Info] Time of free channel listenning: 45
-[Info] Channel is free
-[Info] Channel is free more than 4ms
-[Info] No collision detected
-[Info] Started transmission of packet: 1
-[Info] Package successfully sent
-[Info] Permission to send ACK
-[Info] CTIZ time
-[Info] TER error occur
-[Info] Collision detected
-[Info] Package retransmission attempt... attempt nr: 3
-[Info] Permission for retransmission
-[Info] CRP time: 20
-[Info] Channel is free
-[Info] Channel isn't free more than 4ms
-[Info] Waiting 0,5ms...
-[Info] Time of free channel listenning: 5
-[Info] Channel is free
-[Info] Channel isn't free more than 4ms
-[Info] Waiting 0,5ms...
-[Info] Time of free channel listenning: 10
-[Info] Channel is free
-[Info] Channel isn't free more than 4ms
-[Info] Waiting 0,5ms...
-[Info] Time of free channel listenning: 15
-[Info] Channel is free
-[Info] Channel isn't free more than 4ms
-[Info] Waiting 0,5ms...
-[Info] Time of free channel listenning: 20
-[Info] Channel is free
-[Info] Channel isn't free more than 4ms
-[Info] Waiting 0,5ms...
-[Info] Time of free channel listenning: 25
-[Info] Channel is free
-[Info] Channel isn't free more than 4ms
-[Info] Waiting 0,5ms...
-[Info] Time of free channel listenning: 30
-[Info] Channel is free
-[Info] Channel isn't free more than 4ms
-[Info] Waiting 0,5ms...
-[Info] Time of free channel listenning: 35
-[Info] Channel is free
-[Info] Channel isn't free more than 4ms
-[Info] Waiting 0,5ms...
-[Info] Time of free channel listenning: 40
-[Info] Channel is free
-[Info] Channel isn't free more than 4ms
-[Info] Waiting 0,5ms...
-[Info] Time of free channel listenning: 45
-[Info] Channel is free
-[Info] Channel is free more than 4ms
-[Info] No collision detected
-[Info] Started transmission of packet: 1
-[Info] Package successfully sent
-[Info] Permission to send ACK
-[Info] CTIZ time
-[Info] TER error occur
-[Info] Collision detected
-[Info] Package retransmission attempt... attempt nr: 4
-[Info] Permission for retransmission
-[Info] CRP time: 0
-[Info] Channel is free
-[Info] Channel isn't free more than 4ms
-[Info] Waiting 0,5ms...
-[Info] Time of free channel listenning: 5
-[Info] Channel is free
-[Info] Channel isn't free more than 4ms
-[Info] Waiting 0,5ms...
-[Info] Time of free channel listenning: 10
-[Info] Channel is free
-[Info] Channel isn't free more than 4ms
-[Info] Waiting 0,5ms...
-[Info] Time of free channel listenning: 15
-[Info] Channel is free
-[Info] Channel isn't free more than 4ms
-[Info] Waiting 0,5ms...
-[Info] Time of free channel listenning: 20
-[Info] Channel is free
-[Info] Channel isn't free more than 4ms
-[Info] Waiting 0,5ms...
-[Info] Time of free channel listenning: 25
-[Info] Channel is free
-[Info] Channel isn't free more than 4ms
-[Info] Waiting 0,5ms...
-[Info] Time of free channel listenning: 30
-[Info] Channel is free
-[Info] Channel isn't free more than 4ms
-[Info] Waiting 0,5ms...
-[Info] Time of free channel listenning: 35
-[Info] Channel is free
-[Info] Channel isn't free more than 4ms
-[Info] Waiting 0,5ms...
-[Info] Time of free channel listenning: 40
-[Info] Channel is free
-[Info] Channel isn't free more than 4ms
-[Info] Waiting 0,5ms...
-[Info] Time of free channel listenning: 45
-[Info] Channel is free
-[Info] Channel is free more than 4ms
-[Info] No collision detected
-[Info] Started transmission of packet: 1
-[Info] Package successfully sent
-[Info] Permission to send ACK
-[Info] CTIZ time
 [Info] TER error doesn't occur
+[Info] Package successfully sent
+[Info] Permission to send ACK
+[Info] CTIZ time: 1ms
 [Info] ACK delivered successfully
 [Info] Packages successfully sent: 1
+[Info] Ended transmission of packet: 1
+[Info] End process package (id: 1) 
+
+[Info] Remove package
+[Info] Remove wireless network
+[Info] Remove channel
+[Info] Remove transmitter nr: 0
+[Info] Remove receiver nr: 0
+[Info] Remove transmitter nr: 1
+[Info] Remove receiver nr: 1
+[Info] Remove transmitter nr: 2
+[Info] Remove receiver nr: 2
+[Info] Remove transmitter nr: 3
+[Info] Remove receiver nr: 3
+[Info] Remove transmitter nr: 4
+[Info] Remove receiver nr: 4
+[Info] Remove transmitter nr: 5
+[Info] Remove receiver nr: 5
+[Info] Remove transmitter nr: 6
+[Info] Remove receiver nr: 6
+[Info] Remove transmitter nr: 7
+[Info] Remove receiver nr: 7
+[Info] Remove transmitter nr: 8
+[Info] Remove receiver nr: 8
+[Info] Remove transmitter nr: 9
+[Info] Remove receiver nr: 9
+[Info] Remove logger

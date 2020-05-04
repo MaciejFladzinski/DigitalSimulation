@@ -1,11 +1,11 @@
 #include "simulation.h"
 
+#include <iostream>
+
 Simulation::Simulation(Logger* logger, WirelessNetwork* wireless_network)
 {
   logger_ = logger;
   wireless_network_ = wireless_network;
-
-  logger->Info("Start simulation...");
 
 	Transmitter* transmitter;
 
@@ -22,7 +22,7 @@ Simulation::~Simulation()
 
 }
 
-void Simulation::Run(Logger* logger, size_t time)
+void Simulation::RunM4(Logger* logger, size_t time)
 {
   logger_ = logger;
 
@@ -36,7 +36,9 @@ void Simulation::Run(Logger* logger, size_t time)
 
   // Create first package process
   size_t id = 0;
-  auto package = new Package(id, id, clock_, logger, wireless_network_, &agenda);
+  ++id;
+  auto package = new Package(id, rand() % 10, time + rand() % generate_packet_max_time_,
+    logger, wireless_network_, &agenda);
   package->Activ(time);
 
   // main loop
@@ -45,12 +47,12 @@ void Simulation::Run(Logger* logger, size_t time)
     Package* package_process = agenda.top();
     agenda.pop();
     clock_ = package_process->GetTime();
-
     logger->Info("Simulation time: " + std::to_string(clock_));
     package_process->Execute();
 
-    if(package_process->IsTerminated())
+    if(package_process->GetIsTerminated() == true)
     {
+      logger->Info("End process package (id: " + std::to_string(id) + ") \n");
       delete package_process;
     }
   }

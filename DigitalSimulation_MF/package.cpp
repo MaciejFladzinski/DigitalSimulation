@@ -10,7 +10,7 @@ Package::Package(unsigned int id_package, unsigned int id_station, size_t time,
 {
   id_package_ = id_package;
   id_station_ = id_station;
-  time_ = time; // ???????
+  time_ = time;
   wireless_network_ = wireless_network;
   logger_ = logger;
   agenda_ = agenda;
@@ -19,7 +19,7 @@ Package::Package(unsigned int id_package, unsigned int id_station, size_t time,
   //  " (in station nr: " + std::to_string(id_station) + ") has been created");
 }
 
-Package::Package(unsigned id_package, unsigned id_station, size_t time)
+Package::Package(unsigned int id_package, unsigned int id_station, size_t time)
 {
   id_package_ = id_package;
   id_station_ = id_station;
@@ -64,7 +64,7 @@ void Package::IncrementNumberOfLR(Logger* logger)
   logger->Info("Package retransmission attempt... attempt nr: " + std::to_string(GetNumberOfLR()));
 }
 
-bool Package::IsTerminated()
+bool Package::GetIsTerminated()
 {
   return is_terminated_;
 }
@@ -72,6 +72,33 @@ bool Package::IsTerminated()
 void Package::SetTerminated()
 {
   is_terminated_ = true;
+}
+
+void Package::StepInto()
+{
+  //logger_->Info("Simulation time: " + std::to_string(clock_));
+  printf("\nPress any key to continue... \n\n");
+  getchar();
+}
+
+bool Package::SelectMode(int mode)
+{
+  if (mode == 1)
+  {
+    return true;
+  }
+  else if (mode == 2)
+  {
+    return false;
+  }
+  else
+  {
+    printf("Wrong number, try again \n\n");
+    printf("Select simulation mode:\n1- step into\n2- step over\n");
+    int key;
+    std::cin >> key;
+    SelectMode(key);
+  }
 }
 
 void Package::GenerateCTPkTime(Logger* logger)
@@ -104,6 +131,12 @@ void Package::Execute()
 
   bool active = true;
 
+  printf("\nSelect simulation mode:\n1- step into\n2- step over\n");
+  int key;
+  std::cin >> key;
+  std::cout << std::endl;
+
+  if (SelectMode(key) == true) { StepInto(); }
   logger_->Info("Packet Process Execute:");
 
   while (active)
@@ -122,8 +155,10 @@ void Package::Execute()
       {
         auto new_id = id_package_ + 1;
         auto new_package = new Package(new_id, id_station_, ctpk_time_, logger_, wireless_network_, agenda_);
+        wireless_network_->AddPackages(new_package);  // add package to vector in buffer
         new_package->Activ(rand() % WirelessNetwork::generate_packet_max_time);
       }
+      if (SelectMode(key) == true) { StepInto(); }
       state_ = State::ChannelListening;
       break;
 
@@ -141,20 +176,25 @@ void Package::Execute()
         if (transmitter->GetTimeOfChannelListenning() > transmitter->difs_time_)
         {
           logger_->Info("Channel is free more than 4ms");
+          if (SelectMode(key) == true) { StepInto(); }
           state_ = State::Transmission;
         }
         else
         {
           logger_->Info("Channel isn't free more than 4ms");
           transmitter->Wait(logger_); // Process sleep for 5ms (add: active = false ?)
-          transmitter->IncTimeOfChannelListenning(logger_); // X += 5ms
+          Activ(5); // process sleep for 0,5ms
+          transmitter->IncTimeOfChannelListenning(logger_); // X += 0,5ms
+          if (SelectMode(key) == true) { StepInto(); }
           state_ = State::ChannelListening;
         }
       }
       else
       {
         logger_->Info("Channel is busy");
-        transmitter->Wait(logger_); // Process sleep for 5ms (add: active = false ?)
+        transmitter->Wait(logger_); // Process sleep for 5ms
+        Activ(5); // process sleep for 0,5ms
+        if (SelectMode(key) == true) { StepInto(); }
         state_ = State::ChannelListening;
       }
       break;
@@ -169,20 +209,24 @@ void Package::Execute()
       if (wireless_network_->GetChannelStatus() == false) // if(channel is free)
       {
         logger_->Info("No collision detected");
+
         wireless_network_->StartTransmission(logger_);
-        Activ(rand() % WirelessNetwork::transmission_max_time);
-        
+        Activ(ctpk_time_);// process sleep for CTPk time
+
+        wireless_network_->GetChannel()->ChanceForTER(logger_); // check TER error
         
         if (wireless_network_->GetChannel()->GetCollision() == false)
         {
-          wireless_network_->GetChannel()->SetChannelOccupancy(false);
+          wireless_network_->GetChannel()->SetChannelOccupancy(false); // channel is free
+          if (SelectMode(key) == true) { StepInto(); }
           state_ = State::ACK;
         }
         else
         {
-          wireless_network_->GetChannel()->SetCollision(true);
-          logger_->Info("Collision detected");
+          wireless_network_->GetChannel()->SetChannelOccupancy(false); // channel is free
           wireless_network_->GetChannel()->SetCollision(false);
+          transmitter->SetTimeOfChannelListenning(0);
+          if (SelectMode(key) == true) { StepInto(); }
           state_ = State::Retransmission;
         }
       }
@@ -190,7 +234,10 @@ void Package::Execute()
       {
         wireless_network_->GetChannel()->SetCollision(true);
         logger_->Info("Collision detected");
+        wireless_network_->GetChannel()->SetChannelOccupancy(false); // channel is free
         wireless_network_->GetChannel()->SetCollision(false);
+        transmitter->SetTimeOfChannelListenning(0);
+        if (SelectMode(key) == true) { StepInto(); }
         state_ = State::Retransmission;
       }
       break;
@@ -209,17 +256,19 @@ void Package::Execute()
       if(GetNumberOfLR() <= 10)
       {
         logger_->Info("Permission for retransmission");
-        transmitter->GenerateCRPTime(logger_,ctpk_time_,number_of_LR_); // process sleep for CRP time
+        transmitter->GenerateCRPTime(logger_,ctpk_time_,number_of_LR_);
+        Activ(transmitter->GetTimeCrp()); // process sleep for CRP time
         transmitter->SetTimeOfChannelListenning(0);
+        if (SelectMode(key) == true) { StepInto(); }
         state_ = State::ChannelListening;
       }
       else
       {
         logger_->Info("Unable to retransmit again");
         transmitter->AddPackageLost(logger_);
-        logger_->Info("Packages lost: " + std::to_string(transmitter->GetPackagesLost()));
+        transmitter->SetTimeOfChannelListenning(0);
+        if (SelectMode(key) == true) { StepInto(); }
         state_ = State::RemovalFromTheSystem;
-        active = false;
       }
       break;
 
@@ -236,22 +285,19 @@ void Package::Execute()
         receiver->SetAcknowledgment(true); // permission to send ACK
         logger_->Info("Permission to send ACK");
         wireless_network_->GetChannel()->SetChannelOccupancy(true); // ACK in channel
-        logger_->Info("CTIZ time");
-        //transmitter->ctiz_time_; // process sleep for 1ms (CTIZ)
+        logger_->Info("CTIZ time: 1ms");
+        Activ(transmitter->ctiz_time_); // process sleep for CTIZ time (1ms)
 
         //if there is no collision after time CTPk + CTIZ in the channel:
-        wireless_network_->GetChannel()->ChanceForTER(logger_); // check TER error
-
         if (wireless_network_->GetChannel()->GetCollision() == false)
         {
           wireless_network_->GetChannel()->SetChannelOccupancy(false); // ACK delivered
           logger_->Info("ACK delivered successfully");
           transmitter->AddPackageSuccessfullySent(logger_);
-          logger_->Info("Packages successfully sent: " + std::to_string(transmitter->GetPackagesSuccessfullySent()));
           transmitter->SetTimeOfChannelListenning(0);
           receiver->SetAcknowledgment(false);
+          if (SelectMode(key) == true) { StepInto(); }
           state_ = State::RemovalFromTheSystem;
-          active = false;
         }
         else
         {
@@ -260,6 +306,7 @@ void Package::Execute()
           wireless_network_->GetChannel()->SetChannelOccupancy(false); // ACK not delivered
           transmitter->SetTimeOfChannelListenning(0);
           wireless_network_->GetChannel()->SetCollision(false);
+          if (SelectMode(key) == true) { StepInto(); }
           state_ = State::Retransmission;
         }
       }
@@ -269,6 +316,7 @@ void Package::Execute()
         logger_->Info("No permission to send ACK");
         wireless_network_->GetChannel()->SetChannelOccupancy(false);
         transmitter->SetTimeOfChannelListenning(0);
+        if (SelectMode(key) == true) { StepInto(); }
         state_ = State::Retransmission;
       }
       break;
@@ -280,13 +328,17 @@ void Package::Execute()
       // 2. usuñ pakiet z kolejki FIFO
       // 3. jeœli w kolejce znajduje siê inny pakiet, rozpocznij jego transmisjê
 
-      if(!wireless_network_->IsBufferEmpty()) // if buffer isn't empty
+      wireless_network_->EndTransmission(logger_);
+      /*
+      if(!wireless_network_->GetPackagesPtr()->empty()) // if buffer isn't empty
       {
-        // wake up next process/ packet in buffer in current time
-        wireless_network_->GetFirstPackage()->Activ(time_, false);
+        // wake up next packet in buffer in current time
+        wireless_network_->GetPackagesPtr()->front()->Activ(time_, true);
       }
-      active = false;
+      */
       SetTerminated();
+      if (SelectMode(key) == true) { StepInto(); }
+      active = false;
       break;
 
     default:

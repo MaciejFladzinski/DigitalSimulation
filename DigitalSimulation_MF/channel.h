@@ -1,8 +1,6 @@
 #ifndef CHANNEL_H_
 #define CHANNEL_H_
 
-#include <vector>
-
 #include "logger.h"
 
 class Channel

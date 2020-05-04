@@ -33,7 +33,6 @@ public:
   inline size_t GetTimeOfChannelOccupancy() { return time_of_channel_occupancy_; }
   inline size_t GetTimeCrp() { return time_crp_; }
   inline bool GetCorrectReceptionAck() { return correct_reception_ack_; }
-  inline bool GetTransmissionPermission() { return transmission_permission_; }
   
   // set
   inline void SetTransmitterId(unsigned int transmitter_id)
@@ -56,10 +55,6 @@ public:
   {
     this->correct_reception_ack_ = correct_reception_ack;
   }
-  inline void SetTransmissionPermission(bool transmission_permission)
-  {
-    this->transmission_permission_ = transmission_permission;
-  }
   inline void SetTimeOfChannelListenning(size_t time_of_channel_listenning)
   {
     this->time_of_channel_listenning_ = time_of_channel_listenning;
@@ -73,9 +68,7 @@ private:
   size_t time_of_channel_occupancy_;  // time of channel occupancy
   size_t time_crp_;  // random time after which retransmissions can be made
   bool correct_reception_ack_ = false;  // true - ACK take back in less time than (CGPk + CTIZ)
-  bool transmission_permission_;  // true - permission to transmit the packet
 
-  Package* package_ = nullptr;
   Logger* logger_ = nullptr;
 };
 

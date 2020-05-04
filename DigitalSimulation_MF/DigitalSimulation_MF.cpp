@@ -23,9 +23,10 @@ int main()
 
   auto simulation = new Simulation(logger, wireless_network);
 
-  simulation->Run(logger, 2000);
+  simulation->RunM4(logger, 2000);
 
   delete simulation;
+  delete wireless_network;
   delete logger;
   return 0;
 }

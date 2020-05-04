@@ -8,6 +8,8 @@
 #include <functional>
 #include <queue>
 
+#include "simulation.h"
+
 class WirelessNetwork;
 
 class Package
@@ -30,10 +32,11 @@ Logger* logger, WirelessNetwork* wireless_network, Agenda* agenda);
   // relative false: sets the direct time, true: increments current process time
   void Activ(size_t time, bool relative = true);
 
-  bool IsTerminated();
-  void SetTerminated();
   void IncrementNumberOfLR(Logger* logger);
   void GenerateCTPkTime(Logger* logger);
+
+  void StepInto();
+  bool SelectMode(int mode);
 
   // get
   inline unsigned int GetPackageId() { return id_package_; }
@@ -41,6 +44,7 @@ Logger* logger, WirelessNetwork* wireless_network, Agenda* agenda);
   inline unsigned int GetNumberOfLR() { return number_of_LR_; }
   inline size_t GetTimeCTPk() { return ctpk_time_; }
   inline size_t GetTime() { return time_; }
+  bool GetIsTerminated();
 
   // set
   inline void SetPackageId(unsigned int id_package);
@@ -48,6 +52,7 @@ Logger* logger, WirelessNetwork* wireless_network, Agenda* agenda);
   inline void SetNumberOfLR(unsigned int number_of_LR);
   inline void SetTimeCTPk(size_t ctpk_time);
   inline void SetTime(size_t time);
+  void SetTerminated();
 
 private:
   unsigned int id_package_;
