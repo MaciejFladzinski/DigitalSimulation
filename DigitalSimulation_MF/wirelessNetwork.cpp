@@ -6,7 +6,7 @@ WirelessNetwork::WirelessNetwork(Logger* logger)
 {
   logger_ = logger;
 	logger->Info("Create wireless network");
-
+	int id = 0;
   channel_ = new Channel(logger);
 
 	for (int i = 0; i < k_number_of_stations_; ++i)
@@ -80,8 +80,8 @@ void WirelessNetwork::GeneratePackage(Logger* logger, Package* package, unsigned
 	static size_t id = 0;
 	++id;
 	package->GenerateCTPkTime(logger);
-	auto new_package = new Package(id, id_station, package->GetTimeCTPk());
-	packages_.push_back(new_package);
+	//auto new_package = new Package(id, id_station, package->GetTimeCTPk());
+	packages_.push_back(package);
 	logger->Info("Generate package (id: " + std::to_string(id) + ") by transmitter (id: " +
 		std::to_string(id_station) + "). Package transmission time: " + std::to_string(package->GetTimeCTPk()));
 }
@@ -90,13 +90,12 @@ void WirelessNetwork::StartTransmission(Logger* logger)
 {
 	logger_ = logger;
 	channel_->SetChannelOccupancy(true);
-	logger->Info("Started transmission of packet: " + std::to_string(packages_.front()->GetPackageId()));
+	logger->Info("Start transmission");
 }
 
 void WirelessNetwork::EndTransmission(Logger* logger)
 {
 	logger_ = logger;
 	channel_->SetChannelOccupancy(false);
-	logger->Info("Ended transmission of packet: " + std::to_string(packages_.front()->GetPackageId()));
 	packages_.pop_back();
 }

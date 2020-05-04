@@ -34,11 +34,13 @@ void Simulation::RunM4(Logger* logger, size_t time)
   auto cmp = [](Package* left, Package* right) {return left->GetTime() > right->GetTime(); };
   Package::Agenda agenda(cmp);
 
-  // Create first package process
+  // Create package process
   size_t id = 0;
+
   ++id;
-  auto package = new Package(id, rand() % 10, time + rand() % generate_packet_max_time_,
+  auto package = new Package(id, rand() % 10, rand() % generate_packet_max_time_,
     logger, wireless_network_, &agenda);
+  agenda.push(package);
   package->Activ(time);
 
   // main loop
@@ -52,7 +54,7 @@ void Simulation::RunM4(Logger* logger, size_t time)
 
     if(package_process->GetIsTerminated() == true)
     {
-      logger->Info("End process package (id: " + std::to_string(id) + ") \n");
+      logger->Info("End process package (id: " + std::to_string(package_process->GetPackageId()) + ") \n");
       delete package_process;
     }
   }

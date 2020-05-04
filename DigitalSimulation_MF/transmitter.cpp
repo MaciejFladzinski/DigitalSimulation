@@ -19,12 +19,6 @@ unsigned Transmitter::GetPackagesSuccessfullySent()
   return packages_successfully_sent_;
 }
 
-void Transmitter::Wait(Logger* logger)
-{
-  logger_ = logger;
-  logger->Info("Waiting 0,5ms...");
-}
-
 void Transmitter::GenerateCRPTime(Logger* logger, size_t ctpk, unsigned int number_of_LR)
 {
   logger_ = logger;

@@ -18,7 +18,6 @@ public:
   ~WirelessNetwork();
 
   static const size_t generate_packet_max_time = 10;
-
   unsigned const int k_number_of_stations_ = 10; // number of transmitters and receivers
   
   Transmitter* GetTransmitters(int i);

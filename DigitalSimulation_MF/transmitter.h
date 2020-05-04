@@ -14,7 +14,6 @@ public:
   ~Transmitter();
 
   // functions
-  void Wait(Logger* logger); // delay 0,5ms
   void GenerateCRPTime(Logger* logger, size_t ctpk, unsigned int number_of_LR); // time before start retransmission
   void AddPackageSuccessfullySent(Logger* logger);  // Add 1 package successfully sent
   void AddPackageLost(Logger* logger);  // Add 1 package lost

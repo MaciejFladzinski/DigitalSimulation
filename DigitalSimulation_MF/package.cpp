@@ -146,16 +146,10 @@ void Package::Execute()
     case State::AppearanceInTheSystem:
       // Appearance in the system operations
 
-      // 1. pojawienie sie pakietu i dodanie go do kolejki FIFO
-      // 2. planowanie pojawienia sie nastpenego pakietu
-      // 3. dodanie pakietu do bufora
-      // 4. przejdz do State::ChannelListenning
-
-      wireless_network_->GeneratePackage(logger_, this, id_station_);
+      wireless_network_->GeneratePackage(logger_, this, rand()%10); // generate and add package to the vector
       {
-        auto new_id = id_package_ + 1;
-        auto new_package = new Package(new_id, id_station_, ctpk_time_, logger_, wireless_network_, agenda_);
-        wireless_network_->AddPackages(new_package);  // add package to vector in buffer
+        //auto new_id = ++id_package_;
+        auto new_package = new Package(id_package_, id_station_, ctpk_time_, logger_, wireless_network_, agenda_);
         new_package->Activ(rand() % WirelessNetwork::generate_packet_max_time);
       }
       if (SelectMode(key) == true) { StepInto(); }
@@ -164,10 +158,6 @@ void Package::Execute()
 
     case State::ChannelListening:
       // Channel listening operations
-
-      // 1. co 0,5ms sprawdzaj czy kanal jest wolny
-      // 2. sprawdzenie, czy kanal jest wolny dluzej niz DIFS = 4ms
-      // 3. jesli zalozenie jest spelnione przejdz do State::Transmission, jeœli nie kontynuuj sprawdzanie
 
       if (wireless_network_->GetChannelStatus() == false)
       {
@@ -182,7 +172,6 @@ void Package::Execute()
         else
         {
           logger_->Info("Channel isn't free more than 4ms");
-          transmitter->Wait(logger_); // Process sleep for 5ms (add: active = false ?)
           Activ(5); // process sleep for 0,5ms
           transmitter->IncTimeOfChannelListenning(logger_); // X += 0,5ms
           if (SelectMode(key) == true) { StepInto(); }
@@ -192,7 +181,6 @@ void Package::Execute()
       else
       {
         logger_->Info("Channel is busy");
-        transmitter->Wait(logger_); // Process sleep for 5ms
         Activ(5); // process sleep for 0,5ms
         if (SelectMode(key) == true) { StepInto(); }
         state_ = State::ChannelListening;
@@ -201,10 +189,6 @@ void Package::Execute()
 
     case State::Transmission:
       // Transmission operations
-
-      // 1. pobierz najstarszy pakiet z kolejki FIFO
-      // 2. wyznacz CTPk (czas transmisji pakietu)
-      // 3. wysylaj pakiet przez okreslony czas (CTPk)
 
       if (wireless_network_->GetChannelStatus() == false) // if(channel is free)
       {
@@ -245,12 +229,6 @@ void Package::Execute()
     case State::Retransmission:
       // Retransmission operations
 
-      // 1. zwieksz licznik retransmisji o 1
-      // 2. sprawdz zgodnosc warunku LR <= 10
-      // 3. wyznacz czas CRP
-      // 4. czekaj okreslony czas CRP
-      // 5. przejdz do state ChannelListenning lub RemovalFromTheSystem
-
       IncrementNumberOfLR(logger_);
 
       if(GetNumberOfLR() <= 10)
@@ -275,18 +253,14 @@ void Package::Execute()
     case State::ACK:
       // ACK operations
 
-      // 1. wygeneruj potwierdzenie ACK
-      // 2. poddaj go transmisji przez okreslona jednostke czasu (CTIZ)
-      // 3. jesli po czasie CTPk+CTIZ (dla CTIZ = 1ms) odebrano ACK przejdz do RemovalFromTheSystem, jesli nie- Retransmission
-
       if (wireless_network_->GetChannelStatus() == false)
       {
         logger_->Info("Package successfully sent");
         receiver->SetAcknowledgment(true); // permission to send ACK
         logger_->Info("Permission to send ACK");
         wireless_network_->GetChannel()->SetChannelOccupancy(true); // ACK in channel
-        logger_->Info("CTIZ time: 1ms");
         Activ(transmitter->ctiz_time_); // process sleep for CTIZ time (1ms)
+        if (SelectMode(key) == true) { StepInto(); }
 
         //if there is no collision after time CTPk + CTIZ in the channel:
         if (wireless_network_->GetChannel()->GetCollision() == false)
@@ -324,20 +298,14 @@ void Package::Execute()
     case State::RemovalFromTheSystem:
       // Removal from the system operations
 
-      // 1. zwolnij kanal
-      // 2. usuñ pakiet z kolejki FIFO
-      // 3. jeœli w kolejce znajduje siê inny pakiet, rozpocznij jego transmisjê
-
       wireless_network_->EndTransmission(logger_);
-      /*
-      if(!wireless_network_->GetPackagesPtr()->empty()) // if buffer isn't empty
+      
+      if(!wireless_network_->IsBufferEmpty()) // if (buffer isn't empty)
       {
         // wake up next packet in buffer in current time
-        wireless_network_->GetPackagesPtr()->front()->Activ(time_, true);
+        wireless_network_->GetFirstPackage()->Activ(time_, false);
       }
-      */
       SetTerminated();
-      if (SelectMode(key) == true) { StepInto(); }
       active = false;
       break;
 
