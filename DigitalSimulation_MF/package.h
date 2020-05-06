@@ -18,7 +18,8 @@ public:
   typedef std::priority_queue<Package*, std::vector<Package*>, std::function<bool(Package*, Package*)>>Agenda;
 
   // enum class - representation of states
-  enum class State { AppearanceInTheSystem, ChannelListening, Transmission, Retransmission, ACK, RemovalFromTheSystem };
+  enum class State { AppearanceInTheSystem, ChannelListening, Transmission, ReceivePackage, Retransmission, ACK,
+    ReceiveACK, RemovalFromTheSystem };
 
   Package(unsigned int id_package, unsigned int id_station, size_t time,
 Logger* logger, WirelessNetwork* wireless_network, Agenda* agenda);

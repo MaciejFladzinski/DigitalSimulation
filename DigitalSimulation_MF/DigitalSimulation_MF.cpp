@@ -25,7 +25,7 @@ int main()
 
   auto simulation = new Simulation(logger, wireless_network);
 
-  simulation->RunM4(logger, 2000);
+  simulation->RunM4(logger, 20000);
 
   printf("\n");
   delete simulation;

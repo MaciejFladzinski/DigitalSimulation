@@ -23,310 +23,827 @@
 [Info] Create transmitter nr: 9
 [Info] Create receiver nr: 9
 [Info] Started Simulation method M4 (Process Interaction):
-[Info] Simulation time: 3
-[Info] Generate CTPk time... CTPk = 10
-[Info] Generate package (id: 1) by transmitter (id: 6). Package transmission time: 10
-[Info] Channel is free
+[Info] Simulation time: 0
+[Info] Generate CTPk time... CTPk = 90
+[Info] Generate package (id: 0) by transmitter (id: 6). Package transmission time: 90
 [Info] Channel isn't free more than 4ms
-[Info] Time of free channel listenning: 0
-[Info] Simulation time: 20
-[Info] Channel is free
-[Info] Channel isn't free more than 4ms
-[Info] Time of free channel listenning: 5
+[Info] Time of free channel listenning: 0, by transmitter: 6
 [Info] Simulation time: 13
-[Info] Generate CTPk time... CTPk = 70
-[Info] Generate package (id: 2) by transmitter (id: 4). Package transmission time: 70
-[Info] Channel is free
 [Info] Channel isn't free more than 4ms
-[Info] Time of free channel listenning: 10
-[Info] Simulation time: 18
-[Info] Channel is free
+[Info] Time of free channel listenning: 5, by transmitter: 6
+[Info] Simulation time: 6
+[Info] Generate CTPk time... CTPk = 50
+[Info] Generate package (id: 1) by transmitter (id: 8). Package transmission time: 50
 [Info] Channel isn't free more than 4ms
-[Info] Time of free channel listenning: 15
-[Info] Simulation time: 23
-[Info] Channel is free
+[Info] Time of free channel listenning: 0, by transmitter: 8
+[Info] Simulation time: 11
 [Info] Channel isn't free more than 4ms
-[Info] Time of free channel listenning: 20
+[Info] Time of free channel listenning: 5, by transmitter: 8
+[Info] Simulation time: 16
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 10, by transmitter: 8
+[Info] Simulation time: 19
+[Info] Generate CTPk time... CTPk = 20
+[Info] Generate package (id: 2) by transmitter (id: 4). Package transmission time: 20
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 0, by transmitter: 4
+[Info] Simulation time: 21
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 15, by transmitter: 8
+[Info] Simulation time: 24
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 5, by transmitter: 4
 [Info] Simulation time: 26
-[Info] Generate CTPk time... CTPk = 70
-[Info] Generate package (id: 3) by transmitter (id: 5). Package transmission time: 70
-[Info] Channel is free
 [Info] Channel isn't free more than 4ms
-[Info] Time of free channel listenning: 25
-[Info] Simulation time: 28
-[Info] Channel is free
+[Info] Time of free channel listenning: 20, by transmitter: 8
+[Info] Simulation time: 29
 [Info] Channel isn't free more than 4ms
-[Info] Time of free channel listenning: 30
+[Info] Time of free channel listenning: 10, by transmitter: 4
 [Info] Simulation time: 31
-[Info] Channel is free
 [Info] Channel isn't free more than 4ms
-[Info] Time of free channel listenning: 35
-[Info] Simulation time: 33
-[Info] Channel is free
+[Info] Time of free channel listenning: 25, by transmitter: 8
+[Info] Simulation time: 34
 [Info] Channel isn't free more than 4ms
-[Info] Time of free channel listenning: 40
+[Info] Time of free channel listenning: 15, by transmitter: 4
 [Info] Simulation time: 36
-[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 30, by transmitter: 8
+[Info] Simulation time: 39
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 20, by transmitter: 4
+[Info] Simulation time: 41
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 35, by transmitter: 8
+[Info] Simulation time: 44
+[Info] Generate CTPk time... CTPk = 10
+[Info] Generate package (id: 3) by transmitter (id: 4). Package transmission time: 10
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 25, by transmitter: 4
+[Info] Simulation time: 44
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 30, by transmitter: 4
+[Info] Simulation time: 46
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 40, by transmitter: 8
+[Info] Simulation time: 49
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 35, by transmitter: 4
+[Info] Simulation time: 49
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 40, by transmitter: 4
+[Info] Simulation time: 51
 [Info] Channel is free more than 4ms
 [Info] Start transmission
-[Info] TER error doesn't occur
-[Info] Simulation time: 38
-[Info] Channel is free
-[Info] Channel is free more than 4ms
-[Info] Start transmission
-[Info] TER error doesn't occur
+[Info] Simulation time: 54
+[Info] Channel is busy
+[Info] Simulation time: 54
+[Info] Channel is busy
 [Info] Simulation time: 59
-[Info] Generate CTPk time... CTPk = 70
-[Info] Generate package (id: 4) by transmitter (id: 3). Package transmission time: 70
-[Info] Channel is free
+[Info] Channel is busy
+[Info] Simulation time: 59
+[Info] Channel is busy
+[Info] Simulation time: 64
+[Info] Channel is busy
+[Info] Simulation time: 64
+[Info] Channel is busy
+[Info] Simulation time: 69
+[Info] Channel is busy
+[Info] Simulation time: 69
+[Info] Channel is busy
+[Info] Simulation time: 74
+[Info] Channel is busy
+[Info] Simulation time: 74
+[Info] Channel is busy
+[Info] Simulation time: 79
+[Info] Channel is busy
+[Info] Simulation time: 79
+[Info] Channel is busy
+[Info] Simulation time: 84
+[Info] Channel is busy
+[Info] Simulation time: 84
+[Info] Channel is busy
+[Info] Simulation time: 89
+[Info] Channel is busy
+[Info] Simulation time: 89
+[Info] Channel is busy
+[Info] Simulation time: 92
+[Info] Generate CTPk time... CTPk = 20
+[Info] Generate package (id: 4) by transmitter (id: 9). Package transmission time: 20
+[Info] Channel is busy
+[Info] Simulation time: 94
+[Info] Channel is busy
+[Info] Simulation time: 94
+[Info] Channel is busy
+[Info] Simulation time: 97
+[Info] Channel is busy
+[Info] Simulation time: 99
+[Info] Channel is busy
+[Info] Simulation time: 99
+[Info] Channel is busy
+[Info] Simulation time: 101
+[Info] TER error occur
+[Info] Package retransmission attempt... attempt nr: 1
+[Info] Permission for retransmission
+[Info] CRP time: 0
+[Info] Simulation time: 101
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 0, by transmitter: 8
+[Info] Simulation time: 102
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 0, by transmitter: 9
+[Info] Simulation time: 104
 [Info] Channel is free more than 4ms
 [Info] Start transmission
-[Info] TER error doesn't occur
+[Info] Simulation time: 104
+[Info] Channel is busy
 [Info] Simulation time: 106
+[Info] Channel is busy
+[Info] Simulation time: 107
+[Info] Channel is busy
+[Info] Simulation time: 109
+[Info] Channel is busy
+[Info] Simulation time: 111
+[Info] Channel is busy
+[Info] Simulation time: 112
+[Info] Channel is busy
+[Info] Simulation time: 114
+[Info] Channel is busy
+[Info] Simulation time: 114
+[Info] TER error doesn't occur
 [Info] Permission to send ACK
 [Info] Start transmission
+[Info] Simulation time: 116
+[Info] Channel is busy
+[Info] Simulation time: 117
+[Info] Channel is busy
+[Info] Simulation time: 119
+[Info] Channel is busy
+[Info] Simulation time: 121
+[Info] Channel is busy
+[Info] Simulation time: 122
+[Info] Channel is busy
+[Info] Simulation time: 124
 [Info] ACK delivered successfully
 [Info] Packages successfully sent: 1
-[Info] Simulation time: 10
-[Info] End process package (id: 0) 
+[Info] End process package (id: 4) 
 
 [Info] Remove package
-[Info] Simulation time: 108
-[Info] Permission to send ACK
-[Info] Start transmission
-[Info] ACK delivered successfully
-[Info] Packages successfully sent: 2
-[Info] Simulation time: 10
-[Info] End process package (id: 0) 
-
-[Info] Remove package
+[Info] Simulation time: 124
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 0, by transmitter: 4
+[Info] Simulation time: 126
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 5, by transmitter: 8
 [Info] Simulation time: 127
-[Info] Generate CTPk time... CTPk = 70
-[Info] Generate package (id: 5) by transmitter (id: 9). Package transmission time: 70
-[Info] Channel is free
 [Info] Channel isn't free more than 4ms
-[Info] Time of free channel listenning: 0
+[Info] Time of free channel listenning: 5, by transmitter: 9
 [Info] Simulation time: 129
-[Info] Permission to send ACK
-[Info] Start transmission
-[Info] ACK delivered successfully
-[Info] Packages successfully sent: 3
-[Info] Simulation time: 10
-[Info] End process package (id: 0) 
-
-[Info] Remove package
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 5, by transmitter: 4
+[Info] Simulation time: 131
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 10, by transmitter: 8
 [Info] Simulation time: 132
-[Info] Channel is free
 [Info] Channel isn't free more than 4ms
-[Info] Time of free channel listenning: 0
+[Info] Time of free channel listenning: 10, by transmitter: 9
+[Info] Simulation time: 134
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 10, by transmitter: 4
+[Info] Simulation time: 136
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 15, by transmitter: 8
 [Info] Simulation time: 137
-[Info] Channel is free
 [Info] Channel isn't free more than 4ms
-[Info] Time of free channel listenning: 5
+[Info] Time of free channel listenning: 15, by transmitter: 9
+[Info] Simulation time: 139
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 15, by transmitter: 4
+[Info] Simulation time: 141
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 20, by transmitter: 8
 [Info] Simulation time: 142
-[Info] Channel is free
 [Info] Channel isn't free more than 4ms
-[Info] Time of free channel listenning: 10
+[Info] Time of free channel listenning: 20, by transmitter: 9
+[Info] Simulation time: 144
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 20, by transmitter: 4
+[Info] Simulation time: 146
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 25, by transmitter: 8
 [Info] Simulation time: 147
-[Info] Channel is free
 [Info] Channel isn't free more than 4ms
-[Info] Time of free channel listenning: 15
+[Info] Time of free channel listenning: 25, by transmitter: 9
+[Info] Simulation time: 149
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 25, by transmitter: 4
+[Info] Simulation time: 151
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 30, by transmitter: 8
 [Info] Simulation time: 152
-[Info] Channel is free
 [Info] Channel isn't free more than 4ms
-[Info] Time of free channel listenning: 20
+[Info] Time of free channel listenning: 30, by transmitter: 9
+[Info] Simulation time: 154
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 30, by transmitter: 4
+[Info] Simulation time: 156
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 35, by transmitter: 8
 [Info] Simulation time: 157
-[Info] Channel is free
 [Info] Channel isn't free more than 4ms
-[Info] Time of free channel listenning: 25
+[Info] Time of free channel listenning: 35, by transmitter: 9
+[Info] Simulation time: 159
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 35, by transmitter: 4
+[Info] Simulation time: 161
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 40, by transmitter: 8
 [Info] Simulation time: 162
-[Info] Channel is free
 [Info] Channel isn't free more than 4ms
-[Info] Time of free channel listenning: 30
-[Info] Simulation time: 167
-[Info] Channel is free
+[Info] Time of free channel listenning: 40, by transmitter: 9
+[Info] Simulation time: 164
 [Info] Channel isn't free more than 4ms
-[Info] Time of free channel listenning: 35
-[Info] Simulation time: 172
-[Info] Channel is free
-[Info] Channel isn't free more than 4ms
-[Info] Time of free channel listenning: 40
-[Info] Simulation time: 177
-[Info] Channel is free
+[Info] Time of free channel listenning: 40, by transmitter: 4
+[Info] Simulation time: 166
 [Info] Channel is free more than 4ms
 [Info] Start transmission
+[Info] Simulation time: 167
+[Info] Channel is busy
+[Info] Simulation time: 169
+[Info] Channel is busy
+[Info] Simulation time: 172
+[Info] Channel is busy
+[Info] Simulation time: 174
+[Info] Channel is busy
+[Info] Simulation time: 177
+[Info] Channel is busy
+[Info] Simulation time: 179
+[Info] Channel is busy
+[Info] Simulation time: 182
+[Info] Channel is busy
+[Info] Simulation time: 184
+[Info] Channel is busy
+[Info] Simulation time: 187
+[Info] Channel is busy
+[Info] Simulation time: 189
+[Info] Channel is busy
+[Info] Simulation time: 192
+[Info] Channel is busy
+[Info] Simulation time: 193
+[Info] Generate CTPk time... CTPk = 20
+[Info] Generate package (id: 5) by transmitter (id: 4). Package transmission time: 20
+[Info] Channel is busy
+[Info] Simulation time: 194
+[Info] Channel is busy
+[Info] Simulation time: 197
+[Info] Channel is busy
+[Info] Simulation time: 198
+[Info] Channel is busy
+[Info] Simulation time: 199
+[Info] Channel is busy
+[Info] Simulation time: 202
+[Info] Channel is busy
+[Info] Simulation time: 203
+[Info] Channel is busy
+[Info] Simulation time: 204
+[Info] Channel is busy
+[Info] Simulation time: 207
+[Info] Channel is busy
+[Info] Simulation time: 208
+[Info] Channel is busy
+[Info] Simulation time: 209
+[Info] Channel is busy
+[Info] Simulation time: 212
+[Info] Channel is busy
+[Info] Simulation time: 213
+[Info] Channel is busy
+[Info] Simulation time: 214
+[Info] Channel is busy
+[Info] Simulation time: 216
 [Info] TER error doesn't occur
-[Info] Simulation time: 247
 [Info] Permission to send ACK
 [Info] Start transmission
+[Info] Simulation time: 217
+[Info] Channel is busy
+[Info] Simulation time: 218
+[Info] Channel is busy
+[Info] Simulation time: 219
+[Info] Channel is busy
+[Info] Simulation time: 222
+[Info] Channel is busy
+[Info] Simulation time: 223
+[Info] Channel is busy
+[Info] Simulation time: 224
+[Info] Channel is busy
+[Info] Simulation time: 226
 [Info] ACK delivered successfully
-[Info] Packages successfully sent: 4
-[Info] Simulation time: 10
-[Info] End process package (id: 0) 
+[Info] Packages successfully sent: 1
+[Info] End process package (id: 2) 
+
+[Info] Remove package
+[Info] Simulation time: 227
+[Info] Channel is free more than 4ms
+[Info] Start transmission
+[Info] Simulation time: 228
+[Info] Channel is busy
+[Info] Simulation time: 229
+[Info] Channel is busy
+[Info] Simulation time: 233
+[Info] Channel is busy
+[Info] Simulation time: 234
+[Info] Channel is busy
+[Info] Simulation time: 238
+[Info] Channel is busy
+[Info] Simulation time: 239
+[Info] Channel is busy
+[Info] Simulation time: 243
+[Info] Channel is busy
+[Info] Simulation time: 244
+[Info] Channel is busy
+[Info] Simulation time: 247
+[Info] TER error doesn't occur
+[Info] Permission to send ACK
+[Info] Start transmission
+[Info] Simulation time: 248
+[Info] Channel is busy
+[Info] Simulation time: 249
+[Info] Channel is busy
+[Info] Simulation time: 253
+[Info] Channel is busy
+[Info] Simulation time: 254
+[Info] Channel is busy
+[Info] Simulation time: 257
+[Info] ACK delivered successfully
+[Info] Packages successfully sent: 1
+[Info] End process package (id: 5) 
 
 [Info] Remove package
 [Info] Simulation time: 258
-[Info] Generate CTPk time... CTPk = 30
-[Info] Generate package (id: 6) by transmitter (id: 4). Package transmission time: 30
-[Info] Channel is free
-[Info] Channel isn't free more than 4ms
-[Info] Time of free channel listenning: 0
-[Info] Simulation time: 263
-[Info] Channel is free
-[Info] Channel isn't free more than 4ms
-[Info] Time of free channel listenning: 5
-[Info] Simulation time: 268
-[Info] Channel is free
-[Info] Channel isn't free more than 4ms
-[Info] Time of free channel listenning: 10
-[Info] Simulation time: 273
-[Info] Channel is free
-[Info] Channel isn't free more than 4ms
-[Info] Time of free channel listenning: 15
+[Info] Channel is free more than 4ms
+[Info] Start transmission
+[Info] Simulation time: 259
+[Info] Channel is busy
+[Info] Simulation time: 264
+[Info] Channel is busy
+[Info] Simulation time: 269
+[Info] Channel is busy
+[Info] Simulation time: 274
+[Info] Channel is busy
 [Info] Simulation time: 278
-[Info] Channel is free
-[Info] Channel isn't free more than 4ms
-[Info] Time of free channel listenning: 20
-[Info] Simulation time: 283
-[Info] Channel is free
-[Info] Channel isn't free more than 4ms
-[Info] Time of free channel listenning: 25
+[Info] TER error doesn't occur
+[Info] Permission to send ACK
+[Info] Start transmission
+[Info] Simulation time: 279
+[Info] Channel is busy
+[Info] Simulation time: 284
+[Info] Channel is busy
 [Info] Simulation time: 288
-[Info] Channel is free
-[Info] Channel isn't free more than 4ms
-[Info] Time of free channel listenning: 30
-[Info] Simulation time: 293
-[Info] Channel is free
-[Info] Channel isn't free more than 4ms
-[Info] Time of free channel listenning: 35
-[Info] Simulation time: 298
-[Info] Channel is free
-[Info] Channel isn't free more than 4ms
-[Info] Time of free channel listenning: 40
-[Info] Simulation time: 303
-[Info] Channel is free
-[Info] Channel is free more than 4ms
-[Info] Start transmission
-[Info] TER error doesn't occur
-[Info] Simulation time: 333
-[Info] Permission to send ACK
-[Info] Start transmission
 [Info] ACK delivered successfully
-[Info] Packages successfully sent: 5
-[Info] Simulation time: 10
-[Info] End process package (id: 0) 
+[Info] Packages successfully sent: 2
+[Info] End process package (id: 6) 
 
 [Info] Remove package
-[Info] Simulation time: 525
-[Info] Generate CTPk time... CTPk = 30
-[Info] Generate package (id: 7) by transmitter (id: 2). Package transmission time: 30
-[Info] Channel is free
+[Info] Simulation time: 289
 [Info] Channel isn't free more than 4ms
-[Info] Time of free channel listenning: 0
-[Info] Simulation time: 530
-[Info] Channel is free
+[Info] Time of free channel listenning: 0, by transmitter: 4
+[Info] Simulation time: 294
 [Info] Channel isn't free more than 4ms
-[Info] Time of free channel listenning: 5
-[Info] Simulation time: 535
-[Info] Channel is free
+[Info] Time of free channel listenning: 5, by transmitter: 4
+[Info] Simulation time: 299
 [Info] Channel isn't free more than 4ms
-[Info] Time of free channel listenning: 10
-[Info] Simulation time: 540
-[Info] Channel is free
+[Info] Time of free channel listenning: 10, by transmitter: 4
+[Info] Simulation time: 304
 [Info] Channel isn't free more than 4ms
-[Info] Time of free channel listenning: 15
-[Info] Simulation time: 545
-[Info] Channel is free
+[Info] Time of free channel listenning: 15, by transmitter: 4
+[Info] Simulation time: 309
 [Info] Channel isn't free more than 4ms
-[Info] Time of free channel listenning: 20
-[Info] Simulation time: 550
-[Info] Channel is free
+[Info] Time of free channel listenning: 20, by transmitter: 4
+[Info] Simulation time: 314
 [Info] Channel isn't free more than 4ms
-[Info] Time of free channel listenning: 25
-[Info] Simulation time: 555
-[Info] Channel is free
+[Info] Time of free channel listenning: 25, by transmitter: 4
+[Info] Simulation time: 319
 [Info] Channel isn't free more than 4ms
-[Info] Time of free channel listenning: 30
-[Info] Simulation time: 560
-[Info] Channel is free
+[Info] Time of free channel listenning: 30, by transmitter: 4
+[Info] Simulation time: 324
 [Info] Channel isn't free more than 4ms
-[Info] Time of free channel listenning: 35
-[Info] Simulation time: 565
-[Info] Channel is free
+[Info] Time of free channel listenning: 35, by transmitter: 4
+[Info] Simulation time: 329
 [Info] Channel isn't free more than 4ms
-[Info] Time of free channel listenning: 40
-[Info] Simulation time: 570
-[Info] Channel is free
+[Info] Time of free channel listenning: 40, by transmitter: 4
+[Info] Simulation time: 334
 [Info] Channel is free more than 4ms
 [Info] Start transmission
+[Info] Simulation time: 354
 [Info] TER error doesn't occur
-[Info] Simulation time: 600
 [Info] Permission to send ACK
 [Info] Start transmission
+[Info] Simulation time: 364
 [Info] ACK delivered successfully
-[Info] Packages successfully sent: 6
-[Info] Simulation time: 10
-[Info] End process package (id: 0) 
+[Info] Packages successfully sent: 3
+[Info] End process package (id: 3) 
 
 [Info] Remove package
-[Info] Simulation time: 1054
-[Info] Generate CTPk time... CTPk = 90
-[Info] Generate package (id: 8) by transmitter (id: 4). Package transmission time: 90
-[Info] Channel is free
-[Info] Channel isn't free more than 4ms
-[Info] Time of free channel listenning: 0
-[Info] Simulation time: 1059
-[Info] Channel is free
-[Info] Channel isn't free more than 4ms
-[Info] Time of free channel listenning: 5
-[Info] Simulation time: 1064
-[Info] Channel is free
-[Info] Channel isn't free more than 4ms
-[Info] Time of free channel listenning: 10
-[Info] Simulation time: 1069
-[Info] Channel is free
-[Info] Channel isn't free more than 4ms
-[Info] Time of free channel listenning: 15
-[Info] Simulation time: 1074
-[Info] Channel is free
-[Info] Channel isn't free more than 4ms
-[Info] Time of free channel listenning: 20
-[Info] Simulation time: 1079
-[Info] Channel is free
-[Info] Channel isn't free more than 4ms
-[Info] Time of free channel listenning: 25
-[Info] Simulation time: 1084
-[Info] Channel is free
-[Info] Channel isn't free more than 4ms
-[Info] Time of free channel listenning: 30
-[Info] Simulation time: 1089
-[Info] Channel is free
-[Info] Channel isn't free more than 4ms
-[Info] Time of free channel listenning: 35
-[Info] Simulation time: 1094
-[Info] Channel is free
-[Info] Channel isn't free more than 4ms
-[Info] Time of free channel listenning: 40
-[Info] Simulation time: 1099
-[Info] Channel is free
-[Info] Channel is free more than 4ms
-[Info] Start transmission
-[Info] TER error doesn't occur
-[Info] Simulation time: 1189
-[Info] Permission to send ACK
-[Info] Start transmission
-[Info] ACK delivered successfully
-[Info] Packages successfully sent: 7
-[Info] Simulation time: 10
-[Info] End process package (id: 0) 
-
-[Info] Remove package
-[Info] Simulation time: 2114
+[Info] Simulation time: 393
 [Info] Generate CTPk time... CTPk = 80
-[Info] Generate package (id: 9) by transmitter (id: 4). Package transmission time: 80
-[Info] Channel is free
+[Info] Generate package (id: 6) by transmitter (id: 2). Package transmission time: 80
 [Info] Channel isn't free more than 4ms
-[Info] Time of free channel listenning: 0
+[Info] Time of free channel listenning: 0, by transmitter: 2
+[Info] Simulation time: 398
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 5, by transmitter: 2
+[Info] Simulation time: 403
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 10, by transmitter: 2
+[Info] Simulation time: 408
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 15, by transmitter: 2
+[Info] Simulation time: 413
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 20, by transmitter: 2
+[Info] Simulation time: 418
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 25, by transmitter: 2
+[Info] Simulation time: 423
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 30, by transmitter: 2
+[Info] Simulation time: 428
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 35, by transmitter: 2
+[Info] Simulation time: 433
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 40, by transmitter: 2
+[Info] Simulation time: 438
+[Info] Channel is free more than 4ms
+[Info] Start transmission
+[Info] Simulation time: 518
+[Info] TER error occur
+[Info] Package retransmission attempt... attempt nr: 1
+[Info] Permission for retransmission
+[Info] CRP time: 800
+[Info] Simulation time: 790
+[Info] Generate CTPk time... CTPk = 40
+[Info] Generate package (id: 7) by transmitter (id: 2). Package transmission time: 40
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 0, by transmitter: 2
+[Info] Simulation time: 795
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 5, by transmitter: 2
+[Info] Simulation time: 800
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 10, by transmitter: 2
+[Info] Simulation time: 805
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 15, by transmitter: 2
+[Info] Simulation time: 810
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 20, by transmitter: 2
+[Info] Simulation time: 815
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 25, by transmitter: 2
+[Info] Simulation time: 820
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 30, by transmitter: 2
+[Info] Simulation time: 825
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 35, by transmitter: 2
+[Info] Simulation time: 830
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 40, by transmitter: 2
+[Info] Simulation time: 835
+[Info] Channel is free more than 4ms
+[Info] Start transmission
+[Info] Simulation time: 875
+[Info] TER error occur
+[Info] Package retransmission attempt... attempt nr: 1
+[Info] Permission for retransmission
+[Info] CRP time: 400
+[Info] Simulation time: 1275
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 0, by transmitter: 2
+[Info] Simulation time: 1280
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 5, by transmitter: 2
+[Info] Simulation time: 1285
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 10, by transmitter: 2
+[Info] Simulation time: 1290
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 15, by transmitter: 2
+[Info] Simulation time: 1295
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 20, by transmitter: 2
+[Info] Simulation time: 1300
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 25, by transmitter: 2
+[Info] Simulation time: 1305
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 30, by transmitter: 2
+[Info] Simulation time: 1310
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 35, by transmitter: 2
+[Info] Simulation time: 1315
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 40, by transmitter: 2
+[Info] Simulation time: 1318
+[Info] Channel is free more than 4ms
+[Info] Start transmission
+[Info] Simulation time: 1320
+[Info] Channel is busy
+[Info] Simulation time: 1325
+[Info] Channel is busy
+[Info] Simulation time: 1330
+[Info] Channel is busy
+[Info] Simulation time: 1335
+[Info] Channel is busy
+[Info] Simulation time: 1340
+[Info] Channel is busy
+[Info] Simulation time: 1345
+[Info] Channel is busy
+[Info] Simulation time: 1350
+[Info] Channel is busy
+[Info] Simulation time: 1355
+[Info] Channel is busy
+[Info] Simulation time: 1360
+[Info] Channel is busy
+[Info] Simulation time: 1365
+[Info] Channel is busy
+[Info] Simulation time: 1370
+[Info] Channel is busy
+[Info] Simulation time: 1375
+[Info] Channel is busy
+[Info] Simulation time: 1380
+[Info] Channel is busy
+[Info] Simulation time: 1385
+[Info] Channel is busy
+[Info] Simulation time: 1390
+[Info] Channel is busy
+[Info] Simulation time: 1395
+[Info] Channel is busy
+[Info] Simulation time: 1398
+[Info] TER error doesn't occur
+[Info] Permission to send ACK
+[Info] Start transmission
+[Info] Simulation time: 1400
+[Info] Channel is busy
+[Info] Simulation time: 1405
+[Info] Channel is busy
+[Info] Simulation time: 1408
+[Info] ACK delivered successfully
+[Info] Packages successfully sent: 1
+[Info] End process package (id: 7) 
+
+[Info] Remove package
+[Info] Simulation time: 1410
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 0, by transmitter: 2
+[Info] Simulation time: 1415
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 5, by transmitter: 2
+[Info] Simulation time: 1420
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 10, by transmitter: 2
+[Info] Simulation time: 1425
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 15, by transmitter: 2
+[Info] Simulation time: 1430
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 20, by transmitter: 2
+[Info] Simulation time: 1435
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 25, by transmitter: 2
+[Info] Simulation time: 1440
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 30, by transmitter: 2
+[Info] Simulation time: 1445
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 35, by transmitter: 2
+[Info] Simulation time: 1450
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 40, by transmitter: 2
+[Info] Simulation time: 1455
+[Info] Channel is free more than 4ms
+[Info] Start transmission
+[Info] Simulation time: 1495
+[Info] TER error occur
+[Info] Package retransmission attempt... attempt nr: 2
+[Info] Permission for retransmission
+[Info] CRP time: 0
+[Info] Simulation time: 1495
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 0, by transmitter: 2
+[Info] Simulation time: 1500
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 5, by transmitter: 2
+[Info] Simulation time: 1505
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 10, by transmitter: 2
+[Info] Simulation time: 1510
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 15, by transmitter: 2
+[Info] Simulation time: 1515
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 20, by transmitter: 2
+[Info] Simulation time: 1520
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 25, by transmitter: 2
+[Info] Simulation time: 1525
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 30, by transmitter: 2
+[Info] Simulation time: 1530
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 35, by transmitter: 2
+[Info] Simulation time: 1535
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 40, by transmitter: 2
+[Info] Simulation time: 1540
+[Info] Channel is free more than 4ms
+[Info] Start transmission
+[Info] Simulation time: 1580
+[Info] Generate CTPk time... CTPk = 50
+[Info] Generate package (id: 8) by transmitter (id: 7). Package transmission time: 50
+[Info] Channel is busy
+[Info] Simulation time: 1580
+[Info] TER error doesn't occur
+[Info] Permission to send ACK
+[Info] Start transmission
+[Info] Simulation time: 1585
+[Info] Channel is busy
+[Info] Simulation time: 1590
+[Info] ACK delivered successfully
+[Info] Packages successfully sent: 2
+[Info] End process package (id: 8) 
+
+[Info] Remove package
+[Info] Simulation time: 1590
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 0, by transmitter: 7
+[Info] Simulation time: 1595
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 5, by transmitter: 7
+[Info] Simulation time: 1600
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 10, by transmitter: 7
+[Info] Simulation time: 1605
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 15, by transmitter: 7
+[Info] Simulation time: 1610
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 20, by transmitter: 7
+[Info] Simulation time: 1615
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 25, by transmitter: 7
+[Info] Simulation time: 1620
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 30, by transmitter: 7
+[Info] Simulation time: 1625
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 35, by transmitter: 7
+[Info] Simulation time: 1630
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 40, by transmitter: 7
+[Info] Simulation time: 1635
+[Info] Channel is free more than 4ms
+[Info] Start transmission
+[Info] Simulation time: 1685
+[Info] TER error doesn't occur
+[Info] Permission to send ACK
+[Info] Start transmission
+[Info] Simulation time: 1695
+[Info] ACK delivered successfully
+[Info] Packages successfully sent: 1
+[Info] End process package (id: 9) 
+
+[Info] Remove package
+[Info] Simulation time: 3164
+[Info] Generate CTPk time... CTPk = 30
+[Info] Generate package (id: 9) by transmitter (id: 3). Package transmission time: 30
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 0, by transmitter: 3
+[Info] Simulation time: 3169
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 5, by transmitter: 3
+[Info] Simulation time: 3174
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 10, by transmitter: 3
+[Info] Simulation time: 3179
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 15, by transmitter: 3
+[Info] Simulation time: 3184
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 20, by transmitter: 3
+[Info] Simulation time: 3189
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 25, by transmitter: 3
+[Info] Simulation time: 3194
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 30, by transmitter: 3
+[Info] Simulation time: 3199
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 35, by transmitter: 3
+[Info] Simulation time: 3204
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 40, by transmitter: 3
+[Info] Simulation time: 3209
+[Info] Channel is free more than 4ms
+[Info] Start transmission
+[Info] Simulation time: 3239
+[Info] TER error doesn't occur
+[Info] Permission to send ACK
+[Info] Start transmission
+[Info] Simulation time: 3249
+[Info] ACK delivered successfully
+[Info] Packages successfully sent: 1
+[Info] End process package (id: 10) 
+
+[Info] Remove package
+[Info] Simulation time: 6331
+[Info] Generate CTPk time... CTPk = 40
+[Info] Generate package (id: 10) by transmitter (id: 3). Package transmission time: 40
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 0, by transmitter: 3
+[Info] Simulation time: 6336
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 5, by transmitter: 3
+[Info] Simulation time: 6341
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 10, by transmitter: 3
+[Info] Simulation time: 6346
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 15, by transmitter: 3
+[Info] Simulation time: 6351
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 20, by transmitter: 3
+[Info] Simulation time: 6356
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 25, by transmitter: 3
+[Info] Simulation time: 6361
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 30, by transmitter: 3
+[Info] Simulation time: 6366
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 35, by transmitter: 3
+[Info] Simulation time: 6371
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 40, by transmitter: 3
+[Info] Simulation time: 6376
+[Info] Channel is free more than 4ms
+[Info] Start transmission
+[Info] Simulation time: 6416
+[Info] TER error doesn't occur
+[Info] Permission to send ACK
+[Info] Start transmission
+[Info] Simulation time: 6426
+[Info] ACK delivered successfully
+[Info] Packages successfully sent: 2
+[Info] End process package (id: 11) 
+
+[Info] Remove package
+[Info] Simulation time: 12667
+[Info] Generate CTPk time... CTPk = 80
+[Info] Generate package (id: 11) by transmitter (id: 3). Package transmission time: 80
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 0, by transmitter: 3
+[Info] Simulation time: 12672
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 5, by transmitter: 3
+[Info] Simulation time: 12677
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 10, by transmitter: 3
+[Info] Simulation time: 12682
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 15, by transmitter: 3
+[Info] Simulation time: 12687
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 20, by transmitter: 3
+[Info] Simulation time: 12692
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 25, by transmitter: 3
+[Info] Simulation time: 12697
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 30, by transmitter: 3
+[Info] Simulation time: 12702
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 35, by transmitter: 3
+[Info] Simulation time: 12707
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 40, by transmitter: 3
+[Info] Simulation time: 12712
+[Info] Channel is free more than 4ms
+[Info] Start transmission
+[Info] Simulation time: 12792
+[Info] TER error doesn't occur
+[Info] Permission to send ACK
+[Info] Start transmission
+[Info] Simulation time: 12802
+[Info] ACK delivered successfully
+[Info] Packages successfully sent: 3
+[Info] End process package (id: 12) 
+
+[Info] Remove package
+[Info] Simulation time: 25339
+[Info] Generate CTPk time... CTPk = 30
+[Info] Generate package (id: 12) by transmitter (id: 2). Package transmission time: 30
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 0, by transmitter: 2
 [Info] Remove wireless network
 [Info] Remove channel
 [Info] Remove transmitter nr: 0

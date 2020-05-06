@@ -54,8 +54,10 @@ void Transmitter::AddPackageLost(Logger* logger)
 void Transmitter::IncTimeOfChannelListenning(Logger* logger)
 {
   logger_ = logger;
-  time_of_channel_listenning_ += 5;
-  logger->Info("Time of free channel listenning: " + std::to_string(time_of_channel_listenning_ - 5));
+  this->time_of_channel_listenning_ += 5;
+  logger->Info("Time of free channel listenning: " +
+    std::to_string(time_of_channel_listenning_ - 5) + ", by transmitter: " +
+    std::to_string(GetTransmitterId()));
 }
 
 Package* Transmitter::GetFirstPackageInTX()

@@ -74,7 +74,6 @@ void Simulation::RunM4(Logger* logger, int time)
   // main loop
   while (clock_ < static_cast<size_t>(time) && (!agenda.empty() == true))
   {
-    //++id;
     package->Activ(clock_ + rand() % generate_packet_max_time_);
     Package* package_process = agenda.top();
     agenda.pop();
