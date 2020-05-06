@@ -68,12 +68,13 @@ void Simulation::RunM4(Logger* logger, int time)
 
   size_t id = 0;
 
+  auto package = new Package(id, rand() % 10, clock_, logger, wireless_network_, &agenda);
+  package->Activ(0);
+
   // main loop
-  while (clock_ < static_cast<size_t>(time))
+  while (clock_ < static_cast<size_t>(time) && (!agenda.empty() == true))
   {
-    ++id;
-    auto package = new Package(id, rand() % 10, clock_, logger, wireless_network_, &agenda);
-    agenda.push(package);
+    //++id;
     package->Activ(clock_ + rand() % generate_packet_max_time_);
     Package* package_process = agenda.top();
     agenda.pop();

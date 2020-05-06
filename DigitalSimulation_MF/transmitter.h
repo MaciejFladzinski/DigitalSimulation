@@ -7,6 +7,8 @@
 #include "channel.h"
 #include "logger.h"
 
+class Package;
+
 class Transmitter
 {
 public:
@@ -18,6 +20,9 @@ public:
   void AddPackageSuccessfullySent(Logger* logger);  // Add 1 package successfully sent
   void AddPackageLost(Logger* logger);  // Add 1 package lost
   void IncTimeOfChannelListenning(Logger* logger);  // Add 0,5ms in channel listenning
+
+  Package* GetFirstPackageInTX();
+  void AddPackageInTX(Package* package);
 
   // const... = 0 -> it's only for definition const variable, it will be changed soon...
   const size_t ctiz_time_ = 10;  // ACK transmission time (CTIZ = 1ms)
@@ -66,6 +71,8 @@ private:
   size_t time_of_channel_occupancy_;  // time of channel occupancy
   size_t time_crp_;  // random time after which retransmissions can be made
   bool correct_reception_ack_ = false;  // true - ACK take back in less time than (CGPk + CTIZ)
+
+  std::queue<Package*> packages_in_TX_; // packages in buffer (in transmitter)
 
   Logger* logger_ = nullptr;
 };

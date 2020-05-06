@@ -55,5 +55,15 @@ void Transmitter::IncTimeOfChannelListenning(Logger* logger)
 {
   logger_ = logger;
   time_of_channel_listenning_ += 5;
-  logger->Info("Time of free channel listenning: " + std::to_string(time_of_channel_listenning_));
+  logger->Info("Time of free channel listenning: " + std::to_string(time_of_channel_listenning_ - 5));
+}
+
+Package* Transmitter::GetFirstPackageInTX()
+{
+  return packages_in_TX_.front();
+}
+
+void Transmitter::AddPackageInTX(Package* package)
+{
+  return packages_in_TX_.push(package);
 }

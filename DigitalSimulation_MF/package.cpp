@@ -101,7 +101,6 @@ void Package::Execute()
   Receiver* receiver = wireless_network_->GetReceivers(id_station_);
 
   bool active = true;
-  static int counter = 0;
 
   while (active)
   {
@@ -109,22 +108,21 @@ void Package::Execute()
     {
     case State::AppearanceInTheSystem:
 
-      wireless_network_->GeneratePackage(logger_, this, rand()%10); // generate and add package to the vector
+      wireless_network_->GeneratePackage(logger_, this, transmitter, rand()%10); // generate and add package to the vector
       {
         // planning the appearance of the next package
         auto new_package = new Package(id_package_, id_station_, time_, logger_, wireless_network_, agenda_);
         new_package->Activ(time_ + rand() % WirelessNetwork::generate_packet_max_time);
-        //active = false;
       }
-      ++counter;
-      if (counter == 1) // if (package is first)
+
+      if (transmitter->GetFirstPackageInTX()) // if (package is first)
       {
         state_ = State::ChannelListening;
         active = true;
       }
       else
       {
-        state_ = State::ChannelListening;
+        state_ = State::AppearanceInTheSystem;
         active = false;
       }
       break;
@@ -138,6 +136,7 @@ void Package::Execute()
         if (transmitter->GetTimeOfChannelListenning() > transmitter->difs_time_)
         {
           logger_->Info("Channel is free more than 4ms");
+          wireless_network_->AddPackages(this); // add package to the vector in channel
           state_ = State::Transmission;
           active = true;
         }
@@ -161,25 +160,38 @@ void Package::Execute()
 
     case State::Transmission:
 
-      if (wireless_network_->GetChannelStatus() == false) // if(channel is free)
+      if (wireless_network_->GetBufferSize() == 1) // if (vector in channel have 1 package)
       {
-        logger_->Info("No collision detected");
-
-        wireless_network_->StartTransmission(logger_);
+        wireless_network_->StartTransmission(logger_); // (channel occupancy = true)
         Activ(ctpk_time_, true);// process sleep for CTPk time
         active = false;
 
-        wireless_network_->GetChannel()->ChanceForTER(logger_); // check TER error
-        
-        if (wireless_network_->GetChannel()->GetCollision() == false)
+        // check second time (if 2 packages was added to the vector in these same time)
+        if (wireless_network_->GetBufferSize() == 1)
         {
-          wireless_network_->GetChannel()->SetChannelOccupancy(false); // channel is free
-          state_ = State::ACK;
-          active = true;
+          wireless_network_->GetChannel()->ChanceForTER(logger_); // check TER error (if true: collision = true)
+
+          if (wireless_network_->GetChannel()->GetCollision() == false)
+          {
+            wireless_network_->EndTransmission(logger_); // channel is free (remove package from the vector in channel)
+            state_ = State::ACK;
+          }
+          else
+          {
+            // prepare to retransmission
+            wireless_network_->EndTransmission(logger_); // channel is free (remove package from the vector in channel)
+            wireless_network_->GetChannel()->SetCollision(false);
+            transmitter->SetTimeOfChannelListenning(0);
+            state_ = State::Retransmission;
+            active = true;
+          }
         }
         else
         {
-          wireless_network_->GetChannel()->SetChannelOccupancy(false); // channel is free
+          wireless_network_->GetChannel()->SetCollision(true);
+          logger_->Info("Collision detected");
+          // prepare to retransmission
+          wireless_network_->EndTransmission(logger_); // channel is free (remove package from the vector in channel)
           wireless_network_->GetChannel()->SetCollision(false);
           transmitter->SetTimeOfChannelListenning(0);
           state_ = State::Retransmission;
@@ -188,13 +200,16 @@ void Package::Execute()
       }
       else
       {
+        wireless_network_->StartTransmission(logger_); // (channel occupancy = true)
         wireless_network_->GetChannel()->SetCollision(true);
         logger_->Info("Collision detected");
-        wireless_network_->GetChannel()->SetChannelOccupancy(false); // channel is free
+        Activ(ctpk_time_, true);// process sleep for CTPk time
+        // prepare to retransmission
+        wireless_network_->EndTransmission(logger_); // channel is free (remove package from the vector in channel)
         wireless_network_->GetChannel()->SetCollision(false);
         transmitter->SetTimeOfChannelListenning(0);
         state_ = State::Retransmission;
-        active = true;
+        active = false;
       }
       break;
 
@@ -215,7 +230,6 @@ void Package::Execute()
       {
         logger_->Info("Unable to retransmit again");
         transmitter->AddPackageLost(logger_);
-        counter = 0;
         transmitter->SetTimeOfChannelListenning(0);
         state_ = State::RemovalFromTheSystem;
         active = false;
@@ -224,34 +238,38 @@ void Package::Execute()
 
     case State::ACK:
 
-      if (wireless_network_->GetChannelStatus() == false)
+      if (wireless_network_->GetChannelStatus() == false) // if (channel is free)
       {
-        logger_->Info("Package successfully sent");
-        receiver->SetAcknowledgment(true); // permission to send ACK
         logger_->Info("Permission to send ACK");
-        wireless_network_->GetChannel()->SetChannelOccupancy(true); // ACK in channel
-        Activ(transmitter->ctiz_time_, true); // process sleep for CTIZ time (1ms)
+        receiver->SetAcknowledgment(true);
+
+        // add package (to the vector in channel) instead of ACK to simplify implementation
+        wireless_network_->AddPackages(this);
+        wireless_network_->StartTransmission(logger_); // start transmission
+        Activ(transmitter->ctiz_time_, false); // process sleep for CTIZ time (1ms)
         active = false;
 
-        //if there is no collision after time CTPk + CTIZ in the channel:
-        if (wireless_network_->GetChannel()->GetCollision() == false)
+        //if there is only ACK (after time CTPk + CTIZ) in the channel:
+        if (wireless_network_->GetBufferSize() == 1)
         {
-          wireless_network_->GetChannel()->SetChannelOccupancy(false); // ACK delivered
+          wireless_network_->EndTransmission(logger_); // channel is free (remove ACK from the vector in channel)
           logger_->Info("ACK delivered successfully");
           transmitter->AddPackageSuccessfullySent(logger_);
+
           transmitter->SetTimeOfChannelListenning(0);
           receiver->SetAcknowledgment(false);
           state_ = State::RemovalFromTheSystem;
+          active = false;
         }
         else
         {
           wireless_network_->GetChannel()->SetCollision(true);
           logger_->Info("Collision detected");
-          wireless_network_->GetChannel()->SetChannelOccupancy(false); // ACK not delivered
+
+          wireless_network_->EndTransmission(logger_); // channel is free (remove ACK from the vector in channel)
           transmitter->SetTimeOfChannelListenning(0);
           wireless_network_->GetChannel()->SetCollision(false);
           state_ = State::Retransmission;
-          //active = false;
         }
       }
       else
@@ -261,14 +279,10 @@ void Package::Execute()
         wireless_network_->GetChannel()->SetChannelOccupancy(false);
         transmitter->SetTimeOfChannelListenning(0);
         state_ = State::Retransmission;
-        //active = false;
       }
       break;
 
     case State::RemovalFromTheSystem:
-
-      wireless_network_->EndTransmission(logger_);
-      counter = 0;
       
       if(!wireless_network_->IsBufferEmpty()) // if (buffer isn't empty)
       {

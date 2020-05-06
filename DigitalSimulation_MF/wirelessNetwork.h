@@ -29,7 +29,7 @@ public:
 
   void AddPackages(Package* package); // add package to the vector
   void Init(Logger* logger); // take package from the buffer
-  void GeneratePackage(Logger* logger, Package* package, unsigned int id_station);
+  void GeneratePackage(Logger* logger, Package* package, Transmitter* transmitter, unsigned int id_station);
   void StartTransmission(Logger* logger);
   void EndTransmission(Logger* logger);
   bool IsBufferEmpty() { return packages_.empty(); }
@@ -39,7 +39,7 @@ public:
 private:
   std::vector<Transmitter*> transmitters_;
   std::vector<Receiver*> receivers_;
-  std::vector<Package*> packages_;  // packages in buffer
+  std::vector<Package*> packages_;  // packages in channel
 
   Transmitter* transmitter_ = nullptr;
   Logger* logger_ = nullptr;
