@@ -23,37 +23,365 @@
 [Info] Create transmitter nr: 9
 [Info] Create receiver nr: 9
 [Info] Started Simulation method M4 (Process Interaction):
-[Info] Simulation time: 0
-[Info] Packet Process Execute:
-[Info] Generate CTPk time... CTPk = 100
-[Info] Generate package (id: 1) by transmitter (id: 5). Package transmission time: 100
+[Info] Simulation time: 2
+[Info] Generate CTPk time... CTPk = 80
+[Info] Generate package (id: 1) by transmitter (id: 1). Package transmission time: 80
 [Info] Channel is free
 [Info] Channel isn't free more than 4ms
 [Info] Time of free channel listenning: 5
+[Info] Simulation time: 8
+[Info] Generate CTPk time... CTPk = 100
+[Info] Generate package (id: 2) by transmitter (id: 2). Package transmission time: 100
+[Info] Simulation time: 7
 [Info] Channel is free
 [Info] Channel isn't free more than 4ms
 [Info] Time of free channel listenning: 10
+[Info] Simulation time: 12
 [Info] Channel is free
 [Info] Channel isn't free more than 4ms
 [Info] Time of free channel listenning: 15
+[Info] Simulation time: 5
+[Info] Generate CTPk time... CTPk = 40
+[Info] Generate package (id: 3) by transmitter (id: 1). Package transmission time: 40
+[Info] Simulation time: 10
+[Info] Generate CTPk time... CTPk = 70
+[Info] Generate package (id: 4) by transmitter (id: 1). Package transmission time: 70
+[Info] Simulation time: 8
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 5
+[Info] Simulation time: 24
+[Info] Generate CTPk time... CTPk = 40
+[Info] Generate package (id: 5) by transmitter (id: 7). Package transmission time: 40
+[Info] Simulation time: 10
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 5
+[Info] Simulation time: 24
+[Info] Generate CTPk time... CTPk = 60
+[Info] Generate package (id: 6) by transmitter (id: 9). Package transmission time: 60
+[Info] Simulation time: 13
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 10
+[Info] Simulation time: 32
+[Info] Generate CTPk time... CTPk = 60
+[Info] Generate package (id: 7) by transmitter (id: 0). Package transmission time: 60
+[Info] Simulation time: 15
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 10
+[Info] Simulation time: 36
+[Info] Generate CTPk time... CTPk = 20
+[Info] Generate package (id: 8) by transmitter (id: 8). Package transmission time: 20
+[Info] Simulation time: 17
 [Info] Channel is free
 [Info] Channel isn't free more than 4ms
 [Info] Time of free channel listenning: 20
+[Info] Simulation time: 17
+[Info] Generate CTPk time... CTPk = 10
+[Info] Generate package (id: 9) by transmitter (id: 2). Package transmission time: 10
+[Info] Simulation time: 39
+[Info] Generate CTPk time... CTPk = 60
+[Info] Generate package (id: 10) by transmitter (id: 1). Package transmission time: 60
+[Info] Simulation time: 20
+[Info] Generate CTPk time... CTPk = 20
+[Info] Generate package (id: 11) by transmitter (id: 4). Package transmission time: 20
+[Info] Simulation time: 20
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 15
+[Info] Simulation time: 20
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 5
+[Info] Simulation time: 18
+[Info] Generate CTPk time... CTPk = 50
+[Info] Generate package (id: 12) by transmitter (id: 9). Package transmission time: 50
+[Info] Simulation time: 18
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 15
+[Info] Simulation time: 39
+[Info] Generate CTPk time... CTPk = 100
+[Info] Generate package (id: 13) by transmitter (id: 1). Package transmission time: 100
+[Info] Simulation time: 22
 [Info] Channel is free
 [Info] Channel isn't free more than 4ms
 [Info] Time of free channel listenning: 25
+[Info] Simulation time: 44
+[Info] Generate CTPk time... CTPk = 70
+[Info] Generate package (id: 14) by transmitter (id: 8). Package transmission time: 70
+[Info] Simulation time: 23
+[Info] Generate CTPk time... CTPk = 80
+[Info] Generate package (id: 15) by transmitter (id: 6). Package transmission time: 80
+[Info] Simulation time: 53
+[Info] Generate CTPk time... CTPk = 50
+[Info] Generate package (id: 16) by transmitter (id: 1). Package transmission time: 50
+[Info] Simulation time: 25
+[Info] Generate CTPk time... CTPk = 90
+[Info] Generate package (id: 17) by transmitter (id: 7). Package transmission time: 90
+[Info] Simulation time: 25
+[Info] Generate CTPk time... CTPk = 40
+[Info] Generate package (id: 18) by transmitter (id: 7). Package transmission time: 40
+[Info] Simulation time: 51
+[Info] Generate CTPk time... CTPk = 70
+[Info] Generate package (id: 19) by transmitter (id: 8). Package transmission time: 70
+[Info] Simulation time: 19
+[Info] Generate CTPk time... CTPk = 100
+[Info] Generate package (id: 20) by transmitter (id: 6). Package transmission time: 100
+[Info] Simulation time: 47
+[Info] Generate CTPk time... CTPk = 90
+[Info] Generate package (id: 21) by transmitter (id: 8). Package transmission time: 90
+[Info] Simulation time: 25
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 20
+[Info] Simulation time: 27
 [Info] Channel is free
 [Info] Channel isn't free more than 4ms
 [Info] Time of free channel listenning: 30
+[Info] Simulation time: 25
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 5
+[Info] Simulation time: 25
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 25
+[Info] Simulation time: 58
+[Info] Generate CTPk time... CTPk = 70
+[Info] Generate package (id: 22) by transmitter (id: 2). Package transmission time: 70
+[Info] Simulation time: 30
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 30
+[Info] Simulation time: 19
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 5
+[Info] Simulation time: 40
+[Info] Generate CTPk time... CTPk = 90
+[Info] Generate package (id: 23) by transmitter (id: 1). Package transmission time: 90
+[Info] Simulation time: 23
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 20
+[Info] Simulation time: 52
+[Info] Generate CTPk time... CTPk = 50
+[Info] Generate package (id: 24) by transmitter (id: 8). Package transmission time: 50
+[Info] Simulation time: 24
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 10
+[Info] Simulation time: 24
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 10
+[Info] Simulation time: 32
 [Info] Channel is free
 [Info] Channel isn't free more than 4ms
 [Info] Time of free channel listenning: 35
+[Info] Simulation time: 38
+[Info] Generate CTPk time... CTPk = 60
+[Info] Generate package (id: 25) by transmitter (id: 8). Package transmission time: 60
+[Info] Simulation time: 24
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 15
+[Info] Simulation time: 55
+[Info] Generate CTPk time... CTPk = 80
+[Info] Generate package (id: 26) by transmitter (id: 0). Package transmission time: 80
+[Info] Simulation time: 25
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 10
+[Info] Simulation time: 58
+[Info] Generate CTPk time... CTPk = 100
+[Info] Generate package (id: 27) by transmitter (id: 1). Package transmission time: 100
+[Info] Simulation time: 28
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 25
+[Info] Simulation time: 60
+[Info] Generate CTPk time... CTPk = 20
+[Info] Generate package (id: 28) by transmitter (id: 9). Package transmission time: 20
+[Info] Simulation time: 29
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 20
+[Info] Simulation time: 29
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 25
+[Info] Simulation time: 29
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 15
+[Info] Simulation time: 61
+[Info] Generate CTPk time... CTPk = 60
+[Info] Generate package (id: 29) by transmitter (id: 3). Package transmission time: 60
+[Info] Simulation time: 37
 [Info] Channel is free
 [Info] Channel isn't free more than 4ms
 [Info] Time of free channel listenning: 40
+[Info] Simulation time: 74
+[Info] Generate CTPk time... CTPk = 90
+[Info] Generate package (id: 30) by transmitter (id: 4). Package transmission time: 90
+[Info] Simulation time: 35
+[Info] Generate CTPk time... CTPk = 90
+[Info] Generate package (id: 31) by transmitter (id: 5). Package transmission time: 90
+[Info] Simulation time: 39
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 5
+[Info] Simulation time: 30
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 15
+[Info] Simulation time: 62
+[Info] Generate CTPk time... CTPk = 50
+[Info] Generate package (id: 32) by transmitter (id: 2). Package transmission time: 50
+[Info] Simulation time: 33
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 30
+[Info] Simulation time: 68
+[Info] Generate CTPk time... CTPk = 10
+[Info] Generate package (id: 33) by transmitter (id: 4). Package transmission time: 10
+[Info] Simulation time: 34
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 20
+[Info] Simulation time: 34
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 30
+[Info] Simulation time: 34
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 35
+[Info] Simulation time: 39
+[Info] Generate CTPk time... CTPk = 50
+[Info] Generate package (id: 34) by transmitter (id: 7). Package transmission time: 50
+[Info] Simulation time: 39
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 5
+[Info] Simulation time: 42
+[Info] Generate CTPk time... CTPk = 80
+[Info] Generate package (id: 35) by transmitter (id: 1). Package transmission time: 80
+[Info] Simulation time: 44
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 40
+[Info] Simulation time: 49
+[Info] Generate CTPk time... CTPk = 20
+[Info] Generate package (id: 36) by transmitter (id: 5). Package transmission time: 20
+[Info] Simulation time: 53
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 25
+[Info] Simulation time: 55
+[Info] Generate CTPk time... CTPk = 20
+[Info] Generate package (id: 37) by transmitter (id: 7). Package transmission time: 20
+[Info] Simulation time: 55
+[Info] Generate CTPk time... CTPk = 10
+[Info] Generate package (id: 38) by transmitter (id: 8). Package transmission time: 10
+[Info] Simulation time: 55
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 20
+[Info] Simulation time: 58
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 35
+[Info] Simulation time: 60
 [Info] Channel is free
 [Info] Channel isn't free more than 4ms
 [Info] Time of free channel listenning: 45
+[Info] Simulation time: 61
+[Info] Generate CTPk time... CTPk = 90
+[Info] Generate package (id: 39) by transmitter (id: 7). Package transmission time: 90
+[Info] Simulation time: 32
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 45
+[Info] Simulation time: 66
+[Info] Generate CTPk time... CTPk = 60
+[Info] Generate package (id: 40) by transmitter (id: 5). Package transmission time: 60
+[Info] Simulation time: 35
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 25
+[Info] Simulation time: 77
+[Info] Generate CTPk time... CTPk = 30
+[Info] Generate package (id: 41) by transmitter (id: 7). Package transmission time: 30
+[Info] Simulation time: 37
+[Info] Channel is free
+[Info] Channel is free more than 4ms
+[Info] No collision detected
+[Info] Start transmission
+[Info] TER error occur
+[Info] Package retransmission attempt... attempt nr: 1
+[Info] Permission for retransmission
+[Info] CRP time: 800
+[Info] Simulation time: 76
+[Info] Generate CTPk time... CTPk = 100
+[Info] Generate package (id: 42) by transmitter (id: 0). Package transmission time: 100
+[Info] Simulation time: 38
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 40
+[Info] Simulation time: 38
+[Info] Generate CTPk time... CTPk = 20
+[Info] Generate package (id: 43) by transmitter (id: 5). Package transmission time: 20
+[Info] Simulation time: 79
+[Info] Generate CTPk time... CTPk = 20
+[Info] Generate package (id: 44) by transmitter (id: 8). Package transmission time: 20
+[Info] Simulation time: 62
+[Info] Generate CTPk time... CTPk = 60
+[Info] Generate package (id: 45) by transmitter (id: 6). Package transmission time: 60
+[Info] Simulation time: 36
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 10
+[Info] Simulation time: 73
+[Info] Generate CTPk time... CTPk = 80
+[Info] Generate package (id: 46) by transmitter (id: 4). Package transmission time: 80
+[Info] Simulation time: 42
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 5
+[Info] Simulation time: 59
+[Info] Generate CTPk time... CTPk = 10
+[Info] Generate package (id: 47) by transmitter (id: 2). Package transmission time: 10
+[Info] Simulation time: 51
+[Info] Generate CTPk time... CTPk = 90
+[Info] Generate package (id: 48) by transmitter (id: 8). Package transmission time: 90
+[Info] Simulation time: 59
+[Info] Generate CTPk time... CTPk = 100
+[Info] Generate package (id: 49) by transmitter (id: 4). Package transmission time: 100
+[Info] Simulation time: 119
+[Info] Generate CTPk time... CTPk = 50
+[Info] Generate package (id: 50) by transmitter (id: 3). Package transmission time: 50
+[Info] Simulation time: 61
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 45
+[Info] Simulation time: 129
+[Info] Generate CTPk time... CTPk = 100
+[Info] Generate package (id: 51) by transmitter (id: 3). Package transmission time: 100
+[Info] Simulation time: 41
+[Info] Generate CTPk time... CTPk = 50
+[Info] Generate package (id: 52) by transmitter (id: 9). Package transmission time: 50
+[Info] Simulation time: 41
+[Info] Generate CTPk time... CTPk = 10
+[Info] Generate package (id: 53) by transmitter (id: 8). Package transmission time: 10
+[Info] Simulation time: 86
+[Info] Generate CTPk time... CTPk = 40
+[Info] Generate package (id: 54) by transmitter (id: 0). Package transmission time: 40
+[Info] Simulation time: 42
 [Info] Channel is free
 [Info] Channel is free more than 4ms
 [Info] No collision detected
@@ -62,68 +390,115 @@
 [Info] Package retransmission attempt... attempt nr: 1
 [Info] Permission for retransmission
 [Info] CRP time: 0
+[Info] Simulation time: 91
+[Info] Generate CTPk time... CTPk = 20
+[Info] Generate package (id: 55) by transmitter (id: 4). Package transmission time: 20
+[Info] Simulation time: 43
 [Info] Channel is free
 [Info] Channel isn't free more than 4ms
 [Info] Time of free channel listenning: 5
+[Info] Simulation time: 90
+[Info] Generate CTPk time... CTPk = 40
+[Info] Generate package (id: 56) by transmitter (id: 7). Package transmission time: 40
+[Info] Simulation time: 48
+[Info] Generate CTPk time... CTPk = 60
+[Info] Generate package (id: 57) by transmitter (id: 2). Package transmission time: 60
+[Info] Simulation time: 48
 [Info] Channel is free
 [Info] Channel isn't free more than 4ms
 [Info] Time of free channel listenning: 10
+[Info] Simulation time: 48
+[Info] Generate CTPk time... CTPk = 100
+[Info] Generate package (id: 58) by transmitter (id: 8). Package transmission time: 100
+[Info] Simulation time: 102
+[Info] Generate CTPk time... CTPk = 60
+[Info] Generate package (id: 59) by transmitter (id: 7). Package transmission time: 60
+[Info] Simulation time: 52
 [Info] Channel is free
 [Info] Channel isn't free more than 4ms
 [Info] Time of free channel listenning: 15
+[Info] Simulation time: 56
+[Info] Generate CTPk time... CTPk = 100
+[Info] Generate package (id: 60) by transmitter (id: 6). Package transmission time: 100
+[Info] Simulation time: 61
 [Info] Channel is free
 [Info] Channel isn't free more than 4ms
 [Info] Time of free channel listenning: 20
-[Info] Channel is free
-[Info] Channel isn't free more than 4ms
-[Info] Time of free channel listenning: 25
-[Info] Channel is free
-[Info] Channel isn't free more than 4ms
-[Info] Time of free channel listenning: 30
+[Info] Simulation time: 63
+[Info] Generate CTPk time... CTPk = 80
+[Info] Generate package (id: 61) by transmitter (id: 9). Package transmission time: 80
+[Info] Simulation time: 35
 [Info] Channel is free
 [Info] Channel isn't free more than 4ms
 [Info] Time of free channel listenning: 35
+[Info] Simulation time: 79
+[Info] Generate CTPk time... CTPk = 30
+[Info] Generate package (id: 62) by transmitter (id: 7). Package transmission time: 30
+[Info] Simulation time: 39
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 10
+[Info] Simulation time: 82
+[Info] Generate CTPk time... CTPk = 40
+[Info] Generate package (id: 63) by transmitter (id: 9). Package transmission time: 40
+[Info] Simulation time: 40
 [Info] Channel is free
 [Info] Channel isn't free more than 4ms
 [Info] Time of free channel listenning: 40
+[Info] Simulation time: 88
+[Info] Generate CTPk time... CTPk = 80
+[Info] Generate package (id: 64) by transmitter (id: 2). Package transmission time: 80
+[Info] Simulation time: 41
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 30
+[Info] Simulation time: 83
+[Info] Generate CTPk time... CTPk = 10
+[Info] Generate package (id: 65) by transmitter (id: 1). Package transmission time: 10
+[Info] Simulation time: 44
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 15
+[Info] Simulation time: 93
+[Info] Generate CTPk time... CTPk = 60
+[Info] Generate package (id: 66) by transmitter (id: 4). Package transmission time: 60
+[Info] Simulation time: 45
 [Info] Channel is free
 [Info] Channel isn't free more than 4ms
 [Info] Time of free channel listenning: 45
-[Info] Channel is free
-[Info] Channel is free more than 4ms
-[Info] No collision detected
-[Info] Start transmission
-[Info] TER error occur
-[Info] Package retransmission attempt... attempt nr: 2
-[Info] Permission for retransmission
-[Info] CRP time: 100
+[Info] Simulation time: 46
+[Info] Generate CTPk time... CTPk = 70
+[Info] Generate package (id: 67) by transmitter (id: 0). Package transmission time: 70
+[Info] Simulation time: 51
 [Info] Channel is free
 [Info] Channel isn't free more than 4ms
 [Info] Time of free channel listenning: 5
-[Info] Channel is free
-[Info] Channel isn't free more than 4ms
-[Info] Time of free channel listenning: 10
-[Info] Channel is free
-[Info] Channel isn't free more than 4ms
-[Info] Time of free channel listenning: 15
+[Info] Simulation time: 55
 [Info] Channel is free
 [Info] Channel isn't free more than 4ms
 [Info] Time of free channel listenning: 20
-[Info] Channel is free
-[Info] Channel isn't free more than 4ms
-[Info] Time of free channel listenning: 25
-[Info] Channel is free
-[Info] Channel isn't free more than 4ms
-[Info] Time of free channel listenning: 30
+[Info] Simulation time: 58
 [Info] Channel is free
 [Info] Channel isn't free more than 4ms
 [Info] Time of free channel listenning: 35
+[Info] Simulation time: 45
+[Info] Generate CTPk time... CTPk = 50
+[Info] Generate package (id: 68) by transmitter (id: 9). Package transmission time: 50
+[Info] Simulation time: 55
+[Info] Generate CTPk time... CTPk = 30
+[Info] Generate package (id: 69) by transmitter (id: 8). Package transmission time: 30
+[Info] Simulation time: 60
 [Info] Channel is free
 [Info] Channel isn't free more than 4ms
-[Info] Time of free channel listenning: 40
+[Info] Time of free channel listenning: 30
+[Info] Simulation time: 63
 [Info] Channel is free
 [Info] Channel isn't free more than 4ms
-[Info] Time of free channel listenning: 45
+[Info] Time of free channel listenning: 15
+[Info] Simulation time: 64
+[Info] Generate CTPk time... CTPk = 80
+[Info] Generate package (id: 70) by transmitter (id: 7). Package transmission time: 80
+[Info] Simulation time: 65
 [Info] Channel is free
 [Info] Channel is free more than 4ms
 [Info] No collision detected
@@ -133,9 +508,1346 @@
 [Info] Permission to send ACK
 [Info] ACK delivered successfully
 [Info] Packages successfully sent: 1
-[Info] Simulation time: 545
-[Info] Packet Process Execute:
-[Info] End process package (id: 0) 
+[Info] Simulation time: 59
+[Info] Channel is free
+[Info] Channel is free more than 4ms
+[Info] No collision detected
+[Info] Start transmission
+[Info] TER error occur
+[Info] Package retransmission attempt... attempt nr: 1
+[Info] Permission for retransmission
+[Info] CRP time: 100
+[Info] Simulation time: 73
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 25
+[Info] Simulation time: 76
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 40
+[Info] Simulation time: 77
+[Info] Generate CTPk time... CTPk = 40
+[Info] Generate package (id: 71) by transmitter (id: 4). Package transmission time: 40
+[Info] Simulation time: 41
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 10
+[Info] Simulation time: 63
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 35
+[Info] Simulation time: 77
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 20
+[Info] Simulation time: 77
+[Info] Generate CTPk time... CTPk = 100
+[Info] Generate package (id: 72) by transmitter (id: 9). Package transmission time: 100
+[Info] Simulation time: 39
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 45
+[Info] Simulation time: 39
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 5
+[Info] Simulation time: 39
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 10
+[Info] Simulation time: 85
+[Info] Generate CTPk time... CTPk = 60
+[Info] Generate package (id: 73) by transmitter (id: 3). Package transmission time: 60
+[Info] Simulation time: 44
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 25
+[Info] Simulation time: 46
+[Info] Channel is free
+[Info] Channel is free more than 4ms
+[Info] No collision detected
+[Info] Start transmission
+[Info] TER error doesn't occur
+[Info] Package successfully sent
+[Info] Permission to send ACK
+[Info] ACK delivered successfully
+[Info] Packages successfully sent: 1
+[Info] Simulation time: 49
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 30
+[Info] Simulation time: 106
+[Info] Generate CTPk time... CTPk = 50
+[Info] Generate package (id: 74) by transmitter (id: 5). Package transmission time: 50
+[Info] Simulation time: 54
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 35
+[Info] Simulation time: 79
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 40
+[Info] Simulation time: 47
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 5
+[Info] Simulation time: 95
+[Info] Generate CTPk time... CTPk = 30
+[Info] Generate package (id: 75) by transmitter (id: 8). Package transmission time: 30
+[Info] Simulation time: 52
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 10
+[Info] Simulation time: 81
+[Info] Generate CTPk time... CTPk = 30
+[Info] Generate package (id: 76) by transmitter (id: 8). Package transmission time: 30
+[Info] Simulation time: 30
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 5
+[Info] Simulation time: 30
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 15
+[Info] Simulation time: 67
+[Info] Generate CTPk time... CTPk = 40
+[Info] Generate package (id: 77) by transmitter (id: 6). Package transmission time: 40
+[Info] Simulation time: 62
+[Info] Generate CTPk time... CTPk = 50
+[Info] Generate package (id: 78) by transmitter (id: 6). Package transmission time: 50
+[Info] Simulation time: 35
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 10
+[Info] Simulation time: 35
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 20
+[Info] Simulation time: 78
+[Info] Generate CTPk time... CTPk = 90
+[Info] Generate package (id: 79) by transmitter (id: 6). Package transmission time: 90
+[Info] Simulation time: 71
+[Info] Generate CTPk time... CTPk = 30
+[Info] Generate package (id: 80) by transmitter (id: 6). Package transmission time: 30
+[Info] Simulation time: 40
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 15
+[Info] Simulation time: 40
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 25
+[Info] Simulation time: 85
+[Info] Generate CTPk time... CTPk = 100
+[Info] Generate package (id: 81) by transmitter (id: 7). Package transmission time: 100
+[Info] Simulation time: 81
+[Info] Generate CTPk time... CTPk = 50
+[Info] Generate package (id: 82) by transmitter (id: 0). Package transmission time: 50
+[Info] Simulation time: 45
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 20
+[Info] Simulation time: 45
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 30
+[Info] Simulation time: 90
+[Info] Generate CTPk time... CTPk = 100
+[Info] Generate package (id: 83) by transmitter (id: 8). Package transmission time: 100
+[Info] Simulation time: 82
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 30
+[Info] Simulation time: 49
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 35
+[Info] Simulation time: 65
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 40
+[Info] Simulation time: 68
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 45
+[Info] Simulation time: 68
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 25
+[Info] Simulation time: 77
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 45
+[Info] Simulation time: 82
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 30
+[Info] Simulation time: 82
+[Info] Generate CTPk time... CTPk = 10
+[Info] Generate package (id: 84) by transmitter (id: 6). Package transmission time: 10
+[Info] Simulation time: 78
+[Info] Generate CTPk time... CTPk = 80
+[Info] Generate package (id: 85) by transmitter (id: 2). Package transmission time: 80
+[Info] Simulation time: 83
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 35
+[Info] Simulation time: 83
+[Info] Generate CTPk time... CTPk = 70
+[Info] Generate package (id: 86) by transmitter (id: 1). Package transmission time: 70
+[Info] Simulation time: 83
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 40
+[Info] Simulation time: 85
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 40
+[Info] Simulation time: 85
+[Info] Generate CTPk time... CTPk = 80
+[Info] Generate package (id: 87) by transmitter (id: 1). Package transmission time: 80
+[Info] Simulation time: 86
+[Info] Generate CTPk time... CTPk = 60
+[Info] Generate package (id: 88) by transmitter (id: 2). Package transmission time: 60
+[Info] Simulation time: 88
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 25
+[Info] Simulation time: 90
+[Info] Generate CTPk time... CTPk = 100
+[Info] Generate package (id: 89) by transmitter (id: 4). Package transmission time: 100
+[Info] Simulation time: 46
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 15
+[Info] Simulation time: 96
+[Info] Generate CTPk time... CTPk = 40
+[Info] Generate package (id: 90) by transmitter (id: 5). Package transmission time: 40
+[Info] Simulation time: 50
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 30
+[Info] Simulation time: 50
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 45
+[Info] Simulation time: 104
+[Info] Generate CTPk time... CTPk = 50
+[Info] Generate package (id: 91) by transmitter (id: 7). Package transmission time: 50
+[Info] Simulation time: 62
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 35
+[Info] Simulation time: 67
+[Info] Channel is free
+[Info] Channel is free more than 4ms
+[Info] No collision detected
+[Info] Start transmission
+[Info] TER error doesn't occur
+[Info] Package successfully sent
+[Info] Permission to send ACK
+[Info] ACK delivered successfully
+[Info] Packages successfully sent: 1
+[Info] Simulation time: 71
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 45
+[Info] Simulation time: 81
+[Info] Channel is free
+[Info] Channel is free more than 4ms
+[Info] No collision detected
+[Info] Start transmission
+[Info] TER error occur
+[Info] Package retransmission attempt... attempt nr: 1
+[Info] Permission for retransmission
+[Info] CRP time: 0
+[Info] Simulation time: 85
+[Info] Generate CTPk time... CTPk = 80
+[Info] Generate package (id: 92) by transmitter (id: 8). Package transmission time: 80
+[Info] Simulation time: 86
+[Info] Generate CTPk time... CTPk = 80
+[Info] Generate package (id: 93) by transmitter (id: 0). Package transmission time: 80
+[Info] Simulation time: 86
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 20
+[Info] Simulation time: 90
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 15
+[Info] Simulation time: 95
+[Info] End process package (id: 52) 
+
+[Info] Remove package
+[Info] Simulation time: 98
+[Info] Generate CTPk time... CTPk = 90
+[Info] Generate package (id: 94) by transmitter (id: 0). Package transmission time: 90
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 25
+[Info] Simulation time: 99
+[Info] Generate CTPk time... CTPk = 10
+[Info] Generate package (id: 95) by transmitter (id: 0). Package transmission time: 10
+[Info] Simulation time: 99
+[Info] Generate CTPk time... CTPk = 100
+[Info] Generate package (id: 96) by transmitter (id: 3). Package transmission time: 100
+[Info] Simulation time: 49
+[Info] Channel is free
+[Info] Channel is free more than 4ms
+[Info] No collision detected
+[Info] Start transmission
+[Info] TER error occur
+[Info] Package retransmission attempt... attempt nr: 1
+[Info] Permission for retransmission
+[Info] CRP time: 200
+[Info] Simulation time: 103
+[Info] Generate CTPk time... CTPk = 10
+[Info] Generate package (id: 97) by transmitter (id: 9). Package transmission time: 10
+[Info] Simulation time: 62
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 30
+[Info] Simulation time: 80
+[Info] Generate CTPk time... CTPk = 100
+[Info] Generate package (id: 98) by transmitter (id: 3). Package transmission time: 100
+[Info] Simulation time: 90
+[Info] Generate CTPk time... CTPk = 40
+[Info] Generate package (id: 99) by transmitter (id: 5). Package transmission time: 40
+[Info] Simulation time: 50
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 35
+[Info] Simulation time: 102
+[Info] Generate CTPk time... CTPk = 80
+[Info] Generate package (id: 100) by transmitter (id: 7). Package transmission time: 80
+[Info] Simulation time: 55
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 40
+[Info] Simulation time: 56
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 35
+[Info] Simulation time: 51
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 40
+[Info] Simulation time: 104
+[Info] Generate CTPk time... CTPk = 40
+[Info] Generate package (id: 101) by transmitter (id: 0). Package transmission time: 40
+[Info] Simulation time: 53
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 40
+[Info] Simulation time: 111
+[Info] Generate CTPk time... CTPk = 10
+[Info] Generate package (id: 102) by transmitter (id: 7). Package transmission time: 10
+[Info] Simulation time: 55
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 45
+[Info] Simulation time: 55
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 5
+[Info] Simulation time: 110
+[Info] Generate CTPk time... CTPk = 80
+[Info] Generate package (id: 103) by transmitter (id: 1). Package transmission time: 80
+[Info] Simulation time: 98
+[Info] Generate CTPk time... CTPk = 50
+[Info] Generate package (id: 104) by transmitter (id: 2). Package transmission time: 50
+[Info] Simulation time: 57
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 5
+[Info] Simulation time: 58
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 45
+[Info] Simulation time: 60
+[Info] Channel is free
+[Info] Channel is free more than 4ms
+[Info] No collision detected
+[Info] Start transmission
+[Info] TER error occur
+[Info] Package retransmission attempt... attempt nr: 1
+[Info] Permission for retransmission
+[Info] CRP time: 0
+[Info] Simulation time: 61
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 45
+[Info] Simulation time: 62
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 10
+[Info] Simulation time: 66
+[Info] Generate CTPk time... CTPk = 50
+[Info] Generate package (id: 105) by transmitter (id: 3). Package transmission time: 50
+[Info] Simulation time: 66
+[Info] Channel is free
+[Info] Channel is free more than 4ms
+[Info] No collision detected
+[Info] Start transmission
+[Info] TER error occur
+[Info] Package retransmission attempt... attempt nr: 1
+[Info] Permission for retransmission
+[Info] CRP time: 600
+[Info] Simulation time: 69
+[Info] Generate CTPk time... CTPk = 60
+[Info] Generate package (id: 106) by transmitter (id: 2). Package transmission time: 60
+[Info] Simulation time: 70
+[Info] Generate CTPk time... CTPk = 80
+[Info] Generate package (id: 107) by transmitter (id: 3). Package transmission time: 80
+[Info] Simulation time: 72
+[Info] Generate CTPk time... CTPk = 40
+[Info] Generate package (id: 108) by transmitter (id: 6). Package transmission time: 40
+[Info] Simulation time: 76
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 10
+[Info] Simulation time: 67
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 5
+[Info] Simulation time: 136
+[Info] Generate CTPk time... CTPk = 40
+[Info] Generate package (id: 109) by transmitter (id: 7). Package transmission time: 40
+[Info] Simulation time: 72
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 10
+[Info] Simulation time: 79
+[Info] Generate CTPk time... CTPk = 10
+[Info] Generate package (id: 110) by transmitter (id: 9). Package transmission time: 10
+[Info] Simulation time: 56
+[Info] Channel is free
+[Info] Channel is free more than 4ms
+[Info] No collision detected
+[Info] Start transmission
+[Info] TER error occur
+[Info] Package retransmission attempt... attempt nr: 1
+[Info] Permission for retransmission
+[Info] CRP time: 100
+[Info] Simulation time: 118
+[Info] Generate CTPk time... CTPk = 90
+[Info] Generate package (id: 111) by transmitter (id: 3). Package transmission time: 90
+[Info] Simulation time: 99
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 20
+[Info] Simulation time: 99
+[Info] Generate CTPk time... CTPk = 10
+[Info] Generate package (id: 112) by transmitter (id: 3). Package transmission time: 10
+[Info] Simulation time: 100
+[Info] Generate CTPk time... CTPk = 70
+[Info] Generate package (id: 113) by transmitter (id: 0). Package transmission time: 70
+[Info] Simulation time: 106
+[Info] Generate CTPk time... CTPk = 60
+[Info] Generate package (id: 114) by transmitter (id: 4). Package transmission time: 60
+[Info] Simulation time: 110
+[Info] Generate CTPk time... CTPk = 20
+[Info] Generate package (id: 115) by transmitter (id: 2). Package transmission time: 20
+[Info] Simulation time: 111
+[Info] Generate CTPk time... CTPk = 10
+[Info] Generate package (id: 116) by transmitter (id: 6). Package transmission time: 10
+[Info] Simulation time: 111
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 25
+[Info] Simulation time: 112
+[Info] Generate CTPk time... CTPk = 30
+[Info] Generate package (id: 117) by transmitter (id: 9). Package transmission time: 30
+[Info] Simulation time: 113
+[Info] Generate CTPk time... CTPk = 10
+[Info] Generate package (id: 118) by transmitter (id: 0). Package transmission time: 10
+[Info] Simulation time: 113
+[Info] Generate CTPk time... CTPk = 20
+[Info] Generate package (id: 119) by transmitter (id: 2). Package transmission time: 20
+[Info] Simulation time: 81
+[Info] Generate CTPk time... CTPk = 20
+[Info] Generate package (id: 120) by transmitter (id: 4). Package transmission time: 20
+[Info] Simulation time: 79
+[Info] Generate CTPk time... CTPk = 80
+[Info] Generate package (id: 121) by transmitter (id: 6). Package transmission time: 80
+[Info] Simulation time: 81
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 30
+[Info] Simulation time: 40
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 35
+[Info] Simulation time: 83
+[Info] Generate CTPk time... CTPk = 50
+[Info] Generate package (id: 122) by transmitter (id: 0). Package transmission time: 50
+[Info] Simulation time: 44
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 40
+[Info] Simulation time: 44
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 10
+[Info] Simulation time: 44
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 15
+[Info] Simulation time: 96
+[Info] Generate CTPk time... CTPk = 80
+[Info] Generate package (id: 123) by transmitter (id: 3). Package transmission time: 80
+[Info] Simulation time: 97
+[Info] Generate CTPk time... CTPk = 10
+[Info] Generate package (id: 124) by transmitter (id: 5). Package transmission time: 10
+[Info] Simulation time: 92
+[Info] Generate CTPk time... CTPk = 100
+[Info] Generate package (id: 125) by transmitter (id: 7). Package transmission time: 100
+[Info] Simulation time: 45
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 45
+[Info] Simulation time: 95
+[Info] Generate CTPk time... CTPk = 80
+[Info] Generate package (id: 126) by transmitter (id: 8). Package transmission time: 80
+[Info] Simulation time: 49
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 5
+[Info] Simulation time: 49
+[Info] Channel is free
+[Info] Channel is free more than 4ms
+[Info] No collision detected
+[Info] Start transmission
+[Info] TER error doesn't occur
+[Info] Package successfully sent
+[Info] Permission to send ACK
+[Info] ACK delivered successfully
+[Info] Packages successfully sent: 2
+[Info] Simulation time: 49
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 20
+[Info] Simulation time: 49
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 25
+[Info] Simulation time: 106
+[Info] Generate CTPk time... CTPk = 100
+[Info] Generate package (id: 127) by transmitter (id: 8). Package transmission time: 100
+[Info] Simulation time: 106
+[Info] Generate CTPk time... CTPk = 60
+[Info] Generate package (id: 128) by transmitter (id: 0). Package transmission time: 60
+[Info] Simulation time: 105
+[Info] Generate CTPk time... CTPk = 80
+[Info] Generate package (id: 129) by transmitter (id: 1). Package transmission time: 80
+[Info] Simulation time: 56
+[Info] Generate CTPk time... CTPk = 20
+[Info] Generate package (id: 130) by transmitter (id: 4). Package transmission time: 20
+[Info] Simulation time: 50
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 5
+[Info] Simulation time: 54
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 30
+[Info] Simulation time: 44
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 15
+[Info] Simulation time: 89
+[Info] Generate CTPk time... CTPk = 90
+[Info] Generate package (id: 131) by transmitter (id: 3). Package transmission time: 90
+[Info] Simulation time: 48
+[Info] Generate CTPk time... CTPk = 70
+[Info] Generate package (id: 132) by transmitter (id: 4). Package transmission time: 70
+[Info] Simulation time: 100
+[Info] Generate CTPk time... CTPk = 30
+[Info] Generate package (id: 133) by transmitter (id: 7). Package transmission time: 30
+[Info] Simulation time: 49
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 20
+[Info] Simulation time: 106
+[Info] Generate CTPk time... CTPk = 100
+[Info] Generate package (id: 134) by transmitter (id: 1). Package transmission time: 100
+[Info] Simulation time: 80
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 5
+[Info] Simulation time: 68
+[Info] Channel is free
+[Info] Channel is free more than 4ms
+[Info] No collision detected
+[Info] Start transmission
+[Info] TER error occur
+[Info] Package retransmission attempt... attempt nr: 1
+[Info] Permission for retransmission
+[Info] CRP time: 0
+[Info] Simulation time: 145
+[Info] Generate CTPk time... CTPk = 80
+[Info] Generate package (id: 135) by transmitter (id: 2). Package transmission time: 80
+[Info] Simulation time: 83
+[Info] Generate CTPk time... CTPk = 100
+[Info] Generate package (id: 136) by transmitter (id: 9). Package transmission time: 100
+[Info] Simulation time: 83
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 10
+[Info] Simulation time: 172
+[Info] Generate CTPk time... CTPk = 20
+[Info] Generate package (id: 137) by transmitter (id: 5). Package transmission time: 20
+[Info] Simulation time: 81
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 5
+[Info] Simulation time: 86
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 10
+[Info] Simulation time: 90
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 15
+[Info] Simulation time: 90
+[Info] Generate CTPk time... CTPk = 10
+[Info] Generate package (id: 138) by transmitter (id: 5). Package transmission time: 10
+[Info] Simulation time: 90
+[Info] Generate CTPk time... CTPk = 50
+[Info] Generate package (id: 139) by transmitter (id: 3). Package transmission time: 50
+[Info] Simulation time: 94
+[Info] Generate CTPk time... CTPk = 80
+[Info] Generate package (id: 140) by transmitter (id: 4). Package transmission time: 80
+[Info] Simulation time: 95
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 15
+[Info] Simulation time: 96
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 25
+[Info] Simulation time: 98
+[Info] Generate CTPk time... CTPk = 10
+[Info] Generate package (id: 141) by transmitter (id: 7). Package transmission time: 10
+[Info] Simulation time: 99
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 10
+[Info] Simulation time: 101
+[Info] Generate CTPk time... CTPk = 80
+[Info] Generate package (id: 142) by transmitter (id: 3). Package transmission time: 80
+[Info] Simulation time: 102
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 15
+[Info] Simulation time: 103
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 5
+[Info] Simulation time: 104
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 20
+[Info] Simulation time: 66
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 35
+[Info] Simulation time: 138
+[Info] Generate CTPk time... CTPk = 20
+[Info] Generate package (id: 143) by transmitter (id: 1). Package transmission time: 20
+[Info] Simulation time: 71
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 40
+[Info] Simulation time: 149
+[Info] Generate CTPk time... CTPk = 10
+[Info] Generate package (id: 144) by transmitter (id: 3). Package transmission time: 10
+[Info] Simulation time: 76
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 45
+[Info] Simulation time: 104
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 15
+[Info] Simulation time: 95
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 20
+[Info] Simulation time: 97
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 25
+[Info] Simulation time: 99
+[Info] Generate CTPk time... CTPk = 70
+[Info] Generate package (id: 145) by transmitter (id: 4). Package transmission time: 70
+[Info] Simulation time: 103
+[Info] Generate CTPk time... CTPk = 60
+[Info] Generate package (id: 146) by transmitter (id: 0). Package transmission time: 60
+[Info] Simulation time: 54
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 10
+[Info] Simulation time: 54
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 30
+[Info] Simulation time: 109
+[Info] Generate CTPk time... CTPk = 50
+[Info] Generate package (id: 147) by transmitter (id: 0). Package transmission time: 50
+[Info] Simulation time: 106
+[Info] Generate CTPk time... CTPk = 60
+[Info] Generate package (id: 148) by transmitter (id: 3). Package transmission time: 60
+[Info] Simulation time: 213
+[Info] Generate CTPk time... CTPk = 40
+[Info] Generate package (id: 149) by transmitter (id: 3). Package transmission time: 40
+[Info] Simulation time: 82
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 15
+[Info] Simulation time: 164
+[Info] Generate CTPk time... CTPk = 10
+[Info] Generate package (id: 150) by transmitter (id: 4). Package transmission time: 10
+[Info] Simulation time: 87
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 20
+[Info] Simulation time: 78
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 5
+[Info] Simulation time: 160
+[Info] Generate CTPk time... CTPk = 10
+[Info] Generate package (id: 151) by transmitter (id: 7). Package transmission time: 10
+[Info] Simulation time: 83
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 10
+[Info] Simulation time: 169
+[Info] Generate CTPk time... CTPk = 50
+[Info] Generate package (id: 152) by transmitter (id: 8). Package transmission time: 50
+[Info] Simulation time: 88
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 15
+[Info] Simulation time: 85
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 30
+[Info] Simulation time: 40
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 20
+[Info] Simulation time: 82
+[Info] Generate CTPk time... CTPk = 70
+[Info] Generate package (id: 153) by transmitter (id: 3). Package transmission time: 70
+[Info] Simulation time: 41
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 35
+[Info] Simulation time: 85
+[Info] Generate CTPk time... CTPk = 80
+[Info] Generate package (id: 154) by transmitter (id: 8). Package transmission time: 80
+[Info] Simulation time: 45
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 25
+[Info] Simulation time: 95
+[Info] Generate CTPk time... CTPk = 100
+[Info] Generate package (id: 155) by transmitter (id: 9). Package transmission time: 100
+[Info] Simulation time: 46
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 40
+[Info] Simulation time: 93
+[Info] Generate CTPk time... CTPk = 20
+[Info] Generate package (id: 156) by transmitter (id: 6). Package transmission time: 20
+[Info] Simulation time: 48
+[Info] Channel is free
+[Info] Channel is free more than 4ms
+[Info] No collision detected
+[Info] Start transmission
+[Info] TER error occur
+[Info] Package retransmission attempt... attempt nr: 1
+[Info] Permission for retransmission
+[Info] CRP time: 0
+[Info] Simulation time: 99
+[Info] Generate CTPk time... CTPk = 80
+[Info] Generate package (id: 157) by transmitter (id: 2). Package transmission time: 80
+[Info] Simulation time: 50
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 30
+[Info] Simulation time: 106
+[Info] Generate CTPk time... CTPk = 30
+[Info] Generate package (id: 158) by transmitter (id: 1). Package transmission time: 30
+[Info] Simulation time: 51
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 45
+[Info] Simulation time: 102
+[Info] Generate CTPk time... CTPk = 40
+[Info] Generate package (id: 159) by transmitter (id: 9). Package transmission time: 40
+[Info] Simulation time: 55
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 35
+[Info] Simulation time: 111
+[Info] Generate CTPk time... CTPk = 90
+[Info] Generate package (id: 160) by transmitter (id: 0). Package transmission time: 90
+[Info] Simulation time: 56
+[Info] Channel is free
+[Info] Channel is free more than 4ms
+[Info] No collision detected
+[Info] Start transmission
+[Info] TER error occur
+[Info] Package retransmission attempt... attempt nr: 1
+[Info] Permission for retransmission
+[Info] CRP time: 200
+[Info] Simulation time: 119
+[Info] Generate CTPk time... CTPk = 70
+[Info] Generate package (id: 161) by transmitter (id: 2). Package transmission time: 70
+[Info] Simulation time: 60
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 40
+[Info] Simulation time: 123
+[Info] Generate CTPk time... CTPk = 80
+[Info] Generate package (id: 162) by transmitter (id: 2). Package transmission time: 80
+[Info] Simulation time: 65
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 45
+[Info] Simulation time: 66
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 35
+[Info] Simulation time: 48
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 25
+[Info] Simulation time: 102
+[Info] Generate CTPk time... CTPk = 10
+[Info] Generate package (id: 163) by transmitter (id: 8). Package transmission time: 10
+[Info] Simulation time: 53
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 30
+[Info] Simulation time: 64
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 20
+[Info] Simulation time: 70
+[Info] Channel is free
+[Info] Channel is free more than 4ms
+[Info] No collision detected
+[Info] Start transmission
+[Info] TER error occur
+[Info] Package retransmission attempt... attempt nr: 1
+[Info] Permission for retransmission
+[Info] CRP time: 0
+[Info] Simulation time: 46
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 15
+[Info] Simulation time: 96
+[Info] Generate CTPk time... CTPk = 80
+[Info] Generate package (id: 164) by transmitter (id: 5). Package transmission time: 80
+[Info] Simulation time: 47
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 25
+[Info] Simulation time: 101
+[Info] Generate CTPk time... CTPk = 70
+[Info] Generate package (id: 165) by transmitter (id: 8). Package transmission time: 70
+[Info] Simulation time: 51
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 20
+[Info] Simulation time: 108
+[Info] Generate CTPk time... CTPk = 60
+[Info] Generate package (id: 166) by transmitter (id: 2). Package transmission time: 60
+[Info] Simulation time: 52
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 30
+[Info] Simulation time: 104
+[Info] Generate CTPk time... CTPk = 70
+[Info] Generate package (id: 167) by transmitter (id: 6). Package transmission time: 70
+[Info] Simulation time: 56
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 35
+[Info] Simulation time: 56
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 25
+[Info] Simulation time: 120
+[Info] Generate CTPk time... CTPk = 60
+[Info] Generate package (id: 168) by transmitter (id: 7). Package transmission time: 60
+[Info] Simulation time: 110
+[Info] Generate CTPk time... CTPk = 20
+[Info] Generate package (id: 169) by transmitter (id: 7). Package transmission time: 20
+[Info] Simulation time: 89
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 30
+[Info] Simulation time: 100
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 40
+[Info] Simulation time: 106
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 5
+[Info] Simulation time: 110
+[Info] Generate CTPk time... CTPk = 40
+[Info] Generate package (id: 170) by transmitter (id: 7). Package transmission time: 40
+[Info] Simulation time: 55
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 35
+[Info] Simulation time: 119
+[Info] Generate CTPk time... CTPk = 30
+[Info] Generate package (id: 171) by transmitter (id: 1). Package transmission time: 30
+[Info] Simulation time: 59
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 10
+[Info] Simulation time: 79
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 40
+[Info] Simulation time: 81
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 45
+[Info] Simulation time: 84
+[Info] Generate CTPk time... CTPk = 10
+[Info] Generate package (id: 172) by transmitter (id: 9). Package transmission time: 10
+[Info] Simulation time: 77
+[Info] Generate CTPk time... CTPk = 100
+[Info] Generate package (id: 173) by transmitter (id: 9). Package transmission time: 100
+[Info] Simulation time: 93
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 40
+[Info] Simulation time: 95
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 45
+[Info] Simulation time: 93
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 5
+[Info] Simulation time: 186
+[Info] Generate CTPk time... CTPk = 10
+[Info] Generate package (id: 174) by transmitter (id: 4). Package transmission time: 10
+[Info] Simulation time: 98
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 10
+[Info] Simulation time: 201
+[Info] Generate CTPk time... CTPk = 20
+[Info] Generate package (id: 175) by transmitter (id: 7). Package transmission time: 20
+[Info] Simulation time: 99
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 15
+[Info] Simulation time: 99
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 10
+[Info] Simulation time: 205
+[Info] Generate CTPk time... CTPk = 100
+[Info] Generate package (id: 176) by transmitter (id: 6). Package transmission time: 100
+[Info] Simulation time: 102
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 15
+[Info] Simulation time: 213
+[Info] Generate CTPk time... CTPk = 90
+[Info] Generate package (id: 177) by transmitter (id: 4). Package transmission time: 90
+[Info] Simulation time: 106
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 25
+[Info] Simulation time: 60
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 20
+[Info] Simulation time: 121
+[Info] Generate CTPk time... CTPk = 30
+[Info] Generate package (id: 178) by transmitter (id: 1). Package transmission time: 30
+[Info] Simulation time: 65
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 25
+[Info] Simulation time: 133
+[Info] Generate CTPk time... CTPk = 90
+[Info] Generate package (id: 179) by transmitter (id: 6). Package transmission time: 90
+[Info] Simulation time: 70
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 30
+[Info] Simulation time: 148
+[Info] Generate CTPk time... CTPk = 60
+[Info] Generate package (id: 180) by transmitter (id: 1). Package transmission time: 60
+[Info] Simulation time: 75
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 35
+[Info] Simulation time: 159
+[Info] Generate CTPk time... CTPk = 10
+[Info] Generate package (id: 181) by transmitter (id: 0). Package transmission time: 10
+[Info] Simulation time: 79
+[Info] Generate CTPk time... CTPk = 30
+[Info] Generate package (id: 182) by transmitter (id: 2). Package transmission time: 30
+[Info] Simulation time: 84
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 40
+[Info] Simulation time: 93
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 5
+[Info] Simulation time: 103
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 20
+[Info] Simulation time: 104
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 15
+[Info] Simulation time: 217
+[Info] Generate CTPk time... CTPk = 30
+[Info] Generate package (id: 183) by transmitter (id: 9). Package transmission time: 30
+[Info] Simulation time: 106
+[Info] Generate CTPk time... CTPk = 50
+[Info] Generate package (id: 184) by transmitter (id: 0). Package transmission time: 50
+[Info] Simulation time: 106
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 25
+[Info] Simulation time: 107
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 45
+[Info] Simulation time: 108
+[Info] Channel is free
+[Info] Channel is free more than 4ms
+[Info] No collision detected
+[Info] Start transmission
+[Info] TER error occur
+[Info] Package retransmission attempt... attempt nr: 2
+[Info] Permission for retransmission
+[Info] CRP time: 0
+[Info] Simulation time: 109
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 20
+[Info] Simulation time: 110
+[Info] Channel is free
+[Info] Channel is free more than 4ms
+[Info] No collision detected
+[Info] Start transmission
+[Info] TER error doesn't occur
+[Info] Package successfully sent
+[Info] Permission to send ACK
+[Info] ACK delivered successfully
+[Info] Packages successfully sent: 3
+[Info] Simulation time: 111
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 30
+[Info] Simulation time: 111
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 10
+[Info] Simulation time: 112
+[Info] Generate CTPk time... CTPk = 30
+[Info] Generate package (id: 185) by transmitter (id: 6). Package transmission time: 30
+[Info] Simulation time: 55
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 15
+[Info] Simulation time: 117
+[Info] Generate CTPk time... CTPk = 90
+[Info] Generate package (id: 186) by transmitter (id: 6). Package transmission time: 90
+[Info] Simulation time: 57
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 5
+[Info] Simulation time: 117
+[Info] Generate CTPk time... CTPk = 90
+[Info] Generate package (id: 187) by transmitter (id: 5). Package transmission time: 90
+[Info] Simulation time: 59
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 45
+[Info] Simulation time: 59
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 20
+[Info] Simulation time: 59
+[Info] Channel is free
+[Info] Channel is free more than 4ms
+[Info] No collision detected
+[Info] Start transmission
+[Info] TER error occur
+[Info] Package retransmission attempt... attempt nr: 1
+[Info] Permission for retransmission
+[Info] CRP time: 500
+[Info] Simulation time: 121
+[Info] Generate CTPk time... CTPk = 80
+[Info] Generate package (id: 188) by transmitter (id: 8). Package transmission time: 80
+[Info] Simulation time: 95
+[Info] Channel is free
+[Info] Channel is free more than 4ms
+[Info] No collision detected
+[Info] Start transmission
+[Info] TER error occur
+[Info] Package retransmission attempt... attempt nr: 1
+[Info] Permission for retransmission
+[Info] CRP time: 0
+[Info] Simulation time: 109
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 25
+[Info] Simulation time: 110
+[Info] Generate CTPk time... CTPk = 90
+[Info] Generate package (id: 189) by transmitter (id: 3). Package transmission time: 90
+[Info] Simulation time: 114
+[Info] Generate CTPk time... CTPk = 70
+[Info] Generate package (id: 190) by transmitter (id: 1). Package transmission time: 70
+[Info] Simulation time: 78
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 30
+[Info] Simulation time: 103
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 5
+[Info] Simulation time: 114
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 30
+[Info] Simulation time: 116
+[Info] Generate CTPk time... CTPk = 80
+[Info] Generate package (id: 191) by transmitter (id: 5). Package transmission time: 80
+[Info] Simulation time: 116
+[Info] Generate CTPk time... CTPk = 70
+[Info] Generate package (id: 192) by transmitter (id: 7). Package transmission time: 70
+[Info] Simulation time: 60
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 5
+[Info] Simulation time: 124
+[Info] Generate CTPk time... CTPk = 80
+[Info] Generate package (id: 193) by transmitter (id: 2). Package transmission time: 80
+[Info] Simulation time: 63
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 10
+[Info] Simulation time: 126
+[Info] Generate CTPk time... CTPk = 100
+[Info] Generate package (id: 194) by transmitter (id: 6). Package transmission time: 100
+[Info] Simulation time: 65
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 10
+[Info] Simulation time: 68
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 15
+[Info] Simulation time: 92
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 35
+[Info] Simulation time: 100
+[Info] Generate CTPk time... CTPk = 100
+[Info] Generate package (id: 195) by transmitter (id: 3). Package transmission time: 100
+[Info] Simulation time: 60
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 35
+[Info] Simulation time: 129
+[Info] Generate CTPk time... CTPk = 100
+[Info] Generate package (id: 196) by transmitter (id: 7). Package transmission time: 100
+[Info] Simulation time: 62
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 20
+[Info] Simulation time: 124
+[Info] Generate CTPk time... CTPk = 90
+[Info] Generate package (id: 197) by transmitter (id: 5). Package transmission time: 90
+[Info] Simulation time: 64
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 15
+[Info] Simulation time: 64
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 40
+[Info] Simulation time: 65
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 45
+[Info] Simulation time: 67
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 25
+[Info] Simulation time: 67
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 25
+[Info] Simulation time: 73
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 30
+[Info] Simulation time: 77
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 20
+[Info] Simulation time: 79
+[Info] Channel is free
+[Info] Channel is free more than 4ms
+[Info] No collision detected
+[Info] Start transmission
+[Info] TER error occur
+[Info] Package retransmission attempt... attempt nr: 1
+[Info] Permission for retransmission
+[Info] CRP time: 800
+[Info] Simulation time: 80
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 10
+[Info] Simulation time: 70
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 20
+[Info] Simulation time: 89
+[Info] Generate CTPk time... CTPk = 100
+[Info] Generate package (id: 198) by transmitter (id: 0). Package transmission time: 100
+[Info] Simulation time: 90
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 35
+[Info] Simulation time: 103
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 15
+[Info] Simulation time: 114
+[Info] Generate CTPk time... CTPk = 60
+[Info] Generate package (id: 199) by transmitter (id: 8). Package transmission time: 60
+[Info] Simulation time: 102
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 25
+[Info] Simulation time: 114
+[Info] Generate CTPk time... CTPk = 20
+[Info] Generate package (id: 200) by transmitter (id: 9). Package transmission time: 20
+[Info] Simulation time: 117
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 25
+[Info] Simulation time: 117
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 35
+[Info] Simulation time: 118
+[Info] Generate CTPk time... CTPk = 20
+[Info] Generate package (id: 201) by transmitter (id: 6). Package transmission time: 20
+[Info] Simulation time: 118
+[Info] Generate CTPk time... CTPk = 100
+[Info] Generate package (id: 202) by transmitter (id: 0). Package transmission time: 100
+[Info] Simulation time: 119
+[Info] Generate CTPk time... CTPk = 80
+[Info] Generate package (id: 203) by transmitter (id: 9). Package transmission time: 80
+[Info] Simulation time: 57
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 40
+[Info] Simulation time: 114
+[Info] Generate CTPk time... CTPk = 100
+[Info] Generate package (id: 204) by transmitter (id: 9). Package transmission time: 100
+[Info] Simulation time: 60
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 35
+[Info] Simulation time: 61
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 30
+[Info] Simulation time: 61
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 40
+[Info] Simulation time: 79
+[Info] Generate CTPk time... CTPk = 40
+[Info] Generate package (id: 205) by transmitter (id: 4). Package transmission time: 40
+[Info] Simulation time: 69
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 40
+[Info] Simulation time: 73
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 40
+[Info] Simulation time: 80
+[Info] Generate CTPk time... CTPk = 90
+[Info] Generate package (id: 206) by transmitter (id: 0). Package transmission time: 90
+[Info] Simulation time: 85
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 20
+[Info] Simulation time: 79
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 5
+[Info] Simulation time: 88
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 25
+[Info] Simulation time: 90
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 45
+[Info] Simulation time: 95
+[Info] Channel is free
+[Info] Channel is free more than 4ms
+[Info] No collision detected
+[Info] Start transmission
+[Info] TER error occur
+[Info] Package retransmission attempt... attempt nr: 2
+[Info] Permission for retransmission
+[Info] CRP time: 200
+[Info] Simulation time: 101
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 35
+[Info] Simulation time: 87
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 30
+[Info] Simulation time: 104
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 5
+[Info] Simulation time: 104
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 40
+[Info] Simulation time: 105
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 10
+[Info] Simulation time: 108
+[Info] Channel is free
+[Info] Channel isn't free more than 4ms
+[Info] Time of free channel listenning: 10
+[Info] Simulation time: 117
+[Info] End process package (id: 159) 
 
 [Info] Remove package
 [Info] Simulation time: 3722304989

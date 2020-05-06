@@ -23,11 +23,10 @@ public:
   const size_t ctiz_time_ = 10;  // ACK transmission time (CTIZ = 1ms)
   const size_t difs_time_ = 40; // checking channel time (DIFS = 4ms)
 
-  unsigned int GetPackagesSuccessfullySent();
-
   // get
   inline unsigned int GetTransmitterId() { return transmitter_id_; }
-  inline unsigned int GetPackagesLost() { return packages_lost_; }
+  inline unsigned int GetPackagesLost();
+  inline unsigned int GetPackagesSuccessfullySent();
   inline size_t GetTimeOfChannelListenning() { return time_of_channel_listenning_; }
   inline size_t GetTimeOfChannelOccupancy() { return time_of_channel_occupancy_; }
   inline size_t GetTimeCrp() { return time_crp_; }

@@ -41,6 +41,7 @@ private:
   std::vector<Receiver*> receivers_;
   std::vector<Package*> packages_;  // packages in buffer
 
+  Transmitter* transmitter_ = nullptr;
   Logger* logger_ = nullptr;
   Channel* channel_ = nullptr;
 };

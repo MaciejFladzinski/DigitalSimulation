@@ -14,10 +14,16 @@ Transmitter::~Transmitter()
   logger_->Info("Remove transmitter nr: " + std::to_string(transmitter_id_));
 }
 
-unsigned Transmitter::GetPackagesSuccessfullySent()
+unsigned int Transmitter::GetPackagesSuccessfullySent()
 {
   return packages_successfully_sent_;
 }
+
+unsigned int Transmitter::GetPackagesLost()
+{
+  return packages_lost_;
+}
+
 
 void Transmitter::GenerateCRPTime(Logger* logger, size_t ctpk, unsigned int number_of_LR)
 {
@@ -25,7 +31,7 @@ void Transmitter::GenerateCRPTime(Logger* logger, size_t ctpk, unsigned int numb
 
   unsigned int max_value = std::pow(2, number_of_LR);
   unsigned int R = rand() % max_value;
-  size_t crp_time = ctpk * R;
+  size_t crp_time = ctpk * R * 10;
 
   SetTimeCrp(crp_time);
   logger->Info("CRP time: " + std::to_string(GetTimeCrp()));

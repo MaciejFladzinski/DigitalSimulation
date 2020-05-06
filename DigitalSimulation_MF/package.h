@@ -35,9 +35,6 @@ Logger* logger, WirelessNetwork* wireless_network, Agenda* agenda);
   void IncrementNumberOfLR(Logger* logger);
   void GenerateCTPkTime(Logger* logger);
 
-  void StepInto();
-  bool SelectMode(int mode);
-
   // get
   inline unsigned int GetPackageId() { return id_package_; }
   inline unsigned int GetStationId() { return id_station_; }
@@ -59,7 +56,7 @@ private:
   unsigned int id_station_;
   unsigned int number_of_LR_ = 0; // packet retransmission number
   size_t ctpk_time_ = 0; // random packet generation time (CTPk)
-  size_t time_ = 0; //time after which the process will start
+  size_t time_; //time after which the process will start
   bool is_terminated_ = false;
 
   State state_ = State::AppearanceInTheSystem;

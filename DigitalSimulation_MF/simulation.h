@@ -13,7 +13,10 @@ public:
   Simulation(Logger* logger, WirelessNetwork* wireless_network);
   ~Simulation();
 
-  void RunM4(Logger* logger, size_t time);
+  void RunM4(Logger* logger, int time);
+
+  void StepInto();
+  bool SelectMode(int mode);
 
 private:
   size_t generate_packet_max_time_ = 10;
