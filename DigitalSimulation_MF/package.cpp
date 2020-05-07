@@ -111,12 +111,11 @@ void Package::Execute()
       wireless_network_->GeneratePackage(logger_, this, transmitter, rand()%10); // generate and add package to the vector
       {
         // planning the appearance of the next package
-        ++id_package_;
-        auto new_package = new Package(id_package_, rand() % 10, time_, logger_, wireless_network_, agenda_);
-        new_package->Activ(time_ + rand() % WirelessNetwork::generate_packet_max_time, true);
+        auto new_package = new Package(id_package_ + 1, rand() % 10, time_, logger_, wireless_network_, agenda_);
+        new_package->Activ(rand() % WirelessNetwork::generate_packet_max_time, true);
       }
 
-      if (transmitter->GetFirstPackageInTX()) // if (package is first)
+      if (transmitter->GetFirstPackageInTX() == this) // if (package is first)
       {
         state_ = State::ChannelListening;
         active = true;
@@ -124,7 +123,7 @@ void Package::Execute()
       else
       {
         state_ = State::AppearanceInTheSystem;
-        active = true;
+        active = false;
       }
       break;
 
@@ -153,6 +152,7 @@ void Package::Execute()
       else
       {
         logger_->Info("Channel is busy");
+        transmitter->SetTimeOfChannelListenning(0);
         Activ(5, true); // process sleep for 0,5ms
         state_ = State::ChannelListening;
         active = false;
@@ -164,6 +164,7 @@ void Package::Execute()
       if (wireless_network_->GetBufferSize() == 1) // if (vector in channel have 1 package)
       {
         wireless_network_->StartTransmission(logger_); // (channel occupancy = true)
+        logger_->Info("Start transmission package (id: " + std::to_string(this->GetPackageId()) + ")");
         Activ(ctpk_time_, true);// process sleep for CTPk time
         state_ = State::ReceivePackage;
         active = false;
