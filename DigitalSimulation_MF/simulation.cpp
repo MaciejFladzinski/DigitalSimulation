@@ -68,15 +68,11 @@ void Simulation::RunM4(Logger* logger, int time)
 
   size_t id = 0;
 
-  //auto package = new Package(id, rand() % 10, clock_, logger, wireless_network_, &agenda);
-  //package->Activ(0);
-
   agenda.push(new Package(id, rand() % 10, clock_, logger, wireless_network_, &agenda));
 
   // main loop
   while (clock_ < static_cast<size_t>(time) && (!agenda.empty() == true))
   {
-    //package->Activ(clock_ + rand() % generate_packet_max_time_);
     Package* package_process = agenda.top();
     agenda.pop();
     clock_ = package_process->GetTime();
@@ -84,12 +80,12 @@ void Simulation::RunM4(Logger* logger, int time)
     printf("\n");
     logger->Info("Simulation time: " + std::to_string(clock_));
     package_process->Execute();
-    if (SelectMode(key) == true) { StepInto(); }
 
     if(package_process->GetIsTerminated() == true)
     {
       logger->Info("End process package (id: " + std::to_string(package_process->GetPackageId()) + ") \n");
       delete package_process;
     }
+    if (SelectMode(key) == true) { StepInto(); }
   }
 }

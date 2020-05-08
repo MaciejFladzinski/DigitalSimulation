@@ -21,6 +21,11 @@ bool Channel::GetCollision()
   return packages_collision_;
 }
 
+bool Channel::GetMorePackagesInChannel()
+{
+  return more_packages_in_channel_;
+}
+
 void Channel::SetChannelOccupancy(bool channel_occupancy)
 {
   channel_occupancy_ = channel_occupancy;
@@ -30,6 +35,12 @@ void Channel::SetCollision(bool collision)
 {
   packages_collision_ = collision;
 }
+
+void Channel::SetMorePackagesInBuffer(bool more_packages_in_channel)
+{
+  more_packages_in_channel_ = more_packages_in_channel;
+}
+
 
 void Channel::ChanceForTER(Logger* logger)
 {

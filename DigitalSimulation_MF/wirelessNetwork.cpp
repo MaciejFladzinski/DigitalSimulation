@@ -97,6 +97,6 @@ void WirelessNetwork::StartTransmission(Logger* logger)
 void WirelessNetwork::EndTransmission(Logger* logger)
 {
 	logger_ = logger;
-	channel_->SetChannelOccupancy(false);
+	//channel_->SetChannelOccupancy(false);
 	packages_.pop_back();
 }
