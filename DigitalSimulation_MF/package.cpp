@@ -131,8 +131,6 @@ void Package::Execute()
 
       if (wireless_network_->GetChannelStatus() == false)
       {
-        //logger_->Info("Channel is free");
-
         if (transmitter->GetTimeOfChannelListenning() > transmitter->difs_time_)
         {
           logger_->Info("Channel is free more than 4ms");
@@ -183,19 +181,20 @@ void Package::Execute()
         wireless_network_->GetChannel()->SetCollision(true);
         logger_->Info("Collision detected");
 
+        wireless_network_->EndTransmission(logger_);
+
         if(wireless_network_->IsBufferEmpty())
         {
           wireless_network_->GetChannel()->SetMorePackagesInBuffer(false);
+          wireless_network_->GetChannel()->SetChannelOccupancy(false);
         }
-        else
-        {
-          wireless_network_->EndTransmission(logger_);
-        }
+
         // prepare to retransmission
         wireless_network_->GetChannel()->SetCollision(false);
         transmitter->SetTimeOfChannelListenning(0);
+        Activ(10, true); // wait CTIZ time before retransmission
         state_ = State::Retransmission;
-        active = true;
+        active = false;
       }
       break;
 
@@ -228,19 +227,17 @@ void Package::Execute()
       break;
 
     case State::Retransmission:
-
-      if (GetNumberOfLR() < 10 && wireless_network_->GetBufferSize() == 0) //if there was only 1 package
+      IncrementNumberOfLR(logger_);
+      if (GetNumberOfLR() <= 10) //if there was only 1 package
       {
-        IncrementNumberOfLR(logger_);
         logger_->Info("Permission for retransmission");
         transmitter->GenerateCRPTime(logger_, ctpk_time_, number_of_LR_);
-        wireless_network_->GetChannel()->SetChannelOccupancy(false);
         transmitter->SetTimeOfChannelListenning(0);
         Activ(transmitter->GetTimeCrp(), true); // process sleep for CRP time
         state_ = State::ChannelListening;
         active = false;
       }
-      else if (GetNumberOfLR() > 10)
+      else
       {
         logger_->Info("Unable to retransmit again");
         transmitter->AddPackageLost(logger_);
@@ -248,14 +245,6 @@ void Package::Execute()
         transmitter->SetTimeOfChannelListenning(0);
         state_ = State::RemovalFromTheSystem;
         active = true;
-      }
-      else
-      {
-        // wait for the package with the longest CTPk
-        logger_->Info("Wait for permission to retransmission");
-        Activ(10);
-        state_ = State::Retransmission;
-        active = false;
       }
       break;
 
