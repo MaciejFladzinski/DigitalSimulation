@@ -6,7 +6,7 @@
 Logger::Logger()
 {
   // open file
-  std::ofstream save("Save.txt");
+  std::ofstream saveLogger("SaveLogger.txt");
   Info("Create logger \n");
 }
 
@@ -43,45 +43,45 @@ void Logger::set_level()
 void Logger::Info(std::string message)
 {
   // add to file
-  std::ofstream save("Save.txt", std::ios_base::app);
+  std::ofstream saveLogger("SaveLogger.txt", std::ios_base::app);
 
   if (level_ != Level::Error)
   {
     std::cout << "[Info] " << message << std::endl;
 
-    save << "[Info] " << message << std::endl;
-    save.close();
+    saveLogger << "[Info] " << message << std::endl;
+    saveLogger.close();
   }
 }
 
 void Logger::Debug(std::string message)
 {
   // add to file
-  std::ofstream save("Save.txt", std::ios_base::app);
+  std::ofstream saveLogger("SaveLogger.txt", std::ios_base::app);
 
   if (level_ != Level::Error)
   {
     std::cout << "[Info] " << message << std::endl;
 
-    save << "[Info] " << message << std::endl;
+    saveLogger << "[Info] " << message << std::endl;
   }
   else
   {
     std::cout << "[Error] " << message << std::endl;
 
-    save << "[Error] " << message << std::endl;
+    saveLogger << "[Error] " << message << std::endl;
   }
 
-  save.close();
+  saveLogger.close();
 }
 
 void Logger::Error(std::string message)
 {
   // add to file
-  std::ofstream save("Save.txt", std::ios_base::app);
+  std::ofstream saveLogger("SaveLogger.txt", std::ios_base::app);
 
   std::cout << "[Error] " << message << std::endl;
 
-  save << "[Error] " << message << std::endl;
-  save.close();
+  saveLogger << "[Error] " << message << std::endl;
+  saveLogger.close();
 }

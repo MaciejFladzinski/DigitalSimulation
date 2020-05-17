@@ -81,6 +81,8 @@ void WirelessNetwork::GeneratePackage(Logger* logger, Package* package, Transmit
 	static size_t id = 0;
 	++id;
 	transmitter->AddPackageInTX(package);	// add package to the buffer in transmitter
+	package->SetTimeAddedToBuffer(package->GetTime());
+	package->SaveTimeOfAddedToBuffer();
   package->GenerateCTPkTime(logger);
 
 	logger->Info("Generate package (id: " + std::to_string(package->GetPackageId()) + ") by transmitter (id: " +

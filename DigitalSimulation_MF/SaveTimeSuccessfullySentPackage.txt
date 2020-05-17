@@ -1,0 +1,1 @@
+[Info] Time when package is successfully sent: 135, by transmitter: 8

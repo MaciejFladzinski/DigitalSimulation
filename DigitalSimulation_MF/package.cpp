@@ -1,5 +1,6 @@
 #include "package.h"
 
+#include <fstream>
 #include <iostream>
 
 #include "wirelessNetwork.h"
@@ -64,6 +65,16 @@ void Package::IncrementNumberOfLR(Logger* logger)
   logger->Info("Package retransmission attempt... attempt nr: " + std::to_string(GetNumberOfLR()));
 }
 
+void Package::SaveNumberOfLR()
+{
+  // add to file
+  std::ofstream saveNumberOfLR("SaveNumberOfLR.txt", std::ios_base::app);
+  saveNumberOfLR << "[Info] Number of LR: " + std::to_string(GetNumberOfLR()) +
+    " by transmitter: " + std::to_string(GetStationId()) << std::endl;
+  saveNumberOfLR.close();
+}
+
+
 bool Package::GetIsTerminated()
 {
   return is_terminated_;
@@ -81,6 +92,62 @@ void Package::GenerateCTPkTime(Logger* logger)
   SetTimeCTPk(ctpk_time);
   logger->Info("Generate CTPk time... CTPk = " + std::to_string(GetTimeCTPk()));
 }
+
+void Package::SaveTimeOfAddedToBuffer()
+{
+  // add to file
+  std::ofstream saveTimeOfAddedToBuffer("SaveTimeOfAddedToBuffer.txt", std::ios_base::app);
+  saveTimeOfAddedToBuffer << "[Info] Time of added package to the buffer: " +
+    std::to_string(GetTimeAddedToBuffer()) +
+    ", in transmitter: " + std::to_string(GetStationId()) << std::endl;
+  saveTimeOfAddedToBuffer.close();
+}
+
+void Package::PackageDelayTime()
+{
+  size_t package_delay_time = GetTimeSuccessfullySentPackage() - GetTimeAddedToBuffer();
+
+  // add to file
+  std::ofstream savePackageDelayTime("SavePackageDelayTime.txt", std::ios_base::app);
+  savePackageDelayTime << "[Info] Package delay time: " + std::to_string(package_delay_time) +
+    ", in transmitter: " + std::to_string(GetStationId()) << std::endl;
+  savePackageDelayTime.close();
+}
+
+void Package::SaveTimeSuccessfullySentPackage()
+{
+  // add to file
+  std::ofstream saveTimeSuccessfullySentPackage("SaveTimeSuccessfullySentPackage.txt", std::ios_base::app);
+  saveTimeSuccessfullySentPackage << "[Info] Time when package is successfully sent: " +
+    std::to_string(GetTimeSuccessfullySentPackage()) +
+    ", by transmitter: " + std::to_string(GetStationId()) << std::endl;
+  saveTimeSuccessfullySentPackage.close();
+
+  PackageDelayTime(); // calculation package delay time (successfully sent - generate in buffer)
+}
+
+void Package::SaveTimeRemoveFromBuffer()
+{
+  // add to file
+  std::ofstream saveTimeRemoveFromBuffer("SaveTimeRemoveFromBuffer.txt", std::ios_base::app);
+  saveTimeRemoveFromBuffer << "[Info] Time when package is remove from buffer: " +
+    std::to_string(GetTimeRemoveFromBuffer()) + ", in transmitter: " + std::to_string(GetStationId()) << std::endl;
+  saveTimeRemoveFromBuffer.close();
+
+  SaveWaitingTime();
+}
+
+void Package::SaveWaitingTime()
+{
+  size_t package_waiting_time = GetTimeRemoveFromBuffer() - GetTimeAddedToBuffer();
+
+  // add to file
+  std::ofstream saveWaitingTime("SaveWaitingTime.txt", std::ios_base::app);
+  saveWaitingTime << "[Info] Time of waiting in buffer before transmission: " +
+  std::to_string(package_waiting_time) + ", in transmitter: " + std::to_string(GetStationId()) << std::endl;
+  saveWaitingTime.close();
+}
+
 
 void Package::Activ(size_t time, bool relative)
 {
@@ -159,6 +226,8 @@ void Package::Execute()
 
     case State::Transmission:
 
+      SetTimeRemoveFromBuffer(GetTime());
+      SaveTimeRemoveFromBuffer();
       wireless_network_->AddPackages(transmitter->GetFirstPackageInTX()); // add package to the vector in channel
       wireless_network_->StartTransmission(logger_); // (channel occupancy = true)
       logger_->Info("Start transmission package (id: " + std::to_string(this->GetPackageId()) + ")");
@@ -241,6 +310,7 @@ void Package::Execute()
       {
         logger_->Info("Unable to retransmit again");
         transmitter->AddPackageLost(logger_);
+        SaveNumberOfLR();
         wireless_network_->GetChannel()->SetChannelOccupancy(false);
         transmitter->SetTimeOfChannelListenning(0);
         state_ = State::RemovalFromTheSystem;
@@ -279,7 +349,10 @@ void Package::Execute()
         wireless_network_->EndTransmission(logger_); // channel is free (remove ACK from the vector in channel)
         wireless_network_->GetChannel()->SetChannelOccupancy(false);
         logger_->Info("ACK delivered successfully");
+        SetTimeSuccessfullySentPackage(GetTime());
         transmitter->AddPackageSuccessfullySent(logger_);
+        SaveTimeSuccessfullySentPackage();
+        SaveNumberOfLR();
         transmitter->SetTimeOfChannelListenning(0);
         receiver->SetAcknowledgment(false);
         state_ = State::RemovalFromTheSystem;

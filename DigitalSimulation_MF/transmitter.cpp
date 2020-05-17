@@ -1,5 +1,6 @@
 #include "transmitter.h"
 
+#include <fstream>
 #include <iostream>
 
 Transmitter::Transmitter(unsigned int id_, Logger* logger)
@@ -41,14 +42,30 @@ void Transmitter::AddPackageSuccessfullySent(Logger* logger)
 {
   logger_ = logger;
   ++packages_successfully_sent_;
-  logger->Info("Packages successfully sent: " + std::to_string(GetPackagesSuccessfullySent()));
+
+  // add to file
+  std::ofstream savePackagesSent("SavePackagesSent.txt", std::ios_base::app);
+  savePackagesSent << "[Info] Packages successfully sent: " + std::to_string(GetPackagesSuccessfullySent()) +
+    " by transmitter: " + std::to_string(GetTransmitterId()) << std::endl;
+  savePackagesSent.close();
+
+  logger->Info("Packages successfully sent: " + std::to_string(GetPackagesSuccessfullySent()) +
+    " by transmitter: " + std::to_string(GetTransmitterId()));
 }
 
 void Transmitter::AddPackageLost(Logger* logger)
 {
   logger_ = logger;
   ++packages_lost_;
-  logger->Info("Packages lost: " + std::to_string(GetPackagesLost()));
+
+  // add to file
+  std::ofstream savePackagesSent("SavePackagesSent.txt", std::ios_base::app);
+  savePackagesSent << "[Info] Packages lost: " + std::to_string(GetPackagesLost()) +
+    " by transmitter: " + std::to_string(GetTransmitterId()) << std::endl;
+  savePackagesSent.close();
+
+  logger->Info("Packages lost: " + std::to_string(GetPackagesLost()) +
+    " by transmitter: " + std::to_string(GetTransmitterId()));
 }
 
 void Transmitter::IncTimeOfChannelListenning(Logger* logger)

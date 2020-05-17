@@ -6,8 +6,7 @@
    10 (LR) */
 
 #include <ctime>
-#include <ostream>
-
+#include <fstream>
 
 #include "logger.h"
 #include "simulation.h"
@@ -15,6 +14,19 @@
 
 int main()
 {
+  // open file
+  std::ofstream savePackagesSent("SavePackagesSent.txt"); // save packages successfully sent and packages lost
+  std::ofstream saveNumberOfLR("SaveNumberOfLR.txt"); // save number of LR
+
+  std::ofstream saveTimeOfAddedToBuffer("SaveTimeOfAddedToBuffer.txt"); // save time of added package to the buffer
+  std::ofstream saveTimeSuccessfullySentPackage("SaveTimeSuccessfullySentPackage.txt"); // save time when package is successfully sent
+  std::ofstream savePackageDelayTime("SavePackageDelayTime.txt"); // save package delay time (TimeSuccessfullySentPackage - TimeOfAddedToBuffer)
+
+  std::ofstream saveTimeRemoveFromBuffer("SaveTimeRemoveFromBuffer.txt"); // save time when package is remove from buffer
+  std::ofstream saveWaitingTime("SaveWaitingTime.txt"); // save waiting time (TimeRemoveFromBuffer - TimeOfAddedToBuffer)
+
+
+
   // generate random value in simulation by function "rand()"
   std::srand(time(NULL));
 
