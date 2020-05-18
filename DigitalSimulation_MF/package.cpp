@@ -234,6 +234,7 @@ void Package::SavePackagesSuccessfullySent()
   {
     // add to file
     std::ofstream savePackagesSent("SavePackagesSent.txt", std::ios_base::app);
+
     savePackagesSent << "[Info] Packages successfully sent: " +
       std::to_string(wireless_network_->GetTransmitters(GetStationId())->GetPackagesSuccessfullySent()) +
       ", by transmitter: " + std::to_string(GetStationId()) << std::endl;
@@ -242,6 +243,8 @@ void Package::SavePackagesSuccessfullySent()
       ", in transmitter: " + std::to_string(GetStationId()) << std::endl << std::endl;
 
     savePackagesSent.close();
+
+    CalculationMaxPackageErrorRate();
   }
 }
 
@@ -254,6 +257,7 @@ void Package::SavePackagesLost()
   {
     // add to file
     std::ofstream savePackagesSent("SavePackagesSent.txt", std::ios_base::app);
+
     savePackagesSent << "[Info] Packages lost: " +
       std::to_string(wireless_network_->GetTransmitters(GetStationId())->GetPackagesLost()) +
       ", by transmitter: " + std::to_string(GetStationId()) << std::endl;
@@ -262,8 +266,29 @@ void Package::SavePackagesLost()
       ", in transmitter: " + std::to_string(GetStationId()) << std::endl << std::endl;
 
     savePackagesSent.close();
+
+    CalculationMaxPackageErrorRate();
   }
 }
+
+void Package::CalculationMaxPackageErrorRate()
+{
+  double package_error_rate = (double)wireless_network_->GetTransmitters(GetStationId())->GetPackagesLost() /
+    wireless_network_->GetTransmitters(GetStationId())->GetPackagesSuccessfullySent();
+
+  if (package_error_rate > GetMaxPackageErrorRate())
+  {
+    SetMaxPackageErrorRate(package_error_rate);
+
+    std::ofstream savePackagesSent("SavePackagesSent.txt", std::ios_base::app);
+
+    savePackagesSent << "[Info] Actual max package error rate: " +
+      std::to_string(GetMaxPackageErrorRate()) << std::endl;
+
+    savePackagesSent.close();
+  }
+}
+
 
 void Package::Activ(size_t time, bool relative)
 {

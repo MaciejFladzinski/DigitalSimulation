@@ -51,7 +51,8 @@ Logger* logger, WirelessNetwork* wireless_network, Agenda* agenda, Simulation* s
   void IncrementCounter();
   void AddSumOfAllRetransmissions();
   void CalculationAverageNumberOfLR();
-  
+  void CalculationMaxPackageErrorRate();
+
   // get
   inline unsigned int GetPackageId() { return id_package_; }
   inline unsigned int GetStationId() { return id_station_; }
@@ -65,6 +66,7 @@ Logger* logger, WirelessNetwork* wireless_network, Agenda* agenda, Simulation* s
   inline int GetCounter() { return counter_; }
   inline int GetSumOfAllRetransmissions() { return sum_of_all_retransmissions_; }
   inline double GetAverageNumberOfLR() { return average_number_of_LR_; }
+  inline double GetMaxPackageErrorRate() { return max_package_error_rate_; }
 
   // set
   inline void SetPackageId(unsigned int id_package);
@@ -97,6 +99,10 @@ Logger* logger, WirelessNetwork* wireless_network, Agenda* agenda, Simulation* s
   {
     average_number_of_LR_ = average_number_of_LR;
   }
+  inline void SetMaxPackageErrorRate(double max_package_error_rate)
+  {
+    max_package_error_rate_ = max_package_error_rate;
+  }
 
 private:
   unsigned int id_package_;
@@ -111,6 +117,7 @@ private:
   int counter_ = 0; // package counter with quantity of LR
   int sum_of_all_retransmissions_ = 0;
   double average_number_of_LR_ = 0; // actual average number of LR
+  double max_package_error_rate_ = 0;
 
   State state_ = State::AppearanceInTheSystem;
 
