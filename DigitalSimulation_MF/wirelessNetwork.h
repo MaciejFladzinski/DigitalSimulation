@@ -35,8 +35,17 @@ public:
   bool IsBufferEmpty() { return packages_.empty(); }
   Package* GetFirstPackage() { return packages_.front(); }
   size_t GetBufferSize() { return packages_.size(); }
+  void IncrementCounterOfPackagesSuccessfullySent() { ++counter_of_packages_successfully_sent_; }
+
+  int GetCounterOfPackagesSuccessfullySent() { return counter_of_packages_successfully_sent_; }
+  void SetCounterOfPackagesSuccessfullySent(int counter_of_packages_successfully_sent)
+  {
+    counter_of_packages_successfully_sent_ = counter_of_packages_successfully_sent;
+  }
 
 private:
+  int counter_of_packages_successfully_sent_ = 0;
+
   std::vector<Transmitter*> transmitters_;
   std::vector<Receiver*> receivers_;
   std::vector<Package*> packages_;  // packages in channel

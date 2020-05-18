@@ -24,6 +24,7 @@ int main()
   std::ofstream saveNumberOfLR("SaveNumberOfLR.txt"); // save number of LR
   std::ofstream savePackageDelayTime("SavePackageDelayTime.txt"); // save package delay time (TimeSuccessfullySentPackage - TimeOfAddedToBuffer)
   std::ofstream saveWaitingTime("SaveWaitingTime.txt"); // save waiting time (TimeRemoveFromBuffer - TimeOfAddedToBuffer)
+  std::ofstream saveSystemThroughput("SaveSystemThroughput.txt"); // save: packages successfully sent / simulation time
   
   // generate random value in simulation by function "rand()"
   std::srand(time(NULL));

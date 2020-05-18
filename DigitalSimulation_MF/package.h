@@ -42,12 +42,13 @@ Logger* logger, WirelessNetwork* wireless_network, Agenda* agenda);
   void SaveTimeSuccessfullySentPackage();
   void SaveTimeRemoveFromBuffer();
   void SaveWaitingTime();
+  void SaveThroughputOfSystem();
 
   void PackageDelayTime();
   void IncrementCounter();
   void AddSumOfAllRetransmissions();
   void CalculationAverageNumberOfLR();
-
+  
   // get
   inline unsigned int GetPackageId() { return id_package_; }
   inline unsigned int GetStationId() { return id_station_; }

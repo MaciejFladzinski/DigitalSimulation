@@ -80,7 +80,6 @@ void Package::CalculationAverageNumberOfLR()
   average_number_of_LR_ = GetSumOfAllRetransmissions() / GetCounter();
 }
 
-
 void Package::SaveNumberOfLR()
 {
   IncrementCounter();
@@ -97,7 +96,6 @@ void Package::SaveNumberOfLR()
 
   saveNumberOfLR.close();
 }
-
 
 bool Package::GetIsTerminated()
 {
@@ -172,6 +170,15 @@ void Package::SaveWaitingTime()
   saveWaitingTime.close();
 }
 
+void Package::SaveThroughputOfSystem()
+{
+  double system_throughput = (double)wireless_network_->GetCounterOfPackagesSuccessfullySent() / GetTime();
+
+  // add to file
+  std::ofstream saveSystemThroughput("SaveSystemThroughput.txt", std::ios_base::app);
+  saveSystemThroughput << "[Info] Actual system throughput: " + std::to_string(system_throughput) << std::endl;
+  saveSystemThroughput.close();
+}
 
 void Package::Activ(size_t time, bool relative)
 {
@@ -375,8 +382,10 @@ void Package::Execute()
         logger_->Info("ACK delivered successfully");
         SetTimeSuccessfullySentPackage(GetTime());
         transmitter->AddPackageSuccessfullySent(logger_);
+        wireless_network_->IncrementCounterOfPackagesSuccessfullySent();
         SaveTimeSuccessfullySentPackage();
         SaveNumberOfLR();
+        SaveThroughputOfSystem();
         transmitter->SetTimeOfChannelListenning(0);
         receiver->SetAcknowledgment(false);
         state_ = State::RemovalFromTheSystem;
