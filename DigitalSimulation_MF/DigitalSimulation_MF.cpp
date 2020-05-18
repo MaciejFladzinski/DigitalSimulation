@@ -7,6 +7,8 @@
 
 #include <ctime>
 #include <fstream>
+#include <iostream>
+
 
 #include "logger.h"
 #include "simulation.h"
@@ -32,11 +34,16 @@ int main()
   Logger* logger = new Logger();
   logger->set_level();
 
+  printf("Set max simulation time:\n");
+  size_t max_simulation_time;
+  std::cin >> max_simulation_time;
+  printf("\n");
+
   WirelessNetwork* wireless_network = new WirelessNetwork(logger);
 
   auto simulation = new Simulation(logger, wireless_network);
 
-  simulation->RunM4(logger, 1000);
+  simulation->RunM4(logger, max_simulation_time);
 
   printf("\n");
   delete simulation;

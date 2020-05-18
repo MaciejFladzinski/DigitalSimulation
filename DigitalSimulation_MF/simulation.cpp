@@ -48,6 +48,17 @@ bool Simulation::SelectMode(int mode)
   }
 }
 
+size_t Simulation::GetStartTimeStatistics()
+{
+  return start_time_statistics_;
+}
+
+void Simulation::SetStartTimeStatistics(size_t initial_phase)
+{
+  start_time_statistics_ = initial_phase;
+}
+
+
 void Simulation::RunM4(Logger* logger, int time)
 {
   logger_ = logger;
@@ -55,10 +66,16 @@ void Simulation::RunM4(Logger* logger, int time)
   clock_ = 0;
   wireless_network_->Init(logger_);
 
+  printf("Set initial phase:\n");
+  size_t initial_phase;
+  std::cin >> initial_phase;
+  SetStartTimeStatistics(initial_phase);
+  printf("\n");
+
   printf("\nSelect simulation mode:\n1- step into\n2- step over\n");
   int key;
   std::cin >> key;
-  std::cout << std::endl;
+  printf("\n");
 
   logger->Info("Started Simulation method M4 (Process Interaction):");
   getchar();
@@ -68,7 +85,7 @@ void Simulation::RunM4(Logger* logger, int time)
 
   size_t id = 0;
 
-  agenda.push(new Package(id, rand() % 10, clock_, logger, wireless_network_, &agenda));
+  agenda.push(new Package(id, rand() % 10, clock_, logger, wireless_network_, &agenda, this));
 
   // main loop
   while (clock_ < static_cast<size_t>(time) && (!agenda.empty() == true))

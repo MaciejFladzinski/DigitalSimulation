@@ -10,6 +10,7 @@
 
 #include "simulation.h"
 
+class Simulation;
 class WirelessNetwork;
 
 class Package
@@ -22,7 +23,7 @@ public:
     ReceiveACK, RemovalFromTheSystem };
 
   Package(unsigned int id_package, unsigned int id_station, size_t time,
-Logger* logger, WirelessNetwork* wireless_network, Agenda* agenda);
+Logger* logger, WirelessNetwork* wireless_network, Agenda* agenda, Simulation* simulation);
 
   Package(unsigned int id_package, unsigned int id_station, size_t time);
 
@@ -43,6 +44,8 @@ Logger* logger, WirelessNetwork* wireless_network, Agenda* agenda);
   void SaveTimeRemoveFromBuffer();
   void SaveWaitingTime();
   void SaveThroughputOfSystem();
+  void SavePackagesSuccessfullySent();
+  void SavePackagesLost();
 
   void PackageDelayTime();
   void IncrementCounter();
@@ -111,6 +114,7 @@ private:
 
   State state_ = State::AppearanceInTheSystem;
 
+  Simulation* simulation_ = nullptr;
   WirelessNetwork* wireless_network_ = nullptr;
   Logger* logger_ = nullptr;
   Agenda* agenda_ = nullptr;

@@ -1,6 +1,1 @@
-[Info] Package delay time: 125, in transmitter: 2
-[Info] Package delay time: 220, in transmitter: 4
-[Info] Package delay time: 235, in transmitter: 6
-[Info] Package delay time: 425, in transmitter: 5
-[Info] Package delay time: 540, in transmitter: 7
-[Info] Package delay time: 925, in transmitter: 3
+[Info] Package delay time: 215, in transmitter: 1

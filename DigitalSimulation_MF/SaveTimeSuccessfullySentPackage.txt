@@ -1,6 +1,1 @@
-[Info] Time when package is successfully sent: 125, by transmitter: 2
-[Info] Time when package is successfully sent: 230, by transmitter: 4
-[Info] Time when package is successfully sent: 365, by transmitter: 6
-[Info] Time when package is successfully sent: 450, by transmitter: 5
-[Info] Time when package is successfully sent: 576, by transmitter: 7
-[Info] Time when package is successfully sent: 945, by transmitter: 3
+[Info] Time when package is successfully sent: 295, by transmitter: 1

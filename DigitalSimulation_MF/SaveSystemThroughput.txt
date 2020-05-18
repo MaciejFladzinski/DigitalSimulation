@@ -1,6 +1,1 @@
-[Info] Actual system throughput: 0.008000
-[Info] Actual system throughput: 0.008696
-[Info] Actual system throughput: 0.008219
-[Info] Actual system throughput: 0.008889
-[Info] Actual system throughput: 0.008681
-[Info] Actual system throughput: 0.006349
+[Info] Actual system throughput: 0.010169

@@ -1,11 +1,6 @@
-[Info] Time when package is remove from buffer: 45, in transmitter: 2
-[Info] Time when package is remove from buffer: 170, in transmitter: 4
-[Info] Time when package is remove from buffer: 275, in transmitter: 6
-[Info] Time when package is remove from buffer: 410, in transmitter: 5
-[Info] Time when package is remove from buffer: 496, in transmitter: 7
-[Info] Time when package is remove from buffer: 622, in transmitter: 9
-[Info] Time when package is remove from buffer: 622, in transmitter: 8
-[Info] Time when package is remove from buffer: 758, in transmitter: 0
-[Info] Time when package is remove from buffer: 758, in transmitter: 1
-[Info] Time when package is remove from buffer: 905, in transmitter: 3
-[Info] Time when package is remove from buffer: 992, in transmitter: 9
+[Info] Time when package is remove from buffer: 205, in transmitter: 1
+[Info] Time when package is remove from buffer: 341, in transmitter: 6
+[Info] Time when package is remove from buffer: 341, in transmitter: 9
+[Info] Time when package is remove from buffer: 341, in transmitter: 7
+[Info] Time when package is remove from buffer: 487, in transmitter: 3
+[Info] Time when package is remove from buffer: 487, in transmitter: 4
