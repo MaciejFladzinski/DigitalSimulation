@@ -37,12 +37,16 @@ Logger* logger, WirelessNetwork* wireless_network, Agenda* agenda);
   void GenerateCTPkTime(Logger* logger);
 
   void SaveNumberOfLR();
+
   void SaveTimeOfAddedToBuffer();
   void SaveTimeSuccessfullySentPackage();
   void SaveTimeRemoveFromBuffer();
   void SaveWaitingTime();
 
   void PackageDelayTime();
+  void IncrementCounter();
+  void AddSumOfAllRetransmissions();
+  void CalculationAverageNumberOfLR();
 
   // get
   inline unsigned int GetPackageId() { return id_package_; }
@@ -54,6 +58,9 @@ Logger* logger, WirelessNetwork* wireless_network, Agenda* agenda);
   inline size_t GetTimeAddedToBuffer() { return time_added_to_buffer_; }
   inline size_t GetTimeSuccessfullySentPackage() { return time_successfully_sent_package_; }
   inline size_t GetTimeRemoveFromBuffer() { return time_remove_from_buffer_; }
+  inline int GetCounter() { return counter_; }
+  inline int GetSumOfAllRetransmissions() { return sum_of_all_retransmissions_; }
+  inline double GetAverageNumberOfLR() { return average_number_of_LR_; }
 
   // set
   inline void SetPackageId(unsigned int id_package);
@@ -74,6 +81,18 @@ Logger* logger, WirelessNetwork* wireless_network, Agenda* agenda);
   {
     this->time_remove_from_buffer_ = time_remove_from_buffer;
   }
+  inline void SetCounter (int counter)
+  {
+    counter_ = counter;
+  }
+  inline void SetSumOfAllRetransmissions(int sum_of_all_retransmissions)
+  {
+    sum_of_all_retransmissions_ = sum_of_all_retransmissions;
+  }
+  inline void SetAverageNumberOfLR(int average_number_of_LR)
+  {
+    average_number_of_LR_ = average_number_of_LR;
+  }
 
 private:
   unsigned int id_package_;
@@ -85,6 +104,9 @@ private:
   size_t time_successfully_sent_package_ = 0; // time, when package is successfully sent
   size_t time_remove_from_buffer_ = 0; // time, when package is remove from buffer
   bool is_terminated_ = false;
+  int counter_ = 0; // package counter with quantity of LR
+  int sum_of_all_retransmissions_ = 0;
+  double average_number_of_LR_ = 0; // actual average number of LR
 
   State state_ = State::AppearanceInTheSystem;
 

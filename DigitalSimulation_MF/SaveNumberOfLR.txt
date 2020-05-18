@@ -1,1 +1,6 @@
 [Info] Number of LR: 0 by transmitter: 8
+[Info] Actual average number of LR: 0.000000, in transmitter: 8
+
+[Info] Number of LR: 0 by transmitter: 3
+[Info] Actual average number of LR: 0.000000, in transmitter: 3
+

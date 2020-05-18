@@ -65,12 +65,36 @@ void Package::IncrementNumberOfLR(Logger* logger)
   logger->Info("Package retransmission attempt... attempt nr: " + std::to_string(GetNumberOfLR()));
 }
 
+void Package::IncrementCounter()
+{
+  counter_++;
+}
+
+void Package::AddSumOfAllRetransmissions()
+{
+  sum_of_all_retransmissions_ += GetNumberOfLR();
+}
+
+void Package::CalculationAverageNumberOfLR()
+{
+  average_number_of_LR_ = GetSumOfAllRetransmissions() / GetCounter();
+}
+
+
 void Package::SaveNumberOfLR()
 {
+  IncrementCounter();
+  AddSumOfAllRetransmissions();
+  CalculationAverageNumberOfLR();
+
   // add to file
   std::ofstream saveNumberOfLR("SaveNumberOfLR.txt", std::ios_base::app);
   saveNumberOfLR << "[Info] Number of LR: " + std::to_string(GetNumberOfLR()) +
     " by transmitter: " + std::to_string(GetStationId()) << std::endl;
+
+  saveNumberOfLR << "[Info] Actual average number of LR: " + std::to_string(GetAverageNumberOfLR()) +
+    ", in transmitter: " + std::to_string(GetStationId()) << std::endl << std::endl;
+
   saveNumberOfLR.close();
 }
 

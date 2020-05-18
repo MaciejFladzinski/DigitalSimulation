@@ -43,10 +43,16 @@ void Transmitter::AddPackageSuccessfullySent(Logger* logger)
   logger_ = logger;
   ++packages_successfully_sent_;
 
+  double package_error_rate = (double) packages_lost_ / packages_successfully_sent_;
+
   // add to file
   std::ofstream savePackagesSent("SavePackagesSent.txt", std::ios_base::app);
   savePackagesSent << "[Info] Packages successfully sent: " + std::to_string(GetPackagesSuccessfullySent()) +
-    " by transmitter: " + std::to_string(GetTransmitterId()) << std::endl;
+    ", by transmitter: " + std::to_string(GetTransmitterId()) << std::endl;
+
+  savePackagesSent << "[Info] Actual package error rate: " + std::to_string(package_error_rate) +
+    ", in transmitter: " + std::to_string(GetTransmitterId()) << std::endl << std::endl;
+
   savePackagesSent.close();
 
   logger->Info("Packages successfully sent: " + std::to_string(GetPackagesSuccessfullySent()) +
@@ -58,10 +64,16 @@ void Transmitter::AddPackageLost(Logger* logger)
   logger_ = logger;
   ++packages_lost_;
 
+  double package_error_rate = (double) packages_lost_ / packages_successfully_sent_;
+
   // add to file
   std::ofstream savePackagesSent("SavePackagesSent.txt", std::ios_base::app);
   savePackagesSent << "[Info] Packages lost: " + std::to_string(GetPackagesLost()) +
     " by transmitter: " + std::to_string(GetTransmitterId()) << std::endl;
+
+  savePackagesSent << "[Info] Actual package error rate: " + std::to_string(package_error_rate) +
+    ", in transmitter: " + std::to_string(GetTransmitterId()) << std::endl << std::endl;
+
   savePackagesSent.close();
 
   logger->Info("Packages lost: " + std::to_string(GetPackagesLost()) +

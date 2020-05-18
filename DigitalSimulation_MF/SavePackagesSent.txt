@@ -1,1 +1,6 @@
-[Info] Packages successfully sent: 1 by transmitter: 8
+[Info] Packages successfully sent: 1, by transmitter: 8
+[Info] Actual package error rate: 0.000000, in transmitter: 8
+
+[Info] Packages successfully sent: 1, by transmitter: 3
+[Info] Actual package error rate: 0.000000, in transmitter: 3
+

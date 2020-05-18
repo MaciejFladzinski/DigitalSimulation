@@ -1,6 +1,7 @@
-[Info] Time when package is waiting in buffer before transmission: 45, in transmitter: 8
-[Info] Time when package is waiting in buffer before transmission: 170, in transmitter: 5
-[Info] Time when package is waiting in buffer before transmission: 165, in transmitter: 6
-[Info] Time when package is waiting in buffer before transmission: 175, in transmitter: 2
-[Info] Time when package is waiting in buffer before transmission: 275, in transmitter: 7
-[Info] Time when package is waiting in buffer before transmission: 375, in transmitter: 3
+[Info] Time of waiting in buffer before transmission: 45, in transmitter: 8
+[Info] Time of waiting in buffer before transmission: 100, in transmitter: 3
+[Info] Time of waiting in buffer before transmission: 220, in transmitter: 5
+[Info] Time of waiting in buffer before transmission: 105, in transmitter: 0
+[Info] Time of waiting in buffer before transmission: 200, in transmitter: 0
+[Info] Time of waiting in buffer before transmission: 390, in transmitter: 5
+[Info] Time of waiting in buffer before transmission: 275, in transmitter: 0

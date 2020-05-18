@@ -14,19 +14,17 @@
 
 int main()
 {
-  // open file
-  std::ofstream savePackagesSent("SavePackagesSent.txt"); // save packages successfully sent and packages lost
-  std::ofstream saveNumberOfLR("SaveNumberOfLR.txt"); // save number of LR
-
+  // open file: partial data
   std::ofstream saveTimeOfAddedToBuffer("SaveTimeOfAddedToBuffer.txt"); // save time of added package to the buffer
   std::ofstream saveTimeSuccessfullySentPackage("SaveTimeSuccessfullySentPackage.txt"); // save time when package is successfully sent
-  std::ofstream savePackageDelayTime("SavePackageDelayTime.txt"); // save package delay time (TimeSuccessfullySentPackage - TimeOfAddedToBuffer)
-
   std::ofstream saveTimeRemoveFromBuffer("SaveTimeRemoveFromBuffer.txt"); // save time when package is remove from buffer
+
+  // open file: most important files
+  std::ofstream savePackagesSent("SavePackagesSent.txt"); // save packages successfully sent and packages lost
+  std::ofstream saveNumberOfLR("SaveNumberOfLR.txt"); // save number of LR
+  std::ofstream savePackageDelayTime("SavePackageDelayTime.txt"); // save package delay time (TimeSuccessfullySentPackage - TimeOfAddedToBuffer)
   std::ofstream saveWaitingTime("SaveWaitingTime.txt"); // save waiting time (TimeRemoveFromBuffer - TimeOfAddedToBuffer)
-
-
-
+  
   // generate random value in simulation by function "rand()"
   std::srand(time(NULL));
 
@@ -37,7 +35,7 @@ int main()
 
   auto simulation = new Simulation(logger, wireless_network);
 
-  simulation->RunM4(logger, 500);
+  simulation->RunM4(logger, 1000);
 
   printf("\n");
   delete simulation;
