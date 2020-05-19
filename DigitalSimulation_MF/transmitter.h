@@ -5,6 +5,7 @@
 
 #include "package.h"
 #include "channel.h"
+#include "generators.h"
 #include "logger.h"
 
 class Package;
@@ -22,6 +23,7 @@ public:
   void IncTimeOfChannelListenning(Logger* logger);  // Add 0,5ms in channel listenning
 
   Package* GetFirstPackageInTX();
+  Generators* GetGenerators();
   void AddPackageInTX(Package* package);
 
   // const... = 0 -> it's only for definition const variable, it will be changed soon...
@@ -74,6 +76,7 @@ private:
 
   std::queue<Package*> packages_in_TX_; // packages in buffer (in transmitter)
 
+  Generators* generator_ = nullptr;
   Logger* logger_ = nullptr;
 };
 

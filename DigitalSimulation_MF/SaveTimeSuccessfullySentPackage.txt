@@ -1,2 +1,2 @@
-[Info] Time when package is successfully sent: 200, by transmitter: 3
-[Info] Time when package is successfully sent: 486, by transmitter: 0
+[Info] Time when package is successfully sent: 715, by transmitter: 9
+[Info] Time when package is successfully sent: 1415, by transmitter: 1

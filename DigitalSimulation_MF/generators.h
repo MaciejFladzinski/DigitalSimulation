@@ -1,23 +1,28 @@
-#ifndef GENERATORS_H_
-#define GENERATORS_H_
+#ifndef GENERATORS_H
+#define GENERATORS_H
+
+#include <string>
+#include <cmath>
 
 class Generators
 {
 public:
-  Generators(int kernel);
-  virtual ~Generators();
+	Generators(int kernel);
+	~Generators();
 
-  // Draws number between <0,1>
-  double Rand();
+	double Rand();
+	int Rand(double min, double max); // double czy int?
+	int RandExp(double lambda);
+	int RandZeroOne(double p);
 
-  int get_kernel() { return kernel_; };
+	int GetKernel();
 
 private:
-  int kernel_;
-  const double kM = 2147483647.0;
-  static const int kA = 16807;
-  static const int kQ = 127773;
-  static const int kR = 2836;
+	int kernel_;
+	const double kM = 2147483647.0;
+	static const int kA = 16807;
+	static const int kQ = 127773;
+	static const int kR = 2836;
 };
 
-#endif
+#endif GENERATORS_Hf

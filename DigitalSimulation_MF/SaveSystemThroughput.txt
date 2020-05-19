@@ -1,2 +1,2 @@
-[Info] Actual system throughput: 0.010000
-[Info] Actual system throughput: 0.006173
+[Info] Actual system throughput: 0.001399
+[Info] Actual system throughput: 0.001413

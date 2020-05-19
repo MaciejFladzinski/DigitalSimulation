@@ -16,9 +16,6 @@ Package::Package(unsigned int id_package, unsigned int id_station, size_t time,
   logger_ = logger;
   agenda_ = agenda;
   simulation_ = simulation;
-
-  //logger->Info("Package nr: " + std::to_string(id_package) +
-  //  " (in station nr: " + std::to_string(id_station) + ") has been created");
 }
 
 Package::Package(unsigned int id_package, unsigned int id_station, size_t time)
@@ -117,7 +114,9 @@ void Package::SetTerminated()
 void Package::GenerateCTPkTime(Logger* logger)
 {
   logger_ = logger;
-  size_t ctpk_time = rand() % 10 * 10 + 10;	 // time CTPk {1,...,10}ms * 10 -> {10,...,100}x 
+  size_t ctpk_time = wireless_network_->GetTransmitters(GetStationId())->
+  GetGenerators()->Rand(1, 10) * 10; // time CTPk {1,...,10}ms * 10 -> {10,...,100}x
+
   SetTimeCTPk(ctpk_time);
   logger->Info("Generate CTPk time... CTPk = " + std::to_string(GetTimeCTPk()));
 }
@@ -316,11 +315,17 @@ void Package::Execute()
     {
     case State::AppearanceInTheSystem:
 
-      wireless_network_->GeneratePackage(logger_, this, transmitter, rand()%10); // generate and add package to the vector
+      wireless_network_->GeneratePackage(logger_, this, transmitter, GetStationId()); // generate and add package to the vector
       {
+        // package generate time
+        int CGPk = wireless_network_->GetTransmitters(GetStationId())->GetGenerators()->
+                   RandExp(wireless_network_->GetLambda()) * 10;
+
         // planning the appearance of the next package
-        auto new_package = new Package(id_package_ + 1, rand() % 10, time_, logger_, wireless_network_, agenda_, simulation_);
-        new_package->Activ(rand() % WirelessNetwork::generate_packet_max_time, true);
+        auto new_package = new Package(id_package_ + 1, GetStationId(), time_ + CGPk, logger_, wireless_network_,
+          agenda_, simulation_);
+
+        new_package->Activ(time_ + CGPk, true);
       }
 
       if (transmitter->GetFirstPackageInTX() == this) // if (package is first)

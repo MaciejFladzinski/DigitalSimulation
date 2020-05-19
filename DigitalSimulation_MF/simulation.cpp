@@ -85,7 +85,13 @@ void Simulation::RunM4(Logger* logger, int time)
 
   size_t id = 0;
 
-  agenda.push(new Package(id, rand() % 10, clock_, logger, wireless_network_, &agenda, this));
+  for (int i = 0; i < wireless_network_->k_number_of_stations_; ++i)
+  {
+    // package generate time
+    int CGPk = wireless_network_->GetTransmitters(i)->GetGenerators()->RandExp(wireless_network_->GetLambda()) * 10;
+
+    agenda.push(new Package(id, i, clock_ + CGPk, logger, wireless_network_, &agenda, this));
+  }
 
   // main loop
   while (clock_ < static_cast<size_t>(time) && (!agenda.empty() == true))

@@ -80,6 +80,7 @@ void WirelessNetwork::GeneratePackage(Logger* logger, Package* package, Transmit
 	transmitter_ = transmitter;
 	static size_t id = 0;
 	++id;
+
 	transmitter->AddPackageInTX(package);	// add package to the buffer in transmitter
 	package->SetTimeAddedToBuffer(package->GetTime());
 	package->SaveTimeOfAddedToBuffer();
@@ -93,7 +94,7 @@ void WirelessNetwork::StartTransmission(Logger* logger)
 {
 	logger_ = logger;
 	channel_->SetChannelOccupancy(true);
-	logger->Info("Start transmission");
+	//logger->Info("Start transmission");
 }
 
 void WirelessNetwork::EndTransmission(Logger* logger)
@@ -101,4 +102,9 @@ void WirelessNetwork::EndTransmission(Logger* logger)
 	logger_ = logger;
 	//channel_->SetChannelOccupancy(false);
 	packages_.pop_back();
+}
+
+double WirelessNetwork::GetLambda()
+{
+	return lambda;
 }

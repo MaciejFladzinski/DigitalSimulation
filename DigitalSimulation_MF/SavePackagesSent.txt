@@ -1,6 +1,6 @@
-[Info] Packages successfully sent: 1, by transmitter: 3
-[Info] Actual package error rate: 0.000000, in transmitter: 3
+[Info] Packages successfully sent: 1, by transmitter: 9
+[Info] Actual package error rate: 0.000000, in transmitter: 9
 
-[Info] Packages successfully sent: 1, by transmitter: 0
-[Info] Actual package error rate: 0.000000, in transmitter: 0
+[Info] Packages successfully sent: 1, by transmitter: 1
+[Info] Actual package error rate: 0.000000, in transmitter: 1
 

@@ -2,12 +2,15 @@
 #define CHANNEL_H_
 
 #include "logger.h"
+#include "generators.h"
 
 class Channel
 {
 public:
   Channel(Logger* logger);
   ~Channel();
+
+  Generators* GetGenerators();
 
   // functions
   void ChanceForTER(Logger* logger);
@@ -25,6 +28,8 @@ private:
   bool channel_occupancy_ = false; // true/false - channel is busy/free
   bool packages_collision_ = false; // true - collision occurred
   bool more_packages_in_channel_ = false;
+
+  Generators* generator_ = nullptr;
   Logger* logger_ = nullptr;
 };
 

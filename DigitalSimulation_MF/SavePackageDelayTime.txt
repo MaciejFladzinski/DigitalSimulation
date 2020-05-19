@@ -1,2 +1,2 @@
-[Info] Package delay time: 180, in transmitter: 3
-[Info] Package delay time: 460, in transmitter: 0
+[Info] Package delay time: 125, in transmitter: 9
+[Info] Package delay time: 555, in transmitter: 1

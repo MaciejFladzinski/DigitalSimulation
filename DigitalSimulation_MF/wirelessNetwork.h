@@ -26,6 +26,7 @@ public:
   Channel* GetChannel();
 
   bool GetChannelStatus();
+  double GetLambda();
 
   void AddPackages(Package* package); // add package to the vector
   void Init(Logger* logger); // take package from the buffer
@@ -45,6 +46,7 @@ public:
 
 private:
   int counter_of_packages_successfully_sent_ = 0;
+  double lambda = 0.08;
 
   std::vector<Transmitter*> transmitters_;
   std::vector<Receiver*> receivers_;

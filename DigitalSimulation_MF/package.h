@@ -34,6 +34,8 @@ Logger* logger, WirelessNetwork* wireless_network, Agenda* agenda, Simulation* s
   // relative false: sets the direct time, true: increments current process time
   void Activ(size_t time, bool relative = true);
 
+  Generators* GetGenerators();
+
   void IncrementNumberOfLR(Logger* logger);
   void GenerateCTPkTime(Logger* logger);
 

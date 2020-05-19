@@ -3,12 +3,19 @@
 Channel::Channel(Logger* logger)
 {
   logger_ = logger;
+  generator_ = new Generators(123);
+
   logger->Info("Create channel");
 }
 
 Channel::~Channel()
 {
   logger_->Info("Remove channel");
+}
+
+Generators* Channel::GetGenerators()
+{
+  return generator_;
 }
 
 bool Channel::GetChannelOccupancy()
@@ -45,10 +52,9 @@ void Channel::SetMorePackagesInBuffer(bool more_packages_in_channel)
 void Channel::ChanceForTER(Logger* logger)
 {
   logger_ = logger;
-  int random_number = rand() % 5 + 1;
+  int random_number = GetGenerators()->RandZeroOne(0.8);
 
-  // 5 numbers (draw "1": TER error, draw other number: success)
-  if (random_number == 1)
+  if (random_number == 0)
   {
     SetCollision(true);
     logger->Info("TER error occur");

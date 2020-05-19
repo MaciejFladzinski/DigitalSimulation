@@ -7,6 +7,7 @@ Transmitter::Transmitter(unsigned int id_, Logger* logger)
 {
   transmitter_id_ = id_;
   logger_ = logger;
+  generator_ = new Generators(123 * id_ + 1);
   logger->Info("Create transmitter nr: " + std::to_string(id_));
 }
 
@@ -31,7 +32,7 @@ void Transmitter::GenerateCRPTime(Logger* logger, size_t ctpk, unsigned int numb
   logger_ = logger;
 
   unsigned int max_value = std::pow(2, number_of_LR);
-  unsigned int R = rand() % max_value;
+  unsigned int R = GetGenerators()->Rand(0, max_value);
   size_t crp_time = ctpk * R * 10;
 
   SetTimeCrp(crp_time);
@@ -79,6 +80,12 @@ Package* Transmitter::GetFirstPackageInTX()
 {
   return packages_in_TX_.front();
 }
+
+Generators* Transmitter::GetGenerators()
+{
+  return generator_;
+}
+
 
 void Transmitter::AddPackageInTX(Package* package)
 {
