@@ -1,17 +1,50 @@
 #include "wirelessNetwork.h"
 
+#include <fstream>
 #include <iostream>
+#include <iterator>
 
-WirelessNetwork::WirelessNetwork(Logger* logger)
+WirelessNetwork::WirelessNetwork(Logger* logger, int wireless_network_seed)
 {
-	logger_ = logger;
+  logger_ = logger;
+	seed = wireless_network_seed;
+
+	seeds_generator = new Generators(seed);
+
+  for (int i = 0; i < kNumberOfSeeds * kSeedSaveStep; ++i)
+  {
+		seeds_generator->Rand();
+
+		if(i % kSeedSaveStep == 0)
+		{
+			seeds_.push_back(seeds_generator->GetKernel());
+		}
+  }
+
+	// Save data to file
+	std::ofstream output_file("./example.txt");
+	std::ostream_iterator<double> output_iterator(output_file, "\n");
+	std::copy(seeds_.begin(), seeds_.end(), output_iterator);
+
+	auto seed_uniform = seeds_.back();
+	seeds_.pop_back();
+
 	logger->Info("Create wireless network");
 	int id = 0;
-	channel_ = new Channel(logger);
+  channel_ = new Channel(logger, seed_uniform);
 
 	for (int i = 0; i < k_number_of_stations_; ++i)
 	{
-		auto transmitter = new Transmitter(i, logger);
+		auto seed_uniform = seeds_.back();
+		seeds_.pop_back();
+
+		auto seeds_exp = seeds_.back();
+		seeds_.pop_back();
+
+		auto seed_r = seeds_.back();
+		seeds_.pop_back();
+
+		auto transmitter = new Transmitter(i, logger, seed_uniform, seeds_exp, seed_r);
 		transmitters_.push_back(transmitter);
 
 		auto receiver = new Receiver(i, logger);
@@ -66,11 +99,11 @@ void WirelessNetwork::Init(Logger* logger)
 {
 	logger_ = logger;
 
-	while (!packages_.empty()) // while buffer isn't empty
-	{
+  while (!packages_.empty()) // while buffer isn't empty
+  {
 		delete packages_.front(); // delete actual
 		packages_.pop_back(); // pop next
-	}
+  }
 	channel_->SetChannelOccupancy(false);	// channel is free
 }
 
@@ -84,7 +117,7 @@ void WirelessNetwork::GeneratePackage(Logger* logger, Package* package, Transmit
 	transmitter->AddPackageInTX(package);	// add package to the buffer in transmitter
 	package->SetTimeAddedToBuffer(package->GetTime());
 	package->SaveTimeOfAddedToBuffer();
-	package->GenerateCTPkTime(logger);
+  package->GenerateCTPkTime(logger);
 
 	logger->Info("Generate package (id: " + std::to_string(package->GetPackageId()) + ") by transmitter (id: " +
 		std::to_string(transmitter->GetTransmitterId()) + "). Package transmission time: " + std::to_string(package->GetTimeCTPk()));
@@ -109,12 +142,18 @@ double WirelessNetwork::GetLambda()
 	return lambda;
 }
 
+void WirelessNetwork::IncrementCounterOfPackagesSuccessfullySent()
+{
+	SetCounterOfPackagesSuccessfullySent(GetCounterOfPackagesSuccessfullySent() + 1);
+}
+
+
 void WirelessNetwork::TotalMaxPackageErrorRate()
 {
-	for (int i = 0; i < k_number_of_stations_; ++i)
-	{
+  for (int i = 0; i < k_number_of_stations_; ++i)
+  {
 		SetTotalMaxPackageErrorRate(GetTotalMaxPackageErrorRate() + GetTransmitters(i)->GetMaxPackageErrorRate());
-	}
+  }
 
 	SetTotalMaxPackageErrorRate(GetTotalMaxPackageErrorRate() / k_number_of_stations_);
 }
@@ -138,31 +177,31 @@ void WirelessNetwork::TotalNumberOfPackagesLost()
 
 void WirelessNetwork::TotalPackageErrorRate()
 {
-	for (int i = 0; i < k_number_of_stations_; ++i)
-	{
+  for (int i = 0; i < k_number_of_stations_; ++i)
+  {
 		SetTotalPackageErrorRate(GetTotalPackageErrorRate() + GetTransmitters(i)->GetPackageErrorRate());
-	}
+  }
 
 	SetTotalPackageErrorRate(GetTotalPackageErrorRate() / k_number_of_stations_);
 }
 
 void WirelessNetwork::TotalAverageNumberOfLR()
 {
-	for (int i = 0; i < k_number_of_stations_; ++i)
-	{
+  for (int i = 0; i < k_number_of_stations_; ++i)
+  {
 		SetTotalAverageNumberOfLR(GetTotalAverageNumberOfLR() + GetTransmitters(i)->GetAverageNumberOfLR());
-	}
+  }
 
 	SetTotalAverageNumberOfLR(GetTotalAverageNumberOfLR() / k_number_of_stations_);
 }
 
 void WirelessNetwork::TotalAverageOfPackagesDelayTime()
 {
-	for (int i = 0; i < k_number_of_stations_; ++i)
-	{
+  for (int i = 0; i < k_number_of_stations_; ++i)
+  {
 		SetTotalAverageOfPackagesDelayTime(GetTotalAverageOfPackagesDelayTime() +
 			GetTransmitters(i)->GetAverageOfPackagesDelayTime());
-	}
+  }
 
 	SetTotalAverageOfPackagesDelayTime(GetTotalAverageOfPackagesDelayTime() / (10 * k_number_of_stations_));
 }
@@ -180,10 +219,11 @@ void WirelessNetwork::TotalAverageOfPackagesWaitingTime()
 
 void WirelessNetwork::TotalAverageOfSystemThroughput()
 {
-	for (int i = 0; i < k_number_of_stations_; ++i)
-	{
-		SetTotalAverageOfSystemThroughput(GetTotalAverageOfSystemThroughput() + GetTransmitters(i)->GetAverageOfSystemThroughput());
-	}
+  for (int i = 0; i < k_number_of_stations_; ++i)
+  {
+		SetTotalAverageOfSystemThroughput(GetTotalAverageOfSystemThroughput() +
+			GetTransmitters(i)->GetAverageOfSystemThroughput());
+  }
 	SetTotalAverageOfSystemThroughput(GetTotalAverageOfSystemThroughput() / k_number_of_stations_);
 }
 

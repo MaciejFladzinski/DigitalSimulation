@@ -8,7 +8,7 @@
 #include <ctime>
 #include <fstream>
 #include <iostream>
-
+#include <iterator>
 
 #include "logger.h"
 #include "simulation.h"
@@ -28,8 +28,26 @@ int main()
   std::ofstream saveWaitingTime("SaveWaitingTime.txt"); // save waiting time (TimeRemoveFromBuffer - TimeOfAddedToBuffer)
   std::ofstream saveSystemThroughput("SaveSystemThroughput.txt"); // save: packages successfully sent / simulation time
 
-  // generate random value in simulation by function "rand()"
-  std::srand(time(NULL));
+  /*
+  int number_of_rands = 100000;
+
+  // Create random generator with arbitrary seed
+  int seed = 50;
+  auto uniform_generator = Generators(seed);
+  std::vector<double> numbers;
+
+  for (int i = 0; i < number_of_rands; ++i)
+  {
+    numbers.push_back(uniform_generator.Rand());
+  }
+
+  // Save data to file
+  std::ofstream output_file("./example.txt");
+  std::ostream_iterator<double> output_iterator(output_file, "\n");
+  std::copy(numbers.begin(), numbers.end(), output_iterator);
+  */
+
+  int wireless_network_seed = 123;
 
   Logger* logger = new Logger();
   logger->set_level();
@@ -39,7 +57,7 @@ int main()
   std::cin >> max_simulation_time;
   printf("\n");
 
-  WirelessNetwork* wireless_network = new WirelessNetwork(logger);
+  WirelessNetwork* wireless_network = new WirelessNetwork(logger, wireless_network_seed);
 
   auto simulation = new Simulation(logger, wireless_network);
 

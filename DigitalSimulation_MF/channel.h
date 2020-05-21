@@ -7,10 +7,10 @@
 class Channel
 {
 public:
-  Channel(Logger* logger);
+  Channel(Logger* logger, int seed_uniform);
   ~Channel();
 
-  Generators* GetGenerators();
+  Generators* GetGeneratorTER();
 
   // functions
   void ChanceForTER(Logger* logger);
@@ -29,7 +29,7 @@ private:
   bool packages_collision_ = false; // true - collision occurred
   bool more_packages_in_channel_ = false;
 
-  Generators* generator_ = nullptr;
+  Generators* uniform_generator_ = nullptr;
   Logger* logger_ = nullptr;
 };
 

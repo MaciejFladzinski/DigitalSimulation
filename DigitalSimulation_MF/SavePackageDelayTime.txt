@@ -1,10 +1,6 @@
-[Info] Package delay time: 125, in transmitter: 9
-[Info] Package delay time: 555, in transmitter: 1
-[Info] Package delay time: 225, in transmitter: 0
-[Info] Package delay time: 1080, in transmitter: 3
-[Info] Package delay time: 1375, in transmitter: 2
-[Info] Package delay time: 1670, in transmitter: 8
-[Info] Package delay time: 1970, in transmitter: 5
-[Info] Package delay time: 2130, in transmitter: 6
-[Info] Package delay time: 2610, in transmitter: 7
-[Info] Package delay time: 6345, in transmitter: 4
+[Info] Package delay time: 95, in transmitter: 0
+[Info] Package delay time: 170, in transmitter: 4
+[Info] Package delay time: 145, in transmitter: 8
+[Info] Package delay time: 65, in transmitter: 1
+[Info] Package delay time: 1800, in transmitter: 7
+[Info] Package delay time: 65, in transmitter: 3

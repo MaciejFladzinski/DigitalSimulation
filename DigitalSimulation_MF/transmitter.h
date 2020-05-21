@@ -13,7 +13,7 @@ class Package;
 class Transmitter
 {
 public:
-  Transmitter(unsigned int id_, Logger* logger);
+  Transmitter(unsigned int id_, Logger* logger, int uniform_seed, int exp_seed, int r_seed);
   ~Transmitter();
 
   // functions
@@ -23,7 +23,11 @@ public:
   void IncTimeOfChannelListenning(Logger* logger);  // Add 0,5ms in channel listenning
 
   Package* GetFirstPackageInTX();
-  Generators* GetGenerators();
+
+  Generators* GetUniformGenerator();
+  Generators* GetExpGenerator();
+  Generators* GetRGenerator();
+
   void AddPackageInTX(Package* package);
 
   void CalculationMaxPackageErrorRate();
@@ -53,7 +57,6 @@ public:
   inline size_t GetAverageOfPackagesWaitingTime() { return average_of_packages_waiting_time_; }
   inline size_t GetSumOfAllPackagesWaitingTime() { return sum_of_all_packages_waiting_time_; }
   inline size_t GetAverageOfSystemThroughput() { return average_of_system_throughput_; }
-  inline size_t GetSumOfAllSystemThroughput() { return sum_of_all_system_throughput_; }
 
   // set
   inline void SetTransmitterId(unsigned int transmitter_id)
@@ -120,10 +123,6 @@ public:
   {
     average_of_system_throughput_ = average_of_system_throughput;
   }
-  inline void SetSumOfAllSystemThroughput(size_t average_of_system_throughput)
-  {
-    average_of_system_throughput_ = average_of_system_throughput;
-  }
 
 private:
   unsigned int transmitter_id_ = 0;  // transmitter number
@@ -146,12 +145,13 @@ private:
   size_t sum_of_all_packages_waiting_time_ = 0;
   size_t average_of_packages_waiting_time_ = 0;
 
-  size_t sum_of_all_system_throughput_ = 0;
   size_t average_of_system_throughput_ = 0; // average of system throughput in one station
 
   std::queue<Package*> packages_in_TX_; // packages in buffer (in transmitter)
 
-  Generators* generator_ = nullptr;
+  Generators* uniform_generator_ = nullptr;
+  Generators* exp_generator_ = nullptr;
+  Generators* r_generator_ = nullptr;
   Logger* logger_ = nullptr;
 };
 

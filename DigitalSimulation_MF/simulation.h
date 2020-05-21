@@ -22,9 +22,10 @@ public:
   void SetStartTimeStatistics(size_t initial_phase);
 
 private:
-  size_t generate_packet_max_time_ = 10;
   size_t clock_ = 0;
   size_t start_time_statistics_ = 0;
+
+  Generators* generators_ = nullptr;
   WirelessNetwork* wireless_network_ = nullptr;
   Logger* logger_ = nullptr;
 };

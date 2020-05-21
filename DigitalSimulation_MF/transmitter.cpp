@@ -3,17 +3,36 @@
 #include <fstream>
 #include <iostream>
 
-Transmitter::Transmitter(unsigned int id_, Logger* logger)
+Transmitter::Transmitter(unsigned int id_, Logger* logger, int uniform_seed, int exp_seed, int r_seed)
 {
   transmitter_id_ = id_;
   logger_ = logger;
-  generator_ = new Generators(123 * id_ + 1);
+
+  uniform_generator_ = new Generators(uniform_seed);
+  exp_generator_ = new Generators(exp_seed);
+  r_generator_ = new Generators(r_seed);
+
   logger->Info("Create transmitter nr: " + std::to_string(id_));
 }
 
 Transmitter::~Transmitter()
 {
   logger_->Info("Remove transmitter nr: " + std::to_string(transmitter_id_));
+}
+
+Generators* Transmitter::GetUniformGenerator()
+{
+  return uniform_generator_;
+}
+
+Generators* Transmitter::GetExpGenerator()
+{
+  return exp_generator_;
+}
+
+Generators* Transmitter::GetRGenerator()
+{
+  return r_generator_;
 }
 
 unsigned int Transmitter::GetPackagesSuccessfullySent()
@@ -31,7 +50,7 @@ void Transmitter::GenerateCRPTime(Logger* logger, size_t ctpk, unsigned int numb
   logger_ = logger;
 
   unsigned int max_value = std::pow(2, number_of_LR);
-  unsigned int R = GetGenerators()->Rand(0, max_value);
+  unsigned int R = GetRGenerator()->Rand(0, max_value);
   size_t crp_time = ctpk * R * 10;
 
   SetTimeCrp(crp_time);
@@ -47,7 +66,6 @@ void Transmitter::AddPackageSuccessfullySent(Logger* logger)
   CalculationAverageNumberOfLR();
   CalculationAverageOfPackagesDelayTime();
   CalculationAverageOfPackagesWaitingTime();
-  CalculationAverageOfSystemThroughput();
 
   SetPackageErrorRate(GetPackagesLost() / GetPackagesSuccessfullySent());
 
@@ -103,11 +121,6 @@ Package* Transmitter::GetFirstPackageInTX()
   return packages_in_TX_.front();
 }
 
-Generators* Transmitter::GetGenerators()
-{
-  return generator_;
-}
-
 void Transmitter::AddPackageInTX(Package* package)
 {
   return packages_in_TX_.push(package);
@@ -141,6 +154,5 @@ void Transmitter::CalculationAverageOfPackagesWaitingTime()
 
 void Transmitter::CalculationAverageOfSystemThroughput()
 {
-  SetSumOfAllSystemThroughput(GetSumOfAllSystemThroughput() + GetFirstPackageInTX()->GetSystemThroughput());
-  SetAverageOfSystemThroughput(GetSumOfAllSystemThroughput() / GetPackagesSuccessfullySent());
+  SetAverageOfSystemThroughput(GetFirstPackageInTX()->GetSystemThroughput());
 }

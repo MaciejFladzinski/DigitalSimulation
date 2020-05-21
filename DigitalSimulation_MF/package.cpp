@@ -87,7 +87,7 @@ void Package::GenerateCTPkTime(Logger* logger)
 {
   logger_ = logger;
   size_t ctpk_time = wireless_network_->GetTransmitters(GetStationId())->
-    GetGenerators()->Rand(1, 10) * 10; // time CTPk {1,...,10}ms * 10 -> {10,...,100}x
+    GetUniformGenerator()->Rand(1, 10) * 10; // time CTPk {1,...,10}ms * 10 -> {10,...,100}x
 
   SetTimeCTPk(ctpk_time);
   logger->Info("Generate CTPk time... CTPk = " + std::to_string(GetTimeCTPk()));
@@ -97,7 +97,8 @@ void Package::GenerateCTPkTime(Logger* logger)
 
 void Package::PackageDelayTime()
 {
-  SetPackageDelayTime(GetTimeSuccessfullySentPackage() - GetTimeAddedToBuffer());
+  SetPackageDelayTime(GetTimeSuccessfullySentPackage() - GetTimeAddedToBuffer() -
+    wireless_network_->GetTransmitters(GetStationId())->ctiz_time_);
 
   if (GetTime() >= simulation_->GetStartTimeStatistics())
   {
@@ -146,8 +147,6 @@ void Package::SaveTimeOfAddedToBuffer()
 
 void Package::SaveTimeSuccessfullySentPackage()
 {
-  SaveThroughputOfSystem();
-
   if (GetTime() >= simulation_->GetStartTimeStatistics())
   {
     // add to file
@@ -212,6 +211,8 @@ void Package::SaveThroughputOfSystem()
     saveSystemThroughput << "[Info] Actual system throughput: " + std::to_string(GetSystemThroughput()) + "/s" << std::endl;
 
     saveSystemThroughput.close();
+
+    wireless_network_->GetTransmitters(GetStationId())->CalculationAverageOfSystemThroughput();
   }
 
   logger_->Info("Actual system throughput: " + std::to_string(GetSystemThroughput()) + "/s");
@@ -289,17 +290,17 @@ void Package::Execute()
 
       SetTimeAddedToBuffer(GetTime());
 
-      wireless_network_->GeneratePackage(logger_, this, transmitter, GetStationId()); // generate and add package to the vector
+      wireless_network_->GeneratePackage(logger_, this, transmitter, rand() % 10); // generate and add package to the vector
       {
-        // package generate time
-        int CGPk = wireless_network_->GetTransmitters(GetStationId())->GetGenerators()->
-          RandExp(wireless_network_->GetLambda()) * 10;
-
         // planning the appearance of the next package
-        auto new_package = new Package(id_package_ + 1, GetStationId(), time_ + CGPk, logger_, wireless_network_,
-          agenda_, simulation_);
+        auto new_package = new Package(id_package_ + 1, rand() % 10, time_, logger_,
+          wireless_network_, agenda_, simulation_);
 
-        new_package->Activ(time_ + CGPk, true);
+        // package generate time
+        int CGPk = wireless_network_->GetTransmitters(new_package->GetStationId())->GetUniformGenerator()->
+          RandExp(wireless_network_->GetLambda()) * 10;
+         
+        new_package->Activ(CGPk, true);
       }
 
       if (transmitter->GetFirstPackageInTX() == this) // if (package is first)
@@ -404,8 +405,6 @@ void Package::Execute()
       }
       else
       {
-        wireless_network_->GetChannel()->SetCollision(true);
-        logger_->Info("Collision detected");
         // prepare to retransmission
         wireless_network_->GetChannel()->SetChannelOccupancy(false);
         wireless_network_->GetChannel()->SetCollision(false);
@@ -468,16 +467,16 @@ void Package::Execute()
       //if there is only ACK (after time CTPk + CTIZ) in the channel:
       if (wireless_network_->GetBufferSize() == 1)
       {
-        wireless_network_->EndTransmission(logger_); // channel is free (remove ACK from the vector in channel)
         wireless_network_->GetChannel()->SetChannelOccupancy(false);
         logger_->Info("ACK delivered successfully");
         SetTimeSuccessfullySentPackage(GetTime());
-        transmitter->AddPackageSuccessfullySent(logger_);
-        SavePackagesSuccessfullySent();
         wireless_network_->IncrementCounterOfPackagesSuccessfullySent();
+        transmitter->AddPackageSuccessfullySent(logger_);
+        SaveThroughputOfSystem();
+        SavePackagesSuccessfullySent();
         SaveTimeSuccessfullySentPackage();
         SaveNumberOfLR();
-        SaveThroughputOfSystem();
+        wireless_network_->EndTransmission(logger_); // channel is free (remove ACK from the vector in channel)
         transmitter->SetTimeOfChannelListenning(0);
         receiver->SetAcknowledgment(false);
         state_ = State::RemovalFromTheSystem;

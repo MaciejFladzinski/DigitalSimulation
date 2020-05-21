@@ -1,9 +1,9 @@
 #include "channel.h"
 
-Channel::Channel(Logger* logger)
+Channel::Channel(Logger* logger, int uniform_seed)
 {
   logger_ = logger;
-  generator_ = new Generators(123);
+  uniform_generator_ = new Generators(uniform_seed);
 
   logger->Info("Create channel");
 }
@@ -13,9 +13,9 @@ Channel::~Channel()
   logger_->Info("Remove channel");
 }
 
-Generators* Channel::GetGenerators()
+Generators* Channel::GetGeneratorTER()
 {
-  return generator_;
+  return uniform_generator_;
 }
 
 bool Channel::GetChannelOccupancy()
@@ -52,7 +52,7 @@ void Channel::SetMorePackagesInBuffer(bool more_packages_in_channel)
 void Channel::ChanceForTER(Logger* logger)
 {
   logger_ = logger;
-  int random_number = GetGenerators()->RandZeroOne(0.8);
+  int random_number = GetGeneratorTER()->RandZeroOne(0.8);
 
   if (random_number == 0)
   {

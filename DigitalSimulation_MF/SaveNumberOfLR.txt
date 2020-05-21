@@ -1,10 +1,6 @@
-[Info] Number of LR: 0 by transmitter: 9
-[Info] Number of LR: 1 by transmitter: 1
-[Info] Number of LR: 1 by transmitter: 0
-[Info] Number of LR: 1 by transmitter: 3
-[Info] Number of LR: 2 by transmitter: 2
-[Info] Number of LR: 2 by transmitter: 8
-[Info] Number of LR: 4 by transmitter: 5
-[Info] Number of LR: 4 by transmitter: 6
-[Info] Number of LR: 3 by transmitter: 7
-[Info] Number of LR: 3 by transmitter: 4
+[Info] Number of LR: 0 by transmitter: 0
+[Info] Number of LR: 1 by transmitter: 4
+[Info] Number of LR: 0 by transmitter: 8
+[Info] Number of LR: 0 by transmitter: 1
+[Info] Number of LR: 2 by transmitter: 7
+[Info] Number of LR: 0 by transmitter: 3

@@ -14,7 +14,7 @@ class Transmitter;
 class WirelessNetwork
 {
 public:
-  WirelessNetwork(Logger* logger);
+  WirelessNetwork(Logger* logger, int wireless_network_seed);
   ~WirelessNetwork();
 
   static const size_t generate_packet_max_time = 10;
@@ -24,6 +24,10 @@ public:
   Receiver* GetReceivers(int i);
   Package* GetPackages(int i);
   Channel* GetChannel();
+
+  std::vector<int>* GetSeeds();
+  const int kNumberOfSeeds = 3 * k_number_of_stations_ + 1;
+  const int kSeedSaveStep = 100000;
 
   bool GetChannelStatus();
   double GetLambda();
@@ -36,7 +40,7 @@ public:
   bool IsBufferEmpty() { return packages_.empty(); }
   Package* GetFirstPackage() { return packages_.front(); }
   size_t GetBufferSize() { return packages_.size(); }
-  void IncrementCounterOfPackagesSuccessfullySent() { ++counter_of_packages_successfully_sent_; }
+  void IncrementCounterOfPackagesSuccessfullySent();
 
   void TotalMaxPackageErrorRate();
   void TotalNumberOfPackagesSuccessfullySent();
@@ -115,6 +119,10 @@ private:
   std::vector<Receiver*> receivers_;
   std::vector<Package*> packages_;  // packages in channel
 
+  int seed = 0;
+  std::vector<int> seeds_;
+
+  Generators* seeds_generator = nullptr;
   Transmitter* transmitter_ = nullptr;
   Logger* logger_ = nullptr;
   Channel* channel_ = nullptr;

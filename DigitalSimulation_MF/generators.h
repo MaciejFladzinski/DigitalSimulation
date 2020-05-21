@@ -11,7 +11,7 @@ public:
 	~Generators();
 
 	double Rand();
-	int Rand(double min, double max); // double czy int?
+	int Rand(double min, double max);
 	int RandExp(double lambda);
 	int RandZeroOne(double p);
 
