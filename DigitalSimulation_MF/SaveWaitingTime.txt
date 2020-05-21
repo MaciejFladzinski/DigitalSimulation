@@ -18,3 +18,14 @@
 [Info] Time of waiting in buffer before transmission: 875, in transmitter: 8
 [Info] Time of waiting in buffer before transmission: 940, in transmitter: 6
 [Info] Time of waiting in buffer before transmission: 120, in transmitter: 0
+[Info] Time of waiting in buffer before transmission: 195, in transmitter: 0
+[Info] Time of waiting in buffer before transmission: 1000, in transmitter: 3
+[Info] Time of waiting in buffer before transmission: 1195, in transmitter: 5
+[Info] Time of waiting in buffer before transmission: 1315, in transmitter: 2
+[Info] Time of waiting in buffer before transmission: 1600, in transmitter: 8
+[Info] Time of waiting in buffer before transmission: 1950, in transmitter: 5
+[Info] Time of waiting in buffer before transmission: 2035, in transmitter: 6
+[Info] Time of waiting in buffer before transmission: 2100, in transmitter: 6
+[Info] Time of waiting in buffer before transmission: 2130, in transmitter: 4
+[Info] Time of waiting in buffer before transmission: 2560, in transmitter: 7
+[Info] Time of waiting in buffer before transmission: 6255, in transmitter: 4

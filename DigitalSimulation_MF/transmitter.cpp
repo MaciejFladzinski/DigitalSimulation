@@ -26,7 +26,6 @@ unsigned int Transmitter::GetPackagesLost()
   return packages_lost_;
 }
 
-
 void Transmitter::GenerateCRPTime(Logger* logger, size_t ctpk, unsigned int number_of_LR)
 {
   logger_ = logger;
@@ -42,29 +41,52 @@ void Transmitter::GenerateCRPTime(Logger* logger, size_t ctpk, unsigned int numb
 void Transmitter::AddPackageSuccessfullySent(Logger* logger)
 {
   logger_ = logger;
-  ++packages_successfully_sent_;
 
-  double package_error_rate = (double) packages_lost_ / packages_successfully_sent_;
+  SetPackagesSuccessfullySent(GetPackagesSuccessfullySent() + 1);
+
+  CalculationAverageNumberOfLR();
+  CalculationAverageOfPackagesDelayTime();
+  CalculationAverageOfPackagesWaitingTime();
+  CalculationAverageOfSystemThroughput();
+
+  SetPackageErrorRate(GetPackagesLost() / GetPackagesSuccessfullySent());
 
   logger->Info("Packages successfully sent: " + std::to_string(GetPackagesSuccessfullySent()) +
     ", by transmitter: " + std::to_string(GetTransmitterId()));
 
-  logger->Info("Actual package error rate: " + std::to_string(package_error_rate) +
+  logger->Info("Actual package error rate: " + std::to_string(GetPackageErrorRate()) +
     ", in transmitter: " + std::to_string(GetTransmitterId()));
 }
 
 void Transmitter::AddPackageLost(Logger* logger)
 {
   logger_ = logger;
-  ++packages_lost_;
 
-  double package_error_rate = (double) packages_lost_ / packages_successfully_sent_;
+  SetPackagesLost(GetPackagesLost() + 1);
+
+  CalculationAverageOfPackagesWaitingTime();
+
+  SetPackageErrorRate(GetPackagesLost() / GetPackagesSuccessfullySent());
 
   logger->Info("Packages lost: " + std::to_string(GetPackagesLost()) +
     ", by transmitter: " + std::to_string(GetTransmitterId()));
 
-  logger->Info("Actual package error rate: " + std::to_string(package_error_rate) +
+  logger->Info("Actual package error rate: " + std::to_string(GetPackageErrorRate()) +
     ", in transmitter: " + std::to_string(GetTransmitterId()));
+}
+
+void Transmitter::CalculationMaxPackageErrorRate()
+{
+  if (GetPackageErrorRate() >= GetMaxPackageErrorRate())
+  {
+    SetMaxPackageErrorRate(GetPackageErrorRate());
+    std::ofstream savePackagesSent("SavePackagesSent.txt", std::ios_base::app);
+
+    savePackagesSent << "[Info] New max package error rate: " +
+      std::to_string(GetMaxPackageErrorRate()) << std::endl;
+
+    savePackagesSent.close();
+  }
 }
 
 void Transmitter::IncTimeOfChannelListenning(Logger* logger)
@@ -86,8 +108,39 @@ Generators* Transmitter::GetGenerators()
   return generator_;
 }
 
-
 void Transmitter::AddPackageInTX(Package* package)
 {
   return packages_in_TX_.push(package);
+}
+
+void Transmitter::CalculationAverageNumberOfLR()
+{
+  SetSumOfAllLR(GetSumOfAllLR() + GetFirstPackageInTX()->GetNumberOfLR());
+  SetAverageNumberOfLR(GetSumOfAllLR() / GetPackagesSuccessfullySent());
+}
+
+void Transmitter::CalculationAverageOfPackagesDelayTime()
+{
+  SetSumOfAllPackagesDelayTime(GetSumOfAllPackagesDelayTime() + GetFirstPackageInTX()->GetPackageDelayTime());
+  SetAverageOfPackagesDelayTime(GetSumOfAllPackagesDelayTime() / GetPackagesSuccessfullySent());
+}
+
+void Transmitter::CalculationAverageOfPackagesWaitingTime()
+{
+  SetSumOfAllPackagesWaitingTime(GetSumOfAllPackagesWaitingTime() + GetFirstPackageInTX()->GetPackageWaitingTime());
+
+  if ((GetPackagesSuccessfullySent() + GetPackagesLost()) != 0)
+  {
+    SetAverageOfPackagesWaitingTime(GetSumOfAllPackagesWaitingTime() / (GetPackagesSuccessfullySent() + GetPackagesLost()));
+  }
+  else
+  {
+    SetAverageOfPackagesWaitingTime(0);
+  }
+}
+
+void Transmitter::CalculationAverageOfSystemThroughput()
+{
+  SetSumOfAllSystemThroughput(GetSumOfAllSystemThroughput() + GetFirstPackageInTX()->GetSystemThroughput());
+  SetAverageOfSystemThroughput(GetSumOfAllSystemThroughput() / GetPackagesSuccessfullySent());
 }

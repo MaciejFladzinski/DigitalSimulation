@@ -7,7 +7,7 @@ Simulation::Simulation(Logger* logger, WirelessNetwork* wireless_network)
   logger_ = logger;
   wireless_network_ = wireless_network;
 
-	Transmitter* transmitter;
+  Transmitter* transmitter;
 
   unsigned int id_number;
   for (int i = 0; i < wireless_network->k_number_of_stations_; ++i)
@@ -104,7 +104,7 @@ void Simulation::RunM4(Logger* logger, int time)
     logger->Info("Simulation time: " + std::to_string(clock_));
     package_process->Execute();
 
-    if(package_process->GetIsTerminated() == true)
+    if (package_process->GetIsTerminated() == true)
     {
       logger->Info("End process package (id: " + std::to_string(package_process->GetPackageId()) + ") \n");
       delete package_process;

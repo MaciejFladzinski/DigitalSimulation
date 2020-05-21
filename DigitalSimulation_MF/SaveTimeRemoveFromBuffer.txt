@@ -18,3 +18,14 @@
 [Info] Time when package is remove from buffer: 1475, in transmitter: 8
 [Info] Time when package is remove from buffer: 1580, in transmitter: 6
 [Info] Time when package is remove from buffer: 1580, in transmitter: 0
+[Info] Time when package is remove from buffer: 1655, in transmitter: 0
+[Info] Time when package is remove from buffer: 1730, in transmitter: 3
+[Info] Time when package is remove from buffer: 1855, in transmitter: 5
+[Info] Time when package is remove from buffer: 2095, in transmitter: 2
+[Info] Time when package is remove from buffer: 2200, in transmitter: 8
+[Info] Time when package is remove from buffer: 2610, in transmitter: 5
+[Info] Time when package is remove from buffer: 2675, in transmitter: 6
+[Info] Time when package is remove from buffer: 2740, in transmitter: 6
+[Info] Time when package is remove from buffer: 2820, in transmitter: 4
+[Info] Time when package is remove from buffer: 3180, in transmitter: 7
+[Info] Time when package is remove from buffer: 6945, in transmitter: 4

@@ -19,11 +19,13 @@ public:
   typedef std::priority_queue<Package*, std::vector<Package*>, std::function<bool(Package*, Package*)>>Agenda;
 
   // enum class - representation of states
-  enum class State { AppearanceInTheSystem, ChannelListening, Transmission, Collision, ReceivePackage, Retransmission, ACK,
-    ReceiveACK, RemovalFromTheSystem };
+  enum class State {
+    AppearanceInTheSystem, ChannelListening, Transmission, Collision, ReceivePackage, Retransmission, ACK,
+    ReceiveACK, RemovalFromTheSystem
+  };
 
   Package(unsigned int id_package, unsigned int id_station, size_t time,
-Logger* logger, WirelessNetwork* wireless_network, Agenda* agenda, Simulation* simulation);
+    Logger* logger, WirelessNetwork* wireless_network, Agenda* agenda, Simulation* simulation);
 
   Package(unsigned int id_package, unsigned int id_station, size_t time);
 
@@ -52,8 +54,6 @@ Logger* logger, WirelessNetwork* wireless_network, Agenda* agenda, Simulation* s
   void PackageDelayTime();
   void IncrementCounter();
   void AddSumOfAllRetransmissions();
-  void CalculationAverageNumberOfLR();
-  void CalculationMaxPackageErrorRate();
 
   // get
   inline unsigned int GetPackageId() { return id_package_; }
@@ -67,8 +67,9 @@ Logger* logger, WirelessNetwork* wireless_network, Agenda* agenda, Simulation* s
   inline size_t GetTimeRemoveFromBuffer() { return time_remove_from_buffer_; }
   inline int GetCounter() { return counter_; }
   inline int GetSumOfAllRetransmissions() { return sum_of_all_retransmissions_; }
-  inline double GetAverageNumberOfLR() { return average_number_of_LR_; }
-  inline double GetMaxPackageErrorRate() { return max_package_error_rate_; }
+  inline size_t GetPackageDelayTime() { return package_delay_time_; }
+  inline size_t GetPackageWaitingTime() { return package_waiting_time_; }
+  inline size_t GetSystemThroughput() { return system_throughput_; }
 
   // set
   inline void SetPackageId(unsigned int id_package);
@@ -89,7 +90,7 @@ Logger* logger, WirelessNetwork* wireless_network, Agenda* agenda, Simulation* s
   {
     this->time_remove_from_buffer_ = time_remove_from_buffer;
   }
-  inline void SetCounter (int counter)
+  inline void SetCounter(int counter)
   {
     counter_ = counter;
   }
@@ -97,13 +98,17 @@ Logger* logger, WirelessNetwork* wireless_network, Agenda* agenda, Simulation* s
   {
     sum_of_all_retransmissions_ = sum_of_all_retransmissions;
   }
-  inline void SetAverageNumberOfLR(int average_number_of_LR)
+  inline void SetPackageDelayTime(size_t package_delay_time)
   {
-    average_number_of_LR_ = average_number_of_LR;
+    this->package_delay_time_ = package_delay_time;
   }
-  inline void SetMaxPackageErrorRate(double max_package_error_rate)
+  inline void SetPackageWaitingTime(size_t package_waiting_time)
   {
-    max_package_error_rate_ = max_package_error_rate;
+    this->package_waiting_time_ = package_waiting_time;
+  }
+  inline void SetSystemThroughput(size_t system_throughput)
+  {
+    this->system_throughput_ = system_throughput;
   }
 
 private:
@@ -118,8 +123,10 @@ private:
   bool is_terminated_ = false;
   int counter_ = 0; // package counter with quantity of LR
   int sum_of_all_retransmissions_ = 0;
-  double average_number_of_LR_ = 0; // actual average number of LR
-  double max_package_error_rate_ = 0;
+  size_t package_delay_time_ = 0;
+  size_t package_waiting_time_ = 0;
+  size_t system_throughput_ = 0;
+
 
   State state_ = State::AppearanceInTheSystem;
 

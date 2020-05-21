@@ -4,10 +4,10 @@
 
 WirelessNetwork::WirelessNetwork(Logger* logger)
 {
-  logger_ = logger;
+	logger_ = logger;
 	logger->Info("Create wireless network");
 	int id = 0;
-  channel_ = new Channel(logger);
+	channel_ = new Channel(logger);
 
 	for (int i = 0; i < k_number_of_stations_; ++i)
 	{
@@ -66,11 +66,11 @@ void WirelessNetwork::Init(Logger* logger)
 {
 	logger_ = logger;
 
-  while (!packages_.empty()) // while buffer isn't empty
-  {
+	while (!packages_.empty()) // while buffer isn't empty
+	{
 		delete packages_.front(); // delete actual
 		packages_.pop_back(); // pop next
-  }
+	}
 	channel_->SetChannelOccupancy(false);	// channel is free
 }
 
@@ -84,7 +84,7 @@ void WirelessNetwork::GeneratePackage(Logger* logger, Package* package, Transmit
 	transmitter->AddPackageInTX(package);	// add package to the buffer in transmitter
 	package->SetTimeAddedToBuffer(package->GetTime());
 	package->SaveTimeOfAddedToBuffer();
-  package->GenerateCTPkTime(logger);
+	package->GenerateCTPkTime(logger);
 
 	logger->Info("Generate package (id: " + std::to_string(package->GetPackageId()) + ") by transmitter (id: " +
 		std::to_string(transmitter->GetTransmitterId()) + "). Package transmission time: " + std::to_string(package->GetTimeCTPk()));
@@ -107,4 +107,116 @@ void WirelessNetwork::EndTransmission(Logger* logger)
 double WirelessNetwork::GetLambda()
 {
 	return lambda;
+}
+
+void WirelessNetwork::TotalMaxPackageErrorRate()
+{
+	for (int i = 0; i < k_number_of_stations_; ++i)
+	{
+		SetTotalMaxPackageErrorRate(GetTotalMaxPackageErrorRate() + GetTransmitters(i)->GetMaxPackageErrorRate());
+	}
+
+	SetTotalMaxPackageErrorRate(GetTotalMaxPackageErrorRate() / k_number_of_stations_);
+}
+
+void WirelessNetwork::TotalNumberOfPackagesSuccessfullySent()
+{
+	for (int i = 0; i < k_number_of_stations_; ++i)
+	{
+		SetTotalNumberOfPackagesSuccessfullySent(GetTotalNumberOfPackagesSuccessfullySent() +
+			GetTransmitters(i)->GetPackagesSuccessfullySent());
+	}
+}
+
+void WirelessNetwork::TotalNumberOfPackagesLost()
+{
+	for (int i = 0; i < k_number_of_stations_; ++i)
+	{
+		SetTotalNumberOfPackagesLost(GetTotalNumberOfPackagesLost() + GetTransmitters(i)->GetPackagesLost());
+	}
+}
+
+void WirelessNetwork::TotalPackageErrorRate()
+{
+	for (int i = 0; i < k_number_of_stations_; ++i)
+	{
+		SetTotalPackageErrorRate(GetTotalPackageErrorRate() + GetTransmitters(i)->GetPackageErrorRate());
+	}
+
+	SetTotalPackageErrorRate(GetTotalPackageErrorRate() / k_number_of_stations_);
+}
+
+void WirelessNetwork::TotalAverageNumberOfLR()
+{
+	for (int i = 0; i < k_number_of_stations_; ++i)
+	{
+		SetTotalAverageNumberOfLR(GetTotalAverageNumberOfLR() + GetTransmitters(i)->GetAverageNumberOfLR());
+	}
+
+	SetTotalAverageNumberOfLR(GetTotalAverageNumberOfLR() / k_number_of_stations_);
+}
+
+void WirelessNetwork::TotalAverageOfPackagesDelayTime()
+{
+	for (int i = 0; i < k_number_of_stations_; ++i)
+	{
+		SetTotalAverageOfPackagesDelayTime(GetTotalAverageOfPackagesDelayTime() +
+			GetTransmitters(i)->GetAverageOfPackagesDelayTime());
+	}
+
+	SetTotalAverageOfPackagesDelayTime(GetTotalAverageOfPackagesDelayTime() / (10 * k_number_of_stations_));
+}
+
+void WirelessNetwork::TotalAverageOfPackagesWaitingTime()
+{
+	for (int i = 0; i < k_number_of_stations_; ++i)
+	{
+		SetTotalAverageOfPackagesWaitingTime(GetTotalAverageOfPackagesWaitingTime() +
+			GetTransmitters(i)->GetAverageOfPackagesWaitingTime());
+	}
+
+	SetTotalAverageOfPackagesWaitingTime(GetTotalAverageOfPackagesWaitingTime() / (10 * k_number_of_stations_));
+}
+
+void WirelessNetwork::TotalAverageOfSystemThroughput()
+{
+	for (int i = 0; i < k_number_of_stations_; ++i)
+	{
+		SetTotalAverageOfSystemThroughput(GetTotalAverageOfSystemThroughput() + GetTransmitters(i)->GetAverageOfSystemThroughput());
+	}
+	SetTotalAverageOfSystemThroughput(GetTotalAverageOfSystemThroughput() / k_number_of_stations_);
+}
+
+void WirelessNetwork::TotalStatistics(Logger* logger)
+{
+	logger_ = logger;
+
+	logger->Info("\n\nTotal statistics:");
+
+	TotalNumberOfPackagesSuccessfullySent();
+	logger->Info("Total number of packages successfully sent: " +
+		std::to_string(GetTotalNumberOfPackagesSuccessfullySent()));
+
+	TotalNumberOfPackagesLost();
+	logger->Info("Total number of packages lost: " + std::to_string(GetTotalNumberOfPackagesLost()));
+
+	TotalMaxPackageErrorRate();
+	logger->Info("Total average of package error rate: " + std::to_string(GetTotalPackageErrorRate()));
+
+	logger->Info("Max package error rate in system: " + std::to_string(GetTotalMaxPackageErrorRate()));
+
+	TotalAverageNumberOfLR();
+	logger->Info("Total average number of LR: " + std::to_string(GetTotalAverageNumberOfLR()));
+
+	TotalAverageOfSystemThroughput();
+	logger->Info("Total average of throughput in system: " + std::to_string(GetTotalAverageOfSystemThroughput())
+		+ "/s");
+
+	TotalAverageOfPackagesDelayTime();
+	logger->Info("Total average of package delay time: " + std::to_string(GetTotalAverageOfPackagesDelayTime())
+		+ "ms");
+
+	TotalAverageOfPackagesWaitingTime();
+	logger->Info("Total average of package waiting time: " + std::to_string(GetTotalAverageOfPackagesWaitingTime())
+		+ "ms");
 }

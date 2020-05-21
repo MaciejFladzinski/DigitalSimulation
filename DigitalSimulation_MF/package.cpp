@@ -55,6 +55,16 @@ void Package::SetTime(size_t time)
   time_ = time;
 }
 
+bool Package::GetIsTerminated()
+{
+  return is_terminated_;
+}
+
+void Package::SetTerminated()
+{
+  is_terminated_ = true;
+}
+
 void Package::IncrementNumberOfLR(Logger* logger)
 {
   logger_ = logger;
@@ -73,17 +83,41 @@ void Package::AddSumOfAllRetransmissions()
   sum_of_all_retransmissions_ += GetNumberOfLR();
 }
 
-void Package::CalculationAverageNumberOfLR()
+void Package::GenerateCTPkTime(Logger* logger)
 {
-  average_number_of_LR_ = GetSumOfAllRetransmissions() / GetCounter();
+  logger_ = logger;
+  size_t ctpk_time = wireless_network_->GetTransmitters(GetStationId())->
+    GetGenerators()->Rand(1, 10) * 10; // time CTPk {1,...,10}ms * 10 -> {10,...,100}x
+
+  SetTimeCTPk(ctpk_time);
+  logger->Info("Generate CTPk time... CTPk = " + std::to_string(GetTimeCTPk()));
+}
+
+//////////////////////////////////////////////////
+
+void Package::PackageDelayTime()
+{
+  SetPackageDelayTime(GetTimeSuccessfullySentPackage() - GetTimeAddedToBuffer());
+
+  if (GetTime() >= simulation_->GetStartTimeStatistics())
+  {
+    wireless_network_->GetTransmitters(GetStationId())->CalculationAverageOfPackagesDelayTime();
+
+    // add to file
+    std::ofstream savePackageDelayTime("SavePackageDelayTime.txt", std::ios_base::app);
+
+    savePackageDelayTime << "[Info] Package delay time: " + std::to_string(GetPackageDelayTime()) +
+      ", in transmitter: " + std::to_string(GetStationId()) << std::endl;
+
+    savePackageDelayTime.close();
+  }
+
+  logger_->Info("Package delay time: " + std::to_string(GetPackageDelayTime()) +
+    ", in transmitter: " + std::to_string(GetStationId()));
 }
 
 void Package::SaveNumberOfLR()
 {
-  IncrementCounter();
-  AddSumOfAllRetransmissions();
-  CalculationAverageNumberOfLR();
-
   if (GetTime() >= simulation_->GetStartTimeStatistics())
   {
     // add to file
@@ -91,34 +125,8 @@ void Package::SaveNumberOfLR()
     saveNumberOfLR << "[Info] Number of LR: " + std::to_string(GetNumberOfLR()) +
       " by transmitter: " + std::to_string(GetStationId()) << std::endl;
 
-    saveNumberOfLR << "[Info] Actual average number of LR: " + std::to_string(GetAverageNumberOfLR()) +
-      ", in transmitter: " + std::to_string(GetStationId()) << std::endl << std::endl;
-
     saveNumberOfLR.close();
   }
-
-  logger_->Info("Actual average number of LR: " + std::to_string(GetAverageNumberOfLR()) +
-    ", in transmitter: " + std::to_string(GetStationId()));
-}
-
-bool Package::GetIsTerminated()
-{
-  return is_terminated_;
-}
-
-void Package::SetTerminated()
-{
-  is_terminated_ = true;
-}
-
-void Package::GenerateCTPkTime(Logger* logger)
-{
-  logger_ = logger;
-  size_t ctpk_time = wireless_network_->GetTransmitters(GetStationId())->
-  GetGenerators()->Rand(1, 10) * 10; // time CTPk {1,...,10}ms * 10 -> {10,...,100}x
-
-  SetTimeCTPk(ctpk_time);
-  logger->Info("Generate CTPk time... CTPk = " + std::to_string(GetTimeCTPk()));
 }
 
 void Package::SaveTimeOfAddedToBuffer()
@@ -136,27 +144,10 @@ void Package::SaveTimeOfAddedToBuffer()
   }
 }
 
-void Package::PackageDelayTime()
-{
-  size_t package_delay_time = GetTimeSuccessfullySentPackage() - GetTimeAddedToBuffer();
-
-  if (GetTime() >= simulation_->GetStartTimeStatistics())
-  {
-    // add to file
-    std::ofstream savePackageDelayTime("SavePackageDelayTime.txt", std::ios_base::app);
-
-    savePackageDelayTime << "[Info] Package delay time: " + std::to_string(package_delay_time) +
-      ", in transmitter: " + std::to_string(GetStationId()) << std::endl;
-
-    savePackageDelayTime.close();
-  }
-
-  logger_->Info("Package delay time: " + std::to_string(package_delay_time) +
-    ", in transmitter: " + std::to_string(GetStationId()));
-}
-
 void Package::SaveTimeSuccessfullySentPackage()
 {
+  SaveThroughputOfSystem();
+
   if (GetTime() >= simulation_->GetStartTimeStatistics())
   {
     // add to file
@@ -183,52 +174,51 @@ void Package::SaveTimeRemoveFromBuffer()
       std::to_string(GetTimeRemoveFromBuffer()) + ", in transmitter: " + std::to_string(GetStationId()) << std::endl;
 
     saveTimeRemoveFromBuffer.close();
-  }
 
-  SaveWaitingTime();
+    SaveWaitingTime();
+  }
 }
 
 void Package::SaveWaitingTime()
 {
-  size_t package_waiting_time = GetTimeRemoveFromBuffer() - GetTimeAddedToBuffer();
+  SetPackageWaitingTime(GetTimeRemoveFromBuffer() - GetTimeAddedToBuffer());
 
   if (GetTime() >= simulation_->GetStartTimeStatistics())
   {
+    wireless_network_->GetTransmitters(GetStationId())->CalculationAverageOfPackagesWaitingTime();
+
     // add to file
     std::ofstream saveWaitingTime("SaveWaitingTime.txt", std::ios_base::app);
 
     saveWaitingTime << "[Info] Time of waiting in buffer before transmission: " +
-      std::to_string(package_waiting_time) + ", in transmitter: " + std::to_string(GetStationId()) << std::endl;
+      std::to_string(GetPackageWaitingTime()) + ", in transmitter: " + std::to_string(GetStationId()) << std::endl;
 
     saveWaitingTime.close();
   }
 
   logger_->Info("Time of waiting in buffer before transmission: " +
-    std::to_string(package_waiting_time) + ", in transmitter: " + std::to_string(GetStationId()));
+    std::to_string(GetPackageWaitingTime()) + ", in transmitter: " + std::to_string(GetStationId()));
 }
 
 void Package::SaveThroughputOfSystem()
 {
-  double system_throughput = (double)wireless_network_->GetCounterOfPackagesSuccessfullySent() / GetTime();
-  
+  SetSystemThroughput((wireless_network_->GetCounterOfPackagesSuccessfullySent() * 10000) / GetTime()); // X * 10000 == X s
+
   if (GetTime() >= simulation_->GetStartTimeStatistics())
   {
     // add to file
     std::ofstream saveSystemThroughput("SaveSystemThroughput.txt", std::ios_base::app);
 
-    saveSystemThroughput << "[Info] Actual system throughput: " + std::to_string(system_throughput) << std::endl;
+    saveSystemThroughput << "[Info] Actual system throughput: " + std::to_string(GetSystemThroughput()) + "/s" << std::endl;
 
     saveSystemThroughput.close();
   }
 
-  logger_->Info("Actual system throughput: " + std::to_string(system_throughput));
+  logger_->Info("Actual system throughput: " + std::to_string(GetSystemThroughput()) + "/s");
 }
 
 void Package::SavePackagesSuccessfullySent()
 {
-  double package_error_rate = (double)wireless_network_->GetTransmitters(GetStationId())->GetPackagesLost() /
-    wireless_network_->GetTransmitters(GetStationId())->GetPackagesSuccessfullySent();
-
   if (GetTime() >= simulation_->GetStartTimeStatistics())
   {
     // add to file
@@ -238,20 +228,18 @@ void Package::SavePackagesSuccessfullySent()
       std::to_string(wireless_network_->GetTransmitters(GetStationId())->GetPackagesSuccessfullySent()) +
       ", by transmitter: " + std::to_string(GetStationId()) << std::endl;
 
-    savePackagesSent << "[Info] Actual package error rate: " + std::to_string(package_error_rate) +
+    savePackagesSent << "[Info] Actual package error rate: " +
+      std::to_string(wireless_network_->GetTransmitters(GetStationId())->GetPackageErrorRate()) +
       ", in transmitter: " + std::to_string(GetStationId()) << std::endl << std::endl;
 
     savePackagesSent.close();
 
-    CalculationMaxPackageErrorRate();
+    wireless_network_->GetTransmitters(GetStationId())->CalculationMaxPackageErrorRate();
   }
 }
 
 void Package::SavePackagesLost()
 {
-  double package_error_rate = (double)wireless_network_->GetTransmitters(GetStationId())->GetPackagesLost() /
-    wireless_network_->GetTransmitters(GetStationId())->GetPackagesSuccessfullySent();
-
   if (GetTime() >= simulation_->GetStartTimeStatistics())
   {
     // add to file
@@ -261,33 +249,17 @@ void Package::SavePackagesLost()
       std::to_string(wireless_network_->GetTransmitters(GetStationId())->GetPackagesLost()) +
       ", by transmitter: " + std::to_string(GetStationId()) << std::endl;
 
-    savePackagesSent << "[Info] Actual package error rate: " + std::to_string(package_error_rate) +
+    savePackagesSent << "[Info] Actual package error rate: " +
+      std::to_string(wireless_network_->GetTransmitters(GetStationId())->GetPackageErrorRate()) +
       ", in transmitter: " + std::to_string(GetStationId()) << std::endl << std::endl;
 
     savePackagesSent.close();
 
-    CalculationMaxPackageErrorRate();
+    wireless_network_->GetTransmitters(GetStationId())->CalculationMaxPackageErrorRate();
   }
 }
 
-void Package::CalculationMaxPackageErrorRate()
-{
-  double package_error_rate = (double)wireless_network_->GetTransmitters(GetStationId())->GetPackagesLost() /
-    wireless_network_->GetTransmitters(GetStationId())->GetPackagesSuccessfullySent();
-
-  if (package_error_rate > GetMaxPackageErrorRate())
-  {
-    SetMaxPackageErrorRate(package_error_rate);
-
-    std::ofstream savePackagesSent("SavePackagesSent.txt", std::ios_base::app);
-
-    savePackagesSent << "[Info] Actual max package error rate: " +
-      std::to_string(GetMaxPackageErrorRate()) << std::endl;
-
-    savePackagesSent.close();
-  }
-}
-
+////////////////////////////////////////////////////////////
 
 void Package::Activ(size_t time, bool relative)
 {
@@ -315,11 +287,13 @@ void Package::Execute()
     {
     case State::AppearanceInTheSystem:
 
+      SetTimeAddedToBuffer(GetTime());
+
       wireless_network_->GeneratePackage(logger_, this, transmitter, GetStationId()); // generate and add package to the vector
       {
         // package generate time
         int CGPk = wireless_network_->GetTransmitters(GetStationId())->GetGenerators()->
-                   RandExp(wireless_network_->GetLambda()) * 10;
+          RandExp(wireless_network_->GetLambda()) * 10;
 
         // planning the appearance of the next package
         auto new_package = new Package(id_package_ + 1, GetStationId(), time_ + CGPk, logger_, wireless_network_,
@@ -398,7 +372,7 @@ void Package::Execute()
 
         wireless_network_->EndTransmission(logger_);
 
-        if(wireless_network_->IsBufferEmpty())
+        if (wireless_network_->IsBufferEmpty())
         {
           wireless_network_->GetChannel()->SetMorePackagesInBuffer(false);
           wireless_network_->GetChannel()->SetChannelOccupancy(false);
@@ -421,7 +395,7 @@ void Package::Execute()
       {
         wireless_network_->EndTransmission(logger_); // channel is free (remove package from the vector in channel)
 
-        if(wireless_network_->GetBufferSize() == 0)
+        if (wireless_network_->GetBufferSize() == 0)
         {
           wireless_network_->GetChannel()->SetChannelOccupancy(false);
         }
@@ -435,6 +409,7 @@ void Package::Execute()
         // prepare to retransmission
         wireless_network_->GetChannel()->SetChannelOccupancy(false);
         wireless_network_->GetChannel()->SetCollision(false);
+        wireless_network_->EndTransmission(logger_);
         transmitter->SetTimeOfChannelListenning(0);
         state_ = State::Retransmission;
         active = true;
@@ -522,7 +497,7 @@ void Package::Execute()
       break;
 
     case State::RemovalFromTheSystem:
-      if(!wireless_network_->IsBufferEmpty()) // if (buffer isn't empty)
+      if (!wireless_network_->IsBufferEmpty()) // if (buffer isn't empty)
       {
         // wake up next packet in buffer in current time
         wireless_network_->GetFirstPackage()->Activ(time_, false);

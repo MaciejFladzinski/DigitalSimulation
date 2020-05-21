@@ -27,7 +27,7 @@ int main()
   std::ofstream savePackageDelayTime("SavePackageDelayTime.txt"); // save package delay time (TimeSuccessfullySentPackage - TimeOfAddedToBuffer)
   std::ofstream saveWaitingTime("SaveWaitingTime.txt"); // save waiting time (TimeRemoveFromBuffer - TimeOfAddedToBuffer)
   std::ofstream saveSystemThroughput("SaveSystemThroughput.txt"); // save: packages successfully sent / simulation time
-  
+
   // generate random value in simulation by function "rand()"
   std::srand(time(NULL));
 
@@ -44,6 +44,8 @@ int main()
   auto simulation = new Simulation(logger, wireless_network);
 
   simulation->RunM4(logger, max_simulation_time);
+
+  wireless_network->TotalStatistics(logger);
 
   printf("\n");
   delete simulation;
