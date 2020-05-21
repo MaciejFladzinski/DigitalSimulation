@@ -102,6 +102,7 @@ void Simulation::RunM4(Logger* logger, int time)
     if (package_process->GetIsTerminated() == true)
     {
       logger->Info("End process package (id: " + std::to_string(package_process->GetPackageId()) + ") \n");
+
       delete package_process;
     }
     if (SelectMode(key) == true) { StepInto(); }

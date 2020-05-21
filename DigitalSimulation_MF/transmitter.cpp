@@ -121,6 +121,12 @@ Package* Transmitter::GetFirstPackageInTX()
   return packages_in_TX_.front();
 }
 
+void Transmitter::RemoveFirstPackageInRX()
+{
+  packages_in_TX_.pop();
+}
+
+
 void Transmitter::AddPackageInTX(Package* package)
 {
   return packages_in_TX_.push(package);

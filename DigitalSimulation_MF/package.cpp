@@ -27,6 +27,7 @@ Package::Package(unsigned int id_package, unsigned int id_station, size_t time)
 
 Package::~Package()
 {
+  wireless_network_->GetTransmitters(GetStationId())->RemoveFirstPackageInRX();
   logger_->Info("Remove package");
 }
 

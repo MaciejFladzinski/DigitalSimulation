@@ -23,6 +23,7 @@ public:
   void IncTimeOfChannelListenning(Logger* logger);  // Add 0,5ms in channel listenning
 
   Package* GetFirstPackageInTX();
+  void RemoveFirstPackageInRX();
 
   Generators* GetUniformGenerator();
   Generators* GetExpGenerator();
