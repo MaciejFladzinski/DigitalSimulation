@@ -27,7 +27,6 @@ Package::Package(unsigned int id_package, unsigned int id_station, size_t time)
 
 Package::~Package()
 {
-  wireless_network_->GetTransmitters(GetStationId())->RemoveFirstPackageInRX();
   logger_->Info("Remove package");
 }
 
@@ -291,15 +290,15 @@ void Package::Execute()
 
       SetTimeAddedToBuffer(GetTime());
 
-      wireless_network_->GeneratePackage(logger_, this, transmitter, rand() % 10); // generate and add package to the vector
+      wireless_network_->GeneratePackage(logger_, this, transmitter, GetStationId()); // generate and add package to the vector
       {
-        // planning the appearance of the next package
-        auto new_package = new Package(id_package_ + 1, rand() % 10, time_, logger_,
-          wireless_network_, agenda_, simulation_);
-
         // package generate time
-        int CGPk = wireless_network_->GetTransmitters(new_package->GetStationId())->GetUniformGenerator()->
+        int CGPk = wireless_network_->GetTransmitters(GetStationId())->GetExpGenerator()->
           RandExp(wireless_network_->GetLambda()) * 10;
+
+        // planning the appearance of the next package
+        auto new_package = new Package(id_package_ + 1, GetStationId(), time_ + CGPk, logger_,
+          wireless_network_, agenda_, simulation_);
          
         new_package->Activ(CGPk, true);
       }
@@ -497,11 +496,15 @@ void Package::Execute()
       break;
 
     case State::RemovalFromTheSystem:
-      if (!wireless_network_->IsBufferEmpty()) // if (buffer isn't empty)
+
+      wireless_network_->GetTransmitters(GetStationId())->RemoveFirstPackageInTX();
+
+      if (!wireless_network_->GetTransmitters(GetStationId())->IsBufferInTXEmpty()) // if (buffer in TX isn't empty)
       {
         // wake up next packet in buffer in current time
-        wireless_network_->GetFirstPackage()->Activ(time_, false);
+        wireless_network_->GetTransmitters(GetStationId())->GetFirstPackageInTX()->Activ(time_, false);
       }
+
       SetTerminated();
       active = false;
       break;

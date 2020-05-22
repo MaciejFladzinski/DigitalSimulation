@@ -121,11 +121,15 @@ Package* Transmitter::GetFirstPackageInTX()
   return packages_in_TX_.front();
 }
 
-void Transmitter::RemoveFirstPackageInRX()
+void Transmitter::RemoveFirstPackageInTX()
 {
   packages_in_TX_.pop();
 }
 
+bool Transmitter::IsBufferInTXEmpty()
+{
+  return packages_in_TX_.empty();
+}
 
 void Transmitter::AddPackageInTX(Package* package)
 {
