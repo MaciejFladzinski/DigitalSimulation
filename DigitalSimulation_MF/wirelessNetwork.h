@@ -51,6 +51,7 @@ public:
   void TotalAverageOfPackagesWaitingTime();
   void TotalAverageOfSystemThroughput();
 
+  void TransmittersStatistic(Logger* logger);
   void TotalStatistics(Logger* logger);
 
   // get

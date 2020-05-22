@@ -63,6 +63,7 @@ int main()
 
   simulation->RunM4(logger, max_simulation_time);
 
+  wireless_network->TransmittersStatistic(logger);
   wireless_network->TotalStatistics(logger);
 
   printf("\n");

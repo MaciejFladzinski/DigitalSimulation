@@ -110,3 +110,191 @@
 [Info] Actual package error rate: 0.000000, in transmitter: 8
 
 [Info] New max package error rate: 0.000000
+[Info] Packages successfully sent: 10, by transmitter: 8
+[Info] Actual package error rate: 0.000000, in transmitter: 8
+
+[Info] New max package error rate: 0.000000
+[Info] Packages successfully sent: 11, by transmitter: 8
+[Info] Actual package error rate: 0.000000, in transmitter: 8
+
+[Info] New max package error rate: 0.000000
+[Info] Packages successfully sent: 12, by transmitter: 8
+[Info] Actual package error rate: 0.000000, in transmitter: 8
+
+[Info] New max package error rate: 0.000000
+[Info] Packages successfully sent: 13, by transmitter: 8
+[Info] Actual package error rate: 0.000000, in transmitter: 8
+
+[Info] New max package error rate: 0.000000
+[Info] Packages successfully sent: 1, by transmitter: 9
+[Info] Actual package error rate: 0.000000, in transmitter: 9
+
+[Info] New max package error rate: 0.000000
+[Info] Packages successfully sent: 1, by transmitter: 0
+[Info] Actual package error rate: 0.000000, in transmitter: 0
+
+[Info] New max package error rate: 0.000000
+[Info] Packages successfully sent: 2, by transmitter: 0
+[Info] Actual package error rate: 0.000000, in transmitter: 0
+
+[Info] New max package error rate: 0.000000
+[Info] Packages successfully sent: 3, by transmitter: 0
+[Info] Actual package error rate: 0.000000, in transmitter: 0
+
+[Info] New max package error rate: 0.000000
+[Info] Packages successfully sent: 4, by transmitter: 0
+[Info] Actual package error rate: 0.000000, in transmitter: 0
+
+[Info] New max package error rate: 0.000000
+[Info] Packages successfully sent: 5, by transmitter: 0
+[Info] Actual package error rate: 0.000000, in transmitter: 0
+
+[Info] New max package error rate: 0.000000
+[Info] Packages successfully sent: 14, by transmitter: 8
+[Info] Actual package error rate: 0.000000, in transmitter: 8
+
+[Info] New max package error rate: 0.000000
+[Info] Packages successfully sent: 15, by transmitter: 8
+[Info] Actual package error rate: 0.000000, in transmitter: 8
+
+[Info] New max package error rate: 0.000000
+[Info] Packages successfully sent: 16, by transmitter: 8
+[Info] Actual package error rate: 0.000000, in transmitter: 8
+
+[Info] New max package error rate: 0.000000
+[Info] Packages successfully sent: 2, by transmitter: 5
+[Info] Actual package error rate: 0.000000, in transmitter: 5
+
+[Info] New max package error rate: 0.000000
+[Info] Packages successfully sent: 6, by transmitter: 0
+[Info] Actual package error rate: 0.000000, in transmitter: 0
+
+[Info] New max package error rate: 0.000000
+[Info] Packages successfully sent: 7, by transmitter: 0
+[Info] Actual package error rate: 0.000000, in transmitter: 0
+
+[Info] New max package error rate: 0.000000
+[Info] Packages successfully sent: 8, by transmitter: 0
+[Info] Actual package error rate: 0.000000, in transmitter: 0
+
+[Info] New max package error rate: 0.000000
+[Info] Packages successfully sent: 3, by transmitter: 5
+[Info] Actual package error rate: 0.000000, in transmitter: 5
+
+[Info] New max package error rate: 0.000000
+[Info] Packages successfully sent: 4, by transmitter: 5
+[Info] Actual package error rate: 0.000000, in transmitter: 5
+
+[Info] New max package error rate: 0.000000
+[Info] Packages successfully sent: 5, by transmitter: 5
+[Info] Actual package error rate: 0.000000, in transmitter: 5
+
+[Info] New max package error rate: 0.000000
+[Info] Packages successfully sent: 6, by transmitter: 5
+[Info] Actual package error rate: 0.000000, in transmitter: 5
+
+[Info] New max package error rate: 0.000000
+[Info] Packages successfully sent: 7, by transmitter: 5
+[Info] Actual package error rate: 0.000000, in transmitter: 5
+
+[Info] New max package error rate: 0.000000
+[Info] Packages successfully sent: 8, by transmitter: 5
+[Info] Actual package error rate: 0.000000, in transmitter: 5
+
+[Info] New max package error rate: 0.000000
+[Info] Packages successfully sent: 9, by transmitter: 5
+[Info] Actual package error rate: 0.000000, in transmitter: 5
+
+[Info] New max package error rate: 0.000000
+[Info] Packages successfully sent: 10, by transmitter: 5
+[Info] Actual package error rate: 0.000000, in transmitter: 5
+
+[Info] New max package error rate: 0.000000
+[Info] Packages successfully sent: 9, by transmitter: 0
+[Info] Actual package error rate: 0.000000, in transmitter: 0
+
+[Info] New max package error rate: 0.000000
+[Info] Packages successfully sent: 10, by transmitter: 0
+[Info] Actual package error rate: 0.000000, in transmitter: 0
+
+[Info] New max package error rate: 0.000000
+[Info] Packages successfully sent: 11, by transmitter: 0
+[Info] Actual package error rate: 0.000000, in transmitter: 0
+
+[Info] New max package error rate: 0.000000
+[Info] Packages successfully sent: 12, by transmitter: 0
+[Info] Actual package error rate: 0.000000, in transmitter: 0
+
+[Info] New max package error rate: 0.000000
+[Info] Packages successfully sent: 13, by transmitter: 0
+[Info] Actual package error rate: 0.000000, in transmitter: 0
+
+[Info] New max package error rate: 0.000000
+[Info] Packages successfully sent: 14, by transmitter: 0
+[Info] Actual package error rate: 0.000000, in transmitter: 0
+
+[Info] New max package error rate: 0.000000
+[Info] Packages successfully sent: 15, by transmitter: 0
+[Info] Actual package error rate: 0.000000, in transmitter: 0
+
+[Info] New max package error rate: 0.000000
+[Info] Packages successfully sent: 16, by transmitter: 0
+[Info] Actual package error rate: 0.000000, in transmitter: 0
+
+[Info] New max package error rate: 0.000000
+[Info] Packages successfully sent: 17, by transmitter: 0
+[Info] Actual package error rate: 0.000000, in transmitter: 0
+
+[Info] New max package error rate: 0.000000
+[Info] Packages successfully sent: 18, by transmitter: 0
+[Info] Actual package error rate: 0.000000, in transmitter: 0
+
+[Info] New max package error rate: 0.000000
+[Info] Packages successfully sent: 17, by transmitter: 8
+[Info] Actual package error rate: 0.000000, in transmitter: 8
+
+[Info] New max package error rate: 0.000000
+[Info] Packages successfully sent: 18, by transmitter: 8
+[Info] Actual package error rate: 0.000000, in transmitter: 8
+
+[Info] New max package error rate: 0.000000
+[Info] Packages successfully sent: 19, by transmitter: 8
+[Info] Actual package error rate: 0.000000, in transmitter: 8
+
+[Info] New max package error rate: 0.000000
+[Info] Packages successfully sent: 19, by transmitter: 0
+[Info] Actual package error rate: 0.000000, in transmitter: 0
+
+[Info] New max package error rate: 0.000000
+[Info] Packages successfully sent: 20, by transmitter: 0
+[Info] Actual package error rate: 0.000000, in transmitter: 0
+
+[Info] New max package error rate: 0.000000
+[Info] Packages successfully sent: 21, by transmitter: 0
+[Info] Actual package error rate: 0.000000, in transmitter: 0
+
+[Info] New max package error rate: 0.000000
+[Info] Packages successfully sent: 22, by transmitter: 0
+[Info] Actual package error rate: 0.000000, in transmitter: 0
+
+[Info] New max package error rate: 0.000000
+[Info] Packages successfully sent: 20, by transmitter: 8
+[Info] Actual package error rate: 0.000000, in transmitter: 8
+
+[Info] New max package error rate: 0.000000
+[Info] Packages successfully sent: 21, by transmitter: 8
+[Info] Actual package error rate: 0.000000, in transmitter: 8
+
+[Info] New max package error rate: 0.000000
+[Info] Packages successfully sent: 22, by transmitter: 8
+[Info] Actual package error rate: 0.000000, in transmitter: 8
+
+[Info] New max package error rate: 0.000000
+[Info] Packages successfully sent: 23, by transmitter: 8
+[Info] Actual package error rate: 0.000000, in transmitter: 8
+
+[Info] New max package error rate: 0.000000
+[Info] Packages successfully sent: 24, by transmitter: 8
+[Info] Actual package error rate: 0.000000, in transmitter: 8
+
+[Info] New max package error rate: 0.000000

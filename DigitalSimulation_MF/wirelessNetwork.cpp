@@ -227,6 +227,40 @@ void WirelessNetwork::TotalAverageOfSystemThroughput()
 	SetTotalAverageOfSystemThroughput(GetTotalAverageOfSystemThroughput() / k_number_of_stations_);
 }
 
+void WirelessNetwork::TransmittersStatistic(Logger* logger)
+{
+	logger_ = logger;
+
+	for (int i = 0; i < k_number_of_stations_; ++i)
+	{
+		logger->Info("\n\nTransmitter (id: " + std::to_string(i) + ") statistics:");
+
+		logger->Info("Number of packages successfully sent: " +
+			std::to_string(GetTransmitters(i)->GetPackagesSuccessfullySent()));
+
+		logger->Info("Number of packages lost: " +
+			std::to_string(GetTransmitters(i)->GetPackagesLost()));
+
+		logger->Info("Average of package error rate: " +
+			std::to_string(GetTransmitters(i)->GetPackageErrorRate()));
+
+		logger->Info("Max package error rate in station: " +
+			std::to_string(GetTransmitters(i)->GetMaxPackageErrorRate()));
+
+		logger->Info("Average number of LR: " +
+			std::to_string(GetTransmitters(i)->GetAverageNumberOfLR()));
+
+		logger->Info("Average of throughput in system: " +
+			std::to_string(GetTransmitters(i)->GetAverageOfSystemThroughput()) + "/s");
+
+		logger->Info("Average of package delay time: " +
+			std::to_string(GetTransmitters(i)->GetAverageOfPackagesDelayTime()) + "ms");
+
+		logger->Info("Average of package waiting time: " +
+			std::to_string(GetTransmitters(i)->GetAverageOfPackagesWaitingTime()) + "ms");
+	}
+}
+
 void WirelessNetwork::TotalStatistics(Logger* logger)
 {
 	logger_ = logger;
