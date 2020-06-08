@@ -70,7 +70,7 @@ void Package::IncrementNumberOfLR(Logger* logger)
   logger_ = logger;
   ++number_of_LR_;
   SetNumberOfLR(number_of_LR_);
-  //logger->Info("Package retransmission attempt... attempt nr: " + std::to_string(GetNumberOfLR()));
+  logger->Info("Package retransmission attempt... attempt nr: " + std::to_string(GetNumberOfLR()));
 }
 
 void Package::IncrementCounter()
@@ -90,7 +90,7 @@ void Package::GenerateCTPkTime(Logger* logger)
   GetUniformGenerator()->Rand(1, 10) * 10; // time CTPk {1,...,10}ms * 10 -> {10,...,100}x
 
   SetTimeCTPk(ctpk_time);
-  //logger->Info("Generate CTPk time... CTPk = " + std::to_string(GetTimeCTPk()));
+  logger->Info("Generate CTPk time... CTPk = " + std::to_string(GetTimeCTPk()));
 }
 
 //////////////////////////////////////////////////
@@ -114,8 +114,8 @@ void Package::PackageDelayTime()
     savePackageDelayTime.close();
   }
 
-  //logger_->Info("Package delay time: " + std::to_string(GetPackageDelayTime()) +
-   // ", in transmitter: " + std::to_string(GetStationId()));
+  logger_->Info("Package delay time: " + std::to_string(GetPackageDelayTime()) +
+    ", in transmitter: " + std::to_string(GetStationId()));
 }
 
 void Package::SaveNumberOfLR()
@@ -214,8 +214,8 @@ void Package::SaveWaitingTime()
     saveWaitingTime.close();
   }
 
-  //logger_->Info("Time of waiting in buffer before transmission: " +
-  //  std::to_string(GetPackageWaitingTime()) + ", in transmitter: " + std::to_string(GetStationId()));
+  logger_->Info("Time of waiting in buffer before transmission: " +
+    std::to_string(GetPackageWaitingTime()) + ", in transmitter: " + std::to_string(GetStationId()));
 }
 
 void Package::SaveThroughputOfSystem()
@@ -235,7 +235,7 @@ void Package::SaveThroughputOfSystem()
     wireless_network_->GetTransmitters(GetStationId())->CalculationAverageOfSystemThroughput();
   }
 
-  //logger_->Info("Actual system throughput: " + std::to_string(GetSystemThroughput()) + "/s");
+  logger_->Info("Actual system throughput: " + std::to_string(GetSystemThroughput()) + "/s");
 }
 
 void Package::SavePackagesSuccessfullySent()
@@ -343,14 +343,14 @@ void Package::Execute()
       {
         if (transmitter->GetTimeOfChannelListenning() > transmitter->difs_time_)
         {
-          //logger_->Info("Channel is free more than 4ms");
+          logger_->Info("Channel is free more than 4ms");
           Activ(0); // wait for other packages in these same time
           state_ = State::Transmission;
           active = false;
         }
         else
         {
-          //logger_->Info("Channel isn't free more than 4ms");
+          logger_->Info("Channel isn't free more than 4ms");
           transmitter->IncTimeOfChannelListenning(logger_); // X += 0,5ms
           Activ(5, true); // process sleep for 0,5ms
           state_ = State::ChannelListening;
@@ -359,7 +359,7 @@ void Package::Execute()
       }
       else
       {
-        //logger_->Info("Channel is busy");
+        logger_->Info("Channel is busy");
         transmitter->SetTimeOfChannelListenning(0);
         Activ(5, true); // process sleep for 0,5ms
         state_ = State::ChannelListening;
@@ -373,7 +373,7 @@ void Package::Execute()
       SaveTimeRemoveFromBuffer();
       wireless_network_->AddPackages(transmitter->GetFirstPackageInTX()); // add package to the vector in channel
       wireless_network_->StartTransmission(logger_); // (channel occupancy = true)
-      //logger_->Info("Start transmission package (id: " + std::to_string(this->GetPackageId()) + ")");
+      logger_->Info("Start transmission package (id: " + std::to_string(this->GetPackageId()) + ")");
       Activ(ctpk_time_, true);// process sleep for CTPk time
       state_ = State::Collision;
       active = false;
@@ -383,7 +383,7 @@ void Package::Execute()
       if (wireless_network_->GetBufferSize() == 1 && wireless_network_->GetChannel()->GetMorePackagesInChannel() == false)
       {
         wireless_network_->GetChannel()->SetCollision(false);
-        //logger_->Info("Collision doesn't detected");
+        logger_->Info("Collision doesn't detected");
         state_ = State::ReceivePackage;
         active = true;
       }
@@ -391,7 +391,7 @@ void Package::Execute()
       {
         wireless_network_->GetChannel()->SetMorePackagesInBuffer(true);
         wireless_network_->GetChannel()->SetCollision(true);
-        //logger_->Info("Collision detected");
+        logger_->Info("Collision detected");
 
         wireless_network_->EndTransmission(logger_);
 
@@ -441,7 +441,7 @@ void Package::Execute()
       IncrementNumberOfLR(logger_);
       if (GetNumberOfLR() <= 5) //if there was only 1 package
       {
-        //logger_->Info("Permission for retransmission");
+        logger_->Info("Permission for retransmission");
         transmitter->GenerateCRPTime(logger_, ctpk_time_, number_of_LR_);
         transmitter->SetTimeOfChannelListenning(0);
         Activ(transmitter->GetTimeCrp(), true); // process sleep for CRP time
@@ -450,7 +450,7 @@ void Package::Execute()
       }
       else
       {
-        //logger_->Info("Unable to retransmit again");
+        logger_->Info("Unable to retransmit again");
         transmitter->AddPackageLost(logger_);
         SavePackagesLost();
         SaveNumberOfLR();
@@ -465,7 +465,7 @@ void Package::Execute()
     case State::ACK:
       if (wireless_network_->GetChannelStatus() == false) // if (channel is free)
       {
-        //logger_->Info("Permission to send ACK");
+        logger_->Info("Permission to send ACK");
         receiver->SetAcknowledgment(true);
         // add package (to the vector in channel) instead of ACK to simplify implementation
         wireless_network_->AddPackages(this);
@@ -477,7 +477,7 @@ void Package::Execute()
       else
       {
         wireless_network_->GetChannel()->SetCollision(true);
-        //logger_->Info("Collision detected");
+        logger_->Info("Collision detected");
         wireless_network_->GetChannel()->SetChannelOccupancy(false);
         wireless_network_->GetChannel()->SetCollision(false);
         transmitter->SetTimeOfChannelListenning(0);
@@ -491,7 +491,7 @@ void Package::Execute()
       if (wireless_network_->GetBufferSize() == 1)
       {
         wireless_network_->GetChannel()->SetChannelOccupancy(false);
-        //logger_->Info("ACK delivered successfully");
+        logger_->Info("ACK delivered successfully");
         SetTimeSuccessfullySentPackage(GetTime());
         wireless_network_->IncrementCounterOfPackagesSuccessfullySent();
         transmitter->AddPackageSuccessfullySent(logger_);
@@ -510,7 +510,7 @@ void Package::Execute()
       else
       {
         wireless_network_->GetChannel()->SetCollision(true);
-        //logger_->Info("Collision detected");
+        logger_->Info("Collision detected");
         wireless_network_->EndTransmission(logger_); // channel is free (remove ACK from the vector in channel)
         wireless_network_->GetChannel()->SetChannelOccupancy(false);
         transmitter->SetTimeOfChannelListenning(0);

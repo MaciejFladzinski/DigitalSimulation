@@ -121,8 +121,8 @@ void WirelessNetwork::GeneratePackage(Logger* logger, Package* package, Transmit
 	package->SaveTimeOfAddedToBuffer();
   package->GenerateCTPkTime(logger);
 
-	//logger->Info("Generate package (id: " + std::to_string(package->GetPackageId()) + ") by transmitter (id: " +
-	//	std::to_string(transmitter->GetTransmitterId()) + "). Package transmission time: " + std::to_string(package->GetTimeCTPk()));
+	logger->Info("Generate package (id: " + std::to_string(package->GetPackageId()) + ") by transmitter (id: " +
+		std::to_string(transmitter->GetTransmitterId()) + "). Package transmission time: " + std::to_string(package->GetTimeCTPk()));
 }
 
 void WirelessNetwork::StartTransmission(Logger* logger)

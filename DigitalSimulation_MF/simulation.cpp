@@ -102,12 +102,12 @@ void Simulation::RunM4(Logger* logger, int time)
     clock_ = package_process->GetTime();
 
     printf("\n");
-    //logger->Info("Simulation time: " + std::to_string(clock_));
+    logger->Info("Simulation time: " + std::to_string(clock_));
     package_process->Execute();
 
     if (package_process->GetIsTerminated() == true)
     {
-      //logger->Info("End process package (id: " + std::to_string(package_process->GetPackageId()) + ") \n");
+      logger->Info("End process package (id: " + std::to_string(package_process->GetPackageId()) + ") \n");
 
       delete package_process;
     }

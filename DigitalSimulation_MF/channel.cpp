@@ -5,12 +5,12 @@ Channel::Channel(Logger* logger, int uniform_seed)
   logger_ = logger;
   uniform_generator_ = new Generators(uniform_seed);
 
-  //logger->Info("Create channel");
+  logger->Info("Create channel");
 }
 
 Channel::~Channel()
 {
-  //logger_->Info("Remove channel");
+  logger_->Info("Remove channel");
 }
 
 Generators* Channel::GetGeneratorTER()
@@ -57,10 +57,10 @@ void Channel::ChanceForTER(Logger* logger)
   if (random_number == 0)
   {
     SetCollision(true);
-    //logger->Info("TER error occur");
+    logger->Info("TER error occur");
   }
   else
   {
-    //logger->Info("TER error doesn't occur");
+    logger->Info("TER error doesn't occur");
   }
 }
