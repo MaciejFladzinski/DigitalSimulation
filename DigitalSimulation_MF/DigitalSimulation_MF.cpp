@@ -16,6 +16,7 @@
 
 int main()
 {
+
   // open file: partial data
   std::ofstream saveTimeOfAddedToBuffer("SaveTimeOfAddedToBuffer.txt"); // save time of added package to the buffer
   std::ofstream saveTimeSuccessfullySentPackage("SaveTimeSuccessfullySentPackage.txt"); // save time when package is successfully sent
@@ -27,25 +28,8 @@ int main()
   std::ofstream savePackageDelayTime("SavePackageDelayTime.txt"); // save package delay time (TimeSuccessfullySentPackage - TimeOfAddedToBuffer)
   std::ofstream saveWaitingTime("SaveWaitingTime.txt"); // save waiting time (TimeRemoveFromBuffer - TimeOfAddedToBuffer)
   std::ofstream saveSystemThroughput("SaveSystemThroughput.txt"); // save: packages successfully sent / simulation time
+  std::ofstream saveAverageOfLRInSystem("SaveAverageOfLRInSystem.txt");
 
-  /*
-  int number_of_rands = 100000;
-
-  // Create random generator with arbitrary seed
-  int seed = 50;
-  auto uniform_generator = Generators(seed);
-  std::vector<double> numbers;
-
-  for (int i = 0; i < number_of_rands; ++i)
-  {
-    numbers.push_back(uniform_generator.Rand());
-  }
-
-  // Save data to file
-  std::ofstream output_file("./example.txt");
-  std::ostream_iterator<double> output_iterator(output_file, "\n");
-  std::copy(numbers.begin(), numbers.end(), output_iterator);
-  */
 
   int wireless_network_seed = 123;
 
@@ -57,6 +41,46 @@ int main()
   std::cin >> max_simulation_time;
   printf("\n");
 
+  printf("Choose a set of seeds from 1-10:\n");
+  int seed_key;
+  std::cin >> seed_key;
+
+  switch (seed_key)
+  {
+  case 1:
+    break;
+  case 2:
+    wireless_network_seed += 10;
+    break;
+  case 3:
+    wireless_network_seed += 20;
+    break;
+  case 4:
+    wireless_network_seed += 30;
+    break;
+  case 5:
+    wireless_network_seed += 40;
+    break;
+  case 6:
+    wireless_network_seed += 50;
+    break;
+  case 7:
+    wireless_network_seed += 60;
+    break;
+  case 8:
+    wireless_network_seed += 70;
+    break;
+  case 9:
+    wireless_network_seed += 80;
+    break;
+  case 10:
+    wireless_network_seed += 90;
+    break;
+  default:
+    printf("Wrong number! Seed was choosed automaticly.\n");
+  }
+  printf("\n");
+
   WirelessNetwork* wireless_network = new WirelessNetwork(logger, wireless_network_seed);
 
   auto simulation = new Simulation(logger, wireless_network);
@@ -66,9 +90,10 @@ int main()
   wireless_network->TransmittersStatistic(logger);
   wireless_network->TotalStatistics(logger);
 
-  printf("\n");
+  printf("\n\n");
   delete simulation;
   delete wireless_network;
   delete logger;
+
   return 0;
 }

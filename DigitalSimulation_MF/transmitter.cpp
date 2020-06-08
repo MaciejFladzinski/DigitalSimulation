@@ -54,7 +54,7 @@ void Transmitter::GenerateCRPTime(Logger* logger, size_t ctpk, unsigned int numb
   size_t crp_time = ctpk * R * 10;
 
   SetTimeCrp(crp_time);
-  logger->Info("CRP time: " + std::to_string(GetTimeCrp()));
+  //logger->Info("CRP time: " + std::to_string(GetTimeCrp()));
 }
 
 void Transmitter::AddPackageSuccessfullySent(Logger* logger)
@@ -67,13 +67,13 @@ void Transmitter::AddPackageSuccessfullySent(Logger* logger)
   CalculationAverageOfPackagesDelayTime();
   CalculationAverageOfPackagesWaitingTime();
 
-  SetPackageErrorRate(GetPackagesLost() / GetPackagesSuccessfullySent());
+  SetPackageErrorRate((double)GetPackagesLost() / (double)GetPackagesSuccessfullySent());
 
-  logger->Info("Packages successfully sent: " + std::to_string(GetPackagesSuccessfullySent()) +
-    ", by transmitter: " + std::to_string(GetTransmitterId()));
+  //logger->Info("Packages successfully sent: " + std::to_string(GetPackagesSuccessfullySent()) +
+  //  ", by transmitter: " + std::to_string(GetTransmitterId()));
 
-  logger->Info("Actual package error rate: " + std::to_string(GetPackageErrorRate()) +
-    ", in transmitter: " + std::to_string(GetTransmitterId()));
+  //logger->Info("Actual package error rate: " + std::to_string(GetPackageErrorRate()) +
+  //  ", in transmitter: " + std::to_string(GetTransmitterId()));
 }
 
 void Transmitter::AddPackageLost(Logger* logger)
@@ -84,20 +84,35 @@ void Transmitter::AddPackageLost(Logger* logger)
 
   CalculationAverageOfPackagesWaitingTime();
 
-  SetPackageErrorRate(GetPackagesLost() / GetPackagesSuccessfullySent());
+  if (GetPackagesSuccessfullySent() == 0)
+  {
+    SetPackageErrorRate(0);
+  }
+  else
+  {
+    SetPackageErrorRate((double)GetPackagesLost() / (double)GetPackagesSuccessfullySent());
+  }
 
-  logger->Info("Packages lost: " + std::to_string(GetPackagesLost()) +
-    ", by transmitter: " + std::to_string(GetTransmitterId()));
+  //logger->Info("Packages lost: " + std::to_string(GetPackagesLost()) +
+  //  ", by transmitter: " + std::to_string(GetTransmitterId()));
 
-  logger->Info("Actual package error rate: " + std::to_string(GetPackageErrorRate()) +
-    ", in transmitter: " + std::to_string(GetTransmitterId()));
+  //logger->Info("Actual package error rate: " + std::to_string(GetPackageErrorRate()) +
+  //  ", in transmitter: " + std::to_string(GetTransmitterId()));
 }
 
 void Transmitter::CalculationMaxPackageErrorRate()
 {
   if (GetPackageErrorRate() >= GetMaxPackageErrorRate())
   {
-    SetMaxPackageErrorRate(GetPackageErrorRate());
+    if (GetPackagesSuccessfullySent() == 0)
+    {
+      SetMaxPackageErrorRate(0);
+    }
+    else
+    {
+      SetMaxPackageErrorRate(GetPackageErrorRate());
+    }
+
     std::ofstream savePackagesSent("SavePackagesSent.txt", std::ios_base::app);
 
     savePackagesSent << "[Info] New max package error rate: " +
@@ -111,9 +126,9 @@ void Transmitter::IncTimeOfChannelListenning(Logger* logger)
 {
   logger_ = logger;
   this->time_of_channel_listenning_ += 5;
-  logger->Info("Time of free channel listenning: " +
-    std::to_string(time_of_channel_listenning_ - 5) + ", by transmitter: " +
-    std::to_string(GetTransmitterId()));
+  //logger->Info("Time of free channel listenning: " +
+  //  std::to_string(time_of_channel_listenning_ - 5) + ", by transmitter: " +
+  //  std::to_string(GetTransmitterId()));
 }
 
 Package* Transmitter::GetFirstPackageInTX()

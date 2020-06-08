@@ -17,7 +17,6 @@ public:
   WirelessNetwork(Logger* logger, int wireless_network_seed);
   ~WirelessNetwork();
 
-  static const size_t generate_packet_max_time = 10;
   unsigned const int k_number_of_stations_ = 10; // number of transmitters and receivers
 
   Transmitter* GetTransmitters(int i);
@@ -105,8 +104,7 @@ public:
 
 private:
   int counter_of_packages_successfully_sent_ = 0;
-  double lambda = 0.08;
-
+  double lambda = 0.075;
   double total_max_package_error_rate_ = 0;
   int total_number_of_packages_successfully_sent_ = 0;
   int total_number_of_packages_lost_ = 0;

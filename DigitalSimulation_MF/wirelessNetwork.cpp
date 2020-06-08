@@ -23,7 +23,9 @@ WirelessNetwork::WirelessNetwork(Logger* logger, int wireless_network_seed)
 
 	// Save data to file
 	std::ofstream output_file("./example.txt");
+
 	std::ostream_iterator<double> output_iterator(output_file, "\n");
+
 	std::copy(seeds_.begin(), seeds_.end(), output_iterator);
 
 	auto seed_uniform = seeds_.back();
@@ -119,21 +121,19 @@ void WirelessNetwork::GeneratePackage(Logger* logger, Package* package, Transmit
 	package->SaveTimeOfAddedToBuffer();
   package->GenerateCTPkTime(logger);
 
-	logger->Info("Generate package (id: " + std::to_string(package->GetPackageId()) + ") by transmitter (id: " +
-		std::to_string(transmitter->GetTransmitterId()) + "). Package transmission time: " + std::to_string(package->GetTimeCTPk()));
+	//logger->Info("Generate package (id: " + std::to_string(package->GetPackageId()) + ") by transmitter (id: " +
+	//	std::to_string(transmitter->GetTransmitterId()) + "). Package transmission time: " + std::to_string(package->GetTimeCTPk()));
 }
 
 void WirelessNetwork::StartTransmission(Logger* logger)
 {
 	logger_ = logger;
 	channel_->SetChannelOccupancy(true);
-	//logger->Info("Start transmission");
 }
 
 void WirelessNetwork::EndTransmission(Logger* logger)
 {
 	logger_ = logger;
-	//channel_->SetChannelOccupancy(false);
 	packages_.pop_back();
 }
 
@@ -152,14 +152,17 @@ void WirelessNetwork::TotalMaxPackageErrorRate()
 {
   for (int i = 0; i < k_number_of_stations_; ++i)
   {
-		SetTotalMaxPackageErrorRate(GetTotalMaxPackageErrorRate() + GetTransmitters(i)->GetMaxPackageErrorRate());
-  }
-
-	SetTotalMaxPackageErrorRate(GetTotalMaxPackageErrorRate() / k_number_of_stations_);
+		if (GetTotalMaxPackageErrorRate() <= GetTransmitters(i)->GetMaxPackageErrorRate())
+		{
+			SetTotalMaxPackageErrorRate(GetTransmitters(i)->GetMaxPackageErrorRate());
+		}
+	}
 }
 
 void WirelessNetwork::TotalNumberOfPackagesSuccessfullySent()
 {
+	SetTotalNumberOfPackagesSuccessfullySent(0);
+
 	for (int i = 0; i < k_number_of_stations_; ++i)
 	{
 		SetTotalNumberOfPackagesSuccessfullySent(GetTotalNumberOfPackagesSuccessfullySent() +
@@ -169,6 +172,8 @@ void WirelessNetwork::TotalNumberOfPackagesSuccessfullySent()
 
 void WirelessNetwork::TotalNumberOfPackagesLost()
 {
+	SetTotalNumberOfPackagesLost(0);
+
 	for (int i = 0; i < k_number_of_stations_; ++i)
 	{
 		SetTotalNumberOfPackagesLost(GetTotalNumberOfPackagesLost() + GetTransmitters(i)->GetPackagesLost());
@@ -177,12 +182,7 @@ void WirelessNetwork::TotalNumberOfPackagesLost()
 
 void WirelessNetwork::TotalPackageErrorRate()
 {
-  for (int i = 0; i < k_number_of_stations_; ++i)
-  {
-		SetTotalPackageErrorRate(GetTotalPackageErrorRate() + GetTransmitters(i)->GetPackageErrorRate());
-  }
-
-	SetTotalPackageErrorRate(GetTotalPackageErrorRate() / k_number_of_stations_);
+	SetTotalPackageErrorRate((double)GetTotalNumberOfPackagesLost() / (double)GetTotalNumberOfPackagesSuccessfullySent());
 }
 
 void WirelessNetwork::TotalAverageNumberOfLR()
@@ -192,7 +192,7 @@ void WirelessNetwork::TotalAverageNumberOfLR()
 		SetTotalAverageNumberOfLR(GetTotalAverageNumberOfLR() + GetTransmitters(i)->GetAverageNumberOfLR());
   }
 
-	SetTotalAverageNumberOfLR(GetTotalAverageNumberOfLR() / k_number_of_stations_);
+	SetTotalAverageNumberOfLR(GetTotalAverageNumberOfLR() / (double)k_number_of_stations_);
 }
 
 void WirelessNetwork::TotalAverageOfPackagesDelayTime()
@@ -233,7 +233,8 @@ void WirelessNetwork::TransmittersStatistic(Logger* logger)
 
 	for (int i = 0; i < k_number_of_stations_; ++i)
 	{
-		logger->Info("\n\nTransmitter (id: " + std::to_string(i) + ") statistics:");
+		printf("\n");
+		logger->Info("Transmitter (id: " + std::to_string(i) + ") statistics:");
 
 		logger->Info("Number of packages successfully sent: " +
 			std::to_string(GetTransmitters(i)->GetPackagesSuccessfullySent()));
@@ -242,10 +243,10 @@ void WirelessNetwork::TransmittersStatistic(Logger* logger)
 			std::to_string(GetTransmitters(i)->GetPackagesLost()));
 
 		logger->Info("Average of package error rate: " +
-			std::to_string(GetTransmitters(i)->GetPackageErrorRate()));
+			std::to_string(GetTransmitters(i)->GetPackageErrorRate() * 100) + "%");
 
 		logger->Info("Max package error rate in station: " +
-			std::to_string(GetTransmitters(i)->GetMaxPackageErrorRate()));
+			std::to_string(GetTransmitters(i)->GetMaxPackageErrorRate() * 100) + "%");
 
 		logger->Info("Average number of LR: " +
 			std::to_string(GetTransmitters(i)->GetAverageNumberOfLR()));
@@ -274,10 +275,11 @@ void WirelessNetwork::TotalStatistics(Logger* logger)
 	TotalNumberOfPackagesLost();
 	logger->Info("Total number of packages lost: " + std::to_string(GetTotalNumberOfPackagesLost()));
 
-	TotalMaxPackageErrorRate();
-	logger->Info("Total average of package error rate: " + std::to_string(GetTotalPackageErrorRate()));
+	TotalPackageErrorRate();
+	logger->Info("Total average of package error rate: " + std::to_string(GetTotalPackageErrorRate() * 100) + "%");
 
-	logger->Info("Max package error rate in system: " + std::to_string(GetTotalMaxPackageErrorRate()));
+	TotalMaxPackageErrorRate();
+	logger->Info("Max package error rate in system: " + std::to_string(GetTotalMaxPackageErrorRate() * 100) + "%");
 
 	TotalAverageNumberOfLR();
 	logger->Info("Total average number of LR: " + std::to_string(GetTotalAverageNumberOfLR()));

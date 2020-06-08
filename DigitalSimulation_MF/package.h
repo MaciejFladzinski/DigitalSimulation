@@ -42,6 +42,7 @@ public:
   void GenerateCTPkTime(Logger* logger);
 
   void SaveNumberOfLR();
+  void SaveAverageOfLRInSystem();
 
   void SaveTimeOfAddedToBuffer();
   void SaveTimeSuccessfullySentPackage();

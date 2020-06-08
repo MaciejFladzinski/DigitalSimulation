@@ -66,7 +66,7 @@ void Simulation::RunM4(Logger* logger, int time)
   clock_ = 0;
   wireless_network_->Init(logger_);
 
-  printf("Set initial phase:\n");
+  printf("Set initial phase (suggested value: 200):\n");
   size_t initial_phase;
   std::cin >> initial_phase;
   SetStartTimeStatistics(initial_phase);
@@ -92,9 +92,8 @@ void Simulation::RunM4(Logger* logger, int time)
       RandExp(wireless_network_->GetLambda()) * 10;
 
     agenda.push(new Package(id, i, clock_ + CGPk, logger, wireless_network_, &agenda, this));
-
-    printf("CGPk: %d\n\n", CGPk);
   }
+
   // main loop
   while (clock_ < static_cast<size_t>(time) && (!agenda.empty() == true))
   {
@@ -103,12 +102,12 @@ void Simulation::RunM4(Logger* logger, int time)
     clock_ = package_process->GetTime();
 
     printf("\n");
-    logger->Info("Simulation time: " + std::to_string(clock_));
+    //logger->Info("Simulation time: " + std::to_string(clock_));
     package_process->Execute();
 
     if (package_process->GetIsTerminated() == true)
     {
-      logger->Info("End process package (id: " + std::to_string(package_process->GetPackageId()) + ") \n");
+      //logger->Info("End process package (id: " + std::to_string(package_process->GetPackageId()) + ") \n");
 
       delete package_process;
     }
